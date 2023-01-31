@@ -1,7 +1,0 @@
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.csproj.AssemblyReference.cache
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.MainForm.resources
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.csproj.GenerateResource.cache
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.AssemblyInfoInputs.cache
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.AssemblyInfo.cs
-C:\Users\talip\source\repos\HaydCalculator\obj\Debug\netcoreapp3.1\HaydCalculator.csproj.CoreCompileInputs.cache
