@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MauiTestApp</name>
+    </assembly>
+    <members>
+        <member name="P:MauiTestApp.Calendar`1.Days">
+            <summary>
+            The list of displayed days.
+            </summary>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.NavigatedDate">
+            <summary>
+            The date the calendar will use to get the dates representing a time unit.
+            </summary>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.TodayDate">
+            <summary>
+            The date that the calendar should consider as 'Today'.
+            </summary>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.NavigationLowerBound">
+            <summary>
+            The lower bound of the day range.
+            </summary>
+            <seealso cref="P:MauiTestApp.Calendar`1.NavigationLoopMode"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.NavigationUpperBound">
+            <summary>
+            The upper bound of the day range.
+            </summary>
+            <seealso cref="P:MauiTestApp.Calendar`1.NavigationLoopMode"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.StartOfWeek">
+            <summary>
+            The day of week that should be considered as the start of the week.
+            </summary>
+            <seealso cref="P:MauiTestApp.Calendar`1.CustomDayNamesOrder"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.AutoRows">
+            <summary>
+            Whether to automatically add as many rows as needed to represent the time unit or not.
+            </summary>
+            <seealso cref="P:MauiTestApp.Calendar`1.AutoRowsIsConsistent"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.AutoRowsIsConsistent">
+            <summary>
+            Whether to make sure the amount of rows stays the same across the time unit.
+            </summary>
+            <example>If the <see cref="P:MauiTestApp.Calendar`1.StartOfWeek"/> is Monday, the highest number of rows needed to display a month in 2022 is 6 rows (May, October etc).
+            If this property is true, the calendar will display 6 rows regardless of whether a month needs less or not (April, November etc).
+            Otherwise it will display as needed: (5 for April and November, 6 for May and October etc).</example>
+            <seealso cref="P:MauiTestApp.Calendar`1.AutoRows"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.SelectionAction">
+            <summary>
+            The type of selection to use for selecting dates.
+            </summary>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.NavigationLoopMode">
+            <summary>
+            How the calendar handles navigation past the <see cref="F:System.DateTime.MinValue"/>, <see cref="F:System.DateTime.MaxValue"/>, <see cref="P:MauiTestApp.Calendar`1.NavigationLowerBound"/>, and <see cref="P:MauiTestApp.Calendar`1.NavigationUpperBound"/>.
+            </summary>
+            <seealso cref="!:NavigateCalendar(int)"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.SelectedDates">
+            <summary>
+            The dates that are currently selected.
+            </summary>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.Rows">
+            <summary>
+            The number of rows to display.
+            </summary>
+            <seealso cref="P:MauiTestApp.Calendar`1.AutoRows"/>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.PageStartMode">
+            <summary>
+            The way in which to extract a date from the <see cref="P:MauiTestApp.Calendar`1.NavigatedDate"/> to use as the first date of the first row.
+            </summary>
+            <example>If the <see cref="P:MauiTestApp.Calendar`1.StartOfWeek"/> is Monday and the navigated date is 15th July 2022:
+            <see cref="F:XCalendar.Core.Enums.PageStartMode.FirstDayOfWeek"/> will extract 11th July 2022.
+            <see cref="F:XCalendar.Core.Enums.PageStartMode.FirstDayOfMonth"/> will extract 27th June 2022 (First day in the week of 1st July 2022).
+            <see cref="F:XCalendar.Core.Enums.PageStartMode.FirstDayOfYear"/> will extract 27th December 2021 (First day in the week of 1st January 2022).</example>
+        </member>
+        <member name="P:MauiTestApp.Calendar`1.DayNamesOrder">
+            <summary>
+            The order to display the days of the week in.
+            </summary>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.OnDateSelectionChanged(System.Collections.Generic.IList{System.DateTime},System.Collections.Generic.IList{System.DateTime})">
+            <remarks>
+            Called when <see cref="P:MauiTestApp.Calendar`1.SelectedDates"/> changes.
+            </remarks>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.ChangeDateSelection(System.DateTime)">
+            <summary>
+            Performs selection of a <see cref="T:System.DateTime"/> depending on the current <see cref="P:MauiTestApp.Calendar`1.SelectionAction"/> and <see cref="P:MauiTestApp.Calendar`1.SelectionType"/>.
+            </summary>
+            <param name="DateTime">The <see cref="T:System.DateTime"/> to select/unselect.</param>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.CommitRangeSelection">
+            <summary>
+             Performs selection on a range of dates as defined by <see cref="P:MauiTestApp.Calendar`1.RangeSelectionStart"/> and <see cref="P:MauiTestApp.Calendar`1.RangeSelectionEnd"/> depending on the current <see cref="P:MauiTestApp.Calendar`1.SelectionType"/>.
+            </summary>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.GetMonthRows(System.DateTime,System.Boolean,System.DayOfWeek)">
+            <summary>
+            Gets the number of rows needed to display the days of a month based on how many weeks the months has.
+            </summary>
+            <param name="DateTime">The <see cref="T:System.DateTime"/> representing the month to get the number of rows for.</param>
+            <param name="IsConsistent">Whether the return value should be the highest possible value occuring in the year or not.</param>
+            <param name="StartOfWeek">The start of the week.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.UpdateDays(System.DateTime)">
+            <summary>
+            Updates the dates displayed on the calendar.
+            </summary>
+            <param name="NavigationDate">The <see cref="T:System.DateTime"/> who's month will be used to update the dates.</param>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.Navigate(System.TimeSpan)">
+            <summary>
+            Navigates the calendar by the specified <see cref="T:System.TimeSpan"/> using the navigation rule properties set in the calendar (<see cref="P:MauiTestApp.Calendar`1.NavigationLowerBound"/>, <see cref="P:MauiTestApp.Calendar`1.NavigationUpperBound"/> <see cref="P:MauiTestApp.Calendar`1.NavigationLoopMode"/>).
+            </summary>
+        </member>
+        <member name="M:MauiTestApp.Calendar`1.SelectedDates_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Raises an event signaling that the days' properties need to be reevaluated due to changes in the <see cref="!:CalendarView"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+    </members>
+</doc>

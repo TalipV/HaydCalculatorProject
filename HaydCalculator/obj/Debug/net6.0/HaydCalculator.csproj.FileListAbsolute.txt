@@ -1,0 +1,12 @@
+C:\Users\talip\source\repos\HaydCalculator\bin\Debug\net6.0\HaydCalculator.deps.json
+C:\Users\talip\source\repos\HaydCalculator\bin\Debug\net6.0\HaydCalculator.dll
+C:\Users\talip\source\repos\HaydCalculator\bin\Debug\net6.0\HaydCalculator.pdb
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.csproj.AssemblyReference.cache
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.AssemblyInfoInputs.cache
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.AssemblyInfo.cs
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.csproj.CoreCompileInputs.cache
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.dll
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\refint\HaydCalculator.dll
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\HaydCalculator.pdb
+C:\Users\talip\source\repos\HaydCalculator\obj\Debug\net6.0\ref\HaydCalculator.dll
