@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {}
+    "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {}
   },
   "projects": {
-    "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
+    "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
+        "projectUniqueName": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
         "projectName": "HaydCalculator",
-        "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
+        "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
         "packagesPath": "/Users/Talip/.nuget/packages/",
-        "outputPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/obj/",
+        "outputPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Talip/.nuget/NuGet/NuGet.Config"

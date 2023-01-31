@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Talip/Desktop/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj": {}
+    "/Users/Talip/Projects/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj": {}
   },
   "projects": {
-    "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
+    "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
+        "projectUniqueName": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
         "projectName": "HaydCalculator",
-        "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
+        "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj",
         "packagesPath": "/Users/Talip/.nuget/packages/",
-        "outputPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/obj/",
+        "outputPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Talip/.nuget/NuGet/NuGet.Config"
@@ -58,14 +58,14 @@
         }
       }
     },
-    "/Users/Talip/Desktop/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj": {
+    "/Users/Talip/Projects/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Talip/Desktop/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj",
+        "projectUniqueName": "/Users/Talip/Projects/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj",
         "projectName": "MauiTestApp",
-        "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj",
+        "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/MauiTestApp/MauiTestApp.csproj",
         "packagesPath": "/Users/Talip/.nuget/packages/",
-        "outputPath": "/Users/Talip/Desktop/HaydCalculatorProject/MauiTestApp/obj/",
+        "outputPath": "/Users/Talip/Projects/HaydCalculatorProject/MauiTestApp/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -84,24 +84,24 @@
           "net7.0-android33.0": {
             "targetAlias": "net7.0-android33.0",
             "projectReferences": {
-              "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
-                "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
+              "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
+                "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
               }
             }
           },
           "net7.0-ios16.1": {
             "targetAlias": "net7.0-ios",
             "projectReferences": {
-              "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
-                "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
+              "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
+                "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
               }
             }
           },
           "net7.0-maccatalyst16.1": {
             "targetAlias": "net7.0-maccatalyst",
             "projectReferences": {
-              "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
-                "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
+              "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
+                "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
               }
             }
           }

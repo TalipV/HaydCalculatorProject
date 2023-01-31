@@ -1005,11 +1005,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculatorUnitTest/HaydCalculatorUnitTest.csproj",
+      "projectUniqueName": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculatorUnitTest/HaydCalculatorUnitTest.csproj",
       "projectName": "HaydCalculatorUnitTest",
-      "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculatorUnitTest/HaydCalculatorUnitTest.csproj",
+      "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculatorUnitTest/HaydCalculatorUnitTest.csproj",
       "packagesPath": "/Users/Talip/.nuget/packages/",
-      "outputPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculatorUnitTest/obj/",
+      "outputPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculatorUnitTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/Talip/.nuget/NuGet/NuGet.Config"
@@ -1025,8 +1025,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
-              "projectPath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
+            "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj": {
+              "projectPath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculator/HaydCalculator.csproj"
             }
           }
         }

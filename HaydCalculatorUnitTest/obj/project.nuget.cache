@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wm4brBjti8chMmxNU5s1LQkPvlO7SHQn8Hqc+YgDm2a5V6KVEgWEiNEKrodN9kB7JCQiVngEghkrDSuhwqt9ew==",
+  "dgSpecHash": "To6ephdhnpmw9W3JJml4LZOSN9IfLWU2CQEQxj1PV619SUy+D1+ntQcUqyXHtlEZ2jiSsrMFbyBlRkZexPbY1g==",
   "success": true,
-  "projectFilePath": "/Users/Talip/Desktop/HaydCalculatorProject/HaydCalculatorUnitTest/HaydCalculatorUnitTest.csproj",
+  "projectFilePath": "/Users/Talip/Projects/HaydCalculatorProject/HaydCalculatorUnitTest/HaydCalculatorUnitTest.csproj",
   "expectedPackageFiles": [
     "/Users/Talip/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
     "/Users/Talip/.nuget/packages/microsoft.codecoverage/17.4.1/microsoft.codecoverage.17.4.1.nupkg.sha512",
