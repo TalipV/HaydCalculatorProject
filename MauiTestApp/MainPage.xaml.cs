@@ -17,6 +17,9 @@ namespace MauiTestApp
 
         #endregion fields
 
+        /// <summary>
+        /// Comment
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
