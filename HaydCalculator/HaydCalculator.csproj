@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFrameworks>net7.0-android33.0</TargetFrameworks>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseMaui>true</UseMaui>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
 </Project>
