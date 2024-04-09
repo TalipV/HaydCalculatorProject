@@ -18,14 +18,12 @@
                 <RowDefinition Height="120" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="25" />
-                <RowDefinition Height="100" />
+                <RowDefinition Height="180" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="100" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="25" />
-                <RowDefinition Height="100" />
-                <RowDefinition Height="0" />
-                <RowDefinition Height="0" />
+                <RowDefinition Height="170" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -235,7 +233,7 @@
                     Days="{Binding Calendar.Days}"
                     DaysOfWeek="{Binding Calendar.DayNamesOrder}"
                     DayNamesHeightRequest="0"
-                    DaysViewHeightRequest="300"
+                    DaysViewHeightRequest="500"
                     IsVisible="True">
 
                 <xc:CalendarView.NavigationViewTemplate>
@@ -251,7 +249,6 @@
                             <Frame
                                     Margin="3"
                                     Padding="0"
-                                    CornerRadius="100"
                                     HasShadow="False"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"

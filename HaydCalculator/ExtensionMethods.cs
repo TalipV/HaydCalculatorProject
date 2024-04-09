@@ -22,9 +22,9 @@ namespace HaydCalculator
 
         public static bool HasOverlaps(this IEnumerable<FlowDataEntity> haydTimeData)
         {
-            foreach(var dataEntryA in haydTimeData)
+            foreach(FlowDataEntity dataEntryA in haydTimeData)
             {
-                foreach (var dataEntryB in haydTimeData)
+                foreach (FlowDataEntity dataEntryB in haydTimeData)
                 {
                     if (dataEntryA == dataEntryB)
                     {

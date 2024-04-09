@@ -17,7 +17,7 @@ namespace MauiTestApp
             PageStartMode = PageStartMode.FirstDayOfYear,
             AutoRows = false,
             AutoRowsIsConsistent = true,
-            Rows = 5,
+            Rows = 7,
             TodayDate = DateTime.Today,
         };
     }

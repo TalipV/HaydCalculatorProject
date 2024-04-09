@@ -16,7 +16,9 @@ namespace HaydCalculatorUnitTest
             //ARRANGE
             List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
             {
-                (EFlowAppearanceColor.Red, 0.5),
+                (EFlowAppearanceColor.Red, 0.4),
+                (EFlowAppearanceColor.Clear, 2.0),
+                (EFlowAppearanceColor.Red, 0.1),
             };
 
             _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
@@ -26,7 +28,7 @@ namespace HaydCalculatorUnitTest
 
             //ASSERT
             Assert.IsEmpty(_haydCalculatorFactory.HaydCycleLst);
-            Assert.IsTrue(_haydCalculatorFactory.IstihadaLst.Count == 1);
+            Assert.IsTrue(_haydCalculatorFactory.IstihadaLst.Count == 2);
             Assert.IsTrue(_haydCalculatorFactory.IstihadaLst.First().DayCount == 0.5);
         }
 

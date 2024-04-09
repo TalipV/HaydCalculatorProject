@@ -85,10 +85,11 @@ public class HaydCycleEntity
         if (flowDataLst.GroupBy(x => x.Description).Count() < 2)
             return false;
 
-        List<FlowDataEntity> strongHaydFlowDataLst = extractHeavyHaydFlowData(flowDataLst);
-        List<FlowDataEntity> lighHaydFlowDataLst = flowDataLst.Except(strongHaydFlowDataLst).ToList();
+        List<FlowDataEntity> strongHaydFlowDataLst = extractHeavyHaydFlowData(flowDataLst).OrderBy(x => x.FromDateTime).ToList();
+        List<FlowDataEntity> lighHaydFlowDataLst = flowDataLst.Except(strongHaydFlowDataLst).OrderBy(x => x.FromDateTime).ToList();
 
         double strongHaydFlowDayDuration = strongHaydFlowDataLst.Sum(x => x.DayCount);
+        double lightHaydFlowDayDuration = lighHaydFlowDataLst.Sum(x => x.DayCount);
 
         // FIRST CONDITION: The duration of the heavy flow has to be AT LEAST the minimum hayd duration
         if (strongHaydFlowDayDuration < HaydCalculatorFactory.MINIMUM_HAYD_DURATION_DAYS)
@@ -97,29 +98,43 @@ public class HaydCycleEntity
         if (strongHaydFlowDayDuration > HaydCalculatorFactory.MAXIMUM_HAYD_DURATION_DAYS)
             return false;
 
-        DateTime strongFlowBeginningDateTime = strongHaydFlowDataLst.Select(x => x.ToDateTime).Min();
-        DateTime strongFlowEndDateTime = strongHaydFlowDataLst.Select(x => x.ToDateTime).Max();
+        DateTime latestLightFlow = lighHaydFlowDataLst.Select(x => x.ToDateTime).Max();
+        List<FlowDataEntity> heavyFlowAfterLight = strongHaydFlowDataLst.Where(x => x.FromDateTime >= latestLightFlow).ToList();
 
-        List<FlowDataEntity> lighHaydFlowDataWithoutHeavyBeforeAndAfterLst = 
-            lighHaydFlowDataLst.Where(x => !(x.FromDateTime > strongFlowBeginningDateTime && x.FromDateTime < strongFlowEndDateTime)).ToList();
-
-        DateTime lightHaydFlowEndDateTime = lighHaydFlowDataLst.Select(x => x.ToDateTime).Max();
-
-        // THIRD CONDITION: The duration of the light flow has to be AT LEAST the minimum tuhur duration
-        // or else there must be no heavy flow right after the light one.
-        if (lighHaydFlowDataWithoutHeavyBeforeAndAfterLst.Sum(x => x.DayCount) < HaydCalculatorFactory.MINIMAL_TUHUR_DURATION_DAYS
-            && flowDataLst.Any(x => x.FromDateTime >= lightHaydFlowEndDateTime))
+        // THIRD CONDITION: The duration of the light flow has to be at least the minimal tuhur (i.e. 15 days)
+        // if the (heavy) blood continuous after that for at least a maximum hayd (i.e. 15 days)
+        if (lightHaydFlowDayDuration < HaydCalculatorFactory.MINIMAL_TUHUR_DURATION_DAYS
+            && heavyFlowAfterLight.Sum(x => x.DayCount) >= HaydCalculatorFactory.MAXIMUM_HAYD_DURATION_DAYS)
+        {
             return false;
+        }
 
-        // FOURTH CONDITION: There must not be a heavy flow in between two light flows. (?)
-        if (lighHaydFlowDataWithoutHeavyBeforeAndAfterLst.None())
+        // FOURTH CONDITION: The light flows must not be separated by a heavy flow.
+        if (isLightFlowInterruptedByHeavyFlow(lighHaydFlowDataLst, strongHaydFlowDataLst))
+        {
             return false;
+        }
 
         return true;
     }
 
-    private static bool isLightFlowInterruptedByHeavyFlow(List<FlowDataEntity> lighHaydFlowDataLst, List<FlowDataEntity> strongHaydFlowDataLst)
+
+
+    private static bool isLightFlowInterruptedByHeavyFlow(
+        List<FlowDataEntity> lighHaydFlowDataLst, 
+        List<FlowDataEntity> strongHaydFlowDataLst)
     {
+        foreach (FlowDataEntity strongFlow in strongHaydFlowDataLst)
+        {
+            FlowDataEntity latestLightFlowEndingBeforeStrongFlow = lighHaydFlowDataLst.LastOrDefault(a => a.ToDateTime < strongFlow.FromDateTime);
+            FlowDataEntity earliestLightFlowBeginningAfterStrongFlow = lighHaydFlowDataLst.FirstOrDefault(a => a.FromDateTime > strongFlow.ToDateTime);
+
+            if (latestLightFlowEndingBeforeStrongFlow != null && earliestLightFlowBeginningAfterStrongFlow != null)
+            {
+                return true;
+            }
+        }
+
         return false;
     }
 

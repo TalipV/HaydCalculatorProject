@@ -40,20 +40,13 @@ namespace HaydCalculator
         /// <summary>
         /// Based on <see cref="DataList"/> and constitutes unhandled <see cref="FlowDataEntity"/> entries.
         /// </summary>
-        private List<FlowDataEntity> _workList { get; set; } = new List<FlowDataEntity>();
+        private List<FlowDataEntity> _workList { get; set; } = null;
 
         private HaydCycleEntity _currentIncompleteHaydCycle = null;
 
         public double MakeUpDayCount = 0;
 
-        /*
-         *  DataList der Execute-Methode übergeben. 
-         *  Ein ResultVO zurückgeben, wo der Output dann ist.
-         */
-        #region Settings
         public bool ConsiderYellowAsHayd { get; set; } = true;
-
-        #endregion
 
         public void Execute()
         {
@@ -96,6 +89,7 @@ namespace HaydCalculator
         {
             this.MakeUpDayCount = 0;
             this._currentIncompleteHaydCycle = null;
+            this._workList = null;
             this.HaydCycleLst.Clear();
             this.IstihadaLst.Clear();
         }
@@ -180,7 +174,9 @@ namespace HaydCalculator
             this.createCurrentHaydDataIfNotExists();
 
             // 0 if the hayd has not even begun
-            double passedDaysFromCurrentHaydBeginning = this._currentIncompleteHaydCycle.GetDaysSinceHaydBeginningUntilSpecificDate(currentData.FromDateTime);
+            double passedDaysFromCurrentHaydBeginning = 
+                this._currentIncompleteHaydCycle
+                    .GetDaysSinceHaydBeginningUntilSpecificDate(currentData.FromDateTime);
 
             // new flow data would fully fit within the maximum possible hayd duration
             // --> fully hayd
