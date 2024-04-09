@@ -1,7 +1,4 @@
-﻿using HaydCalculator;
-using HaydCalculator.Entities;
-using HaydCalculator.Enums;
-using System;
+﻿using HaydCalculator.Entities;
 
 public class FlowDataEntity
 {

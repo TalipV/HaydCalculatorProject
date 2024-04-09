@@ -1,4 +1,3 @@
-using HaydCalculator;
 using HaydCalculator.Entities;
 using HaydCalculator.Enums;
 

@@ -1,4 +1,4 @@
-﻿namespace MauiTestApp
+﻿namespace HaydCalculator
 {
     public partial class App : Application
     {

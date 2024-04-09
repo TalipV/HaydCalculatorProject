@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XCalendar.Core.Enums;
-using XCalendar.Core.Models;
+﻿using XCalendar.Core.Models;
 
-namespace MauiTestApp
+namespace HaydCalculator
 {
     public class CustomDay : CalendarDay
     {

@@ -1,6 +1,4 @@
 ﻿using HaydCalculator;
-using HaydCalculator.Enums;
-using System;
 
 public class HaydCycleEntity
 {

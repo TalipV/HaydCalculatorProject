@@ -1,11 +1,8 @@
-﻿using HaydCalculator;
-using HaydCalculator.Entities;
+﻿using HaydCalculator.Entities;
 using HaydCalculator.Enums;
-using System.IO;
-using XCalendar.Core.Enums;
 using XCalendar.Core.Models;
 
-namespace MauiTestApp
+namespace HaydCalculator
 {
     public partial class MainPage : ContentPage
     {

@@ -1,7 +1,6 @@
-﻿using ObjCRuntime;
-using UIKit;
+﻿using UIKit;
 
-namespace MauiTestApp
+namespace HaydCalculator.Platforms.MacCatalyst
 {
     public class Program
     {

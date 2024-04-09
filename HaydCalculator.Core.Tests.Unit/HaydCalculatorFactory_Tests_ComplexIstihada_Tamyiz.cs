@@ -1,5 +1,4 @@
-﻿using HaydCalculator;
-using HaydCalculator.Enums;
+﻿using HaydCalculator.Enums;
 
 namespace HaydCalculator.Core.Tests.Unit
 {

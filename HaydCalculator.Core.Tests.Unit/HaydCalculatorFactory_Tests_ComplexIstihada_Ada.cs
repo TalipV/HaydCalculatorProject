@@ -1,6 +1,4 @@
-﻿using HaydCalculator;
-
-namespace HaydCalculator.Core.Tests.Unit
+﻿namespace HaydCalculator.Core.Tests.Unit
 {
     public class HaydCalculatorFactory_Tests_ComplexIstihada_Ada
     {
