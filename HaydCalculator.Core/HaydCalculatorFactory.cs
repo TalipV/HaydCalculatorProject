@@ -319,11 +319,13 @@ namespace HaydCalculator
             if (this._currentIncompleteHaydCycle == null)
                 return;
 
-            if (this._currentIncompleteHaydCycle.HaydDurationDays < MINIMUM_HAYD_DURATION_DAYS)
+            List<FlowDataEntity> haydFlowWithoutNaqa = 
+                this._currentIncompleteHaydCycle.HaydDataLst.Where(x => !x.IsNaqa).ToList();
+
+            if (haydFlowWithoutNaqa.Sum(x => x.DayCount) < MINIMUM_HAYD_DURATION_DAYS)
             {
-                this.IstihadaLst.AddRange(this._currentIncompleteHaydCycle.HaydDataLst);
-                this._currentIncompleteHaydCycle.HaydDataLst.ForEach(x => x.IsNaqa = true);
-                this.MakeUpDayCount += (this._currentIncompleteHaydCycle.HaydDataLst).Sum(x => x.DayCount);
+                this.IstihadaLst.AddRange(haydFlowWithoutNaqa);
+                this.MakeUpDayCount += haydFlowWithoutNaqa.Sum(x => x.DayCount);
             }
             else
                 this.HaydCycleLst.Add(this._currentIncompleteHaydCycle);

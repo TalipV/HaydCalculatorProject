@@ -26,7 +26,8 @@ namespace HaydCalculator.Core.Tests.Unit
             // ASSERT
             _haydCalculatorFactory.HaydCycleLst.Should().BeEmpty();
             _haydCalculatorFactory.IstihadaLst.Count.Should().Be(2);
-            _haydCalculatorFactory.IstihadaLst.First().DayCount.Should().Be(0.5);
+            _haydCalculatorFactory.IstihadaLst.First().DayCount.Should().Be(0.4);
+            _haydCalculatorFactory.IstihadaLst.Last().DayCount.Should().Be(0.1);
         }
 
         [Fact] // Self explanatory.
@@ -143,8 +144,8 @@ namespace HaydCalculator.Core.Tests.Unit
             menstruation.Should().Be(timeData.First());
             //istihada.Should().Be(timeData.Last());
 
-            (menstruation == (EFlowAppearanceColor.Red, 7.0).ToFlowTimeData(_beginningDate)).Should().BeTrue();
-            (istihada == (EFlowAppearanceColor.Red, 2.0).ToFlowTimeData(_beginningDate.AddDays(15))).Should().BeTrue();
+            (EFlowAppearanceColor.Red, 7.0).ToFlowTimeData(_beginningDate).Should().Be(menstruation);
+            (EFlowAppearanceColor.Red, 2.0).ToFlowTimeData(_beginningDate.AddDays(15)).Should().Be(istihada);
         }
 
         [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=200; Seite 61-62 der PDF]
@@ -174,9 +175,9 @@ namespace HaydCalculator.Core.Tests.Unit
             FlowDataEntity secondMenstruation = _haydCalculatorFactory.HaydCycleLst[1].HaydDataLst[0];
             FlowDataEntity istihada = _haydCalculatorFactory.IstihadaLst[0];
 
-            (firstMenstruation == (EFlowAppearanceColor.Red, 3.0).ToFlowTimeData(_beginningDate)).Should().BeTrue();
-            (istihada == (EFlowAppearanceColor.Red, 1.0).ToFlowTimeData(_beginningDate.AddDays(17))).Should().BeTrue();
-            (secondMenstruation == (EFlowAppearanceColor.Red, 3.0).ToFlowTimeData(_beginningDate.AddDays(18))).Should().BeTrue();
+            (EFlowAppearanceColor.Red, 3.0).ToFlowTimeData(_beginningDate).Should().Be(firstMenstruation);
+            (EFlowAppearanceColor.Red, 1.0).ToFlowTimeData(_beginningDate.AddDays(17)).Should().Be(istihada);
+            (EFlowAppearanceColor.Red, 3.0).ToFlowTimeData(_beginningDate.AddDays(18)).Should().Be(secondMenstruation);
         }
 
         [Fact] // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1910]
@@ -206,9 +207,9 @@ namespace HaydCalculator.Core.Tests.Unit
             FlowDataEntity secondMenstruation = _haydCalculatorFactory.HaydCycleLst[1].HaydDataLst[0];
             FlowDataEntity istihada = _haydCalculatorFactory.IstihadaLst[0];
 
-            (firstMenstruation == (EFlowAppearanceColor.Red, 10.0).ToFlowTimeData(_beginningDate)).Should().BeTrue();
-            (istihada == (EFlowAppearanceColor.Red, 7.0).ToFlowTimeData(_beginningDate.AddDays(18))).Should().BeTrue();
-            (secondMenstruation == (EFlowAppearanceColor.Red, 5.0).ToFlowTimeData(_beginningDate.AddDays(25))).Should().BeTrue();
+            (EFlowAppearanceColor.Red, 10.0).ToFlowTimeData(_beginningDate).Should().Be(firstMenstruation);
+            (EFlowAppearanceColor.Red, 7.0).ToFlowTimeData(_beginningDate.AddDays(18)).Should().Be(istihada);
+            (EFlowAppearanceColor.Red, 5.0).ToFlowTimeData(_beginningDate.AddDays(25)).Should().Be(secondMenstruation);
         }
     }
 }
