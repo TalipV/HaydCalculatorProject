@@ -190,8 +190,6 @@ namespace HaydCalculator
             fancyCalendarView.SetBinding(CalendarView.DaysProperty, $"{nameof(Calendar)}.{nameof(Calendar.Days)}");
             fancyCalendarView.SetBinding(CalendarView.DaysOfWeekProperty, $"{nameof(Calendar)}.{nameof(Calendar.DayNamesOrder)}");
             fancyCalendarView.NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 });
-            
-            return;
 
             fancyCalendarView.DayTemplate = new DataTemplate(() =>
             {
@@ -203,8 +201,9 @@ namespace HaydCalculator
                     HorizontalOptions = LayoutOptions.Center,
                     VerticalOptions = LayoutOptions.Center,
                 };
+                frame.SetBinding(BackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
 
-                var dayView = new DayView
+                var dayView = frame.Content = new DayView
                 {
                     Margin = 1,
                     HorizontalOptions = LayoutOptions.Center,
@@ -212,25 +211,17 @@ namespace HaydCalculator
                     HeightRequest = 35,
                     WidthRequest = 35
                 };
+                dayView.SetBinding(DayView.BackgroundColorProperty, nameof(CustomDay.MainColor));
+                dayView.SetBinding(DayView.TextColorProperty, nameof(CustomDay.MainTextColor));
+                dayView.SetBinding(DayView.DateTimeProperty, nameof(CustomDay.DateTime));
+                dayView.SetBinding(DayView.SelectedBackgroundColorProperty, nameof(CustomDay.MainColor));
+                dayView.SetBinding(DayView.CurrentMonthBackgroundColorProperty, nameof(CustomDay.MainColor));
+                dayView.SetBinding(DayView.OtherMonthBackgroundColorProperty, nameof(CustomDay.MainColor));
+                dayView.SetBinding(DayView.SelectedTextColorProperty, nameof(CustomDay.MainTextColor));
+                dayView.SetBinding(DayView.CurrentMonthTextColorProperty, nameof(CustomDay.MainTextColor));
+                dayView.SetBinding(DayView.OtherMonthTextColorProperty, nameof(CustomDay.MainTextColor));
 
-                frame.Content = dayView;
-
-                // Assuming CustomDay is your data class, you would bind properties like MainColor, MainTextColor etc.
-                frame.SetBinding(BackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
-                dayView.SetBinding(BackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
-
-                dayView.SetBinding(DayView.BackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
-                dayView.SetBinding(DayView.TextColorProperty, $"{nameof(CustomDay.MainTextColor)}");
-                dayView.SetBinding(DayView.DateTimeProperty, $"{nameof(CustomDay.DateTime)}");
-
-                dayView.SetBinding(DayView.SelectedBackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
-                dayView.SetBinding(DayView.CurrentMonthBackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
-                dayView.SetBinding(DayView.OtherMonthBackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
-                dayView.SetBinding(DayView.SelectedTextColorProperty, $"{nameof(CustomDay.MainTextColor)}");
-                dayView.SetBinding(DayView.CurrentMonthTextColorProperty, $"{nameof(CustomDay.MainTextColor)}");
-                dayView.SetBinding(DayView.OtherMonthTextColorProperty, $"{nameof(CustomDay.MainTextColor)}");
-
-                return new ViewCell { View = frame };
+                return frame;
             });
         }
 
