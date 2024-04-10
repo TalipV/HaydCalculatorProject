@@ -1,4 +1,6 @@
-﻿namespace HaydCalculator
+﻿using HaydCalculator;
+
+namespace MauiTestApp
 {
     public static class MauiProgram
     {

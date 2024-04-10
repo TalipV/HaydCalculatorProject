@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace HaydCalculator.Platforms.MacCatalyst
+namespace MauiTestApp.Platforms.MacCatalyst
 {
     public class Program
     {

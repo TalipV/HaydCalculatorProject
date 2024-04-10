@@ -1,6 +1,8 @@
 ﻿using HaydCalculator.Core;
 using HaydCalculator.Core.Entities;
 using HaydCalculator.Core.Enums;
+using MauiTestApp.Presentation;
+using MauiTestApp.Presentation.ViewModel;
 using XCalendar.Core.Models;
 
 namespace HaydCalculator

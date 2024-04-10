@@ -1,7 +1,8 @@
 ﻿using Android.App;
 using Android.Runtime;
+using MauiTestApp;
 
-namespace HaydCalculator.Platforms.Android
+namespace MauiTestApp.Platforms.Android
 {
     [Application]
     public class MainApplication : MauiApplication

@@ -1,6 +1,6 @@
 ﻿using XCalendar.Core.Models;
 
-namespace HaydCalculator
+namespace MauiTestApp.Presentation
 {
     public class CustomDay : CalendarDay
     {

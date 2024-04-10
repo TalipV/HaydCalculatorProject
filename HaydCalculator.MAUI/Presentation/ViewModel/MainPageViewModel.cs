@@ -1,7 +1,7 @@
 ﻿using XCalendar.Core.Enums;
 using XCalendar.Core.Models;
 
-namespace HaydCalculator
+namespace MauiTestApp.Presentation.ViewModel
 {
     public class MainPageViewModel
     {
