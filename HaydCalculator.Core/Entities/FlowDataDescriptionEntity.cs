@@ -1,6 +1,6 @@
-﻿using HaydCalculator.Enums;
+﻿using HaydCalculator.Core.Enums;
 
-namespace HaydCalculator.Entities
+namespace HaydCalculator.Core.Entities
 {
     public class FlowDataDescriptionEntity : IComparable
     {
@@ -10,9 +10,9 @@ namespace HaydCalculator.Entities
 
         public FlowDataDescriptionEntity(FlowDataDescriptionEntity copyFrom)
         {
-            this.FlowAppearanceColorEnum = copyFrom.FlowAppearanceColorEnum;
-            this.IsThick = copyFrom.IsThick;
-            this.IsOdorStingy = copyFrom.IsOdorStingy;
+            FlowAppearanceColorEnum = copyFrom.FlowAppearanceColorEnum;
+            IsThick = copyFrom.IsThick;
+            IsOdorStingy = copyFrom.IsOdorStingy;
         }
 
         #endregion constructors
@@ -31,8 +31,8 @@ namespace HaydCalculator.Entities
         {
             get
             {
-                return 
-                    this.FlowAppearanceColorEnum != EFlowAppearanceColor.Clear;
+                return
+                    FlowAppearanceColorEnum != EFlowAppearanceColor.Clear;
             }
         }
 
@@ -50,9 +50,9 @@ namespace HaydCalculator.Entities
                 return false;
 
             return
-                this.FlowAppearanceColorEnum == compareToObject.FlowAppearanceColorEnum
-                && this.IsOdorStingy == compareToObject.IsOdorStingy
-                && this.IsThick == compareToObject.IsThick;
+                FlowAppearanceColorEnum == compareToObject.FlowAppearanceColorEnum
+                && IsOdorStingy == compareToObject.IsOdorStingy
+                && IsThick == compareToObject.IsThick;
         }
 
         public override int GetHashCode()
@@ -62,7 +62,7 @@ namespace HaydCalculator.Entities
 
         public override string ToString()
         {
-            return $"[Type: {this.FlowAppearanceColorEnum}";//; Stingy odor: {this.IsOdorStingy}; Thick: {this.IsThick}]";
+            return $"[Type: {FlowAppearanceColorEnum}";//; Stingy odor: {this.IsOdorStingy}; Thick: {this.IsThick}]";
         }
 
         public int CompareTo(object compareToObj)
@@ -73,29 +73,29 @@ namespace HaydCalculator.Entities
             if (this == compareToDescription)
                 return 0;
 
-            if (!this.IsHaydType && !compareToDescription.IsHaydType)
+            if (!IsHaydType && !compareToDescription.IsHaydType)
                 return -1;
-            if (this.IsHaydType && !compareToDescription.IsHaydType)
+            if (IsHaydType && !compareToDescription.IsHaydType)
                 return 0;
-            if (!this.IsHaydType && compareToDescription.IsHaydType)
+            if (!IsHaydType && compareToDescription.IsHaydType)
                 return 1;
 
             int thisStrongQualityCount = 0;
             int compareToStrongQualityCount = 0;
 
-            if (this.FlowAppearanceColorEnum < compareToDescription.FlowAppearanceColorEnum)
+            if (FlowAppearanceColorEnum < compareToDescription.FlowAppearanceColorEnum)
                 compareToStrongQualityCount++;
-            else if (this.FlowAppearanceColorEnum > compareToDescription.FlowAppearanceColorEnum)
+            else if (FlowAppearanceColorEnum > compareToDescription.FlowAppearanceColorEnum)
                 thisStrongQualityCount++;
 
-            if (!this.IsOdorStingy && compareToDescription.IsOdorStingy)
+            if (!IsOdorStingy && compareToDescription.IsOdorStingy)
                 compareToStrongQualityCount++;
-            else if (this.IsOdorStingy && !compareToDescription.IsOdorStingy)
+            else if (IsOdorStingy && !compareToDescription.IsOdorStingy)
                 thisStrongQualityCount++;
 
-            if (!this.IsThick && compareToDescription.IsThick)
+            if (!IsThick && compareToDescription.IsThick)
                 compareToStrongQualityCount++;
-            else if (this.IsThick && !compareToDescription.IsThick)
+            else if (IsThick && !compareToDescription.IsThick)
                 thisStrongQualityCount++;
 
             if (thisStrongQualityCount < compareToStrongQualityCount)

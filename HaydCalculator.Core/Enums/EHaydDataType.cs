@@ -1,4 +1,4 @@
-﻿namespace HaydCalculator.Enums
+﻿namespace HaydCalculator.Core.Enums
 {
     public enum EFlowAppearanceColor
     {

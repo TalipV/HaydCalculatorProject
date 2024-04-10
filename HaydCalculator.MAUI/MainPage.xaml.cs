@@ -1,5 +1,6 @@
-﻿using HaydCalculator.Entities;
-using HaydCalculator.Enums;
+﻿using HaydCalculator.Core;
+using HaydCalculator.Core.Entities;
+using HaydCalculator.Core.Enums;
 using XCalendar.Core.Models;
 
 namespace HaydCalculator

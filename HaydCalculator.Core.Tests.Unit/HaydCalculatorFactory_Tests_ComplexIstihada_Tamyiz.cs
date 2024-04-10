@@ -1,10 +1,11 @@
-﻿using HaydCalculator.Enums;
+﻿using HaydCalculator.Core.Entities;
+using HaydCalculator.Core.Enums;
 
 namespace HaydCalculator.Core.Tests.Unit
 {
     public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     {
-        DateTime beginningDate = new DateTime(DateTime.Now.Year, 1, 1);
+        private readonly DateTime beginningDate = new(DateTime.Now.Year, 1, 1);
 
         #region Condition 3
 
@@ -12,14 +13,16 @@ namespace HaydCalculator.Core.Tests.Unit
         public void Condition3_Fulfilled_TenDaysBlackTenDaysRedAndStop()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Black, 10), (EFlowAppearanceColor.Red, 10),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            HaydCycleEntity haydCycleEntity = new HaydCycleEntity();
-            haydCycleEntity.HaydDataLst = timeData;
+            var haydCycleEntity = new HaydCycleEntity
+            {
+                HaydDataLst = timeData
+            };
 
             // ACT & ASSERT
             HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydDataLst).Should().BeTrue();
@@ -29,14 +32,16 @@ namespace HaydCalculator.Core.Tests.Unit
         public void Condition3_NotFulfilled_TenDaysRedTenDaysBlackAndStop()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 10), (EFlowAppearanceColor.Black, 10),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            HaydCycleEntity haydCycleEntity = new HaydCycleEntity();
-            haydCycleEntity.HaydDataLst = timeData;
+            var haydCycleEntity = new HaydCycleEntity
+            {
+                HaydDataLst = timeData
+            };
 
             // ACT & ASSERT
             HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydDataLst).Should().BeFalse();
@@ -46,14 +51,16 @@ namespace HaydCalculator.Core.Tests.Unit
         public void Condition3_Fulfilled_1DayBlackAnd14DaysRed()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            HaydCycleEntity haydCycleEntity = new HaydCycleEntity();
-            haydCycleEntity.HaydDataLst = timeData;
+            var haydCycleEntity = new HaydCycleEntity
+            {
+                HaydDataLst = timeData
+            };
 
             // ACT & ASSERT
             HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydDataLst).Should().BeTrue();
@@ -63,14 +70,16 @@ namespace HaydCalculator.Core.Tests.Unit
         public void Condition3_NotFulfilled_1DayBlack14DaysRedAndThenBlackAgain()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14), (EFlowAppearanceColor.Black, 1)
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            HaydCycleEntity haydCycleEntity = new HaydCycleEntity();
-            haydCycleEntity.HaydDataLst = timeData;
+            var haydCycleEntity = new HaydCycleEntity
+            {
+                HaydDataLst = timeData
+            };
 
             // ACT & ASSERT
             HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydDataLst).Should().BeFalse();
@@ -84,19 +93,21 @@ namespace HaydCalculator.Core.Tests.Unit
         public void Condition4_ContinuouslyBlackAndRedAndAtTheEndLongRed()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 10),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            HaydCycleEntity haydCycleEntity = new HaydCycleEntity();
-            haydCycleEntity.HaydDataLst = timeData;
+            var haydCycleEntity = new HaydCycleEntity
+            {
+                HaydDataLst = timeData
+            };
 
             // ACT & ASSERT
             HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydDataLst).Should().BeTrue();
@@ -106,8 +117,8 @@ namespace HaydCalculator.Core.Tests.Unit
         public void Condition4_ContinuouslyBlackAndRed()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
@@ -117,11 +128,13 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
                 (EFlowAppearanceColor.Black, 1),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            HaydCycleEntity haydCycleEntity = new HaydCycleEntity();
-            haydCycleEntity.HaydDataLst = timeData;
+            var haydCycleEntity = new HaydCycleEntity
+            {
+                HaydDataLst = timeData
+            };
 
             // ACT & ASSERT
             HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydDataLst).Should().BeFalse();

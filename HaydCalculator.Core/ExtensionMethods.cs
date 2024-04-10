@@ -1,7 +1,7 @@
-﻿using HaydCalculator.Entities;
-using HaydCalculator.Enums;
+﻿using HaydCalculator.Core.Entities;
+using HaydCalculator.Core.Enums;
 
-namespace HaydCalculator
+namespace HaydCalculator.Core
 {
     public static class ExtensionMethods
     {
@@ -17,7 +17,7 @@ namespace HaydCalculator
 
         public static bool HasOverlaps(this IEnumerable<FlowDataEntity> haydTimeData)
         {
-            foreach(FlowDataEntity dataEntryA in haydTimeData)
+            foreach (FlowDataEntity dataEntryA in haydTimeData)
             {
                 foreach (FlowDataEntity dataEntryB in haydTimeData)
                 {

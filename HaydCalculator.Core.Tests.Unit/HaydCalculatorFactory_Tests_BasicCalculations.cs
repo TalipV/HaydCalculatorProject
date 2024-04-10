@@ -1,22 +1,23 @@
-using HaydCalculator.Enums;
+using HaydCalculator.Core.Entities;
+using HaydCalculator.Core.Enums;
 
 namespace HaydCalculator.Core.Tests.Unit
 {
     public class HaydCalculatorFactoryTests_BasicCalculations
     {
-        private DateTime _beginningDate = new DateTime(DateTime.Now.Year, 1, 1);
-        private HaydCalculatorFactory _haydCalculatorFactory = new HaydCalculatorFactory();
+        private readonly DateTime _beginningDate = new(DateTime.Now.Year, 1, 1);
+        private readonly HaydCalculatorFactory _haydCalculatorFactory = new();
 
         [Fact] // Self explanatory.
         public void HaydCalculation_MinimalHaydDurationNotFulfilled()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 0.4),
                 (EFlowAppearanceColor.Clear, 2.0),
                 (EFlowAppearanceColor.Red, 0.1),
-            };
+            ];
 
             _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
 
@@ -34,10 +35,10 @@ namespace HaydCalculator.Core.Tests.Unit
         public void HaydCalculation_MinimalHaydDurationBarelyFulfilled()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 1.0),
-            };
+            ];
 
             _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
 
@@ -55,12 +56,12 @@ namespace HaydCalculator.Core.Tests.Unit
         public void HaydCalculation_ConnectSuccessiveSameFlows()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 1.0),
                 (EFlowAppearanceColor.Black, 2.0),
                 (EFlowAppearanceColor.Black, 3.0),
-            };
+            ];
 
             _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
 
@@ -85,12 +86,12 @@ namespace HaydCalculator.Core.Tests.Unit
         public void HaydCalculation_CalculationWithPurityInBetweenTwoMenstrualFlows()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 3.0),
                 (EFlowAppearanceColor.Clear, 7.0),
                 (EFlowAppearanceColor.Red, 1.0),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
             _haydCalculatorFactory.DataList = timeData.AsReadOnly();
@@ -113,8 +114,8 @@ namespace HaydCalculator.Core.Tests.Unit
         public void HaydCalculation_CalculationWithPurityBetweenMenstrualFlowAndIstihadaFlow()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 7.0),
                 (EFlowAppearanceColor.Clear, 8.0),
 
@@ -125,7 +126,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 // UND gleiche aufeinanderfolgende Istihada-Einträge wurden nicht korrekt zu einem Eintrag vereinigt.
                 (EFlowAppearanceColor.Red, 1.0),
                 (EFlowAppearanceColor.Red, 1.0),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
             _haydCalculatorFactory.DataList = timeData.AsReadOnly();
@@ -152,12 +153,12 @@ namespace HaydCalculator.Core.Tests.Unit
         public void HaydCalculation_CalculationWithPurityBetweenTwoSeparateMenstrualCyclesIncludingIstihada()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 3.0),
                 (EFlowAppearanceColor.Clear, 14.0),
                 (EFlowAppearanceColor.Red, 4.0),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
             _haydCalculatorFactory.DataList = timeData.AsReadOnly();
@@ -184,12 +185,12 @@ namespace HaydCalculator.Core.Tests.Unit
         public void HaydCalculation_CalculationWithPartiallyIstihadaAndPartiallyMenstrualFlow()
         {
             // ARRANGE
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, 10.0),
                 (EFlowAppearanceColor.Clear, 8.0),
                 (EFlowAppearanceColor.Red, 12.0),
-            };
+            ];
 
             List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
             _haydCalculatorFactory.DataList = timeData.AsReadOnly();

@@ -1,73 +1,74 @@
-﻿using HaydCalculator.Entities;
-
-public class FlowDataEntity
+﻿namespace HaydCalculator.Core.Entities
 {
-	#region properties
+    public class FlowDataEntity
+    {
+        #region properties
 
-	public bool IsNaqa { get; set; } = false;
+        public bool IsNaqa { get; set; } = false;
 
-	public DateTime FromDateTime { get; set; }
-	public DateTime ToDateTime { get; set; }
+        public DateTime FromDateTime { get; set; }
+        public DateTime ToDateTime { get; set; }
 
-    public FlowDataDescriptionEntity Description { get; set; } = new FlowDataDescriptionEntity();
+        public FlowDataDescriptionEntity Description { get; set; } = new FlowDataDescriptionEntity();
 
-    #endregion properties
+        #endregion properties
 
-    #region calculated properties
+        #region calculated properties
 
-    public double DayCount 
-	{
-		get
-		{
-			return (ToDateTime - FromDateTime).TotalDays;
-		}
-	}
+        public double DayCount
+        {
+            get
+            {
+                return (ToDateTime - FromDateTime).TotalDays;
+            }
+        }
 
-    #endregion calculated properties
+        #endregion calculated properties
 
-    #region constructors
+        #region constructors
 
-    public FlowDataEntity()
-	{
-	}
+        public FlowDataEntity()
+        {
+        }
 
-	public FlowDataEntity(FlowDataEntity copiedFromData)
-	{
-		this.Description = new FlowDataDescriptionEntity(copiedFromData.Description);
-		this.FromDateTime = copiedFromData.FromDateTime;
-		this.ToDateTime = copiedFromData.ToDateTime;
-	}
+        public FlowDataEntity(FlowDataEntity copiedFromData)
+        {
+            this.Description = new FlowDataDescriptionEntity(copiedFromData.Description);
+            this.FromDateTime = copiedFromData.FromDateTime;
+            this.ToDateTime = copiedFromData.ToDateTime;
+        }
 
-	#endregion constructors
+        #endregion constructors
 
-	#region override methods
+        #region override methods
 
-	public override bool Equals(object obj)
-	{
-		if (obj is not FlowDataEntity compareToObject)
-			return false;
+        public override bool Equals(object obj)
+        {
+            if (obj is not FlowDataEntity compareToObject)
+                return false;
 
-		return 
-			this.FromDateTime == compareToObject.FromDateTime 
-			&& this.ToDateTime == compareToObject.ToDateTime
-			&& this.Description.FlowAppearanceColorEnum == compareToObject.Description.FlowAppearanceColorEnum;
-	}
+            return
+                this.FromDateTime == compareToObject.FromDateTime
+                && this.ToDateTime == compareToObject.ToDateTime
+                && this.Description.FlowAppearanceColorEnum == compareToObject.Description.FlowAppearanceColorEnum;
+        }
 
-	public override int GetHashCode()
-	{
-		return base.GetHashCode();
-	}
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
 
-	public override string ToString()
-	{
-        //return $"{this.Description.FlowAppearanceColorEnum}: {FromDateTime.ToString(TextUtil.DATE_FORMAT)} - {ToDateTime.ToString(TextUtil.DATE_FORMAT)} [{DayCount.ToString("N2")} days]";
-        return $"{this.Description.FlowAppearanceColorEnum}: {DayCount.ToString("0.##")} days";
+        public override string ToString()
+        {
+            //return $"{this.Description.FlowAppearanceColorEnum}: {FromDateTime.ToString(TextUtil.DATE_FORMAT)} - {ToDateTime.ToString(TextUtil.DATE_FORMAT)} [{DayCount.ToString("N2")} days]";
+            return $"{this.Description.FlowAppearanceColorEnum}: {DayCount:0.##} days";
+        }
+
+        #endregion override methods
+
+        #region methods
+
+
+        #endregion methods
     }
-
-    #endregion override methods
-
-    #region methods
-
-
-    #endregion methods
 }

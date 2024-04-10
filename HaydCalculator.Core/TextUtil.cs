@@ -1,4 +1,4 @@
-﻿namespace HaydCalculator
+﻿namespace HaydCalculator.Core
 {
     public static class TextUtil
     {

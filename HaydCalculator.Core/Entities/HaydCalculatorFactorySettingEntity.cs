@@ -1,4 +1,4 @@
-﻿namespace HaydCalculator.Entities
+﻿namespace HaydCalculator.Core.Entities
 {
     public class HaydCalculatorFactorySettingEntity
     {
