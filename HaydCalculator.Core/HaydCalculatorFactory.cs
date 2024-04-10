@@ -238,7 +238,7 @@ namespace HaydCalculator.Core
             }
         }
 
-        private EMustahadaType GetCurrentMustahadaType()
+        private EMustahadaType getCurrentMustahadaType()
         {
             if (HaydCycleLst.None())
                 return EMustahadaType.Mubtada_ah;

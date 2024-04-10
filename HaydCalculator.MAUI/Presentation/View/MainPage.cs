@@ -318,23 +318,20 @@ namespace HaydCalculator
         private FlowDataEntity getHaydTimeDataFromInput()
         {
             EFlowAppearanceColor haydDataType = (EFlowAppearanceColor)this._flowAppearanceSelectorView.SelectedItem;
-            DateTime fromDateTime = _inputData.LastOrDefault()?.ToDateTime ?? START_DATE_TIME;
-            DateTime toDateTime = fromDateTime;
+            DateTime dateTime = _inputData.LastOrDefault()?.ToDateTime ?? START_DATE_TIME;
 
-            if (double.TryParse(this._dayCountEntryView.Text, out double dayCount) && dayCount > 0)
-            {
-                toDateTime = fromDateTime.AddDays(dayCount);
-            }
-            else
+            if (!double.TryParse(this._dayCountEntryView.Text, out double dayCount) || dayCount <= 0)
             {
                 this._dayCountEntryView.Text = "";
                 throw new InfoException("Invalid input!");
             }
 
+            dateTime = dateTime.AddDays(dayCount);
+
             return new FlowDataEntity()
             {
-                FromDateTime = fromDateTime,
-                ToDateTime = toDateTime,
+                FromDateTime = dateTime,
+                ToDateTime = dateTime,
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = haydDataType }
             };
         }
