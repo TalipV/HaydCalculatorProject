@@ -17,7 +17,7 @@ namespace MauiTestApp
                 .UseMauiCommunityToolkit()
                 .UseUraniumUI()
                 .UseUraniumUIMaterial()
-                .UseDebugRainbows(new DebugRainbowsOptions { ShowRainbows = true })
+                .UseDebugRainbows(new DebugRainbowsOptions { ShowRainbows = false })
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

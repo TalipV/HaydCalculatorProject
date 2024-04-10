@@ -185,19 +185,14 @@ namespace HaydCalculator
             grid.Children.Add(fancyCalendarView);
             Grid.SetRow(fancyCalendarView, 5);
             Grid.SetColumnSpan(fancyCalendarView, 5);
-            Grid.SetRowSpan(fancyCalendarView, 1);
+            Grid.SetRowSpan(fancyCalendarView, 3);
 
             fancyCalendarView.SetBinding(CalendarView.DaysProperty, $"{nameof(Calendar)}.{nameof(Calendar.Days)}");
             fancyCalendarView.SetBinding(CalendarView.DaysOfWeekProperty, $"{nameof(Calendar)}.{nameof(Calendar.DayNamesOrder)}");
+            fancyCalendarView.NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 });
+            
+            return;
 
-            fancyCalendarView.NavigationViewTemplate = new ControlTemplate(() =>
-                new NavigationView
-                {
-                    HeightRequest = 0
-                }
-            );
-
-            // DayTemplate (assuming you have CustomDay class and the necessary properties)
             fancyCalendarView.DayTemplate = new DataTemplate(() =>
             {
                 var frame = new Frame
@@ -326,12 +321,10 @@ namespace HaydCalculator
                 throw new InfoException("Invalid input!");
             }
 
-            dateTime = dateTime.AddDays(dayCount);
-
             return new FlowDataEntity()
             {
                 FromDateTime = dateTime,
-                ToDateTime = dateTime,
+                ToDateTime = dateTime.AddDays(dayCount),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = haydDataType }
             };
         }
