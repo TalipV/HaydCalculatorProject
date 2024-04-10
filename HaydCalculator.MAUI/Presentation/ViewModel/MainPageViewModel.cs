@@ -1,8 +1,10 @@
-﻿using XCalendar.Core.Enums;
+﻿using PropertyChanged;
+using XCalendar.Core.Enums;
 using XCalendar.Core.Models;
 
 namespace MauiTestApp.Presentation.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     public class MainPageViewModel
     {
         public Calendar<CustomDay> Calendar { get; set; } = new Calendar<CustomDay>()

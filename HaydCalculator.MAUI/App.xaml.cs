@@ -11,13 +11,8 @@
         protected override Window CreateWindow(IActivationState activationState)
         {
             var window = base.CreateWindow(activationState);
-
-            const int newWidth = 400;
-            const int newHeight = 700;
-
-            window.Width = newWidth;
-            window.Height = newHeight;
-
+            window.Width = 425;
+            window.Height = 800;
             return window;
         }
     }

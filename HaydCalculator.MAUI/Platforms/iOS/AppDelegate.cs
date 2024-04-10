@@ -1,5 +1,4 @@
 ﻿using Foundation;
-using MauiTestApp;
 
 namespace MauiTestApp.Platforms.iOS
 {

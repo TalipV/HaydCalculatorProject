@@ -1,5 +1,4 @@
-﻿using HaydCalculator.Core;
-using HaydCalculator.Core.Entities;
+﻿using HaydCalculator.Core.Entities;
 using HaydCalculator.Core.Enums;
 using System.Collections.ObjectModel;
 
