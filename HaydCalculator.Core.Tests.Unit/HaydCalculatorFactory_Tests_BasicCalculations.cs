@@ -1,5 +1,6 @@
-using HaydCalculator.Core.Entities;
-using HaydCalculator.Core.Enums;
+using HaydCalculator.Core.Calculator.Models;
+using HaydCalculator.Core.Calculator.Services;
+using HaydCalculator.Core.Misc;
 
 namespace HaydCalculator.Core.Tests.Unit
 {

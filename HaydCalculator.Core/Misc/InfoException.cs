@@ -1,4 +1,4 @@
-﻿namespace HaydCalculator.Core.Entities
+﻿namespace HaydCalculator.Core.Misc
 {
     public class InfoException : Exception
     {

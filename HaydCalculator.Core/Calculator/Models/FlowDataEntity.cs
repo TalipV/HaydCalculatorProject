@@ -1,4 +1,4 @@
-﻿namespace HaydCalculator.Core.Entities
+﻿namespace HaydCalculator.Core.Calculator.Models
 {
     public class FlowDataEntity
     {
@@ -33,9 +33,9 @@
 
         public FlowDataEntity(FlowDataEntity copiedFromData)
         {
-            this.Description = new FlowDataDescriptionEntity(copiedFromData.Description);
-            this.FromDateTime = copiedFromData.FromDateTime;
-            this.ToDateTime = copiedFromData.ToDateTime;
+            Description = new FlowDataDescriptionEntity(copiedFromData.Description);
+            FromDateTime = copiedFromData.FromDateTime;
+            ToDateTime = copiedFromData.ToDateTime;
         }
 
         #endregion constructors
@@ -48,9 +48,9 @@
                 return false;
 
             return
-                this.FromDateTime == compareToObject.FromDateTime
-                && this.ToDateTime == compareToObject.ToDateTime
-                && this.Description.FlowAppearanceColorEnum == compareToObject.Description.FlowAppearanceColorEnum;
+                FromDateTime == compareToObject.FromDateTime
+                && ToDateTime == compareToObject.ToDateTime
+                && Description.FlowAppearanceColorEnum == compareToObject.Description.FlowAppearanceColorEnum;
         }
 
         public override int GetHashCode()
@@ -61,7 +61,7 @@
         public override string ToString()
         {
             //return $"{this.Description.FlowAppearanceColorEnum}: {FromDateTime.ToString(TextUtil.DATE_FORMAT)} - {ToDateTime.ToString(TextUtil.DATE_FORMAT)} [{DayCount.ToString("N2")} days]";
-            return $"{this.Description.FlowAppearanceColorEnum}: {DayCount:0.##} days";
+            return $"{Description.FlowAppearanceColorEnum}: {DayCount:0.##} days";
         }
 
         #endregion override methods

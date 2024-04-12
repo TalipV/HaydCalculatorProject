@@ -1,7 +1,6 @@
-﻿using HaydCalculator.Core.Entities;
-using HaydCalculator.Core.Enums;
+﻿using HaydCalculator.Core.Calculator.Models;
 
-namespace HaydCalculator.Core
+namespace HaydCalculator.Core.Misc
 {
     public static class ExtensionMethods
     {

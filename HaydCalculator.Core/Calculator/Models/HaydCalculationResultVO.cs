@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HaydCalculator.Core.Entities
+namespace HaydCalculator.Core.Calculator.Models
 {
     public class HaydCalculationResultVO
     {

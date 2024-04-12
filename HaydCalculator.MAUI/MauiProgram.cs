@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using HaydCalculator;
+using MauiTestApp.Presentation.View;
 using MauiTestApp.Presentation.ViewModel;
 using Plugin.Maui.DebugRainbows;
 using UraniumUI;

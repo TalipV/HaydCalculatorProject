@@ -1,6 +1,4 @@
-﻿using HaydCalculator.Core.Enums;
-
-namespace HaydCalculator.Core.Entities
+﻿namespace HaydCalculator.Core.Calculator.Models
 {
     public class FlowDataDescriptionEntity : IComparable
     {

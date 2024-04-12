@@ -1,12 +1,12 @@
-﻿using HaydCalculator.Core;
-using HaydCalculator.Core.Entities;
-using HaydCalculator.Core.Enums;
+﻿using HaydCalculator.Core.Calculator.Models;
+using HaydCalculator.Core.Calculator.Services;
+using HaydCalculator.Core.Misc;
 using MauiTestApp.Presentation;
 using MauiTestApp.Presentation.ViewModel;
 using XCalendar.Core.Models;
 using XCalendar.Maui.Views;
 
-namespace HaydCalculator
+namespace MauiTestApp.Presentation.View
 {
     public class MainPage : ContentPage
     {
@@ -26,7 +26,7 @@ namespace HaydCalculator
         /// </summary>
         public MainPage(MainPageViewModel viewModel)
         {
-            this.BindingContext = viewModel;
+            BindingContext = viewModel;
 
             Title = "";
             var scrollView = new ScrollView();
@@ -204,7 +204,7 @@ namespace HaydCalculator
                     WidthRequest = 35
                 };
 
-                dayView.SetBinding(DayView.BackgroundColorProperty, nameof(CustomDay.MainColor));
+                dayView.SetBinding(BackgroundColorProperty, nameof(CustomDay.MainColor));
                 dayView.SetBinding(DayView.TextColorProperty, nameof(CustomDay.MainTextColor));
                 dayView.SetBinding(DayView.DateTimeProperty, nameof(CustomDay.DateTime));
 
@@ -216,7 +216,7 @@ namespace HaydCalculator
             });
         }
 
-        public Calendar<CustomDay> Calendar => (this.BindingContext as MainPageViewModel)?.Calendar;
+        public Calendar<CustomDay> Calendar => (BindingContext as MainPageViewModel)?.Calendar;
 
         public static bool IsDateWithinDateRange(DateTime targetDate, DateTime fromDate, DateTime toDate)
         {
@@ -227,24 +227,24 @@ namespace HaydCalculator
 
         public bool IsHaydDay(DateTime date)
         {
-            return result?.HaydFlows.SelectMany(x => x.HaydDataLst).Any(x => MainPage.IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.HaydFlows.SelectMany(x => x.HaydDataLst).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public bool IsNaqaDay(DateTime date)
         {
-            return result?.HaydFlows.SelectMany(x => x.HaydDataLst.Where(x => x.IsNaqa)).Any(x => MainPage.IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.HaydFlows.SelectMany(x => x.HaydDataLst.Where(x => x.IsNaqa)).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public bool IsIstihadaDay(DateTime date)
         {
-            return result?.IstihadaFlows.Any(x => MainPage.IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.IstihadaFlows.Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public void setCalendarColors()
         {
-            if (this._inputData.Count == 0)
+            if (_inputData.Count == 0)
             {
-                this.Calendar.Days.ToList().ForEach(day =>
+                Calendar.Days.ToList().ForEach(day =>
                 {
                     day.MainColor = Colors.White;
                     day.MainTextColor = Colors.Black;
@@ -253,27 +253,27 @@ namespace HaydCalculator
                 return;
             }
 
-            DateTime minDate = this._inputData.MinBy(x => x.FromDateTime).FromDateTime;
-            DateTime maxDate = this._inputData.MaxBy(x => x.ToDateTime).ToDateTime;
+            DateTime minDate = _inputData.MinBy(x => x.FromDateTime).FromDateTime;
+            DateTime maxDate = _inputData.MaxBy(x => x.ToDateTime).ToDateTime;
 
             foreach (CustomDay day in Calendar.Days)
             {
                 // basically days for which there is no data
-                if (day.DateTime < minDate || maxDate <= day.DateTime )
+                if (day.DateTime < minDate || maxDate <= day.DateTime)
                 {
                     day.MainColor = Colors.White;
                     day.MainTextColor = Colors.Black;
                 }
-                else if (this.IsHaydDay(day.DateTime))
+                else if (IsHaydDay(day.DateTime))
                 {
-                    if (this.IsNaqaDay(day.DateTime))
+                    if (IsNaqaDay(day.DateTime))
                         day.MainColor = Colors.IndianRed;
                     else
                         day.MainColor = Colors.Red;
 
                     day.MainTextColor = Colors.White;
                 }
-                else if (this.IsIstihadaDay(day.DateTime))
+                else if (IsIstihadaDay(day.DateTime))
                 {
                     day.MainColor = Colors.Black;
                     day.MainTextColor = Colors.White;
@@ -289,18 +289,18 @@ namespace HaydCalculator
 
         private void assignDefaultValuesToViews()
         {
-            this._flowAppearanceSelectorView.SelectedItem = EFlowAppearanceColor.Red;
-            this._dayCountEntryView.Text = "3";
+            _flowAppearanceSelectorView.SelectedItem = EFlowAppearanceColor.Red;
+            _dayCountEntryView.Text = "3";
         }
 
         private FlowDataEntity getHaydTimeDataFromInput()
         {
-            EFlowAppearanceColor haydDataType = (EFlowAppearanceColor)this._flowAppearanceSelectorView.SelectedItem;
+            EFlowAppearanceColor haydDataType = (EFlowAppearanceColor)_flowAppearanceSelectorView.SelectedItem;
             DateTime dateTime = _inputData.LastOrDefault()?.ToDateTime ?? START_DATE_TIME;
 
-            if (!double.TryParse(this._dayCountEntryView.Text, out double dayCount) || dayCount <= 0)
+            if (!double.TryParse(_dayCountEntryView.Text, out double dayCount) || dayCount <= 0)
             {
-                this._dayCountEntryView.Text = "";
+                _dayCountEntryView.Text = "";
                 throw new InfoException("Invalid input!");
             }
 
@@ -314,9 +314,9 @@ namespace HaydCalculator
 
         private void applyDataToViews()
         {
-            this._inputListView.ItemsSource = _inputData.ToList();
-            this._makeUpDayCounter.Text = $"Make up days: {result?.MakeUpDayCount ?? 0}";
-            this.setCalendarColors();
+            _inputListView.ItemsSource = _inputData.ToList();
+            _makeUpDayCounter.Text = $"Make up days: {result?.MakeUpDayCount ?? 0}";
+            setCalendarColors();
         }
 
         private void addInputData(FlowDataEntity newInputData)
@@ -373,11 +373,11 @@ namespace HaydCalculator
 
         private void clearDataButton_Clicked(object sender, EventArgs e)
         {
-            this._inputData.Clear();
-            this._feedbackEditor.Text = "";
+            _inputData.Clear();
+            _feedbackEditor.Text = "";
 
-            this.assignDefaultValuesToViews();
-            this.applyDataToViews();
+            assignDefaultValuesToViews();
+            applyDataToViews();
         }
     }
 }

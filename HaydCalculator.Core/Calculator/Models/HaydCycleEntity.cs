@@ -1,4 +1,7 @@
-﻿namespace HaydCalculator.Core.Entities
+﻿using HaydCalculator.Core.Calculator.Services;
+using HaydCalculator.Core.Misc;
+
+namespace HaydCalculator.Core.Calculator.Models
 {
     public class HaydCycleEntity
     {
@@ -18,7 +21,7 @@
         {
             get
             {
-                return this.HaydDataLst.MinBy(x => x.FromDateTime)?.FromDateTime;
+                return HaydDataLst.MinBy(x => x.FromDateTime)?.FromDateTime;
             }
         }
 
@@ -26,7 +29,7 @@
         {
             get
             {
-                return this.HaydDataLst.MaxBy(x => x.ToDateTime)?.ToDateTime;
+                return HaydDataLst.MaxBy(x => x.ToDateTime)?.ToDateTime;
             }
         }
 
@@ -34,12 +37,12 @@
         {
             get
             {
-                if (this.HaydBeginning == null || this.HaydEnd == null)
+                if (HaydBeginning == null || HaydEnd == null)
                 {
                     return 0;
                 }
 
-                return (this.HaydEnd.Value - this.HaydBeginning.Value).TotalDays;
+                return (HaydEnd.Value - HaydBeginning.Value).TotalDays;
             }
         }
 
@@ -47,7 +50,7 @@
         {
             get
             {
-                return this.HaydDataLst.LastOrDefault();
+                return HaydDataLst.LastOrDefault();
             }
         }
 
@@ -57,22 +60,22 @@
 
         public double GetDaysSinceHaydBeginningUntilSpecificDate(DateTime dateTime)
         {
-            if (this.HaydBeginning == null)
+            if (HaydBeginning == null)
             {
                 return 0;
             }
 
-            return (dateTime - this.HaydBeginning.Value).TotalDays;
+            return (dateTime - HaydBeginning.Value).TotalDays;
         }
 
         public double GetDaysSinceHaydEndUntilSpecificDate(DateTime dateTime)
         {
-            if (this.HaydEnd == null)
+            if (HaydEnd == null)
             {
                 return 0;
             }
 
-            return (dateTime - this.HaydEnd.Value).TotalDays;
+            return (dateTime - HaydEnd.Value).TotalDays;
         }
 
         public static bool IsHaydFlowDataLstWithDistinguishableFlows(List<FlowDataEntity> flowDataLst)

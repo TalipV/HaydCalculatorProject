@@ -1,8 +1,8 @@
-﻿using HaydCalculator.Core.Entities;
-using HaydCalculator.Core.Enums;
+﻿using HaydCalculator.Core.Calculator.Models;
+using HaydCalculator.Core.Misc;
 using System.Collections.ObjectModel;
 
-namespace HaydCalculator.Core
+namespace HaydCalculator.Core.Calculator.Services
 {
     public class HaydCalculatorService
     {
@@ -24,7 +24,7 @@ namespace HaydCalculator.Core
 
         public HaydCalculationResultVO Calculate(List<FlowDataEntity> flowDataEntities)
         {
-            this._flowData = flowDataEntities.AsReadOnly();
+            _flowData = flowDataEntities.AsReadOnly();
 
             checkPrerequesites();
             resetCalculationData();
@@ -44,8 +44,8 @@ namespace HaydCalculator.Core
 
             return new HaydCalculationResultVO
             {
-                HaydFlows = this._haydCycleLst.AsReadOnly(),
-                IstihadaFlows = this._istihadaLst.AsReadOnly(),
+                HaydFlows = _haydCycleLst.AsReadOnly(),
+                IstihadaFlows = _istihadaLst.AsReadOnly(),
                 MakeUpDayCount = _makeUpDayCount,
             };
         }
