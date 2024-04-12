@@ -49,8 +49,7 @@
 	<ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.20" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.20" />
-	  <PackageReference Include="XCalendar.Core" Version="4.3.1" />
-	  <PackageReference Include="XCalendar.Maui" Version="4.3.1" />
+	  <PackageReference Include="XCalendar.Maui" Version="4.6.0" />
     <PackageReference Include="UraniumUI.Material" Version="2.8.1" />
     <PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
     <PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.0" />

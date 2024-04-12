@@ -211,15 +211,14 @@ namespace HaydCalculator
                     HeightRequest = 35,
                     WidthRequest = 35
                 };
+
                 dayView.SetBinding(DayView.BackgroundColorProperty, nameof(CustomDay.MainColor));
                 dayView.SetBinding(DayView.TextColorProperty, nameof(CustomDay.MainTextColor));
                 dayView.SetBinding(DayView.DateTimeProperty, nameof(CustomDay.DateTime));
-                dayView.SetBinding(DayView.SelectedBackgroundColorProperty, nameof(CustomDay.MainColor));
-                dayView.SetBinding(DayView.CurrentMonthBackgroundColorProperty, nameof(CustomDay.MainColor));
-                dayView.SetBinding(DayView.OtherMonthBackgroundColorProperty, nameof(CustomDay.MainColor));
-                dayView.SetBinding(DayView.SelectedTextColorProperty, nameof(CustomDay.MainTextColor));
-                dayView.SetBinding(DayView.CurrentMonthTextColorProperty, nameof(CustomDay.MainTextColor));
-                dayView.SetBinding(DayView.OtherMonthTextColorProperty, nameof(CustomDay.MainTextColor));
+
+                dayView.SetBinding(DayView.SelectedStyleProperty, nameof(CustomDay.MainStyle));
+                dayView.SetBinding(DayView.CurrentMonthStyleProperty, nameof(CustomDay.MainStyle));
+                dayView.SetBinding(DayView.OtherMonthStyleProperty, nameof(CustomDay.MainStyle));
 
                 return frame;
             });
