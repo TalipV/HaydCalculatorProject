@@ -168,30 +168,24 @@ namespace HaydCalculator
             Content = scrollView;
 
             assignDefaultValuesToViews();
-            addCalendarStuff(grid);
-        }
 
-        private CalendarView _calendarView;
-
-        private void addCalendarStuff(Grid grid)
-        {
-            var fancyCalendarView = _calendarView = new CalendarView
+            var calendarView = new CalendarView
             {
                 BackgroundColor = Colors.White,
                 DayNamesHeightRequest = 0,
                 DaysViewHeightRequest = 500,
                 IsVisible = true
             };
-            grid.Children.Add(fancyCalendarView);
-            Grid.SetRow(fancyCalendarView, 5);
-            Grid.SetColumnSpan(fancyCalendarView, 5);
-            Grid.SetRowSpan(fancyCalendarView, 3);
+            grid.Children.Add(calendarView);
+            Grid.SetRow(calendarView, 5);
+            Grid.SetColumnSpan(calendarView, 5);
+            Grid.SetRowSpan(calendarView, 3);
 
-            fancyCalendarView.SetBinding(CalendarView.DaysProperty, $"{nameof(Calendar)}.{nameof(Calendar.Days)}");
-            fancyCalendarView.SetBinding(CalendarView.DaysOfWeekProperty, $"{nameof(Calendar)}.{nameof(Calendar.DayNamesOrder)}");
-            fancyCalendarView.NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 });
+            calendarView.SetBinding(CalendarView.DaysProperty, $"{nameof(Calendar)}.{nameof(Calendar.Days)}");
+            calendarView.SetBinding(CalendarView.DaysOfWeekProperty, $"{nameof(Calendar)}.{nameof(Calendar.DayNamesOrder)}");
+            calendarView.NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 });
 
-            fancyCalendarView.DayTemplate = new DataTemplate(() =>
+            calendarView.DayTemplate = new DataTemplate(() =>
             {
                 var frame = new Frame
                 {
@@ -266,13 +260,13 @@ namespace HaydCalculator
 
             foreach (CustomDay day in Calendar.Days)
             {
-                if (day.DateTime < minDate || day.DateTime > maxDate)
+                // basically days for which there is no data
+                if (day.DateTime < minDate || maxDate <= day.DateTime )
                 {
                     day.MainColor = Colors.White;
                     day.MainTextColor = Colors.Black;
                 }
-
-                if (this.IsHaydDay(day.DateTime))
+                else if (this.IsHaydDay(day.DateTime))
                 {
                     if (this.IsNaqaDay(day.DateTime))
                         day.MainColor = Colors.IndianRed;
@@ -286,9 +280,10 @@ namespace HaydCalculator
                     day.MainColor = Colors.Black;
                     day.MainTextColor = Colors.White;
                 }
+                // days for which there is data but it is not hayd or istihada
                 else
                 {
-                    day.MainColor = Colors.White;
+                    day.MainColor = Colors.LightGray;
                     day.MainTextColor = Colors.Black;
                 }
             }
