@@ -5,16 +5,16 @@ namespace HaydCalculator.Core.Tests.Unit
 {
     public class HaydCalculatorFactoryTests_ErrorHandling
     {
-        private HaydCalculatorFactory haydCalculatorFactory = new HaydCalculatorFactory();
+        private readonly HaydCalculatorService haydCalculatorFactory = new();
 
         [Fact]
         public void ThrowExceptionWhenNoFlowDataIsHaydType()
         {
             // ARRANGE
-            DateTime date = new DateTime(year: 2000, month: 5, day: 20);
+            var date = new DateTime(year: 2000, month: 5, day: 20);
 
-            List<FlowDataEntity> timeData = new List<FlowDataEntity>()
-            {
+            List<FlowDataEntity> timeData =
+            [
                 new FlowDataEntity()
                 {
                     FromDateTime = date,
@@ -27,12 +27,10 @@ namespace HaydCalculator.Core.Tests.Unit
                     ToDateTime = date.AddDays(15),
                     Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Clear },
                 },
-            };
-
-            haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            ];
 
             // ACT & ASSERT
-            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Execute());
+            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData));
             exc.Message.Should().Be(TextUtil.NO_HAYD_FLOW_DATA_PROVIDED);
         }
 
@@ -42,10 +40,10 @@ namespace HaydCalculator.Core.Tests.Unit
         public void ThrowExceptionWhenFlowDataToDateIsEqualToOrSmallerThanFromDate(int dayDifference)
         {
             // ARRANGE
-            DateTime date = new DateTime(year: 2000, month: 5, day: 20);
+            var date = new DateTime(year: 2000, month: 5, day: 20);
 
-            List<FlowDataEntity> timeData = new List<FlowDataEntity>()
-            {
+            List<FlowDataEntity> timeData =
+            [
                 new FlowDataEntity()
                 {
                     FromDateTime = date,
@@ -58,12 +56,10 @@ namespace HaydCalculator.Core.Tests.Unit
                     ToDateTime = date.AddDays(dayDifference*3),
                     Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
                 },
-            };
-
-            haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            ];
 
             // ACT & ASSERT
-            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Execute());
+            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData));
             exc.Message.Should().Be(TextUtil.FLOW_DATA_WITH_INVALID_TIMES);
         }
 
@@ -71,10 +67,10 @@ namespace HaydCalculator.Core.Tests.Unit
         public void ThrowExceptionWhenMultipleFlowDataOverlapEachOther()
         {
             // ARRANGE
-            DateTime date = new DateTime(year: 2000, month: 5, day: 20);
+            var date = new DateTime(year: 2000, month: 5, day: 20);
 
-            List<FlowDataEntity> timeData = new List<FlowDataEntity>()
-            {
+            List<FlowDataEntity> timeData =
+            [
                 new FlowDataEntity()
                 {
                     FromDateTime = date.AddDays(3),
@@ -87,12 +83,10 @@ namespace HaydCalculator.Core.Tests.Unit
                     ToDateTime = date.AddDays(6),
                     Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
                 },
-            };
-
-            haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            ];
 
             // ACT & ASSERT
-            Exception exc = Assert.Throws<InfoException>(haydCalculatorFactory.Execute); 
+            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData)); 
             exc.Message.Should().Be(TextUtil.FLOW_DATA_ENTRIES_WITH_OVERLAPPING_TIMES);
         }
 
@@ -100,10 +94,10 @@ namespace HaydCalculator.Core.Tests.Unit
         public void ThrowExceptionWhenGapsBetweenFlowDataEntries()
         {
             // ARRANGE
-            DateTime date = new DateTime(year: 2000, month: 5, day: 20);
+            var date = new DateTime(year: 2000, month: 5, day: 20);
 
-            List<FlowDataEntity> timeData = new List<FlowDataEntity>()
-            {
+            List<FlowDataEntity> timeData =
+            [
                 new FlowDataEntity()
                 {
                     FromDateTime = date.AddDays(3),
@@ -116,12 +110,10 @@ namespace HaydCalculator.Core.Tests.Unit
                     ToDateTime = date.AddDays(7),
                     Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
                 },
-            };
-
-            haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            ];
 
             // ACT & ASSERT
-            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Execute());
+            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData));
             exc.Message.Should().Be(TextUtil.FLOW_DATA_ENTRIES_WITH_TIME_GAPS);
         }
     }

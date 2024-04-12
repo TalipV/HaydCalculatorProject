@@ -1,11 +1,12 @@
 ﻿using HaydCalculator.Core.Entities;
 using HaydCalculator.Core.Enums;
+using NSubstitute.ExceptionExtensions;
 
 namespace HaydCalculator.Core.Tests.Unit
 {
     public class HaydCalculatorFactory_Tests_ComplexIstihada_General
     {
-        private HaydCalculatorFactory haydCalculatorFactory = new HaydCalculatorFactory();
+        private readonly HaydCalculatorService haydCalculatorFactory = new();
 
         [Theory]
         [InlineData(11.0, 1.0, 1.0, 5.0)]
@@ -13,21 +14,20 @@ namespace HaydCalculator.Core.Tests.Unit
         public void IdentifyComplexIstihadahCaseWithNotImplementedException(double redFlowDayCount1, double clearFlowDayCount, double redFlowDayCount2, double redFlowDayCount3)
         {
             // ARRANGE
-            DateTime beginningDate = new DateTime(DateTime.Now.Year, 1, 1);
+            var beginningDate = new DateTime(DateTime.Now.Year, 1, 1);
 
-            List<(EFlowAppearanceColor type, double dayCount)> tuple = new List<(EFlowAppearanceColor type, double dayCount)>()
-            {
+            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            [
                 (EFlowAppearanceColor.Red, redFlowDayCount1),
                 (EFlowAppearanceColor.Clear, clearFlowDayCount),
                 (EFlowAppearanceColor.Red, redFlowDayCount2),
                 (EFlowAppearanceColor.Red, redFlowDayCount3),
-            };
+            ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
-            haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
 
             // ACT & ASSERT
-            Exception exc = Assert.Throws<InfoException>(haydCalculatorFactory.Execute); ;
+            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData)); ;
             exc.Message.Should().Be(TextUtil.COMPLEX_ISTIHADA_NOT_IMPLEMENTED);
         }
     }

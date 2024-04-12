@@ -90,10 +90,10 @@
             double lightHaydFlowDayDuration = lighHaydFlowDataLst.Sum(x => x.DayCount);
 
             // FIRST CONDITION: The duration of the heavy flow has to be AT LEAST the minimum hayd duration
-            if (strongHaydFlowDayDuration < HaydCalculatorFactory.MINIMUM_HAYD_DURATION_DAYS)
+            if (strongHaydFlowDayDuration < HaydCalculatorService.MINIMUM_HAYD_DURATION_DAYS)
                 return false;
             // SECOND CONDITION: The duration of the heavy flow has to LESS THAN the maximum hayd duration
-            if (strongHaydFlowDayDuration > HaydCalculatorFactory.MAXIMUM_HAYD_DURATION_DAYS)
+            if (strongHaydFlowDayDuration > HaydCalculatorService.MAXIMUM_HAYD_DURATION_DAYS)
                 return false;
 
             DateTime latestLightFlow = lighHaydFlowDataLst.Select(x => x.ToDateTime).Max();
@@ -101,8 +101,8 @@
 
             // THIRD CONDITION: The duration of the light flow has to be at least the minimal tuhur (i.e. 15 days)
             // if the (heavy) blood continuous after that for at least a maximum hayd (i.e. 15 days)
-            if (lightHaydFlowDayDuration < HaydCalculatorFactory.MINIMAL_TUHUR_DURATION_DAYS
-                && heavyFlowAfterLight.Sum(x => x.DayCount) >= HaydCalculatorFactory.MAXIMUM_HAYD_DURATION_DAYS)
+            if (lightHaydFlowDayDuration < HaydCalculatorService.MINIMAL_TUHUR_DURATION_DAYS
+                && heavyFlowAfterLight.Sum(x => x.DayCount) >= HaydCalculatorService.MAXIMUM_HAYD_DURATION_DAYS)
             {
                 return false;
             }

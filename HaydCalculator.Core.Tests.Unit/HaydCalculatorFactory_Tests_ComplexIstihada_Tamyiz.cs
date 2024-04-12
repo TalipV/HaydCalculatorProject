@@ -18,7 +18,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 10), (EFlowAppearanceColor.Red, 10),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
             var haydCycleEntity = new HaydCycleEntity
             {
                 HaydDataLst = timeData
@@ -37,7 +37,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 10), (EFlowAppearanceColor.Black, 10),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
             var haydCycleEntity = new HaydCycleEntity
             {
                 HaydDataLst = timeData
@@ -56,7 +56,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
             var haydCycleEntity = new HaydCycleEntity
             {
                 HaydDataLst = timeData
@@ -75,7 +75,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14), (EFlowAppearanceColor.Black, 1)
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
             var haydCycleEntity = new HaydCycleEntity
             {
                 HaydDataLst = timeData
@@ -103,7 +103,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 10),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
             var haydCycleEntity = new HaydCycleEntity
             {
                 HaydDataLst = timeData
@@ -130,7 +130,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 1),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
             var haydCycleEntity = new HaydCycleEntity
             {
                 HaydDataLst = timeData

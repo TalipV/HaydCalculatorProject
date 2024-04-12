@@ -6,7 +6,7 @@ namespace HaydCalculator.Core.Tests.Unit
     public class HaydCalculatorFactoryTests_BasicCalculations
     {
         private readonly DateTime _beginningDate = new(DateTime.Now.Year, 1, 1);
-        private readonly HaydCalculatorFactory _haydCalculatorFactory = new();
+        private readonly HaydCalculatorService _haydCalculatorFactory = new();
 
         [Fact] // Self explanatory.
         public void HaydCalculation_MinimalHaydDurationNotFulfilled()
@@ -19,16 +19,14 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 0.1),
             ];
 
-            _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
-
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(HaydCalculatorService.GetFlowDataList(_beginningDate, tuple));
 
             // ASSERT
-            _haydCalculatorFactory.HaydCycleLst.Should().BeEmpty();
-            _haydCalculatorFactory.IstihadaLst.Count.Should().Be(2);
-            _haydCalculatorFactory.IstihadaLst.First().DayCount.Should().Be(0.4);
-            _haydCalculatorFactory.IstihadaLst.Last().DayCount.Should().Be(0.1);
+            result.HaydFlows.Should().BeEmpty();
+            result.IstihadaFlows.Count.Should().Be(2);
+            result.IstihadaFlows.First().DayCount.Should().Be(0.4);
+            result.IstihadaFlows.Last().DayCount.Should().Be(0.1);
         }
 
         [Fact] // Self explanatory.
@@ -40,16 +38,14 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 1.0),
             ];
 
-            _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
-
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(HaydCalculatorService.GetFlowDataList(_beginningDate, tuple));
 
             // ASSERT
-            _haydCalculatorFactory.IstihadaLst.Should().BeEmpty();
-            _haydCalculatorFactory.HaydCycleLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst[0].DayCount.Should().Be(1.0);
+            result.IstihadaFlows.Should().BeEmpty();
+            result.HaydFlows.Count.Should().Be(1);
+            result.HaydFlows[0].HaydDataLst.Count.Should().Be(1);
+            result.HaydFlows[0].HaydDataLst[0].DayCount.Should().Be(1.0);
         }
 
         [Fact] // Program specific test.
@@ -63,18 +59,16 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Black, 3.0),
             ];
 
-            _haydCalculatorFactory.DataList = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple).AsReadOnly();
-
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(HaydCalculatorService.GetFlowDataList(_beginningDate, tuple));
 
             // ASSERT
-            _haydCalculatorFactory.IstihadaLst.Should().BeEmpty();
-            _haydCalculatorFactory.HaydCycleLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.Count.Should().Be(2);
+            result.IstihadaFlows.Should().BeEmpty();
+            result.HaydFlows.Count.Should().Be(1);
+            result.HaydFlows[0].HaydDataLst.Count.Should().Be(2);
 
-            FlowDataEntity firstFlowData = _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst[0];
-            FlowDataEntity secondFlowData = _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst[1];
+            FlowDataEntity firstFlowData = result.HaydFlows[0].HaydDataLst[0];
+            FlowDataEntity secondFlowData = result.HaydFlows[0].HaydDataLst[1];
 
             firstFlowData.DayCount.Should().Be(1.0);
             firstFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
@@ -93,20 +87,19 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 1.0),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
-            _haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            var timeData = HaydCalculatorService.GetFlowDataList(_beginningDate, tuple);
 
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(timeData);
 
             // ASSERT
-            _haydCalculatorFactory.IstihadaLst.Should().BeEmpty();
-            _haydCalculatorFactory.HaydCycleLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.Count.Should().Be(3);
+            result.IstihadaFlows.Should().BeEmpty();
+            result.HaydFlows.Count.Should().Be(1);
+            result.HaydFlows[0].HaydDataLst.Count.Should().Be(3);
 
             for (int i = 0; i < tuple.Count; i++)
             {
-                _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.ElementAt(i).Should().Be(timeData.ElementAt(i));
+                result.HaydFlows[0].HaydDataLst.ElementAt(i).Should().Be(timeData.ElementAt(i));
             }
         }
 
@@ -128,19 +121,18 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 1.0),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
-            _haydCalculatorFactory.DataList = timeData.AsReadOnly();
+            var timeData = HaydCalculatorService.GetFlowDataList(_beginningDate, tuple);
 
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(timeData);
 
             // ASSERT
-            _haydCalculatorFactory.IstihadaLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.Count.Should().Be(1);
+            result.IstihadaFlows.Count.Should().Be(1);
+            result.HaydFlows.Count.Should().Be(1);
+            result.HaydFlows[0].HaydDataLst.Count.Should().Be(1);
 
-            FlowDataEntity menstruation = _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst[0];
-            FlowDataEntity istihada = _haydCalculatorFactory.IstihadaLst[0];
+            FlowDataEntity menstruation = result.HaydFlows[0].HaydDataLst[0];
+            FlowDataEntity istihada = result.IstihadaFlows[0];
 
             menstruation.Should().Be(timeData.First());
             //istihada.Should().Be(timeData.Last());
@@ -160,21 +152,18 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 4.0),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
-            _haydCalculatorFactory.DataList = timeData.AsReadOnly();
-
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(HaydCalculatorService.GetFlowDataList(_beginningDate, tuple));
 
             // ASSERT
-            _haydCalculatorFactory.IstihadaLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst.Count.Should().Be(2);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[1].HaydDataLst.Count.Should().Be(1);
+            result.IstihadaFlows.Count.Should().Be(1);
+            result.HaydFlows.Count.Should().Be(2);
+            result.HaydFlows[0].HaydDataLst.Count.Should().Be(1);
+            result.HaydFlows[1].HaydDataLst.Count.Should().Be(1);
 
-            FlowDataEntity firstMenstruation = _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst[0];
-            FlowDataEntity secondMenstruation = _haydCalculatorFactory.HaydCycleLst[1].HaydDataLst[0];
-            FlowDataEntity istihada = _haydCalculatorFactory.IstihadaLst[0];
+            FlowDataEntity firstMenstruation = result.HaydFlows[0].HaydDataLst[0];
+            FlowDataEntity secondMenstruation = result.HaydFlows[1].HaydDataLst[0];
+            FlowDataEntity istihada = result.IstihadaFlows[0];
 
             (EFlowAppearanceColor.Red, 3.0).ToFlowTimeData(_beginningDate).Should().Be(firstMenstruation);
             (EFlowAppearanceColor.Red, 1.0).ToFlowTimeData(_beginningDate.AddDays(17)).Should().Be(istihada);
@@ -192,21 +181,18 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, 12.0),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorFactory.TransformHaydTupleListToFlowTimeDataList(_beginningDate, tuple);
-            _haydCalculatorFactory.DataList = timeData.AsReadOnly();
-
             // ACT
-            _haydCalculatorFactory.Execute();
+            var result = _haydCalculatorFactory.Calculate(HaydCalculatorService.GetFlowDataList(_beginningDate, tuple));
 
             // ASSERT
-            _haydCalculatorFactory.IstihadaLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst.Count.Should().Be(2);
-            _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst.Count.Should().Be(1);
-            _haydCalculatorFactory.HaydCycleLst[1].HaydDataLst.Count.Should().Be(1);
+            result.IstihadaFlows.Count.Should().Be(1);
+            result.HaydFlows.Count.Should().Be(2);
+            result.HaydFlows[0].HaydDataLst.Count.Should().Be(1);
+            result.HaydFlows[1].HaydDataLst.Count.Should().Be(1);
 
-            FlowDataEntity firstMenstruation = _haydCalculatorFactory.HaydCycleLst[0].HaydDataLst[0];
-            FlowDataEntity secondMenstruation = _haydCalculatorFactory.HaydCycleLst[1].HaydDataLst[0];
-            FlowDataEntity istihada = _haydCalculatorFactory.IstihadaLst[0];
+            FlowDataEntity firstMenstruation = result.HaydFlows[0].HaydDataLst[0];
+            FlowDataEntity secondMenstruation = result.HaydFlows[1].HaydDataLst[0];
+            FlowDataEntity istihada = result.IstihadaFlows[0];
 
             (EFlowAppearanceColor.Red, 10.0).ToFlowTimeData(_beginningDate).Should().Be(firstMenstruation);
             (EFlowAppearanceColor.Red, 7.0).ToFlowTimeData(_beginningDate.AddDays(18)).Should().Be(istihada);

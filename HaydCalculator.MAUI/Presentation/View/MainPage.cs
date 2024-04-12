@@ -3,18 +3,16 @@ using HaydCalculator.Core.Entities;
 using HaydCalculator.Core.Enums;
 using MauiTestApp.Presentation;
 using MauiTestApp.Presentation.ViewModel;
-using System.Xml.Linq;
-using System;
 using XCalendar.Core.Models;
 using XCalendar.Maui.Views;
-using Microsoft.Maui.Graphics.Text;
 
 namespace HaydCalculator
 {
     public class MainPage : ContentPage
     {
         private static readonly DateTime START_DATE_TIME = new(2023, 1, 1);
-        private readonly HaydCalculatorFactory _haydCalculatorFactory = new();
+        private readonly HaydCalculatorService _haydCalculatorFactory = new();
+        private HaydCalculationResultVO result = null;
         private readonly List<FlowDataEntity> _inputData = [];
 
         private readonly Picker _flowAppearanceSelectorView;
@@ -220,7 +218,7 @@ namespace HaydCalculator
 
         public Calendar<CustomDay> Calendar => (this.BindingContext as MainPageViewModel)?.Calendar;
 
-        public bool IsDateWithinDateRange(DateTime targetDate, DateTime fromDate, DateTime toDate)
+        public static bool IsDateWithinDateRange(DateTime targetDate, DateTime fromDate, DateTime toDate)
         {
             return fromDate <= targetDate && targetDate < toDate;
         }
@@ -229,17 +227,17 @@ namespace HaydCalculator
 
         public bool IsHaydDay(DateTime date)
         {
-            return _haydCalculatorFactory?.HaydCycleLst.SelectMany(x => x.HaydDataLst).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.HaydFlows.SelectMany(x => x.HaydDataLst).Any(x => MainPage.IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public bool IsNaqaDay(DateTime date)
         {
-            return _haydCalculatorFactory?.HaydCycleLst.SelectMany(x => x.HaydDataLst.Where(x => x.IsNaqa)).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.HaydFlows.SelectMany(x => x.HaydDataLst.Where(x => x.IsNaqa)).Any(x => MainPage.IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public bool IsIstihadaDay(DateTime date)
         {
-            return _haydCalculatorFactory?.IstihadaLst.Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.IstihadaFlows.Any(x => MainPage.IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public void setCalendarColors()
@@ -317,7 +315,7 @@ namespace HaydCalculator
         private void applyDataToViews()
         {
             this._inputListView.ItemsSource = _inputData.ToList();
-            this._makeUpDayCounter.Text = $"Make up days: {_haydCalculatorFactory.MakeUpDayCount}";
+            this._makeUpDayCounter.Text = $"Make up days: {result?.MakeUpDayCount ?? 0}";
             this.setCalendarColors();
         }
 
@@ -343,13 +341,11 @@ namespace HaydCalculator
             try
             {
                 _feedbackEditor.Text = "";
-                _haydCalculatorFactory.ResetCalculationData();
 
                 if (addCurrentInput)
                     addInputData(getHaydTimeDataFromInput());
 
-                _haydCalculatorFactory.DataList = _inputData.Select(x => new FlowDataEntity(x)).ToList().AsReadOnly();
-                _haydCalculatorFactory.Execute();
+                result = _haydCalculatorFactory.Calculate(_inputData.Select(x => new FlowDataEntity(x)).ToList());
             }
             catch (InfoException ex)
             {
@@ -378,7 +374,6 @@ namespace HaydCalculator
         private void clearDataButton_Clicked(object sender, EventArgs e)
         {
             this._inputData.Clear();
-            this._haydCalculatorFactory.ResetCalculationData();
             this._feedbackEditor.Text = "";
 
             this.assignDefaultValuesToViews();
