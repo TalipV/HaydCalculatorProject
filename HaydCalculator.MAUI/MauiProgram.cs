@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using HaydCalculator;
+using HaydCalculator.Core.Calculator.Services;
 using MauiTestApp.Presentation.View;
 using MauiTestApp.Presentation.ViewModel;
 using Plugin.Maui.DebugRainbows;
@@ -27,6 +28,7 @@ namespace MauiTestApp
 
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<MainPageViewModel>();
+            builder.Services.AddTransient<HaydCalculatorService>();
 
             return builder.Build();
         }

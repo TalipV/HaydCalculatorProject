@@ -10,11 +10,6 @@ namespace MauiTestApp.Presentation.View
 {
     public class MainPage : ContentPage
     {
-        private static readonly DateTime START_DATE_TIME = new(2023, 1, 1);
-        private readonly HaydCalculatorService _haydCalculatorFactory = new();
-        private HaydCalculationResultVO result = null;
-        private readonly List<FlowDataEntity> _inputData = [];
-
         private readonly Picker _flowAppearanceSelectorView;
         private readonly Editor _feedbackEditor;
         private readonly ListView _inputListView;
@@ -66,7 +61,7 @@ namespace MauiTestApp.Presentation.View
                 BackgroundColor = Colors.AntiqueWhite,
                 HorizontalTextAlignment = TextAlignment.Center
             };
-
+            _dayCountEntryView.SetBinding(Entry.TextProperty, nameof(MainPageViewModel.DayCountEntryText), BindingMode.TwoWay);
             var hStackGrid = new Grid
             {
                 ColumnDefinitions =
@@ -75,7 +70,6 @@ namespace MauiTestApp.Presentation.View
                     new ColumnDefinition { Width = GridLength.Star }
                 }
             };
-
             hStackGrid.Children.Add(new Label
             {
                 Text = "Days:",
@@ -84,7 +78,6 @@ namespace MauiTestApp.Presentation.View
             });
             hStackGrid.Children.Add(_dayCountEntryView);
             Grid.SetColumn(_dayCountEntryView, 1);
-
             grid.Children.Add(hStackGrid);
             Grid.SetColumn(hStackGrid, 1);
 
@@ -95,9 +88,9 @@ namespace MauiTestApp.Presentation.View
                 MinimumWidthRequest = 45,
                 BackgroundColor = Colors.AntiqueWhite,
                 HorizontalTextAlignment = TextAlignment.Center,
-                ItemsSource = Enum.GetValues(typeof(EFlowAppearanceColor))
             };
-
+            _flowAppearanceSelectorView.SetBinding(Picker.ItemsSourceProperty, nameof(MainPageViewModel.FlowAppearances));
+            _flowAppearanceSelectorView.SetBinding(Picker.SelectedItemProperty, nameof(MainPageViewModel.SelectedFlowAppearance));
             grid.Children.Add(_flowAppearanceSelectorView);
             Grid.SetColumn(_flowAppearanceSelectorView, 3);
 
@@ -107,7 +100,7 @@ namespace MauiTestApp.Presentation.View
                 Margin = 5,
                 HorizontalOptions = LayoutOptions.Center
             };
-            addDataButton.Clicked += addDataButton_Clicked;
+            addDataButton.Clicked += viewModel.addDataButton_Clicked;
             grid.Children.Add(addDataButton);
             Grid.SetColumn(addDataButton, 1);
             Grid.SetRow(addDataButton, 1);
@@ -124,15 +117,14 @@ namespace MauiTestApp.Presentation.View
                     return new ViewCell { View = label };
                 })
             };
-            _inputListView.ItemSelected += (sender, e) => { (sender as ListView).SelectedItem = null; };
-
+            _inputListView.SetBinding(ListView.ItemsSourceProperty, nameof(MainPageViewModel.InputData));
             grid.Children.Add(_inputListView);
             Grid.SetColumnSpan(_inputListView, 4);
             Grid.SetColumn(_inputListView, 0);
             Grid.SetRow(_inputListView, 3);
 
             var clearDataButton = new Button { Text = "Clear", Margin = 10, HeightRequest = 40 };
-            clearDataButton.Clicked += clearDataButton_Clicked;
+            clearDataButton.Clicked += viewModel.clearDataButton_Clicked;
             grid.Children.Add(clearDataButton);
             Grid.SetColumn(clearDataButton, 4);
             Grid.SetRow(clearDataButton, 3);
@@ -152,20 +144,20 @@ namespace MauiTestApp.Presentation.View
             Grid.SetRow(feedbackLabel, 10);
 
             _makeUpDayCounter = new Label { Text = "Make up days: ", Padding = 3 };
+            _makeUpDayCounter.SetBinding(Label.TextProperty, nameof(MainPageViewModel.MakeUpDayCounterText));
             grid.Children.Add(_makeUpDayCounter);
             Grid.SetColumnSpan(_makeUpDayCounter, 3);
             Grid.SetColumn(_makeUpDayCounter, 3);
             Grid.SetRow(_makeUpDayCounter, 10);
 
             _feedbackEditor = new Editor { BackgroundColor = Colors.AntiqueWhite, Margin = 5, IsReadOnly = true };
+            _feedbackEditor.SetBinding(Editor.TextProperty, nameof(MainPageViewModel.FeedbackText));
             grid.Children.Add(_feedbackEditor);
             Grid.SetColumnSpan(_feedbackEditor, 5);
             Grid.SetRow(_feedbackEditor, 11);
 
             scrollView.Content = grid;
             Content = scrollView;
-
-            assignDefaultValuesToViews();
 
             var calendarView = new CalendarView
             {
@@ -178,11 +170,9 @@ namespace MauiTestApp.Presentation.View
             Grid.SetRow(calendarView, 5);
             Grid.SetColumnSpan(calendarView, 5);
             Grid.SetRowSpan(calendarView, 3);
-
             calendarView.SetBinding(CalendarView.DaysProperty, $"{nameof(Calendar)}.{nameof(Calendar.Days)}");
             calendarView.SetBinding(CalendarView.DaysOfWeekProperty, $"{nameof(Calendar)}.{nameof(Calendar.DayNamesOrder)}");
             calendarView.NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 });
-
             calendarView.DayTemplate = new DataTemplate(() =>
             {
                 var frame = new Frame
@@ -207,177 +197,12 @@ namespace MauiTestApp.Presentation.View
                 dayView.SetBinding(BackgroundColorProperty, nameof(CustomDay.MainColor));
                 dayView.SetBinding(DayView.TextColorProperty, nameof(CustomDay.MainTextColor));
                 dayView.SetBinding(DayView.DateTimeProperty, nameof(CustomDay.DateTime));
-
                 dayView.SetBinding(DayView.SelectedStyleProperty, nameof(CustomDay.MainStyle));
                 dayView.SetBinding(DayView.CurrentMonthStyleProperty, nameof(CustomDay.MainStyle));
                 dayView.SetBinding(DayView.OtherMonthStyleProperty, nameof(CustomDay.MainStyle));
 
                 return frame;
             });
-        }
-
-        public Calendar<CustomDay> Calendar => (BindingContext as MainPageViewModel)?.Calendar;
-
-        public static bool IsDateWithinDateRange(DateTime targetDate, DateTime fromDate, DateTime toDate)
-        {
-            return fromDate <= targetDate && targetDate < toDate;
-        }
-
-        // TODO: Refactoring
-
-        public bool IsHaydDay(DateTime date)
-        {
-            return result?.HaydFlows.SelectMany(x => x.HaydDataLst).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
-        }
-
-        public bool IsNaqaDay(DateTime date)
-        {
-            return result?.HaydFlows.SelectMany(x => x.HaydDataLst.Where(x => x.IsNaqa)).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
-        }
-
-        public bool IsIstihadaDay(DateTime date)
-        {
-            return result?.IstihadaFlows.Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
-        }
-
-        public void setCalendarColors()
-        {
-            if (_inputData.Count == 0)
-            {
-                Calendar.Days.ToList().ForEach(day =>
-                {
-                    day.MainColor = Colors.White;
-                    day.MainTextColor = Colors.Black;
-                });
-
-                return;
-            }
-
-            DateTime minDate = _inputData.MinBy(x => x.FromDateTime).FromDateTime;
-            DateTime maxDate = _inputData.MaxBy(x => x.ToDateTime).ToDateTime;
-
-            foreach (CustomDay day in Calendar.Days)
-            {
-                // basically days for which there is no data
-                if (day.DateTime < minDate || maxDate <= day.DateTime)
-                {
-                    day.MainColor = Colors.White;
-                    day.MainTextColor = Colors.Black;
-                }
-                else if (IsHaydDay(day.DateTime))
-                {
-                    if (IsNaqaDay(day.DateTime))
-                        day.MainColor = Colors.IndianRed;
-                    else
-                        day.MainColor = Colors.Red;
-
-                    day.MainTextColor = Colors.White;
-                }
-                else if (IsIstihadaDay(day.DateTime))
-                {
-                    day.MainColor = Colors.Black;
-                    day.MainTextColor = Colors.White;
-                }
-                // days for which there is data but it is not hayd or istihada
-                else
-                {
-                    day.MainColor = Colors.LightGray;
-                    day.MainTextColor = Colors.Black;
-                }
-            }
-        }
-
-        private void assignDefaultValuesToViews()
-        {
-            _flowAppearanceSelectorView.SelectedItem = EFlowAppearanceColor.Red;
-            _dayCountEntryView.Text = "3";
-        }
-
-        private FlowDataEntity getHaydTimeDataFromInput()
-        {
-            EFlowAppearanceColor haydDataType = (EFlowAppearanceColor)_flowAppearanceSelectorView.SelectedItem;
-            DateTime dateTime = _inputData.LastOrDefault()?.ToDateTime ?? START_DATE_TIME;
-
-            if (!double.TryParse(_dayCountEntryView.Text, out double dayCount) || dayCount <= 0)
-            {
-                _dayCountEntryView.Text = "";
-                throw new InfoException("Invalid input!");
-            }
-
-            return new FlowDataEntity()
-            {
-                FromDateTime = dateTime,
-                ToDateTime = dateTime.AddDays(dayCount),
-                Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = haydDataType }
-            };
-        }
-
-        private void applyDataToViews()
-        {
-            _inputListView.ItemsSource = _inputData.ToList();
-            _makeUpDayCounter.Text = $"Make up days: {result?.MakeUpDayCount ?? 0}";
-            setCalendarColors();
-        }
-
-        private void addInputData(FlowDataEntity newInputData)
-        {
-            if (_inputData.LastOrDefault() is FlowDataEntity lastData)
-            {
-                if (lastData.FromDateTime == newInputData.FromDateTime)
-                {
-                    _inputData.Remove(lastData);
-                }
-                else
-                {
-                    lastData.ToDateTime = newInputData.FromDateTime;
-                }
-            }
-
-            _inputData.Add(getHaydTimeDataFromInput());
-        }
-
-        private void runCalculation(bool addCurrentInput)
-        {
-            try
-            {
-                _feedbackEditor.Text = "";
-
-                if (addCurrentInput)
-                    addInputData(getHaydTimeDataFromInput());
-
-                result = _haydCalculatorFactory.Calculate(_inputData.Select(x => new FlowDataEntity(x)).ToList());
-            }
-            catch (InfoException ex)
-            {
-                _feedbackEditor.Text = ex.Message;
-            }
-            catch (Exception ex)
-            {
-                _feedbackEditor.Text = $"""
-                    ERROR: {ex.Message}
-                    
-                    Stacktrace: 
-                    {ex.StackTrace}
-                    """;
-            }
-            finally
-            {
-                applyDataToViews();
-            }
-        }
-
-        private void addDataButton_Clicked(object sender, EventArgs e)
-        {
-            runCalculation(addCurrentInput: true);
-        }
-
-        private void clearDataButton_Clicked(object sender, EventArgs e)
-        {
-            _inputData.Clear();
-            _feedbackEditor.Text = "";
-
-            assignDefaultValuesToViews();
-            applyDataToViews();
         }
     }
 }
