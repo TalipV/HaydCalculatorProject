@@ -59,16 +59,5 @@ namespace HaydCalculator.Core.Misc
 
             return false;
         }
-
-        public static FlowDataEntity ToFlowTimeData(this (EFlowAppearanceColor haydDataType, double dayCount) tuple, DateTime initialDateTime)
-        {
-            return
-                new FlowDataEntity()
-                {
-                    FromDateTime = initialDateTime,
-                    ToDateTime = initialDateTime.AddDays(tuple.dayCount),
-                    Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = tuple.haydDataType },
-                };
-        }
     }
 }

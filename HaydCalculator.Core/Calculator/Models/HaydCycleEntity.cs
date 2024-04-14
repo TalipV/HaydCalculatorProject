@@ -11,7 +11,7 @@ namespace HaydCalculator.Core.Calculator.Models
 
         #region properties
 
-        public List<FlowDataEntity> HaydDataLst { get; set; } = [];
+        public List<FlowDataEntity> HaydFlows { get; set; } = [];
 
         #endregion properties
 
@@ -21,7 +21,7 @@ namespace HaydCalculator.Core.Calculator.Models
         {
             get
             {
-                return HaydDataLst.MinBy(x => x.FromDateTime)?.FromDateTime;
+                return HaydFlows.MinBy(x => x.FromDateTime)?.FromDateTime;
             }
         }
 
@@ -29,7 +29,7 @@ namespace HaydCalculator.Core.Calculator.Models
         {
             get
             {
-                return HaydDataLst.MaxBy(x => x.ToDateTime)?.ToDateTime;
+                return HaydFlows.MaxBy(x => x.ToDateTime)?.ToDateTime;
             }
         }
 
@@ -50,7 +50,7 @@ namespace HaydCalculator.Core.Calculator.Models
         {
             get
             {
-                return HaydDataLst.LastOrDefault();
+                return HaydFlows.LastOrDefault();
             }
         }
 

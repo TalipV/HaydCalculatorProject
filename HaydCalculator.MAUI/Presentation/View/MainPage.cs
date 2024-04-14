@@ -1,8 +1,4 @@
-﻿using HaydCalculator.Core.Calculator.Models;
-using HaydCalculator.Core.Calculator.Services;
-using HaydCalculator.Core.Misc;
-using MauiTestApp.Presentation;
-using MauiTestApp.Presentation.ViewModel;
+﻿using MauiTestApp.Presentation.ViewModel;
 using XCalendar.Core.Models;
 using XCalendar.Maui.Views;
 

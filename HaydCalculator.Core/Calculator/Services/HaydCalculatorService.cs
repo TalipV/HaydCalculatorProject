@@ -6,13 +6,9 @@ namespace HaydCalculator.Core.Calculator.Services
 {
     public class HaydCalculatorService
     {
-        #region static fields
-
         public static readonly int MINIMUM_HAYD_DURATION_DAYS = 1;
         public static readonly int MAXIMUM_HAYD_DURATION_DAYS = 15;
         public static readonly int MINIMAL_TUHUR_DURATION_DAYS = 15;
-
-        #endregion  static fields
 
         private ReadOnlyCollection<FlowDataEntity> _flowData;
         private readonly List<HaydCycleEntity> _haydCycleLst = [];
@@ -21,6 +17,30 @@ namespace HaydCalculator.Core.Calculator.Services
 
         private HaydCycleEntity _currentIncompleteHaydCycle = null;
         private double _makeUpDayCount = 0;
+
+        private void resetCalculationData()
+        {
+            _makeUpDayCount = 0;
+            _currentIncompleteHaydCycle = null;
+            _workList.Clear();
+            _haydCycleLst.Clear();
+            _istihadaLst.Clear();
+        }
+
+        private void checkPrerequesites()
+        {
+            if (_flowData.None(dataEntry => dataEntry.Description.IsHaydType))
+                throw new InfoException(TextUtil.NO_HAYD_FLOW_DATA_PROVIDED);
+
+            if (_flowData.Any(x => x.FromDateTime >= x.ToDateTime))
+                throw new InfoException(TextUtil.FLOW_DATA_WITH_INVALID_TIMES);
+
+            if (_flowData.HasOverlaps())
+                throw new InfoException(TextUtil.FLOW_DATA_ENTRIES_WITH_OVERLAPPING_TIMES);
+
+            if (_flowData.HasGaps())
+                throw new InfoException(TextUtil.FLOW_DATA_ENTRIES_WITH_TIME_GAPS);
+        }
 
         public HaydCalculationResultVO Calculate(List<FlowDataEntity> flowDataEntities)
         {
@@ -44,34 +64,10 @@ namespace HaydCalculator.Core.Calculator.Services
 
             return new HaydCalculationResultVO
             {
-                HaydFlows = _haydCycleLst.AsReadOnly(),
+                HaydCycles = _haydCycleLst.AsReadOnly(),
                 IstihadaFlows = _istihadaLst.AsReadOnly(),
                 MakeUpDayCount = _makeUpDayCount,
             };
-        }
-
-        private void checkPrerequesites()
-        {
-            if (_flowData.None(dataEntry => dataEntry.Description.IsHaydType))
-                throw new InfoException(TextUtil.NO_HAYD_FLOW_DATA_PROVIDED);
-
-            if (_flowData.Any(x => x.FromDateTime >= x.ToDateTime))
-                throw new InfoException(TextUtil.FLOW_DATA_WITH_INVALID_TIMES);
-
-            if (_flowData.HasOverlaps())
-                throw new InfoException(TextUtil.FLOW_DATA_ENTRIES_WITH_OVERLAPPING_TIMES);
-
-            if (_flowData.HasGaps())
-                throw new InfoException(TextUtil.FLOW_DATA_ENTRIES_WITH_TIME_GAPS);
-        }
-
-        private void resetCalculationData()
-        {
-            _makeUpDayCount = 0;
-            _currentIncompleteHaydCycle = null;
-            _workList.Clear();
-            _haydCycleLst.Clear();
-            _istihadaLst.Clear();
         }
 
         private void addToHaydDataLst(FlowDataEntity newFlowTimeData)
@@ -86,16 +82,7 @@ namespace HaydCalculator.Core.Calculator.Services
             else
             {
                 conditionallyAddInBetweenPurityToMenstruation(newFlowTimeData);
-                _currentIncompleteHaydCycle.HaydDataLst.Add(newFlowTimeData);
-            }
-        }
-
-        private void completeCurrentHaydCycleIfTooLongWithProvidedDate(DateTime dateTime)
-        {
-            // the current hayd is completed and there needs to be a tuhur now
-            if (_currentIncompleteHaydCycle.GetDaysSinceHaydBeginningUntilSpecificDate(dateTime) >= MAXIMUM_HAYD_DURATION_DAYS)
-            {
-                completeCurrentHaydData();
+                _currentIncompleteHaydCycle.HaydFlows.Add(newFlowTimeData);
             }
         }
 
@@ -109,6 +96,15 @@ namespace HaydCalculator.Core.Calculator.Services
             else
             {
                 _istihadaLst.Add(newFlowTimeData);
+            }
+        }
+
+        private void completeCurrentHaydCycleIfTooLongWithProvidedDate(DateTime dateTime)
+        {
+            // the current hayd is completed and there needs to be a tuhur now
+            if (_currentIncompleteHaydCycle.GetDaysSinceHaydBeginningUntilSpecificDate(dateTime) >= MAXIMUM_HAYD_DURATION_DAYS)
+            {
+                completeCurrentHaydData();
             }
         }
 
@@ -151,7 +147,7 @@ namespace HaydCalculator.Core.Calculator.Services
             if (!currentData.Description.IsHaydType)
                 return;
 
-            createCurrentHaydDataIfNotExists();
+            _currentIncompleteHaydCycle ??= new HaydCycleEntity();
 
             // 0 if the hayd has not even begun
             double passedDaysFromCurrentHaydBeginning =
@@ -291,18 +287,13 @@ namespace HaydCalculator.Core.Calculator.Services
         //    }
         //}
 
-        private void createCurrentHaydDataIfNotExists()
-        {
-            _currentIncompleteHaydCycle ??= new HaydCycleEntity();
-        }
-
         private void completeCurrentHaydData()
         {
             if (_currentIncompleteHaydCycle == null)
                 return;
 
             List<FlowDataEntity> haydFlowWithoutNaqa =
-                _currentIncompleteHaydCycle.HaydDataLst.Where(x => !x.IsNaqa).ToList();
+                _currentIncompleteHaydCycle.HaydFlows.Where(x => !x.IsNaqa).ToList();
 
             if (haydFlowWithoutNaqa.Sum(x => x.DayCount) < MINIMUM_HAYD_DURATION_DAYS)
             {
@@ -339,20 +330,6 @@ namespace HaydCalculator.Core.Calculator.Services
                     x.IsNaqa = true;
                     _makeUpDayCount += x.DayCount;
                 });
-        }
-
-        public static List<FlowDataEntity> GetFlowDataList(DateTime initialDateTime, List<(EFlowAppearanceColor type, double dayCount)> tupleLst)
-        {
-            List<FlowDataEntity> list = new(tupleLst.Count);
-            DateTime lastBeginningDateTime = initialDateTime;
-
-            foreach (var tupleEntry in tupleLst.Where(x => x.dayCount != 0))
-            {
-                list.Add(tupleEntry.ToFlowTimeData(lastBeginningDateTime));
-                lastBeginningDateTime = list.Last().ToDateTime;
-            }
-
-            return list;
         }
 
         private double getRemainingMinimalTuhurDayCountByDate(DateTime dateTime)

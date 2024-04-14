@@ -2,7 +2,6 @@
 using PropertyChanged;
 using XCalendar.Core.Enums;
 using XCalendar.Core.Models;
-using System.Linq;
 using HaydCalculator.Core.Misc;
 using HaydCalculator.Core.Calculator.Services;
 
@@ -190,12 +189,12 @@ namespace MauiTestApp.Presentation.ViewModel
 
         public bool IsHaydDay(DateTime date)
         {
-            return result?.HaydFlows.SelectMany(x => x.HaydDataLst).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.HaydCycles.SelectMany(x => x.HaydFlows).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public bool IsNaqaDay(DateTime date)
         {
-            return result?.HaydFlows.SelectMany(x => x.HaydDataLst.Where(x => x.IsNaqa)).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+            return result?.HaydCycles.SelectMany(x => x.HaydFlows.Where(x => x.IsNaqa)).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
         }
 
         public bool IsIstihadaDay(DateTime date)

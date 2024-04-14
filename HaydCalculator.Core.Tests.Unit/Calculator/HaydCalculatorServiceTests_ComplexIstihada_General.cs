@@ -1,11 +1,11 @@
 ﻿using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
-using NSubstitute.ExceptionExtensions;
+using HaydCalculator.Core.Tests.Unit.Util;
 
-namespace HaydCalculator.Core.Tests.Unit
+namespace HaydCalculator.Core.Tests.Unit.Calculator
 {
-    public class HaydCalculatorFactory_Tests_ComplexIstihada_General
+    public class HaydCalculatorServiceTests_ComplexIstihada_General
     {
         private readonly HaydCalculatorService haydCalculatorFactory = new();
 
@@ -15,9 +15,9 @@ namespace HaydCalculator.Core.Tests.Unit
         public void IdentifyComplexIstihadahCaseWithNotImplementedException(double redFlowDayCount1, double clearFlowDayCount, double redFlowDayCount2, double redFlowDayCount3)
         {
             // ARRANGE
-            var beginningDate = new DateTime(DateTime.Now.Year, 1, 1);
+            var startDate = new DateTime(DateTime.Now.Year, 1, 1);
 
-            List<(EFlowAppearanceColor type, double dayCount)> tuple =
+            List<(EFlowAppearanceColor type, double dayCount)> data =
             [
                 (EFlowAppearanceColor.Red, redFlowDayCount1),
                 (EFlowAppearanceColor.Clear, clearFlowDayCount),
@@ -25,7 +25,7 @@ namespace HaydCalculator.Core.Tests.Unit
                 (EFlowAppearanceColor.Red, redFlowDayCount3),
             ];
 
-            List<FlowDataEntity> timeData = HaydCalculatorService.GetFlowDataList(beginningDate, tuple);
+            List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: startDate);
 
             // ACT & ASSERT
             Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData)); ;

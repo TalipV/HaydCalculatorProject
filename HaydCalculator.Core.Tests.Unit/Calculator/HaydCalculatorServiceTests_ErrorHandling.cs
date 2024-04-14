@@ -2,9 +2,9 @@ using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
 
-namespace HaydCalculator.Core.Tests.Unit
+namespace HaydCalculator.Core.Tests.Unit.Calculator
 {
-    public class HaydCalculatorFactoryTests_ErrorHandling
+    public class HaydCalculatorServiceTests_ErrorHandling
     {
         private readonly HaydCalculatorService haydCalculatorFactory = new();
 
@@ -87,7 +87,7 @@ namespace HaydCalculator.Core.Tests.Unit
             ];
 
             // ACT & ASSERT
-            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData)); 
+            Exception exc = Assert.Throws<InfoException>(() => haydCalculatorFactory.Calculate(timeData));
             exc.Message.Should().Be(TextUtil.FLOW_DATA_ENTRIES_WITH_OVERLAPPING_TIMES);
         }
 
