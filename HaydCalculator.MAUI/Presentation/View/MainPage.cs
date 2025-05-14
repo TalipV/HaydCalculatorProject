@@ -4,7 +4,7 @@ using XCalendar.Maui.Views;
 
 namespace MauiTestApp.Presentation.View
 {
-    public class MainPage : ContentPage
+    public partial class MainPage : ContentPage
     {
         private readonly Picker _flowAppearanceSelectorView;
         private readonly Editor _feedbackEditor;
@@ -171,17 +171,16 @@ namespace MauiTestApp.Presentation.View
             calendarView.NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 });
             calendarView.DayTemplate = new DataTemplate(() =>
             {
-                var frame = new Frame
+                var border = new Border
                 {
                     Margin = 3,
                     Padding = 0,
-                    HasShadow = false,
                     HorizontalOptions = LayoutOptions.Center,
                     VerticalOptions = LayoutOptions.Center,
                 };
-                frame.SetBinding(BackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
+                border.SetBinding(BackgroundColorProperty, $"{nameof(CustomDay.MainColor)}");
 
-                var dayView = frame.Content = new DayView
+                var dayView = border.Content = new DayView
                 {
                     Margin = 1,
                     HorizontalOptions = LayoutOptions.Center,
@@ -197,7 +196,7 @@ namespace MauiTestApp.Presentation.View
                 dayView.SetBinding(DayView.CurrentMonthStyleProperty, nameof(CustomDay.MainStyle));
                 dayView.SetBinding(DayView.OtherMonthStyleProperty, nameof(CustomDay.MainStyle));
 
-                return frame;
+                return border;
             });
         }
     }

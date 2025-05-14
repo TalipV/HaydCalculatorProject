@@ -17,7 +17,7 @@ namespace MauiTestApp.Presentation.ViewModel
         public MainPageViewModel(HaydCalculatorService haydCalculatorService)
         {
             this._haydCalculatorService = haydCalculatorService;
-            this.FlowAppearances = Enum.GetValues(typeof(EFlowAppearanceColor)).OfType<EFlowAppearanceColor>().ToList(); 
+            this.FlowAppearances = [.. Enum.GetValues<EFlowAppearanceColor>()]; 
             assignDefaultValuesToViews();
         }
 

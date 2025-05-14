@@ -5,7 +5,7 @@ namespace HaydCalculator.Core.Tests.Unit.Calculator
 {
     public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     {
-        private readonly DateTime startDate = new DateTime(2024, 1, 1);
+        private readonly DateTime startDate = new(2024, 1, 1);
 
         #region Condition 3
 

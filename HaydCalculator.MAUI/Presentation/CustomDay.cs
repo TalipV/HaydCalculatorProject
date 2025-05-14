@@ -5,7 +5,7 @@ using XCalendar.Maui.Views;
 namespace MauiTestApp.Presentation
 {
     [AddINotifyPropertyChangedInterface]
-    public class CustomDay : CalendarDay
+    public partial class CustomDay : CalendarDay
     {
         public Color MainColor { get; set; } = Colors.White;
         public Color MainTextColor { get; set; } = Colors.Black;

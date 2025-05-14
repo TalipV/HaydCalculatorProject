@@ -70,11 +70,10 @@ namespace HaydCalculator.Core.Tests.Unit.Util
             // ARRANGE
             var initialDateTime = DateTime.Now;
             var flows = TestMethods.GetFlowDataList(
-                new List<(EFlowAppearanceColor, double)>
-                {
+                [
                     (EFlowAppearanceColor.Red, 1),
                     (EFlowAppearanceColor.Black, 1)
-                },
+                ],
                 initialDateTime);
 
             // ACT

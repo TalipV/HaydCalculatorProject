@@ -4,7 +4,7 @@ namespace HaydCalculator.Core.Tests.Unit.Calculator
 {
     public class HaydCalculatorServiceTests_ComplexIstihada_Ada
     {
-        private HaydCalculatorService haydCalculatorFactory = new HaydCalculatorService();
+        private readonly HaydCalculatorService haydCalculatorFactory = new();
 
 
     }
