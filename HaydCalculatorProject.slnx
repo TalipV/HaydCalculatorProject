@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="HaydCalculator.Core.Tests.Unit/HaydCalculator.Core.Tests.Unit.csproj">
+      <Build Solution="Release|*" Project="false" />
+    </Project>
+  </Folder>
+  <Project Path="HaydCalculator.Core/HaydCalculator.Core.csproj" />
+  <Project Path="HaydCalculator.MAUI/HaydCalculator.MAUI.csproj">
+    <Deploy />
+  </Project>
+</Solution>
