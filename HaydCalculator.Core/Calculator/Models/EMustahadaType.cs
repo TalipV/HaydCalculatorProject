@@ -1,9 +1,8 @@
-﻿namespace HaydCalculator.Core.Calculator.Models
+namespace HaydCalculator.Core.Calculator.Models;
+
+public enum EMustahadaType
 {
-    public enum EMustahadaType
-    {
-        Mubtada_ah,
-        Mu3taadah,
-        Mutahayyirah,
-    }
+    Mubtada_ah,
+    Mu3taadah,
+    Mutahayyirah,
 }

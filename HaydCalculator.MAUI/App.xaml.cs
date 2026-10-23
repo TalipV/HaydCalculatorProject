@@ -1,21 +1,20 @@
-﻿namespace HaydCalculator
+namespace HaydCalculator;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        protected override Window CreateWindow(IActivationState activationState)
+    protected override Window CreateWindow(IActivationState activationState)
+    {
+        var window = new Window(new AppShell())
         {
-            var window = new Window(new AppShell())
-            {
-                Width = 425,
-                Height = 800
-            };
+            Width = 425,
+            Height = 800
+        };
 
-            return window;
-        }
+        return window;
     }
 }

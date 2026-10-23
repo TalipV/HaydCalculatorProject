@@ -1,29 +1,28 @@
-﻿namespace HaydCalculator.Core.Calculator.Models
+namespace HaydCalculator.Core.Calculator.Models;
+
+public class HaydCalculatorFactorySettingEntity
 {
-    public class HaydCalculatorFactorySettingEntity
-    {
-        #region constructors
+    #region constructors
 
-        public HaydCalculatorFactorySettingEntity() { }
+    public HaydCalculatorFactorySettingEntity() { }
 
-        #endregion constructors
+    #endregion constructors
 
-        #region properties
+    #region properties
 
-        public bool ConsiderYellowAsHayd { get; set; } = true;
+    public bool ConsiderYellowAsHayd { get; set; } = true;
 
-        #endregion properties
+    #endregion properties
 
-        #region calculated properties
+    #region calculated properties
 
-        #endregion calculated properties
+    #endregion calculated properties
 
-        #region methods
+    #region methods
 
-        #endregion methods
+    #endregion methods
 
-        #region override methods
+    #region override methods
 
-        #endregion override methods
-    }
+    #endregion override methods
 }

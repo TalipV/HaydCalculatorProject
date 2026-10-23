@@ -1,6 +1,5 @@
-﻿namespace HaydCalculator.Core.Misc
+namespace HaydCalculator.Core.Misc;
+
+public class InfoException(string message) : Exception(message)
 {
-    public class InfoException(string message) : Exception(message)
-    {
-    }
 }

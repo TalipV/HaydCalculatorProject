@@ -3,8 +3,14 @@
   <PropertyGroup>
     <NetVersion>net10.0</NetVersion>
     <LangVersion>latest</LangVersion>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Code style rules from .editorconfig are checked on every build (as errors). -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- Needed so IDE0005 (unnecessary usings) is reported on build; missing XML docs are not required. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(MSBuildProjectName)' != 'HaydCalculator.MAUI'">
@@ -12,7 +18,9 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'HaydCalculator.MAUI'">
-    <TargetFrameworks>$(NetVersion)-android;$(NetVersion)-ios</TargetFrameworks>
+    <TargetFrameworks>$(NetVersion)-android</TargetFrameworks>
+    <!-- No iOS workload on Linux (CI): only add the iOS target where it can be restored. -->
+    <TargetFrameworks Condition="!$([MSBuild]::IsOSPlatform('linux'))">$(TargetFrameworks);$(NetVersion)-ios</TargetFrameworks>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">26.0</SupportedOSPlatformVersion>
@@ -20,7 +28,7 @@
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'HaydCalculator.MAUI' And $([MSBuild]::IsOSPlatform('maccatalyst'))">
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'HaydCalculator.MAUI' And $([MSBuild]::IsOSPlatform('osx'))">
     <TargetFrameworks>$(TargetFrameworks);$(NetVersion)-maccatalyst</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'HaydCalculator.MAUI' And $([MSBuild]::IsOSPlatform('windows'))">

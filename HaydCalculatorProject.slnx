@@ -1,10 +1,17 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path="CLAUDE.md" />
     <File Path="Directory.Build.props" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/ci.yml" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="HaydCalculator.Core.Tests.Unit/HaydCalculator.Core.Tests.Unit.csproj">
+    <File Path="tests/Directory.Build.props" />
+    <Project Path="tests/HaydCalculator.Core.Tests.Unit/HaydCalculator.Core.Tests.Unit.csproj">
       <Build Solution="Release|*" Project="false" />
     </Project>
   </Folder>

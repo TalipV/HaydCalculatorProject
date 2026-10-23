@@ -1,35 +1,33 @@
-﻿using PropertyChanged;
+using PropertyChanged;
 using XCalendar.Core.Models;
 using XCalendar.Maui.Views;
 
-namespace MauiTestApp.Presentation
+namespace MauiTestApp.Presentation;
+
+[AddINotifyPropertyChangedInterface]
+public partial class CustomDay : CalendarDay
 {
-    [AddINotifyPropertyChangedInterface]
-    public partial class CustomDay : CalendarDay
+    public Color MainColor { get; set; } = Colors.White;
+    public Color MainTextColor { get; set; } = Colors.Black;
+    public Style MainStyle { get; set; }
+
+    public CustomDay()
     {
-        public Color MainColor { get; set; } = Colors.White;
-        public Color MainTextColor { get; set; } = Colors.Black;
-        public Style MainStyle { get; set; }
-
-        public CustomDay()
+        MainStyle = new Style(typeof(DayView))
         {
-            MainStyle = new Style(typeof(DayView))
+            Setters =
             {
-                Setters = 
+                new Setter()
                 {
-                    new Setter()
-                    {
-                        Property = DayView.BackgroundColorProperty,
-                        Value = MainColor
-                    },                    
-                    new Setter()
-                    {
-                        Property = DayView.TextColorProperty,
-                        Value = MainTextColor
-                    },
-                }
-            };
-        }
+                    Property = VisualElement.BackgroundColorProperty,
+                    Value = MainColor
+                },
+                new Setter()
+                {
+                    Property = DayView.TextColorProperty,
+                    Value = MainTextColor
+                },
+            }
+        };
     }
-
 }

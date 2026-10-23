@@ -1,14 +1,13 @@
-﻿namespace HaydCalculator.Core.Calculator.Models
-{
-    public enum EFlowAppearanceColor
-    {
-        // ordered by strength
+namespace HaydCalculator.Core.Calculator.Models;
 
-        Clear,
-        //Brownish,
-        //Yellow,
-        //Blondish,
-        Red,
-        Black
-    }
+public enum EFlowAppearanceColor
+{
+    // ordered by strength
+
+    Clear,
+    //Brownish,
+    //Yellow,
+    //Blondish,
+    Red,
+    Black
 }
