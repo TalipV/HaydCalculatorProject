@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace MauiTestApp.Platforms.MacCatalyst;
+namespace HaydCalculator;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

@@ -1,29 +1,40 @@
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
+using HaydCalculator.Presentation.Views.Calendar;
+using MethodTimer;
+using Microsoft.Extensions.Logging;
+using NodaTime;
 using PropertyChanged;
 using XCalendar.Core.Enums;
 using XCalendar.Core.Models;
 
-namespace MauiTestApp.Presentation.ViewModel;
+namespace HaydCalculator.Presentation.Pages.Main;
 
 [AddINotifyPropertyChangedInterface]
 public class MainPageViewModel
 {
-    private static readonly DateTime s_startDateTime = new(2023, 1, 1);
-    private readonly HaydCalculatorService _haydCalculatorService;
-    private HaydCalculationResultVO _result = null;
+    private static readonly DateTime s_startDate = new(2023, 1, 1);
 
-    public MainPageViewModel(HaydCalculatorService haydCalculatorService)
+    private readonly HaydCalculatorService _haydCalculatorService;
+    private readonly ILogger<MainPageViewModel> _logger;
+    private HaydCalculationResultVO? _result = null;
+
+    public MainPageViewModel(HaydCalculatorService haydCalculatorService, ILogger<MainPageViewModel> logger)
     {
         _haydCalculatorService = haydCalculatorService;
+        _logger = logger;
         FlowAppearances = [.. Enum.GetValues<EFlowAppearanceColor>()];
+        AddDataCommand = new Command(() => RunCalculation(addCurrentInput: true));
+        ClearDataCommand = new Command(ClearData);
         AssignDefaultValuesToViews();
     }
 
     public Calendar<CustomDay> Calendar { get; set; } = new Calendar<CustomDay>()
     {
-        NavigatedDate = new DateTime(2023, 1, 1),
+        NavigatedDate = s_startDate,
         NavigationLowerBound = DateTime.Today.AddYears(-2),
         NavigationUpperBound = DateTime.Today.AddYears(2),
         StartOfWeek = DayOfWeek.Sunday,
@@ -39,21 +50,29 @@ public class MainPageViewModel
 
     public List<EFlowAppearanceColor> FlowAppearances { get; set; } = [];
     public EFlowAppearanceColor SelectedFlowAppearance { get; set; } = EFlowAppearanceColor.Red;
-    public List<FlowDataEntity> InputData { get; set; } = [];
+    public ObservableCollection<FlowDataEntity> InputData { get; set; } = [];
 
-    public string MakeUpDayCounterText { get; set; }
-    public string DayCountEntryText { get; set; }
-    public string FeedbackText { get; set; }
+    public string MakeUpDayCounterText { get; set; } = "";
+    public string DayCountEntryText { get; set; } = "";
+    public string FeedbackText { get; set; } = "";
 
-    public void AddDataButton_Clicked(object sender, EventArgs e)
+    public ICommand AddDataCommand { get; }
+    public ICommand ClearDataCommand { get; }
+
+    /// <summary>
+    /// The calendar works with plain dates, the calculation with instants. Calendar days are
+    /// mapped to midnight UTC, so every day is exactly 24 hours long (no daylight saving shifts).
+    /// </summary>
+    private static Instant ToInstant(DateTime date)
     {
-        RunCalculation(addCurrentInput: true);
+        return Instant.FromUtc(date.Year, date.Month, date.Day, 0, 0);
     }
 
-    public void ClearDataButton_Clicked(object sender, EventArgs e)
+    private void ClearData()
     {
         InputData.Clear();
         FeedbackText = "";
+        _result = null;
 
         AssignDefaultValuesToViews();
         ApplyDataToViews();
@@ -69,13 +88,13 @@ public class MainPageViewModel
     {
         if (InputData.LastOrDefault() is FlowDataEntity lastData)
         {
-            if (lastData.FromDateTime == newInputData.FromDateTime)
+            if (lastData.From == newInputData.From)
             {
                 InputData.Remove(lastData);
             }
             else
             {
-                lastData.ToDateTime = newInputData.FromDateTime;
+                lastData.To = newInputData.From;
             }
         }
 
@@ -84,7 +103,7 @@ public class MainPageViewModel
 
     private FlowDataEntity GetHaydTimeDataFromInput()
     {
-        DateTime dateTime = InputData.LastOrDefault()?.ToDateTime ?? s_startDateTime;
+        Instant from = InputData.LastOrDefault()?.To ?? ToInstant(s_startDate);
 
         if (!double.TryParse(DayCountEntryText, out double dayCount) || dayCount <= 0)
         {
@@ -94,12 +113,13 @@ public class MainPageViewModel
 
         return new FlowDataEntity()
         {
-            FromDateTime = dateTime,
-            ToDateTime = dateTime.AddDays(dayCount),
+            From = from,
+            To = from + Duration.FromDays(dayCount),
             Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = SelectedFlowAppearance }
         };
     }
 
+    [Time]
     private void RunCalculation(bool addCurrentInput)
     {
         try
@@ -115,14 +135,16 @@ public class MainPageViewModel
         }
         catch (InfoException ex)
         {
+            _logger.LogInformation("Calculation stopped: {Reason}", ex.Message);
             FeedbackText = ex.Message;
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "Calculation failed for {FlowDataCount} input entries", InputData.Count);
             FeedbackText = $"""
                 ERROR: {ex.Message}
-                
-                Stacktrace: 
+
+                Stacktrace:
                 {ex.StackTrace}
                 """;
         }
@@ -134,7 +156,8 @@ public class MainPageViewModel
 
     private void ApplyDataToViews()
     {
-        MakeUpDayCounterText = $"Make up days: {_result?.MakeUpDayCount ?? 0}";
+        Duration makeUpDuration = _result?.MakeUpDuration ?? Duration.Zero;
+        MakeUpDayCounterText = $"Make up days: {makeUpDuration.TotalDays:0.##}";
         SetCalendarColors();
     }
 
@@ -147,25 +170,26 @@ public class MainPageViewModel
                 day.MainColor = Colors.White;
                 day.MainTextColor = Colors.Black;
             }
-            ;
 
             return;
         }
 
-        DateTime minDate = InputData.MinBy(x => x.FromDateTime).FromDateTime;
-        DateTime maxDate = InputData.MaxBy(x => x.ToDateTime).ToDateTime;
+        Instant minInstant = InputData.Min(x => x.From);
+        Instant maxInstant = InputData.Max(x => x.To);
 
         foreach (CustomDay day in Calendar.Days)
         {
+            Instant dayInstant = ToInstant(day.DateTime);
+
             // basically days for which there is no data
-            if (day.DateTime < minDate || maxDate <= day.DateTime)
+            if (dayInstant < minInstant || maxInstant <= dayInstant)
             {
                 day.MainColor = Colors.White;
                 day.MainTextColor = Colors.Black;
             }
-            else if (IsHaydDay(day.DateTime))
+            else if (IsHaydDay(dayInstant))
             {
-                if (IsNaqaDay(day.DateTime))
+                if (IsNaqaDay(dayInstant))
                 {
                     day.MainColor = Colors.IndianRed;
                 }
@@ -176,7 +200,7 @@ public class MainPageViewModel
 
                 day.MainTextColor = Colors.White;
             }
-            else if (IsIstihadaDay(day.DateTime))
+            else if (IsIstihadaDay(dayInstant))
             {
                 day.MainColor = Colors.Black;
                 day.MainTextColor = Colors.White;
@@ -189,23 +213,24 @@ public class MainPageViewModel
             }
         }
     }
-    public static bool IsDateWithinDateRange(DateTime targetDate, DateTime fromDate, DateTime toDate)
+
+    public static bool IsWithinRange(Instant target, Instant from, Instant to)
     {
-        return fromDate <= targetDate && targetDate < toDate;
+        return from <= target && target < to;
     }
 
-    public bool IsHaydDay(DateTime date)
+    public bool IsHaydDay(Instant day)
     {
-        return _result?.HaydCycles.SelectMany(x => x.HaydFlows).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+        return _result?.HaydCycles.SelectMany(x => x.HaydFlows).Any(x => IsWithinRange(day, x.From, x.To)) == true;
     }
 
-    public bool IsNaqaDay(DateTime date)
+    public bool IsNaqaDay(Instant day)
     {
-        return _result?.HaydCycles.SelectMany(x => x.HaydFlows.Where(x => x.IsNaqa)).Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+        return _result?.HaydCycles.SelectMany(x => x.HaydFlows.Where(x => x.IsNaqa)).Any(x => IsWithinRange(day, x.From, x.To)) == true;
     }
 
-    public bool IsIstihadaDay(DateTime date)
+    public bool IsIstihadaDay(Instant day)
     {
-        return _result?.IstihadaFlows.Any(x => IsDateWithinDateRange(date, x.FromDateTime, x.ToDateTime)) == true;
+        return _result?.IstihadaFlows.Any(x => IsWithinRange(day, x.From, x.To)) == true;
     }
 }

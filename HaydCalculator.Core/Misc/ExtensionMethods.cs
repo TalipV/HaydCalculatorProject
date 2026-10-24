@@ -1,4 +1,5 @@
 using HaydCalculator.Core.Calculator.Models;
+using NodaTime;
 
 namespace HaydCalculator.Core.Misc;
 
@@ -14,6 +15,11 @@ public static class ExtensionMethods
         return !source.Any(predicate);
     }
 
+    public static Duration Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, Duration> selector)
+    {
+        return source.Aggregate(Duration.Zero, (sum, item) => sum + selector(item));
+    }
+
     public static bool HasOverlaps(this IEnumerable<FlowDataEntity> haydTimeData)
     {
         foreach (FlowDataEntity dataEntryA in haydTimeData)
@@ -25,8 +31,8 @@ public static class ExtensionMethods
                     continue;
                 }
 
-                if (dataEntryA.FromDateTime < dataEntryB.ToDateTime
-                    && dataEntryA.ToDateTime > dataEntryB.FromDateTime)
+                if (dataEntryA.From < dataEntryB.To
+                    && dataEntryA.To > dataEntryB.From)
                 {
                     return true;
                 }
@@ -43,19 +49,19 @@ public static class ExtensionMethods
             return false;
         }
 
-        DateTime minValue = flowDataLst.Select(x => x.FromDateTime).Min();
-        DateTime maxValue = flowDataLst.Select(x => x.ToDateTime).Max();
+        Instant minValue = flowDataLst.Select(x => x.From).Min();
+        Instant maxValue = flowDataLst.Select(x => x.To).Max();
 
         foreach (FlowDataEntity flowData in flowDataLst)
         {
             // the current one isn't the last one and no other entry starts where it ends
-            if (flowData.ToDateTime != maxValue && flowDataLst.Where(x => flowData != x).None(x => x.FromDateTime == flowData.ToDateTime))
+            if (flowData.To != maxValue && flowDataLst.Where(x => flowData != x).None(x => x.From == flowData.To))
             {
                 return true;
             }
 
             // the current one isn't the first one and no other entry ends where it starts
-            if (flowData.FromDateTime != minValue && flowDataLst.Where(x => flowData != x).None(x => x.ToDateTime == flowData.FromDateTime))
+            if (flowData.From != minValue && flowDataLst.Where(x => flowData != x).None(x => x.To == flowData.From))
             {
                 return true;
             }

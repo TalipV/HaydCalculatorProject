@@ -2,6 +2,7 @@ using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
 using HaydCalculator.Core.Tests.Unit.Util;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace HaydCalculator.Core.Tests.Unit.Calculator;
 
@@ -11,34 +12,34 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     public HaydCalculatorFactoryTests_BasicCalculations()
     {
-        _haydCalculatorService = new HaydCalculatorService();
+        _haydCalculatorService = new HaydCalculatorService(NullLogger<HaydCalculatorService>.Instance);
     }
 
     [Fact]
     public void ThrowExceptionWhenNoFlowDataIsHaydType()
     {
         // ARRANGE
-        var date = new DateTime(year: 2000, month: 5, day: 20);
+        var date = Instant.FromUtc(2000, 5, 20, 0, 0);
 
         List<FlowDataEntity> timeData =
         [
             new FlowDataEntity()
             {
-                FromDateTime = date,
-                ToDateTime = date.AddDays(5),
+                From = date,
+                To = date + Duration.FromDays(5),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Clear },
             },
             new FlowDataEntity()
             {
-                FromDateTime = date.AddDays(10),
-                ToDateTime = date.AddDays(15),
+                From = date + Duration.FromDays(10),
+                To = date + Duration.FromDays(15),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Clear },
             },
         ];
 
         // ACT & ASSERT
         Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData));
-        exc.Message.Should().Be(TextUtil.NO_HAYD_FLOW_DATA_PROVIDED);
+        exc.Message.Should().Be(TextUtil.NoHaydFlowDataProvided);
     }
 
     [Theory]
@@ -47,81 +48,81 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     public void ThrowExceptionWhenFlowDataToDateIsEqualToOrSmallerThanFromDate(int dayDifference)
     {
         // ARRANGE
-        var date = new DateTime(year: 2000, month: 5, day: 20);
+        var date = Instant.FromUtc(2000, 5, 20, 0, 0);
 
         List<FlowDataEntity> timeData =
         [
             new FlowDataEntity()
             {
-                FromDateTime = date,
-                ToDateTime = date.AddDays(-dayDifference),
+                From = date,
+                To = date + Duration.FromDays(-dayDifference),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
             },
             new FlowDataEntity()
             {
-                FromDateTime = date.AddDays(dayDifference*2),
-                ToDateTime = date.AddDays(dayDifference*3),
+                From = date + Duration.FromDays(dayDifference*2),
+                To = date + Duration.FromDays(dayDifference*3),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
             },
         ];
 
         // ACT & ASSERT
         Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData));
-        exc.Message.Should().Be(TextUtil.FLOW_DATA_WITH_INVALID_TIMES);
+        exc.Message.Should().Be(TextUtil.FlowDataWithInvalidTimes);
     }
 
     [Fact]
     public void ThrowExceptionWhenMultipleFlowDataOverlapEachOther()
     {
         // ARRANGE
-        var date = new DateTime(year: 2000, month: 5, day: 20);
+        var date = Instant.FromUtc(2000, 5, 20, 0, 0);
 
         List<FlowDataEntity> timeData =
         [
             new FlowDataEntity()
             {
-                FromDateTime = date.AddDays(3),
-                ToDateTime = date.AddDays(5),
+                From = date + Duration.FromDays(3),
+                To = date + Duration.FromDays(5),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
             },
             new FlowDataEntity()
             {
-                FromDateTime = date.AddDays(4),
-                ToDateTime = date.AddDays(6),
+                From = date + Duration.FromDays(4),
+                To = date + Duration.FromDays(6),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
             },
         ];
 
         // ACT & ASSERT
         Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData));
-        exc.Message.Should().Be(TextUtil.FLOW_DATA_ENTRIES_WITH_OVERLAPPING_TIMES);
+        exc.Message.Should().Be(TextUtil.FlowDataEntriesWithOverlappingTimes);
     }
 
     [Fact]
     public void ThrowExceptionWhenGapsBetweenFlowDataEntries()
     {
         // ARRANGE
-        var date = new DateTime(year: 2000, month: 5, day: 20);
+        var date = Instant.FromUtc(2000, 5, 20, 0, 0);
 
         List<FlowDataEntity> timeData =
         [
             new FlowDataEntity()
             {
-                FromDateTime = date.AddDays(3),
-                ToDateTime = date.AddDays(5),
+                From = date + Duration.FromDays(3),
+                To = date + Duration.FromDays(5),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
             },
             new FlowDataEntity()
             {
-                FromDateTime = date.AddDays(6),
-                ToDateTime = date.AddDays(7),
+                From = date + Duration.FromDays(6),
+                To = date + Duration.FromDays(7),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = EFlowAppearanceColor.Red},
             },
         ];
 
         // ACT & ASSERT
         Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData));
-        exc.Message.Should().Be(TextUtil.FLOW_DATA_ENTRIES_WITH_TIME_GAPS);
+        exc.Message.Should().Be(TextUtil.FlowDataEntriesWithTimeGaps);
     }
 
     [Fact] // Self explanatory.
@@ -133,7 +134,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 0.4),
             (EFlowAppearanceColor.Clear, 2.0),
             (EFlowAppearanceColor.Red, 0.59),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -145,9 +146,9 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         FlowDataEntity firstIstihadaData = calculationResult.IstihadaFlows.First();
         FlowDataEntity secondIstihadaData = calculationResult.IstihadaFlows.Last();
 
-        firstIstihadaData.DayCount.Should().Be(0.4);
+        firstIstihadaData.Duration.Should().Be(Duration.FromDays(0.4));
         firstIstihadaData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
-        secondIstihadaData.DayCount.Should().Be(0.59);
+        secondIstihadaData.Duration.Should().Be(Duration.FromDays(0.59));
         secondIstihadaData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         TestMethods.CheckFlowsInOrder([firstIstihadaData, secondIstihadaData]);
@@ -160,7 +161,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         List<FlowDataEntity> data = new List<(EFlowAppearanceColor, double)>
         {
             (EFlowAppearanceColor.Red, 1.0),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -169,7 +170,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.IstihadaFlows.Should().BeEmpty();
         calculationResult.HaydCycles.Count.Should().Be(1);
         calculationResult.HaydCycles[0].HaydFlows.Count.Should().Be(1);
-        calculationResult.HaydCycles[0].HaydFlows[0].DayCount.Should().Be(1.0);
+        calculationResult.HaydCycles[0].HaydFlows[0].Duration.Should().Be(Duration.FromDays(1.0));
         calculationResult.HaydCycles[0].HaydFlows[0].Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
     }
 
@@ -182,7 +183,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 1.0),
             (EFlowAppearanceColor.Black, 2.0),
             (EFlowAppearanceColor.Black, 3.0),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -193,11 +194,11 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.HaydCycles[0].HaydFlows.Count.Should().Be(2);
 
         FlowDataEntity firstFlowData = calculationResult.HaydCycles[0].HaydFlows[0];
-        firstFlowData.DayCount.Should().Be(1.0);
+        firstFlowData.Duration.Should().Be(Duration.FromDays(1.0));
         firstFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         FlowDataEntity secondFlowData = calculationResult.HaydCycles[0].HaydFlows[1];
-        secondFlowData.DayCount.Should().Be(5.0);
+        secondFlowData.Duration.Should().Be(Duration.FromDays(5.0));
         secondFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Black);
 
         TestMethods.CheckFlowsInOrder([firstFlowData, secondFlowData]);
@@ -212,7 +213,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 3.0),
             (EFlowAppearanceColor.Clear, 7.0),
             (EFlowAppearanceColor.Red, 1.0),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -223,17 +224,17 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.HaydCycles[0].HaydFlows.Count.Should().Be(3);
 
         FlowDataEntity firstFlowData = calculationResult.HaydCycles[0].HaydFlows[0];
-        firstFlowData.DayCount.Should().Be(3.0);
+        firstFlowData.Duration.Should().Be(Duration.FromDays(3.0));
         firstFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
         firstFlowData.IsNaqa.Should().Be(false);
 
         FlowDataEntity secondFlowData = calculationResult.HaydCycles[0].HaydFlows[1];
-        secondFlowData.DayCount.Should().Be(7.0);
+        secondFlowData.Duration.Should().Be(Duration.FromDays(7.0));
         secondFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Clear);
         secondFlowData.IsNaqa.Should().Be(true);
 
         FlowDataEntity thirdFlowData = calculationResult.HaydCycles[0].HaydFlows[2];
-        thirdFlowData.DayCount.Should().Be(1.0);
+        thirdFlowData.Duration.Should().Be(Duration.FromDays(1.0));
         thirdFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
         thirdFlowData.IsNaqa.Should().Be(false);
 
@@ -252,7 +253,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             // intentionally split up into two to capture a now fixed bug
             (EFlowAppearanceColor.Red, 1.0),
             (EFlowAppearanceColor.Red, 1.0),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -263,11 +264,11 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.HaydCycles[0].HaydFlows.Count.Should().Be(1);
 
         FlowDataEntity firstFlowData = calculationResult.HaydCycles[0].HaydFlows[0];
-        firstFlowData.DayCount.Should().Be(7.0);
+        firstFlowData.Duration.Should().Be(Duration.FromDays(7.0));
         firstFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         FlowDataEntity firstIstihadaData = calculationResult.IstihadaFlows[0];
-        firstIstihadaData.DayCount.Should().Be(2.0);
+        firstIstihadaData.Duration.Should().Be(Duration.FromDays(2.0));
         firstIstihadaData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData]);
@@ -282,7 +283,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 3.0),
             (EFlowAppearanceColor.Clear, 14.0),
             (EFlowAppearanceColor.Red, 4.0),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -294,15 +295,15 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.HaydCycles[1].HaydFlows.Count.Should().Be(1);
 
         FlowDataEntity firstFlowData = calculationResult.HaydCycles[0].HaydFlows[0];
-        firstFlowData.DayCount.Should().Be(3.0);
+        firstFlowData.Duration.Should().Be(Duration.FromDays(3.0));
         firstFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         FlowDataEntity firstIstihadaData = calculationResult.IstihadaFlows[0];
-        firstIstihadaData.DayCount.Should().Be(1.0);
+        firstIstihadaData.Duration.Should().Be(Duration.FromDays(1.0));
         firstIstihadaData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         FlowDataEntity secondFlowData = calculationResult.HaydCycles[1].HaydFlows[0];
-        secondFlowData.DayCount.Should().Be(3.0);
+        secondFlowData.Duration.Should().Be(Duration.FromDays(3.0));
         secondFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData, secondFlowData]);
@@ -317,7 +318,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 10.0),
             (EFlowAppearanceColor.Clear, 8.0),
             (EFlowAppearanceColor.Red, 12.0),
-        }.GetFlowDataList(initialDateTime: new DateTime(2024, 1, 1));
+        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -329,15 +330,15 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.HaydCycles[1].HaydFlows.Count.Should().Be(1);
 
         FlowDataEntity firstFlowData = calculationResult.HaydCycles[0].HaydFlows[0];
-        firstFlowData.DayCount.Should().Be(10.0);
+        firstFlowData.Duration.Should().Be(Duration.FromDays(10.0));
         firstFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         FlowDataEntity firstIstihadaData = calculationResult.IstihadaFlows[0];
-        firstIstihadaData.DayCount.Should().Be(7.0);
+        firstIstihadaData.Duration.Should().Be(Duration.FromDays(7.0));
         firstIstihadaData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         FlowDataEntity secondFlowData = calculationResult.HaydCycles[1].HaydFlows[0];
-        secondFlowData.DayCount.Should().Be(5.0);
+        secondFlowData.Duration.Should().Be(Duration.FromDays(5.0));
         secondFlowData.Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
 
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData, secondFlowData]);
@@ -350,7 +351,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     public void IdentifyComplexIstihadahCaseWithNotImplementedException(double redFlowDayCount1, double clearFlowDayCount, double redFlowDayCount2, double redFlowDayCount3)
     {
         // ARRANGE
-        var startDate = new DateTime(DateTime.Now.Year, 1, 1);
+        var startDate = Instant.FromUtc(2024, 1, 1, 0, 0);
 
         List<(EFlowAppearanceColor type, double dayCount)> data =
         [
@@ -364,6 +365,6 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
         // ACT & ASSERT
         Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData)); ;
-        exc.Message.Should().Be(TextUtil.COMPLEX_ISTIHADA_NOT_IMPLEMENTED);
+        exc.Message.Should().Be(TextUtil.ComplexIstihadaNotImplemented);
     }
 }

@@ -1,3 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
+  <!--
+    The calculation logic. Must stay free of MAUI and any other UI framework
+    (guarded by tests/.../Architecture/ArchitectureTests.cs).
+    Only NodaTime, logging and DI abstractions are allowed.
+  -->
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="HaydCalculator.Core.Tests.Unit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaTime" Version="3.3.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.13" />
+  </ItemGroup>
+
 </Project>

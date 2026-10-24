@@ -1,12 +1,28 @@
 ## Projects
 
 - **`HaydCalculator.Core`** — the calculation logic (`HaydCalculatorService`, flow data / hayd
-  cycle models). Plain `net10.0`, no MAUI dependency; keep it that way.
-- **`HaydCalculator.MAUI`** — the app (calendar UI, `MainPageViewModel`) and the composition
-  root (`MauiProgram`).
+  cycle models). Plain `net10.0`; only NodaTime plus the logging and DI abstractions are allowed.
+  `AddCore()` (`DependencyInjection/CoreServiceCollectionExtensions.cs`) is its composition root.
+- **`HaydCalculator.MAUI`** — the app and the real composition root (`MauiProgram`, which calls
+  `AddCore()`). Pages live in `Presentation/Pages/<Name>/` (`<Name>Page.cs` + `<Name>PageViewModel.cs`),
+  reusable views in `Presentation/Views/`. UI is written in C# with
+  `CommunityToolkit.Maui.Markup`, no XAML pages. Logging goes through `ILogger` (MetroLog file
+  logger in the cache folder + debug output); `[Time]` (MethodTimer.Fody) logs method durations.
 - **`tests/HaydCalculator.Core.Tests.Unit`** — xunit + AwesomeAssertions + NSubstitute tests for
   Core. Shared test settings (`IsTestProject`, test SDK, xunit runner) live in
-  `tests/Directory.Build.props`.
+  `tests/Directory.Build.props`. `Architecture/ArchitectureTests.cs` (NetArchTest) fails when
+  Core picks up a dependency on MAUI or another UI library.
+
+## Calculation model
+
+- Time is NodaTime: flows are `Instant` ranges (`From`/`To`), lengths are `Duration`. Hayd rules
+  count real elapsed time (15 days = 360 hours), which `Instant`/`Duration` give exactly, without
+  floating-point day counts or daylight saving shifts. The app maps calendar days to midnight UTC.
+- `HaydCalculatorService` is stateless (singleton); each `Calculate` call creates its own
+  `HaydCalculation`, which holds all intermediate state of that one run.
+- `InfoException` = expected outcome shown to the user (invalid input, case not supported yet).
+  `HaydCalculationStateException` = the calculation reached a state its own rules forbid, i.e. a
+  bug. Never throw a bare `Exception`.
 
 ## Building and testing
 

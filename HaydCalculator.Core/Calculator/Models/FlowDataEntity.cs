@@ -1,3 +1,5 @@
+using NodaTime;
+
 namespace HaydCalculator.Core.Calculator.Models;
 
 public class FlowDataEntity
@@ -6,8 +8,8 @@ public class FlowDataEntity
 
     public bool IsNaqa { get; set; } = false;
 
-    public DateTime FromDateTime { get; set; }
-    public DateTime ToDateTime { get; set; }
+    public Instant From { get; set; }
+    public Instant To { get; set; }
 
     public FlowDataDescriptionEntity Description { get; set; } = new FlowDataDescriptionEntity();
 
@@ -15,11 +17,11 @@ public class FlowDataEntity
 
     #region calculated properties
 
-    public double DayCount
+    public Duration Duration
     {
         get
         {
-            return (ToDateTime - FromDateTime).TotalDays;
+            return To - From;
         }
     }
 
@@ -34,15 +36,15 @@ public class FlowDataEntity
     public FlowDataEntity(FlowDataEntity copiedFromData)
     {
         Description = new FlowDataDescriptionEntity(copiedFromData.Description);
-        FromDateTime = copiedFromData.FromDateTime;
-        ToDateTime = copiedFromData.ToDateTime;
+        From = copiedFromData.From;
+        To = copiedFromData.To;
     }
 
     #endregion constructors
 
     #region override methods
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         if (obj is not FlowDataEntity compareToObject)
         {
@@ -50,26 +52,20 @@ public class FlowDataEntity
         }
 
         return
-            FromDateTime == compareToObject.FromDateTime
-            && ToDateTime == compareToObject.ToDateTime
+            From == compareToObject.From
+            && To == compareToObject.To
             && Description.FlowAppearanceColorEnum == compareToObject.Description.FlowAppearanceColorEnum;
     }
 
     public override int GetHashCode()
     {
-        return base.GetHashCode();
+        return HashCode.Combine(From, To, Description.FlowAppearanceColorEnum);
     }
 
     public override string ToString()
     {
-        //return $"{this.Description.FlowAppearanceColorEnum}: {FromDateTime.ToString(TextUtil.DATE_FORMAT)} - {ToDateTime.ToString(TextUtil.DATE_FORMAT)} [{DayCount.ToString("N2")} days]";
-        return $"{Description.FlowAppearanceColorEnum}: {DayCount:0.##} days";
+        return $"{Description.FlowAppearanceColorEnum}: {Duration.TotalDays:0.##} days";
     }
 
     #endregion override methods
-
-    #region methods
-
-
-    #endregion methods
 }

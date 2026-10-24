@@ -2,7 +2,7 @@ using PropertyChanged;
 using XCalendar.Core.Models;
 using XCalendar.Maui.Views;
 
-namespace MauiTestApp.Presentation;
+namespace HaydCalculator.Presentation.Views.Calendar;
 
 [AddINotifyPropertyChangedInterface]
 public partial class CustomDay : CalendarDay

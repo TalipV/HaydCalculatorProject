@@ -1,14 +1,11 @@
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
+using NodaTime;
 
 namespace HaydCalculator.Core.Calculator.Models;
 
 public class HaydCycleEntity
 {
-    #region constructors
-
-    #endregion constructors
-
     #region properties
 
     public List<FlowDataEntity> HaydFlows { get; set; } = [];
@@ -17,36 +14,36 @@ public class HaydCycleEntity
 
     #region calculated properties
 
-    public DateTime? HaydBeginning
+    public Instant? HaydBeginning
     {
         get
         {
-            return HaydFlows.MinBy(x => x.FromDateTime)?.FromDateTime;
+            return HaydFlows.MinBy(x => x.From)?.From;
         }
     }
 
-    public DateTime? HaydEnd
+    public Instant? HaydEnd
     {
         get
         {
-            return HaydFlows.MaxBy(x => x.ToDateTime)?.ToDateTime;
+            return HaydFlows.MaxBy(x => x.To)?.To;
         }
     }
 
-    public double HaydDurationDays
+    public Duration HaydDuration
     {
         get
         {
-            if (HaydBeginning == null || HaydEnd == null)
+            if (HaydBeginning is not Instant haydBeginning || HaydEnd is not Instant haydEnd)
             {
-                return 0;
+                return Duration.Zero;
             }
 
-            return (HaydEnd.Value - HaydBeginning.Value).TotalDays;
+            return haydEnd - haydBeginning;
         }
     }
 
-    public FlowDataEntity LastHaydData
+    public FlowDataEntity? LastHaydData
     {
         get
         {
@@ -58,24 +55,24 @@ public class HaydCycleEntity
 
     #region methods
 
-    public double GetDaysSinceHaydBeginningUntilSpecificDate(DateTime dateTime)
+    public Duration GetDurationSinceHaydBeginningUntil(Instant instant)
     {
-        if (HaydBeginning == null)
+        if (HaydBeginning is not Instant haydBeginning)
         {
-            return 0;
+            return Duration.Zero;
         }
 
-        return (dateTime - HaydBeginning.Value).TotalDays;
+        return instant - haydBeginning;
     }
 
-    public double GetDaysSinceHaydEndUntilSpecificDate(DateTime dateTime)
+    public Duration GetDurationSinceHaydEndUntil(Instant instant)
     {
-        if (HaydEnd == null)
+        if (HaydEnd is not Instant haydEnd)
         {
-            return 0;
+            return Duration.Zero;
         }
 
-        return (dateTime - HaydEnd.Value).TotalDays;
+        return instant - haydEnd;
     }
 
     public static bool IsHaydFlowDataLstWithDistinguishableFlows(List<FlowDataEntity> flowDataLst)
@@ -88,30 +85,31 @@ public class HaydCycleEntity
             return false;
         }
 
-        var strongHaydFlowDataLst = ExtractHeavyHaydFlowData(flowDataLst).OrderBy(x => x.FromDateTime).ToList();
-        var lighHaydFlowDataLst = flowDataLst.Except(strongHaydFlowDataLst).OrderBy(x => x.FromDateTime).ToList();
+        var strongHaydFlowDataLst = ExtractHeavyHaydFlowData(flowDataLst).OrderBy(x => x.From).ToList();
+        var lighHaydFlowDataLst = flowDataLst.Except(strongHaydFlowDataLst).OrderBy(x => x.From).ToList();
 
-        double strongHaydFlowDayDuration = strongHaydFlowDataLst.Sum(x => x.DayCount);
-        double lightHaydFlowDayDuration = lighHaydFlowDataLst.Sum(x => x.DayCount);
+        Duration strongHaydFlowDuration = strongHaydFlowDataLst.Sum(x => x.Duration);
+        Duration lightHaydFlowDuration = lighHaydFlowDataLst.Sum(x => x.Duration);
 
         // FIRST CONDITION: The duration of the heavy flow has to be AT LEAST the minimum hayd duration
-        if (strongHaydFlowDayDuration < HaydCalculatorService.MINIMUM_HAYD_DURATION_DAYS)
+        if (strongHaydFlowDuration < HaydCalculatorService.MinimumHaydDuration)
         {
             return false;
         }
         // SECOND CONDITION: The duration of the heavy flow has to LESS THAN the maximum hayd duration
-        if (strongHaydFlowDayDuration > HaydCalculatorService.MAXIMUM_HAYD_DURATION_DAYS)
+        if (strongHaydFlowDuration > HaydCalculatorService.MaximumHaydDuration)
         {
             return false;
         }
 
-        DateTime latestLightFlow = lighHaydFlowDataLst.Select(x => x.ToDateTime).Max();
-        var heavyFlowAfterLight = strongHaydFlowDataLst.Where(x => x.FromDateTime >= latestLightFlow).ToList();
+        Instant latestLightFlow = lighHaydFlowDataLst.Select(x => x.To).Max();
+        var heavyFlowAfterLight = strongHaydFlowDataLst.Where(x => x.From >= latestLightFlow).ToList();
+        Duration heavyFlowAfterLightDuration = heavyFlowAfterLight.Sum(x => x.Duration);
 
         // THIRD CONDITION: The duration of the light flow has to be at least the minimal tuhur (i.e. 15 days)
         // if the (heavy) blood continuous after that for at least a maximum hayd (i.e. 15 days)
-        if (lightHaydFlowDayDuration < HaydCalculatorService.MINIMAL_TUHUR_DURATION_DAYS
-            && heavyFlowAfterLight.Sum(x => x.DayCount) >= HaydCalculatorService.MAXIMUM_HAYD_DURATION_DAYS)
+        if (lightHaydFlowDuration < HaydCalculatorService.MinimalTuhurDuration
+            && heavyFlowAfterLightDuration >= HaydCalculatorService.MaximumHaydDuration)
         {
             return false;
         }
@@ -131,8 +129,8 @@ public class HaydCycleEntity
     {
         foreach (FlowDataEntity strongFlow in strongHaydFlowDataLst)
         {
-            FlowDataEntity latestLightFlowEndingBeforeStrongFlow = lighHaydFlowDataLst.LastOrDefault(a => a.ToDateTime < strongFlow.FromDateTime);
-            FlowDataEntity earliestLightFlowBeginningAfterStrongFlow = lighHaydFlowDataLst.FirstOrDefault(a => a.FromDateTime > strongFlow.ToDateTime);
+            FlowDataEntity? latestLightFlowEndingBeforeStrongFlow = lighHaydFlowDataLst.LastOrDefault(a => a.To < strongFlow.From);
+            FlowDataEntity? earliestLightFlowBeginningAfterStrongFlow = lighHaydFlowDataLst.FirstOrDefault(a => a.From > strongFlow.To);
 
             if (latestLightFlowEndingBeforeStrongFlow != null && earliestLightFlowBeginningAfterStrongFlow != null)
             {
@@ -147,13 +145,13 @@ public class HaydCycleEntity
     {
         if (haydDataWithHaydTypeLst.None())
         {
-            throw new ArgumentException("Empty list");
+            throw new ArgumentException("Empty list", nameof(haydDataWithHaydTypeLst));
         }
 
         FlowDataEntity initialHeavyFlowData = haydDataWithHaydTypeLst
                 .OrderByDescending(x => x.Description)
-                .ThenByDescending(x => x.FromDateTime)
-                .FirstOrDefault();
+                .ThenByDescending(x => x.From)
+                .First();
 
         // based on that heaviest/earliest flow,
         // consider all the other ones with the same description too
@@ -183,15 +181,11 @@ public class HaydCycleEntity
                     .Where(x => x.Description != initialHeavyFlowData.Description)
                     .Where(x => x.Description.CompareTo(initialHeavyFlowData.Description) < 0)
                     // aber es sind doch mehrere heavies?
-                    .Where(x => x.FromDateTime == initialHeavyFlowData.FromDateTime)]);
+                    .Where(x => x.From == initialHeavyFlowData.From)]);
         }
 
         return resultLst;
     }
 
     #endregion methods
-
-    #region override methods
-
-    #endregion override methods
 }

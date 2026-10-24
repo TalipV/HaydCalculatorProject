@@ -42,7 +42,7 @@ public class FlowDataDescriptionEntity : IComparable
 
     #region override methods
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         if (obj is not FlowDataDescriptionEntity compareToObject)
         {
@@ -57,7 +57,7 @@ public class FlowDataDescriptionEntity : IComparable
 
     public override int GetHashCode()
     {
-        return base.GetHashCode();
+        return HashCode.Combine(FlowAppearanceColorEnum, IsOdorStingy, IsThick);
     }
 
     public override string ToString()
@@ -65,7 +65,7 @@ public class FlowDataDescriptionEntity : IComparable
         return $"[Type: {FlowAppearanceColorEnum}";//; Stingy odor: {this.IsOdorStingy}; Thick: {this.IsThick}]";
     }
 
-    public int CompareTo(object compareToObj)
+    public int CompareTo(object? compareToObj)
     {
         if (compareToObj is not FlowDataDescriptionEntity compareToDescription)
         {

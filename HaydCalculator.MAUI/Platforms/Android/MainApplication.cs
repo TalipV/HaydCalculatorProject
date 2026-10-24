@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace MauiTestApp.Platforms.Android;
+namespace HaydCalculator;
 
 [Application]
 public class MainApplication(nint handle, JniHandleOwnership ownership) : MauiApplication(handle, ownership)

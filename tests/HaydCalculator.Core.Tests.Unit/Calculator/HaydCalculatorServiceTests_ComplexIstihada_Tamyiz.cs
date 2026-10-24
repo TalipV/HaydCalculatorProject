@@ -6,7 +6,7 @@ namespace HaydCalculator.Core.Tests.Unit.Calculator;
 public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
 {
     private const string TamyizNotFinished = "Tamyiz determination (IsHaydFlowDataLstWithDistinguishableFlows) is not finished yet; this case still fails.";
-    private readonly DateTime _startDate = new(2024, 1, 1);
+    private readonly Instant _startDate = Instant.FromUtc(2024, 1, 1, 0, 0);
 
     #region Condition 3
 

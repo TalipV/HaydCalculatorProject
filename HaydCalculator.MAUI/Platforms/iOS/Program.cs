@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace MauiTestApp.Platforms.iOS;
+namespace HaydCalculator;
 
 public class Program
 {
