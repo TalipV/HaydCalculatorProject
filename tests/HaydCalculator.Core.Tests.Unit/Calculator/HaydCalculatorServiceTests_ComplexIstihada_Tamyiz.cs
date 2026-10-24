@@ -10,6 +10,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
 
     #region Condition 3
 
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 10 days black, then 10 days red, then it stops: she follows the distinction, although the weak blood stays under 15 days.
     [Fact]
     public void Condition3_Fulfilled_TenDaysBlackTenDaysRedAndStop()
     {
@@ -48,6 +49,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeFalse();
     }
 
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285f.; https://shamela.ws/book/11444/201] The condition that the weak blood lasts at least 15 days only applies if the blood continues. [IMPLICIT]
     [Fact]
     public void Condition3_Fulfilled_1DayBlackAnd14DaysRed()
     {
@@ -67,6 +69,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeTrue();
     }
 
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Only 14 days of weak blood (followed by strong blood again) does not fulfil the conditions of the distinction. [IMPLICIT]
     [Fact(Skip = TamyizNotFinished)]
     public void Condition3_NotFulfilled_1DayBlack14DaysRedAndThenBlackAgain()
     {
@@ -114,6 +117,8 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeTrue();
     }
 
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Permanently alternating 1 day black and 2 days red: no valid distinction. [IMPLICIT]
+    // [al-Juwayni, Nihayat al-Matlab, vol. 1, p. 435; https://shamela.ws/book/9851/843] Permanently alternating 1 day black and 1 day light red: the pillars of the distinction are missing.
     [Fact]
     public void Condition4_ContinuouslyBlackAndRed()
     {
