@@ -7,6 +7,7 @@ using HaydCalculator.Presentation.Views.Calendar;
 using MethodTimer;
 using Microsoft.Extensions.Logging;
 using NodaTime;
+using NodaTime.Extensions;
 using PropertyChanged;
 using XCalendar.Core.Enums;
 using XCalendar.Core.Models;
@@ -16,37 +17,26 @@ namespace HaydCalculator.Presentation.Pages.Main;
 [AddINotifyPropertyChangedInterface]
 public class MainPageViewModel
 {
-    private static readonly DateTime s_startDate = new(2023, 1, 1);
+    private static readonly LocalDate s_startDate = new(2023, 1, 1);
 
     private readonly HaydCalculatorService _haydCalculatorService;
     private readonly ILogger<MainPageViewModel> _logger;
+    private readonly IClock _clock;
     private HaydCalculationResultVO? _result = null;
 
-    public MainPageViewModel(HaydCalculatorService haydCalculatorService, ILogger<MainPageViewModel> logger)
+    public MainPageViewModel(HaydCalculatorService haydCalculatorService, ILogger<MainPageViewModel> logger, IClock clock)
     {
         _haydCalculatorService = haydCalculatorService;
         _logger = logger;
+        _clock = clock;
+        Calendar = CreateCalendar(_clock.InTzdbSystemDefaultZone().GetCurrentDate());
         FlowAppearances = [.. Enum.GetValues<EFlowAppearanceColor>()];
         AddDataCommand = new Command(() => RunCalculation(addCurrentInput: true));
         ClearDataCommand = new Command(ClearData);
         AssignDefaultValuesToViews();
     }
 
-    public Calendar<CustomDay> Calendar { get; set; } = new Calendar<CustomDay>()
-    {
-        NavigatedDate = s_startDate,
-        NavigationLowerBound = DateTime.Today.AddYears(-2),
-        NavigationUpperBound = DateTime.Today.AddYears(2),
-        StartOfWeek = DayOfWeek.Sunday,
-        SelectionAction = SelectionAction.Modify,
-        NavigationLoopMode = NavigationLoopMode.LoopMinimumAndMaximum,
-        SelectionType = SelectionType.Single,
-        PageStartMode = PageStartMode.FirstDayOfYear,
-        AutoRows = false,
-        AutoRowsIsConsistent = true,
-        Rows = 7,
-        TodayDate = DateTime.Today,
-    };
+    public Calendar<CustomDay> Calendar { get; set; }
 
     public List<EFlowAppearanceColor> FlowAppearances { get; set; } = [];
     public EFlowAppearanceColor SelectedFlowAppearance { get; set; } = EFlowAppearanceColor.Red;
@@ -59,13 +49,34 @@ public class MainPageViewModel
     public ICommand AddDataCommand { get; }
     public ICommand ClearDataCommand { get; }
 
+    // XCalendar's API is the only place with BCL date types; they are converted to and from
+    // LocalDate right here (ToDateTimeUnspecified / LocalDate.FromDateTime) and nowhere else.
+    private static Calendar<CustomDay> CreateCalendar(LocalDate today)
+    {
+        return new Calendar<CustomDay>()
+        {
+            NavigatedDate = s_startDate.ToDateTimeUnspecified(),
+            NavigationLowerBound = today.PlusYears(-2).ToDateTimeUnspecified(),
+            NavigationUpperBound = today.PlusYears(2).ToDateTimeUnspecified(),
+            StartOfWeek = DayOfWeek.Sunday,
+            SelectionAction = SelectionAction.Modify,
+            NavigationLoopMode = NavigationLoopMode.LoopMinimumAndMaximum,
+            SelectionType = SelectionType.Single,
+            PageStartMode = PageStartMode.FirstDayOfYear,
+            AutoRows = false,
+            AutoRowsIsConsistent = true,
+            Rows = 7,
+            TodayDate = today.ToDateTimeUnspecified(),
+        };
+    }
+
     /// <summary>
     /// The calendar works with plain dates, the calculation with instants. Calendar days are
     /// mapped to midnight UTC, so every day is exactly 24 hours long (no daylight saving shifts).
     /// </summary>
-    private static Instant ToInstant(DateTime date)
+    private static Instant ToInstant(LocalDate date)
     {
-        return Instant.FromUtc(date.Year, date.Month, date.Day, 0, 0);
+        return date.AtMidnight().InUtc().ToInstant();
     }
 
     private void ClearData()
@@ -179,7 +190,7 @@ public class MainPageViewModel
 
         foreach (CustomDay day in Calendar.Days)
         {
-            Instant dayInstant = ToInstant(day.DateTime);
+            Instant dayInstant = ToInstant(LocalDate.FromDateTime(day.DateTime));
 
             // basically days for which there is no data
             if (dayInstant < minInstant || maxInstant <= dayInstant)

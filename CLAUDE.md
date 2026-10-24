@@ -18,6 +18,12 @@
 - Time is NodaTime: flows are `Instant` ranges (`From`/`To`), lengths are `Duration`. Hayd rules
   count real elapsed time (15 days = 360 hours), which `Instant`/`Duration` give exactly, without
   floating-point day counts or daylight saving shifts. The app maps calendar days to midnight UTC.
+- **No `DateTime` / `DateTimeOffset` anywhere.** `BannedSymbols.txt` bans them, together with every
+  direct read of the system clock (`DateTime.Now`, `SystemClock.Instance`, ...), via the
+  BannedApiAnalyzers (RS0030 = build error). The current time comes from an injected NodaTime
+  `IClock` (registered once in `AddCore()`; tests use `FakeClock` from `NodaTime.Testing`).
+  The only BCL dates left are at XCalendar's API in `MainPageViewModel.CreateCalendar` /
+  `SetCalendarColors`, converted with `ToDateTimeUnspecified()` / `LocalDate.FromDateTime(...)`.
 - `HaydCalculatorService` is stateless (singleton); each `Calculate` call creates its own
   `HaydCalculation`, which holds all intermediate state of that one run.
 - `InfoException` = expected outcome shown to the user (invalid input, case not supported yet).

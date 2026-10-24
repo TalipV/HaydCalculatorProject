@@ -134,7 +134,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 0.4),
             (EFlowAppearanceColor.Clear, 2.0),
             (EFlowAppearanceColor.Red, 0.59),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -161,7 +161,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         List<FlowDataEntity> data = new List<(EFlowAppearanceColor, double)>
         {
             (EFlowAppearanceColor.Red, 1.0),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -183,7 +183,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 1.0),
             (EFlowAppearanceColor.Black, 2.0),
             (EFlowAppearanceColor.Black, 3.0),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -213,7 +213,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 3.0),
             (EFlowAppearanceColor.Clear, 7.0),
             (EFlowAppearanceColor.Red, 1.0),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -253,7 +253,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             // intentionally split up into two to capture a now fixed bug
             (EFlowAppearanceColor.Red, 1.0),
             (EFlowAppearanceColor.Red, 1.0),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -283,7 +283,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 3.0),
             (EFlowAppearanceColor.Clear, 14.0),
             (EFlowAppearanceColor.Red, 4.0),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -318,7 +318,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, 10.0),
             (EFlowAppearanceColor.Clear, 8.0),
             (EFlowAppearanceColor.Red, 12.0),
-        }.GetFlowDataList(initialDateTime: Instant.FromUtc(2024, 1, 1, 0, 0));
+        }.GetFlowDataList(initialInstant: Instant.FromUtc(2024, 1, 1, 0, 0));
 
         // ACT
         HaydCalculationResultVO calculationResult = _haydCalculatorService.Calculate(data);
@@ -361,7 +361,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
             (EFlowAppearanceColor.Red, redFlowDayCount3),
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: startDate);
 
         // ACT & ASSERT
         Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData)); ;

@@ -4,21 +4,21 @@ namespace HaydCalculator.Core.Tests.Unit.Util;
 
 internal static class TestMethods
 {
-    public static List<FlowDataEntity> GetFlowDataList(this List<(EFlowAppearanceColor type, double dayCount)> tupleLst, Instant initialDateTime)
+    public static List<FlowDataEntity> GetFlowDataList(this List<(EFlowAppearanceColor type, double dayCount)> tupleLst, Instant initialInstant)
     {
         List<FlowDataEntity> list = new(tupleLst.Count);
-        Instant lastBeginningDateTime = initialDateTime;
+        Instant lastBeginningInstant = initialInstant;
 
         foreach ((EFlowAppearanceColor type, double dayCount) in tupleLst.Where(x => x.dayCount != 0))
         {
             var flowDataEntity = new FlowDataEntity()
             {
-                From = lastBeginningDateTime,
-                To = lastBeginningDateTime + Duration.FromDays(dayCount),
+                From = lastBeginningInstant,
+                To = lastBeginningInstant + Duration.FromDays(dayCount),
                 Description = new FlowDataDescriptionEntity() { FlowAppearanceColorEnum = type },
             };
             list.Add(flowDataEntity);
-            lastBeginningDateTime = flowDataEntity.To;
+            lastBeginningInstant = flowDataEntity.To;
         }
 
         return list;

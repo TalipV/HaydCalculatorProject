@@ -1,0 +1,8 @@
+T:System.DateTime;Use NodaTime (Instant, LocalDate, LocalDateTime) instead
+T:System.DateTimeOffset;Use NodaTime (Instant, ZonedDateTime, OffsetDateTime) instead
+P:System.DateTime.Now;Inject NodaTime's IClock instead
+P:System.DateTime.UtcNow;Inject NodaTime's IClock instead
+P:System.DateTime.Today;Inject NodaTime's IClock instead
+P:System.DateTimeOffset.Now;Inject NodaTime's IClock instead
+P:System.DateTimeOffset.UtcNow;Inject NodaTime's IClock instead
+P:NodaTime.SystemClock.Instance;Inject IClock instead (only AddCore() registers SystemClock.Instance)

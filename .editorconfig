@@ -342,6 +342,9 @@ dotnet_naming_style.camelcase.capitalization = camel_case
 # CsWinRT tooling note about AllowUnsafeBlocks in the Windows head; not actionable here
 dotnet_diagnostic.CsWinRT1030.severity = none
 
+# Banned APIs (BannedSymbols.txt): no BCL date types, no direct system clock reads
+dotnet_diagnostic.RS0030.severity = error
+
 # Generated code (EF Core compiled model, migrations) is not hand-written and not style-checked
 [**/Generated_CompiledModels/**.cs]
 generated_code = true

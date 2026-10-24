@@ -3,6 +3,7 @@
     <File Path=".editorconfig" />
     <File Path=".gitattributes" />
     <File Path="CLAUDE.md" />
+    <File Path="BannedSymbols.txt" />
     <File Path="Directory.Build.props" />
     <File Path="global.json" />
   </Folder>

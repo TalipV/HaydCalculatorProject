@@ -19,7 +19,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Black, 10), (EFlowAppearanceColor.Red, 10),
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: _startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
         var haydCycleEntity = new HaydCycleEntity
         {
             HaydFlows = timeData
@@ -38,7 +38,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Red, 10), (EFlowAppearanceColor.Black, 10),
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: _startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
         var haydCycleEntity = new HaydCycleEntity
         {
             HaydFlows = timeData
@@ -57,7 +57,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14),
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: _startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
         var haydCycleEntity = new HaydCycleEntity
         {
             HaydFlows = timeData
@@ -76,7 +76,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14), (EFlowAppearanceColor.Black, 1)
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: _startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
         var haydCycleEntity = new HaydCycleEntity
         {
             HaydFlows = timeData
@@ -104,7 +104,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 10),
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: _startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
         var haydCycleEntity = new HaydCycleEntity
         {
             HaydFlows = timeData
@@ -131,7 +131,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Black, 1),
         ];
 
-        List<FlowDataEntity> timeData = data.GetFlowDataList(initialDateTime: _startDate);
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
         var haydCycleEntity = new HaydCycleEntity
         {
             HaydFlows = timeData
