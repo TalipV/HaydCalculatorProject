@@ -56,7 +56,7 @@ public class MainPageViewModel
         return new Calendar<CustomDay>()
         {
             NavigatedDate = s_startDate.ToDateTimeUnspecified(),
-            NavigationLowerBound = today.PlusYears(-2).ToDateTimeUnspecified(),
+            NavigationLowerBound = LocalDate.Min(s_startDate, today.PlusYears(-2)).ToDateTimeUnspecified(),
             NavigationUpperBound = today.PlusYears(2).ToDateTimeUnspecified(),
             StartOfWeek = DayOfWeek.Sunday,
             SelectionAction = SelectionAction.Modify,

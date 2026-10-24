@@ -1,3 +1,5 @@
+using CommunityToolkit.Maui.Behaviors;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Markup;
 using HaydCalculator.Presentation.Views.Calendar;
 using XCalendar.Core.Models;
@@ -8,145 +10,123 @@ namespace HaydCalculator.Presentation.Pages.Main;
 
 public class MainPage : ContentPage
 {
-    private enum Row
-    {
-        Input,
-        AddButton,
-        Spacer,
-        InputList,
-        TopSeparator,
-        Calendar,
-        CalendarMiddle,
-        CalendarBottom,
-        BelowCalendar,
-        BottomSeparator,
-        LogHeader,
-        Log,
-    }
-
-    private enum Column
-    {
-        Left,
-        LeftMiddle,
-        Gap,
-        RightMiddle,
-        Right,
-    }
+    private const double DayCellSize = 40;
+    private const double DayCellMargin = 2;
+    private const int CalendarRows = 7;
 
     public MainPage(MainPageViewModel viewModel)
     {
         BindingContext = viewModel;
         Title = "";
+        BackgroundColor = Colors.White;
+
+        // .NET 10 lays pages out edge to edge by default; keep the content clear of the
+        // status bar (and the navigation bar at the bottom) instead of drawing under it.
+        SafeAreaEdges = new(SafeAreaRegions.Container);
+        Shell.SetNavBarIsVisible(this, false);
+
+        // dark status bar icons, so they stay visible on the white page
+        Behaviors.Add(new StatusBarBehavior
+        {
+            StatusBarColor = Colors.White,
+            StatusBarStyle = StatusBarStyle.DarkContent,
+        });
 
         Content = new ScrollView
         {
-            Content = new Grid
+            Content = new VerticalStackLayout
             {
-                RowDefinitions = Rows.Define(
-                    (Row.Input, 40),
-                    (Row.AddButton, 50),
-                    (Row.Spacer, 30),
-                    (Row.InputList, 120),
-                    (Row.TopSeparator, 5),
-                    (Row.Calendar, 25),
-                    (Row.CalendarMiddle, 180),
-                    (Row.CalendarBottom, 25),
-                    (Row.BelowCalendar, 100),
-                    (Row.BottomSeparator, 5),
-                    (Row.LogHeader, 25),
-                    (Row.Log, 170)),
-                ColumnDefinitions = Columns.Define(
-                    (Column.Left, Star),
-                    (Column.LeftMiddle, Star),
-                    (Column.Gap, 10),
-                    (Column.RightMiddle, Star),
-                    (Column.Right, Star)),
+                Padding = new Thickness(12, 8),
+                Spacing = 8,
                 Children =
                 {
-                    CreateDayCountInput()
-                        .Row(Row.Input).Column(Column.LeftMiddle),
-
-                    new Picker
-                    {
-                        MinimumWidthRequest = 45,
-                        BackgroundColor = Colors.AntiqueWhite,
-                        HorizontalTextAlignment = TextAlignment.Center,
-                    }
-                        .Start().CenterVertical()
-                        .Bind(Picker.ItemsSourceProperty, nameof(MainPageViewModel.FlowAppearances))
-                        .Bind(Picker.SelectedItemProperty, nameof(MainPageViewModel.SelectedFlowAppearance))
-                        .Row(Row.Input).Column(Column.RightMiddle),
-
-                    new Button { Text = "Add" }
-                        .Margin(5).CenterHorizontal()
-                        .BindCommand(nameof(MainPageViewModel.AddDataCommand))
-                        .Row(Row.AddButton).Column(Column.LeftMiddle),
+                    CreateInputRow(),
 
                     new CollectionView
                     {
                         BackgroundColor = Colors.AntiqueWhite,
+                        HeightRequest = 120,
                         ItemTemplate = new DataTemplate(() =>
-                            new Label { TextColor = Colors.Blue, HeightRequest = 20 }.Bind(Label.TextProperty, ".")),
+                            new Label { TextColor = Colors.Blue }
+                                .Paddings(8, 2, 8, 2)
+                                .Bind(Label.TextProperty, ".")),
                     }
-                        .Margin(10)
-                        .Bind(ItemsView.ItemsSourceProperty, nameof(MainPageViewModel.InputData))
-                        .Row(Row.InputList).Column(Column.Left).ColumnSpan(4),
+                        .Bind(CollectionView.ItemsSourceProperty, nameof(MainPageViewModel.InputData)),
 
-                    new Button { Text = "Clear", HeightRequest = 40 }
-                        .Margin(10)
-                        .BindCommand(nameof(MainPageViewModel.ClearDataCommand))
-                        .Row(Row.InputList).Column(Column.Right),
+                    CreateSeparator(),
 
-                    new BoxView { Color = Colors.BlueViolet }
-                        .Row(Row.TopSeparator).ColumnSpan(5),
+                    CreateCalendarView(),
 
-                    CreateCalendarView()
-                        .Row(Row.Calendar).RowSpan(3).ColumnSpan(5),
+                    CreateSeparator(),
 
-                    new BoxView { Color = Colors.BlueViolet }
-                        .Row(Row.BottomSeparator).ColumnSpan(5),
+                    new Grid
+                    {
+                        ColumnDefinitions = Columns.Define(Auto, Star),
+                        Children =
+                        {
+                            new Label { Text = "Log" }
+                                .Font(bold: true).CenterVertical()
+                                .Column(0),
 
-                    new Label { Text = "Log" }
-                        .Padding(3).Font(bold: true)
-                        .Row(Row.LogHeader),
+                            new Label { HorizontalTextAlignment = TextAlignment.End }
+                                .CenterVertical()
+                                .Bind(Label.TextProperty, nameof(MainPageViewModel.MakeUpDayCounterText))
+                                .Column(1),
+                        },
+                    },
 
-                    new Label { Text = "Make up days: " }
-                        .Padding(3)
-                        .Bind(Label.TextProperty, nameof(MainPageViewModel.MakeUpDayCounterText))
-                        .Row(Row.LogHeader).Column(Column.RightMiddle).ColumnSpan(3),
-
-                    new Editor { BackgroundColor = Colors.AntiqueWhite, IsReadOnly = true }
-                        .Margin(5)
-                        .Bind(Editor.TextProperty, nameof(MainPageViewModel.FeedbackText))
-                        .Row(Row.Log).ColumnSpan(5),
+                    new Editor { BackgroundColor = Colors.AntiqueWhite, IsReadOnly = true, HeightRequest = 170 }
+                        .Bind(Editor.TextProperty, nameof(MainPageViewModel.FeedbackText)),
                 },
             },
         };
     }
 
-    private static Grid CreateDayCountInput()
+    private static Grid CreateInputRow()
     {
         return new Grid
         {
-            ColumnDefinitions = Columns.Define(Auto, Star),
+            ColumnDefinitions = Columns.Define(Auto, Star, Star, Auto, Auto),
+            ColumnSpacing = 8,
             Children =
             {
                 new Label { Text = "Days:" }
-                    .CenterVertical().Padding(5)
+                    .CenterVertical()
                     .Column(0),
 
                 new Entry
                 {
                     MaxLength = 5,
-                    MinimumWidthRequest = 35,
+                    Keyboard = Keyboard.Numeric,
                     BackgroundColor = Colors.AntiqueWhite,
                     HorizontalTextAlignment = TextAlignment.Center,
                 }
-                    .Center()
                     .Bind(Entry.TextProperty, nameof(MainPageViewModel.DayCountEntryText), BindingMode.TwoWay)
                     .Column(1),
+
+                new Picker
+                {
+                    BackgroundColor = Colors.AntiqueWhite,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                }
+                    .Bind(Picker.ItemsSourceProperty, nameof(MainPageViewModel.FlowAppearances))
+                    .Bind(Picker.SelectedItemProperty, nameof(MainPageViewModel.SelectedFlowAppearance))
+                    .Column(2),
+
+                new Button { Text = "Add" }
+                    .BindCommand(nameof(MainPageViewModel.AddDataCommand))
+                    .Column(3),
+
+                new Button { Text = "Clear" }
+                    .BindCommand(nameof(MainPageViewModel.ClearDataCommand))
+                    .Column(4),
             },
         };
+    }
+
+    private static BoxView CreateSeparator()
+    {
+        return new BoxView { Color = Colors.BlueViolet, HeightRequest = 3 };
     }
 
     private static CalendarView CreateCalendarView()
@@ -155,8 +135,8 @@ public class MainPage : ContentPage
         {
             BackgroundColor = Colors.White,
             DayNamesHeightRequest = 0,
-            DaysViewHeightRequest = 500,
-            IsVisible = true,
+            // exactly the space of the day rows, so the calendar neither overlaps nor leaves a gap
+            DaysViewHeightRequest = CalendarRows * (DayCellSize + (2 * DayCellMargin)),
             NavigationViewTemplate = new ControlTemplate(() => new NavigationView { HeightRequest = 0 }),
             DayTemplate = new DataTemplate(CreateDayView),
         };
@@ -171,12 +151,13 @@ public class MainPage : ContentPage
         return new Border
         {
             Padding = 0,
+            StrokeThickness = 0,
             Content = new DayView
             {
-                HeightRequest = 35,
-                WidthRequest = 35,
+                HeightRequest = DayCellSize,
+                WidthRequest = DayCellSize,
             }
-                .Margin(1).Center()
+                .Center()
                 .Bind(BackgroundColorProperty, nameof(CustomDay.MainColor))
                 .Bind(DayView.TextColorProperty, nameof(CustomDay.MainTextColor))
                 .Bind(DayView.DateTimeProperty, nameof(CustomDay.DateTime))
@@ -184,7 +165,7 @@ public class MainPage : ContentPage
                 .Bind(DayView.CurrentMonthStyleProperty, nameof(CustomDay.MainStyle))
                 .Bind(DayView.OtherMonthStyleProperty, nameof(CustomDay.MainStyle)),
         }
-            .Margin(3).Center()
+            .Margin(DayCellMargin).Center()
             .Bind(BackgroundColorProperty, nameof(CustomDay.MainColor));
     }
 }
