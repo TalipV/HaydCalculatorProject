@@ -61,6 +61,8 @@ not finished; remove the `Skip` once it is.
 
 ## Code style
 
+All text in the repository is English: code, comments, test descriptions, docs, CI output. No German.
+
 `.editorconfig` follows Microsoft's published C# coding and naming conventions (same file as
 in PrayerTimeEngine), and `EnforceCodeStyleInBuild` turns every violation into a build
 **error**. Key naming rules: PascalCase for types, members, constants (also local constants)
@@ -105,7 +107,7 @@ PRs opened by a Claude session must be recognizable as such at a glance:
 - **First line of the PR body** is this banner, before any heading:
 
   ```
-  > 🤖 **Dieser Pull Request wurde von Claude Code erstellt.**
+  > 🤖 **This pull request was created by Claude Code.**
   ```
 
 - **End of the PR body** keeps the generated-with footer and the session link.

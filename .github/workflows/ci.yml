@@ -132,10 +132,10 @@ jobs:
           target_commitish: ${{ github.sha }}
           name: Latest build (${{ env.BUILD_DATE }})
           body: |
-            Automatischer Build von `main` — Commit ${{ github.sha }}
-            Stand: ${{ env.BUILD_DATE }}
+            Automatic build of `main` — commit ${{ github.sha }}
+            Date: ${{ env.BUILD_DATE }}
 
-            Fester Download-Link (zeigt immer auf den neuesten Build):
+            Permanent download link (always points to the latest build):
             https://github.com/${{ github.repository }}/releases/download/latest/HaydCalculator-release.apk
           prerelease: true
           files: out/*.apk
