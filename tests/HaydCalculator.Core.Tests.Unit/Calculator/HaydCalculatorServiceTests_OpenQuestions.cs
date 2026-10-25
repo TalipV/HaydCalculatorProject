@@ -1,3 +1,5 @@
+using HaydCalculator.Core.Tests.Unit.Util;
+
 namespace HaydCalculator.Core.Tests.Unit.Calculator;
 
 /// <summary>
@@ -32,7 +34,7 @@ public class HaydCalculatorServiceTests_OpenQuestions
     //   the line between the two runs.
     //
     // To resolve: the chapter on intermittent blood (talfiq) in al-Majmu' and ar-Rawda.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void ThirteenRedOnePurityFiveRed_DamFasadOrMustahada()
     {
@@ -60,7 +62,7 @@ public class HaydCalculatorServiceTests_OpenQuestions
     //
     // To resolve: an explicit text for blood that stops after it has passed the completion of the
     // minimal purity, for mubtada'a and mu'tada.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd()
     {

@@ -15,7 +15,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         _haydCalculatorService = new HaydCalculatorService(NullLogger<HaydCalculatorService>.Instance);
     }
 
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void ThrowExceptionWhenNoFlowDataIsHaydType()
     {
@@ -43,7 +43,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         exc.Message.Should().Be(TextUtil.NoHaydFlowDataProvided);
     }
 
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Theory]
     [InlineData(0)]
     [InlineData(5)]
@@ -73,7 +73,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         exc.Message.Should().Be(TextUtil.FlowDataWithInvalidTimes);
     }
 
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void ThrowExceptionWhenMultipleFlowDataOverlapEachOther()
     {
@@ -101,7 +101,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         exc.Message.Should().Be(TextUtil.FlowDataEntriesWithOverlappingTimes);
     }
 
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void ThrowExceptionWhenGapsBetweenFlowDataEntries()
     {
@@ -131,7 +131,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The minimum duration of hayd is a day and a night.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] If the bloods together stay under the minimum duration, they are dam fasad (not hayd). [IMPLICIT]
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact] // Self explanatory.
     public void HaydCalculation_MinimalHaydDurationNotFulfilled()
     {
@@ -163,7 +163,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The minimum duration of hayd is a day and a night.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 278; https://shamela.ws/book/11444/194] A day and a night are 24 hours.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact] // Self explanatory.
     public void HaydCalculation_MinimalHaydDurationBarelyFulfilled()
     {
@@ -184,7 +184,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         calculationResult.HaydCycles[0].HaydFlows[0].Description.FlowAppearanceColorEnum.Should().Be(EFlowAppearanceColor.Red);
     }
 
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact] // Program specific test.
     public void HaydCalculation_ConnectSuccessiveSameFlows()
     {
@@ -218,7 +218,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] The purity between bloods that together reach the minimum duration is hayd (qawl as-sahb). [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293; https://shamela.ws/book/11444/209] Conditions: everything together not over 15 days, the bloods together at least a day and night, the purity enclosed by blood. [IMPLICIT]
     // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1591]
     public void HaydCalculation_CalculationWithPurityInBetweenTwoMenstrualFlows()
     {
@@ -257,7 +257,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] Blood that still falls into the remainder of the minimal purity and then stops is dam fasad (example 3 blood, 12 purity, 3 blood). [IMPLICIT]
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1750]
     public void HaydCalculation_CalculationWithPurityBetweenMenstrualFlowAndIstihadaFlow()
     {
@@ -292,7 +292,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // No text source found yet: whether blood past the completion of the minimal purity is a new hayd is an open question, see HaydCalculatorServiceTests_OpenQuestions.BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=200; Pages 61-62 of the pdf]
     public void HaydCalculation_CalculationWithPurityBetweenTwoSeparateMenstrualCyclesIncludingIstihada()
     {
@@ -329,7 +329,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // No text source found yet: whether blood past the completion of the minimal purity is a new hayd is an open question, see HaydCalculatorServiceTests_OpenQuestions.BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact] // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1910]
     public void HaydCalculation_CalculationWithPartiallyIstihadaAndPartiallyMenstrualFlow()
     {
@@ -367,7 +367,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
 
     // Whether intermittent blood that exceeds 15 days together with the purity is a mustahada case is partly an open question, see HaydCalculatorServiceTests_OpenQuestions.ThirteenRedOnePurityFiveRed_DamFasadOrMustahada.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Theory]
     [InlineData(11.0, 1.0, 1.0, 5.0)]
     [InlineData(13.0, 1.0, 1.0, 5.0)]
@@ -408,7 +408,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The maximum duration of hayd is 15 days with their nights; blood of at least a day and night that does not exceed the maximum is all hayd.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] The same, no matter whether she is a mubtada'a or a mu'tada. [IMPLICIT]
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_FifteenDaysOfBlood_AllHayd()
     {
@@ -423,7 +423,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] Within 15 days everything is hayd, whether the blood is black or not. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] If red blood follows black blood and stops before 15 days are over, the red is hayd as well. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 402; https://shamela.ws/book/9059/403] A day and a night black, then red: if it stops before 15 days, everything is hayd (no khilaf here).
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_BlackThenRedEndingWithinFifteenDays_AllHayd()
     {
@@ -438,7 +438,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The minimal purity between two hayds is 15 days.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_ExactlyMinimalTuhurBetweenTwoBloods_TwoHaydCycles()
     {
@@ -456,7 +456,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] 3 days blood, 12 days purity, 3 days blood, then it stops: the last 3 days are dam fasad, not hayd (after al-Majmu').
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The same example: the last 3 days are dam fasad.
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 339f.; https://shamela.ws/book/3565/337] The same example: the last 3 days are dam fasad.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad()
     {
@@ -474,7 +474,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293f.; https://shamela.ws/book/11444/209] If she sees blood and purity alternately, everything is hayd when the conditions are met (qawl as-sahb, the mu'tamad). [IMPLICIT]
     // [ash-Shashi, Hilyat al-'Ulama', vol. 1, p. 228; https://shamela.ws/book/6131/176] If she sees a day of blood and a day of purity without exceeding 15 days, everything is hayd according to ash-Shafi'i's text.
     // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_AlternatingDayOfBloodAndDayOfPurityWithinFifteenDays_AllHayd()
     {
@@ -500,7 +500,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293; https://shamela.ws/book/11444/209] Condition of sahb: the bloods together reach the minimum duration (a day and a night). [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] According to the mu'tamad the purity only counts as hayd if the bloods together reach the minimum duration. [IMPLICIT]
     // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_BloodsReachMinimumOnlyTogether_PurityInBetweenIsHayd()
     {
@@ -516,7 +516,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] 'Ada of 5 days at the start of the month; if she is pure for 20 days after her 5 days and the blood returns in the last 5 days, her hayd has moved earlier and her cycle is 25 days.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_BloodAfterTwentyDaysOfPurity_IsEarlierHayd()
     {
@@ -535,7 +535,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] 5 days black, then 5 days red (or yellow), then 5 days black, not exceeding 15 days: according to the madhhab everything is hayd; the majority (al-jumhur) state this decisively.
     // KHILAF: [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] Abu Ishaq treats the weak blood in the middle like purity between two bloods of hayd, so the two views on that purity apply (hayd with the blacks, or purity); as-Sarakhsi follows him. This test follows the madhhab.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_BlackRedBlackWithinFifteenDays_AllHayd()
     {
@@ -552,7 +552,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] Blood that falls into the remaining minimal purity and then stops is dam fasad (example 3 blood, 12 purity, 3 blood). [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The same example. [IMPLICIT]
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_OneDayOfBloodWithinRemainingMinimalTuhur_IsDamFasad()
     {
@@ -570,7 +570,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Yellow and turbid blood are hayd according to the sounder view. [IMPLICIT]
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] Each of them is hayd, whether she is a mubtada'a or not and whether it contradicts her 'ada or not. [IMPLICIT]
     // KHILAF: Yellow and turbid blood are hayd according to the asahh; the other view says they are not hayd because they do not have the color of blood (Mughni al-Muhtaj, vol. 1, p. 284f.; https://shamela.ws/book/11444/200). This test follows the asahh.
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_OnlyYellowBloodWithinTheLimits_IsHayd()
     {
@@ -587,7 +587,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     #region Other views (khilaf), selected through HaydCalculatorSettings
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] qawl al-laqt / at-talfiq: the purity between the bloods counts as purity, only the bloods are hayd. [IMPLICIT]
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_PurityInBetweenTwoMenstrualFlows_PurityCountsAsTuhr()
     {
@@ -604,7 +604,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284f.; https://shamela.ws/book/11444/200] Other view: yellow and turbid blood are not hayd, because they do not have the color of blood. [IMPLICIT]
-    // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
+    [FiqhTodo]
     [Fact]
     public void HaydCalculation_OnlyYellowBlood_YellowNotHayd_NoHaydAtAll()
     {

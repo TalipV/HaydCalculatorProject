@@ -137,8 +137,11 @@ Tests that check calculator results against the Shafi'i mu'tamad follow these ru
   that are at least strong inside the school go in there. Tests for another view pass the settings
   (`HaydCalculatorSettings.Default with { ... }` or a preset) and live in the region
   "Other views (khilaf)". A new khilaf point gets a setting, a KHILAF line and a test per view.
-- Every test carries `// FIQH-TODO: Verify that the expected result is correct from the fiqh point
-  of view.` until the user has checked it. Add it to every new test; only the user removes it.
+- Every calculator test carries the attribute `[FiqhTodo]` (`tests/.../Util/FiqhTodoAttribute.cs`)
+  until the user has checked its expected result. It sets the xunit trait `Fiqh = ToDo`, so the
+  Visual Studio Test Explorer can group and filter by it (Group by: Traits, or search
+  `Trait:"ToDo"`), and `dotnet test --filter "Fiqh=ToDo"` runs only these tests. Add it to every
+  new test; only the user removes it.
 - A wrong result stays a red test (TDD); never change the calculator or the test to make it
   pass unless asked. Cases the sources do not settle go into
   `HaydCalculatorServiceTests_OpenQuestions` and throw `OpenFiqhQuestionException`.
