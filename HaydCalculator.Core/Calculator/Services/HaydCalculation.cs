@@ -320,8 +320,8 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData, Ha
 
     private void ConditionallyAddInBetweenPurityToMenstruation(FlowDataEntity currentData)
     {
-        // qawl al-laqt: the purity between the bloods stays purity and is not added to the hayd
-        if (_settings.PurityBetweenBloods == EPurityBetweenBloods.Laqt)
+        // the purity between the bloods counts as tuhr (qawl al-laqt) and is not added to the hayd
+        if (_settings.PurityBetweenBloods == EPurityBetweenBloods.Tuhr)
         {
             return;
         }

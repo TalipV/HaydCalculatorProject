@@ -589,11 +589,11 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] qawl al-laqt / at-talfiq: the purity between the bloods counts as purity, only the bloods are hayd. [IMPLICIT]
     // FIQH-TODO: Verify that the expected result is correct from the fiqh point of view.
     [Fact]
-    public void HaydCalculation_PurityInBetweenTwoMenstrualFlows_Laqt_PurityStaysPurity()
+    public void HaydCalculation_PurityInBetweenTwoMenstrualFlows_PurityCountsAsTuhr()
     {
         // ACT
         HaydCalculationResultVO result = CalculateSourceExample(
-            HaydCalculatorSettings.Default with { PurityBetweenBloods = EPurityBetweenBloods.Laqt },
+            HaydCalculatorSettings.Default with { PurityBetweenBloods = EPurityBetweenBloods.Tuhr },
             (EFlowAppearanceColor.Red, 3),
             (EFlowAppearanceColor.Clear, 7),
             (EFlowAppearanceColor.Red, 1));

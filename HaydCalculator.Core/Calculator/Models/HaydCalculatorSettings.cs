@@ -24,8 +24,8 @@ public sealed record HaydCalculatorSettings
     /// <summary>Mughni al-Muhtaj (same as <see cref="Default"/>; no difference to ar-Ramli in the covered points).</summary>
     public static HaydCalculatorSettings Shirbini => Default;
 
-    /// <summary>Purity between bloods that together reach the minimum (within 15 days): hayd (sahb, azhar) or purity (laqt / talfiq).</summary>
-    public EPurityBetweenBloods PurityBetweenBloods { get; init; } = EPurityBetweenBloods.Sahb;
+    /// <summary>Purity between bloods that together reach the minimum (within 15 days): counts as hayd (azhar) or as tuhr.</summary>
+    public EPurityBetweenBloods PurityBetweenBloods { get; init; } = EPurityBetweenBloods.Hayd;
 
     /// <summary>Yellow and turbid blood are hayd (asahh) or not.</summary>
     public bool YellowAndTurbidAreHayd { get; init; } = true;
@@ -51,10 +51,10 @@ public sealed record HaydCalculatorSettings
 
 public enum EPurityBetweenBloods
 {
-    /// <summary>qawl as-sahb: the purity counts as hayd (azhar)</summary>
-    Sahb,
-    /// <summary>qawl al-laqt / at-talfiq: the purity counts as purity</summary>
-    Laqt,
+    /// <summary>the purity counts as hayd (azhar; called qawl as-sahb in the sources)</summary>
+    Hayd,
+    /// <summary>the purity counts as tuhr (called qawl al-laqt or at-talfiq in the sources)</summary>
+    Tuhr,
 }
 
 public enum EMubtadaaGhayrMumayyizaHayd
