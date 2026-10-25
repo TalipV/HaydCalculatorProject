@@ -386,7 +386,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The maximum duration of hayd is 15 days with their nights; blood of at least a day and night that does not exceed the maximum is all hayd.
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] The same, no matter whether she is a beginner or has a habit. [IMPLICIT]
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] The same, no matter whether she is a mubtada'a or a mu'tada. [IMPLICIT]
     [Fact]
     public void HaydCalculation_FifteenDaysOfBlood_AllHayd()
     {
@@ -485,7 +485,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Habit of 5 days at the start of the month; if she is pure for 20 days after her 5 days and the blood returns in the last 5 days, her hayd has moved earlier and her cycle is 25 days.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] 'Ada of 5 days at the start of the month; if she is pure for 20 days after her 5 days and the blood returns in the last 5 days, her hayd has moved earlier and her cycle is 25 days.
     [Fact]
     public void HaydCalculation_BloodAfterTwentyDaysOfPurity_IsEarlierHayd()
     {
@@ -499,6 +499,19 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
         // ASSERT
         result.GetHaydDayRanges(s_sourceExampleStart).Should().Equal((0.0, 5.0), (30.0, 35.0), (55.0, 60.0));
+        result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
+    }
+
+    // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Yellow and turbid blood are hayd according to the sounder view. [IMPLICIT]
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] Each of them is hayd, whether she is a mubtada'a or not and whether it contradicts her 'ada or not. [IMPLICIT]
+    [Fact]
+    public void HaydCalculation_OnlyYellowBloodWithinTheLimits_IsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = CalculateSourceExample((EFlowAppearanceColor.Yellow, 5));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_sourceExampleStart).Should().Equal((0.0, 5.0));
         result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
     }
 

@@ -23,9 +23,9 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         return _haydCalculatorService.Calculate(flowList.GetFlowDataList(initialInstant: s_start));
     }
 
-    #region Mubtada'a ghayr mumayyiza (beginner without distinguishable blood)
+    #region Mubtada'a ghayr mumayyiza (without distinguishable blood)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 19f.; https://shamela.ws/book/12096/19] Beginner without distinguishable blood: according to the stronger view her hayd is a day and a night, her purity 29 days.
+    // [an-Nawawi, Minhaj at-Talibin, p. 19f.; https://shamela.ws/book/12096/19] Mubtada'a ghayr mumayyiza (without distinguishable blood): according to the stronger view her hayd is a day and a night, her purity 29 days.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] The same, counted from the start of the blood; the 29 days complete the month to a 30-day cycle.
     [Fact]
     public void MubtadaaGhayrMumayyiza_ContinuousRedBlood_OneDayHaydAndTwentyNineDaysTuhur()
@@ -38,7 +38,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((1.0, 30.0), (31.0, 45.0));
     }
 
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287; https://shamela.ws/book/11444/203] A beginner sees 15 days red, then 15 days black; if the black continues she has no distinction, her hayd is a day and a night from the start of each month.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287; https://shamela.ws/book/11444/203] A mubtada'a sees 15 days red, then 15 days black; if the black continues she has no distinction, her hayd is a day and a night from the start of each month.
     [Fact]
     public void MubtadaaGhayrMumayyiza_FifteenDaysRedThenBlackContinues_OneDayHaydPerMonth()
     {
@@ -52,7 +52,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((1.0, 30.0));
     }
 
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she sees 16 days black, a condition of the distinction is missing and she counts as a beginner without distinguishable blood.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she sees 16 days black, a condition of the distinction is missing and she counts as a mubtada'a ghayr mumayyiza.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Then her hayd is a day and a night, her purity 29 days.
     [Fact]
     public void MubtadaaGhayrMumayyiza_SixteenDaysBlack_TamyizFailsSoOneDayHayd()
@@ -67,7 +67,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((1.0, 30.0));
     }
 
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she permanently sees one day black and two days red, a condition of the distinction is missing and she counts as a beginner without distinguishable blood.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she permanently sees one day black and two days red, a condition of the distinction is missing and she counts as a mubtada'a ghayr mumayyiza.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Then her hayd is a day and a night, her purity 29 days.
     [Fact]
     public void MubtadaaGhayrMumayyiza_AlternatingOneDayBlackTwoDaysRed_TamyizFailsSoOneDayHayd()
@@ -89,11 +89,11 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((1.0, 30.0));
     }
 
-    #endregion Mubtada'a ghayr mumayyiza (beginner without distinguishable blood)
+    #endregion Mubtada'a ghayr mumayyiza (without distinguishable blood)
 
-    #region Mubtada'a mumayyiza (beginner with distinguishable blood)
+    #region Mubtada'a mumayyiza (with distinguishable blood)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Beginner with distinguishable blood: the weak blood is istihada, the strong is hayd if it lasts at least a day and night and at most 15 days and the weak does not stay under 15 days.
+    // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Mubtada'a mumayyiza (with distinguishable blood): the weak blood is istihada, the strong is hayd if it lasts at least a day and night and at most 15 days and the weak does not stay under 15 days.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she sees a day and a night black and then weak blood permanently, the weak blood is purity. (The source says the weak blood continues "for years"; 40 days fulfil the explicit conditions of al-Minhaj above.)
     [Fact]
     public void MubtadaaMumayyiza_OneDayBlackThenLongRed_BlackIsHayd()
@@ -137,14 +137,74 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((14.0, 21.0));
     }
 
-    #endregion Mubtada'a mumayyiza (beginner with distinguishable blood)
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Strong, weak and weaker blood: 5 days black, then 5 days red, then the yellow continues: the first two are hayd, because they are strong compared to what follows (the strong comes first, the weak follows directly, and together they do not exceed the maximum).
+    [Fact]
+    public void MubtadaaMumayyiza_FiveBlackFiveRedThenYellow_BlackAndRedAreHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Black, 5),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Yellow, 20));
 
-    #region Mu'tada (woman with a habit)
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 10.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((10.0, 30.0));
+    }
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] Woman with a habit: she returns to the hayd and purity of her habit in duration and timing; according to the sounder view the habit is established by a single occurrence.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 10 days black, then 6 days red, then the yellow continues: black and red together exceed the maximum, so her hayd is only the black.
+    [Fact]
+    public void MubtadaaMumayyiza_TenBlackSixRedThenYellow_OnlyBlackIsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Black, 10),
+            (EFlowAppearanceColor.Red, 6),
+            (EFlowAppearanceColor.Yellow, 20));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 10.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((10.0, 36.0));
+    }
+
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 5 days red, then 5 days black, then the yellow continues: the weak comes first, so her hayd is only the black.
+    [Fact]
+    public void MubtadaaMumayyiza_FiveRedFiveBlackThenYellow_OnlyBlackIsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Black, 5),
+            (EFlowAppearanceColor.Yellow, 20));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((5.0, 10.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((0.0, 5.0), (10.0, 30.0));
+    }
+
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 5 days black, then 5 days yellow, then the red continues: the weak (red) does not follow the strong directly, so her hayd is only the black.
+    [Fact]
+    public void MubtadaaMumayyiza_FiveBlackFiveYellowThenRed_OnlyBlackIsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Black, 5),
+            (EFlowAppearanceColor.Yellow, 5),
+            (EFlowAppearanceColor.Red, 20));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((5.0, 30.0));
+    }
+
+    #endregion Mubtada'a mumayyiza (with distinguishable blood)
+
+    #region Mu'tada (woman with an 'ada)
+
+    // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] Mu'tada (woman with an 'ada): she returns to the hayd and purity of her 'ada in duration and timing; according to the sounder view the 'ada is established by a single occurrence.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287f.; https://shamela.ws/book/11444/203] Example 5 days every month; if she had 5 days of hayd in one month and then became a mustahada, she returns to the 5 days.
     [Fact]
-    public void Mutada_HabitOfFiveDays_ReturnsToHabit()
+    public void Mutada_AdaOfFiveDays_ReturnsToAda()
     {
         // ACT
         HaydCalculationResultVO result = Calculate(
@@ -157,10 +217,10 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((35.0, 60.0));
     }
 
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] Hayd of 5 days in one month, then 6, then 7, then istihada: according to the sounder view (habit by a single occurrence) she returns to the 7.
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] Habit of 5 days at the start of each month, then 6 in one cycle, 7 in the next, then istihada: if the habit is established by a single occurrence, she returns to the 7.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] Hayd of 5 days in one month, then 6, then 7, then istihada: according to the sounder view ('ada by a single occurrence) she returns to the 7.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] 'Ada of 5 days at the start of each month, then 6 in one cycle, 7 in the next, then istihada: if the 'ada is established by a single occurrence, she returns to the 7.
     [Fact]
-    public void Mutada_ChangingHabitFiveSixSeven_ReturnsToLastHabit()
+    public void Mutada_ChangingAdaFiveSixSeven_ReturnsToLastAda()
     {
         // ACT
         HaydCalculationResultVO result = Calculate(
@@ -177,7 +237,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((97.0, 120.0));
     }
 
-    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] Habit of 5 days at the start of the month, then 14 days purity, then the blood returns and continues: the first day and night of the returning blood are purity, then 5 days hayd, and her cycle stays 20 days.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] 'Ada of 5 days at the start of the month, then 14 days purity, then the blood returns and continues: the first day and night of the returning blood are purity, then 5 days hayd, and her cycle stays 20 days.
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340 (Hashiyat ash-Shabramallisi); https://shamela.ws/book/3565/338] The same example after Ibn Hajar.
     [Fact]
     public void Mutada_FourteenDaysPurityThenContinuousBlood_FirstDayCompletesTuhur()
@@ -195,7 +255,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((49.0, 50.0), (55.0, 70.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Habit of 5 days at the start of the month; after 20 days of purity the blood returns in the last 5 days and continues: according to the soundest view she has 5 days of hayd from its start and 20 days of purity, and so on.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] 'Ada of 5 days at the start of the month; after 20 days of purity the blood returns in the last 5 days and continues: according to the soundest view she has 5 days of hayd from its start and 20 days of purity, and so on.
     [Fact]
     public void Mutada_BloodReturnsEarlierAndContinues_FiveDaysHaydTwentyDaysTuhur()
     {
@@ -212,8 +272,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((60.0, 80.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] Habit of 5 days at the start of each month, the rest pure; in one cycle she has only 4 of the 5 days, then istihada: if the habit is established by a single occurrence (the sounder view), she returns to what came right before the istihada (4 days).
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] The habit is established by a single occurrence according to the sounder view.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] 'Ada of 5 days at the start of each month, the rest pure; in one cycle she has only 4 of the 5 days, then istihada: if the 'ada is established by a single occurrence (the sounder view), she returns to what came right before the istihada (4 days).
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] The 'ada is established by a single occurrence according to the sounder view.
     [Fact]
     public void Mutada_LastCycleOnlyFourDays_ReturnsToFourDays()
     {
@@ -230,7 +290,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((64.0, 90.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Habit of 5 days at the start of the month; she sees the second five days as blood, it stops, she is pure the rest of the month (20 days), and the blood returns at the start of the month and continues: the first 5 days are hayd without dispute, and her purity is 20 days if the habit is established by a single occurrence.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] 'Ada of 5 days at the start of the month; she sees the second five days as blood, it stops, she is pure the rest of the month (20 days), and the blood returns at the start of the month and continues: the first 5 days are hayd without dispute, and her purity is 20 days if the 'ada is established by a single occurrence.
     [Fact]
     public void Mutada_HaydMovedToSecondFiveThenContinuousBlood_FiveDaysHaydTwentyDaysTuhur()
     {
@@ -247,9 +307,9 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((65.0, 85.0));
     }
 
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287; https://shamela.ws/book/11444/203] Habit of 15 days at the start of each month; she sees 15 days red from the start of a month, then black continues: as the black goes on, it becomes clear that she returns to her habit (after al-Barizi).
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287; https://shamela.ws/book/11444/203] 'Ada of 15 days at the start of each month; she sees 15 days red from the start of a month, then black continues: as the black goes on, it becomes clear that she returns to her 'ada (after al-Barizi).
     [Fact]
-    public void Mutada_HabitOfFifteenDays_RedThenContinuousBlack_ReturnsToHabit()
+    public void Mutada_AdaOfFifteenDays_RedThenContinuousBlack_ReturnsToAda()
     {
         // ACT
         HaydCalculationResultVO result = Calculate(
@@ -263,14 +323,14 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((45.0, 60.0));
     }
 
-    #endregion Mu'tada (woman with a habit)
+    #endregion Mu'tada (woman with an 'ada)
 
-    #region Mu'tada mumayyiza (woman with a habit and distinguishable blood)
+    #region Mu'tada mumayyiza (woman with an 'ada and distinguishable blood)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] For a woman with a habit and distinguishable blood, the distinction decides according to the sounder view, not the habit.
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] Habit of 5 days at the start of the month, the rest pure; then 10 days black from the start of the month and the rest red: her hayd are the 10 black days.
+    // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] For a woman with an 'ada and distinguishable blood, the distinction decides according to the sounder view, not the 'ada.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] 'Ada of 5 days at the start of the month, the rest pure; then 10 days black from the start of the month and the rest red: her hayd are the 10 black days.
     [Fact]
-    public void MutadaMumayyiza_TenDaysBlackAgainstHabitOfFive_TamyizWins()
+    public void MutadaMumayyiza_TenDaysBlackAgainstAdaOfFive_TamyizWins()
     {
         // ACT
         HaydCalculationResultVO result = Calculate(
@@ -284,10 +344,10 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((40.0, 60.0));
     }
 
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288f.; https://shamela.ws/book/11444/204] If a full minimal purity lies between habit and distinction, both are used: after her habitual 5 days at the start of the month she sees 20 days red, then 5 days black, then red; according to the soundest view both (the 5 habit days and the 5 black days) are hayd.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288f.; https://shamela.ws/book/11444/204] If a full minimal purity lies between 'ada and distinction, both are used: after her 5 'ada days at the start of the month she sees 20 days red, then 5 days black, then red; according to the soundest view both (the 5 'ada days and the 5 black days) are hayd.
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The minimal purity between two hayds is 15 days, so the red right after the black cannot be hayd.
     [Fact]
-    public void MutadaMumayyiza_FullTuhurBetweenHabitAndBlack_BothAreHayd()
+    public void MutadaMumayyiza_FullTuhurBetweenAdaAndBlack_BothAreHayd()
     {
         // ACT
         HaydCalculationResultVO result = Calculate(
@@ -303,5 +363,5 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((35.0, 55.0), (60.0, 65.0));
     }
 
-    #endregion Mu'tada mumayyiza (woman with a habit and distinguishable blood)
+    #endregion Mu'tada mumayyiza (woman with an 'ada and distinguishable blood)
 }
