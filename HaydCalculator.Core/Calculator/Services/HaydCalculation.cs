@@ -10,9 +10,10 @@ namespace HaydCalculator.Core.Calculator.Services;
 /// One single run of the calculation over one set of flow data. Holds all the intermediate
 /// state, so it must not be reused: create a new instance per calculation.
 /// </summary>
-internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
+internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData, HaydCalculatorSettings settings)
 {
     private readonly IReadOnlyList<FlowDataEntity> _flowData = flowData;
+    private readonly HaydCalculatorSettings _settings = settings;
     private readonly List<HaydCycleEntity> _haydCycleLst = [];
     private readonly List<FlowDataEntity> _istihadaLst = [];
     private List<FlowDataEntity> _workList = [];
@@ -34,7 +35,7 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
         {
             _workList.Remove(currentData);
 
-            if (currentData.Description.IsHaydType)
+            if (IsHaydBlood(currentData))
             {
                 HandleHaydFlowData(currentData);
             }
@@ -55,7 +56,7 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
 
     private void CheckPrerequisites()
     {
-        if (_flowData.None(dataEntry => dataEntry.Description.IsHaydType))
+        if (_flowData.None(IsHaydBlood))
         {
             throw new InfoException(TextUtil.NoHaydFlowDataProvided);
         }
@@ -153,7 +154,7 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
 
     private void HandleHaydFlowData(FlowDataEntity currentData)
     {
-        if (!currentData.Description.IsHaydType)
+        if (!IsHaydBlood(currentData))
         {
             return;
         }
@@ -206,7 +207,7 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
             if (passedDurationFromCurrentHaydBeginning == MaximumHaydDuration)
             {
                 // complex
-                if (lastFlowData.To == currentData.From && lastFlowData.Description.IsHaydType)
+                if (lastFlowData.To == currentData.From && IsHaydBlood(lastFlowData))
                 {
                     DoComplexIstihada(currentData);
                 }
@@ -222,7 +223,7 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
             else
             {
                 // how could the previous flow surpass the maximum hayd without requiring the tuhur?
-                if (lastFlowData.To == currentData.From && lastFlowData.Description.IsHaydType)
+                if (lastFlowData.To == currentData.From && IsHaydBlood(lastFlowData))
                 {
                     throw new HaydCalculationStateException(
                         $"Hayd flow directly before {currentData.From} already exceeds the maximum hayd duration.");
@@ -319,7 +320,13 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
 
     private void ConditionallyAddInBetweenPurityToMenstruation(FlowDataEntity currentData)
     {
-        if (CurrentIncompleteHaydCycle.LastHaydData is not FlowDataEntity lastHaydData || !currentData.Description.IsHaydType)
+        // qawl al-laqt: the purity between the bloods stays purity and is not added to the hayd
+        if (_settings.PurityBetweenBloods == EPurityBetweenBloods.Laqt)
+        {
+            return;
+        }
+
+        if (CurrentIncompleteHaydCycle.LastHaydData is not FlowDataEntity lastHaydData || !IsHaydBlood(currentData))
         {
             return;
         }
@@ -360,6 +367,12 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData)
 
         Duration result = MinimalTuhurDuration - (instant - endOfLastCompletedHaydCycle);
         return result > Duration.Zero ? result : Duration.Zero;
+    }
+
+    private bool IsHaydBlood(FlowDataEntity flowData)
+    {
+        return flowData.Description.IsHaydType
+            && (_settings.YellowAndTurbidAreHayd || flowData.Description.FlowAppearanceColorEnum != EFlowAppearanceColor.Yellow);
     }
 
     private bool IsMinimalTuhurFulfilledBy(Instant instant)

@@ -34,15 +34,30 @@ internal static class TestMethods
     }
 
     /// <summary>
+    /// The flows inside the hayd cycles as day ranges [from, to) relative to <paramref name="start"/>,
+    /// touching flows merged. Unlike <see cref="GetHaydDayRanges"/> this shows purity inside a cycle
+    /// that does not count as hayd (qawl al-laqt) as a gap.
+    /// </summary>
+    public static List<(double FromDay, double ToDay)> GetHaydFlowDayRanges(this HaydCalculationResultVO result, Instant start)
+    {
+        return MergeDayRanges(result.HaydCycles.SelectMany(cycle => cycle.HaydFlows), start);
+    }
+
+    /// <summary>
     /// The istihada flows (including dam fasad) of a result as day ranges [from, to) relative to
     /// <paramref name="start"/>. Touching flows are merged and empty ones dropped, so the ranges
     /// only describe what is istihada, not how the calculator happens to split it up.
     /// </summary>
     public static List<(double FromDay, double ToDay)> GetIstihadaDayRanges(this HaydCalculationResultVO result, Instant start)
     {
+        return MergeDayRanges(result.IstihadaFlows, start);
+    }
+
+    private static List<(double FromDay, double ToDay)> MergeDayRanges(IEnumerable<FlowDataEntity> flows, Instant start)
+    {
         List<(double FromDay, double ToDay)> merged = [];
 
-        foreach (FlowDataEntity flow in result.IstihadaFlows.Where(x => x.Duration > Duration.Zero).OrderBy(x => x.From))
+        foreach (FlowDataEntity flow in flows.Where(x => x.Duration > Duration.Zero).OrderBy(x => x.From))
         {
             (double fromDay, double toDay) = ToDayRange(start, flow.From, flow.To);
 

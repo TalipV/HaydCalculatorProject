@@ -128,6 +128,14 @@ Tests that check calculator results against the Shafi'i mu'tamad follow these ru
   (Tuhfat al-Muhtaj) and ar-Ramli / al-Khatib (Nihayat al-Muhtaj, Mughni al-Muhtaj) and weaker
   views inside the madhhab (asahh vs. other, azhar vs. other). Where the mu'tamad works agree,
   say so ("no khilaf here").
+- Points of khilaf are selectable through `HaydCalculatorSettings` (Core, `Calculator/Models`): one
+  bool or enum per point, defaults = asahh / azhar and ar-Ramli / al-Khatib where the mu'tamad
+  authorities differ, presets `IbnHajar`, `Ramli`, `Shirbini`. Only mu'tamad authorities and views
+  that are at least strong inside the school go in there. Tests for another view pass the settings
+  (`HaydCalculatorSettings.Default with { ... }` or a preset) and live in the region
+  "Other views (khilaf)". A new khilaf point gets a setting, a KHILAF line and a test per view.
+- Every test carries `// FIQH-TODO: Verify that the expected result is correct from the fiqh point
+  of view.` until the user has checked it. Add it to every new test; only the user removes it.
 - A wrong result stays a red test (TDD); never change the calculator or the test to make it
   pass unless asked. Cases the sources do not settle go into
   `HaydCalculatorServiceTests_OpenQuestions` and throw `OpenFiqhQuestionException`.
