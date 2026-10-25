@@ -114,3 +114,20 @@ PRs opened by a Claude session must be recognizable as such at a glance:
 
 Same for the PR title: describe the change normally, no marker there — the banner,
 the label and the branch prefix carry that.
+
+## Fiqh tests
+
+Tests that check calculator results against the Shafi'i mu'tamad follow these rules:
+
+- Every expected result has a source comment above the test:
+  `// [Author, Work, vol. X, p. Y; https://shamela.ws/book/<book>/<page>] short English summary`.
+  Prefer sources that state the case with explicit numbers; a source that states the rule
+  clearly but without the numbers of the test is marked `[IMPLICIT]`.
+- **Every known khilaf is stated** in a `// KHILAF: ...` line: the other view(s), who holds
+  them, where, and which view the test follows. This includes differences between Ibn Hajar
+  (Tuhfat al-Muhtaj) and ar-Ramli / al-Khatib (Nihayat al-Muhtaj, Mughni al-Muhtaj) and weaker
+  views inside the madhhab (asahh vs. other, azhar vs. other). Where the mu'tamad works agree,
+  say so ("no khilaf here").
+- A wrong result stays a red test (TDD); never change the calculator or the test to make it
+  pass unless asked. Cases the sources do not settle go into
+  `HaydCalculatorServiceTests_OpenQuestions` and throw `OpenFiqhQuestionException`.

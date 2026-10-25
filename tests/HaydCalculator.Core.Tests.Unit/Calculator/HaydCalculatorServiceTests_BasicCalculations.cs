@@ -210,6 +210,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] The purity between bloods that together reach the minimum duration is hayd (qawl as-sahb). [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293; https://shamela.ws/book/11444/209] Conditions: everything together not over 15 days, the bloods together at least a day and night, the purity enclosed by blood. [IMPLICIT]
+    // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
     [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1591]
     public void HaydCalculation_CalculationWithPurityInBetweenTwoMenstrualFlows()
     {
@@ -403,6 +404,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] Within 15 days everything is hayd, whether the blood is black or not. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] If red blood follows black blood and stops before 15 days are over, the red is hayd as well. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 402; https://shamela.ws/book/9059/403] A day and a night black, then red: if it stops before 15 days, everything is hayd (no khilaf here).
     [Fact]
     public void HaydCalculation_BlackThenRedEndingWithinFifteenDays_AllHayd()
     {
@@ -450,6 +452,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293f.; https://shamela.ws/book/11444/209] If she sees blood and purity alternately, everything is hayd when the conditions are met (qawl as-sahb, the mu'tamad). [IMPLICIT]
     // [ash-Shashi, Hilyat al-'Ulama', vol. 1, p. 228; https://shamela.ws/book/6131/176] If she sees a day of blood and a day of purity without exceeding 15 days, everything is hayd according to ash-Shafi'i's text.
+    // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
     [Fact]
     public void HaydCalculation_AlternatingDayOfBloodAndDayOfPurityWithinFifteenDays_AllHayd()
     {
@@ -474,6 +477,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293; https://shamela.ws/book/11444/209] Condition of sahb: the bloods together reach the minimum duration (a day and a night). [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] According to the mu'tamad the purity only counts as hayd if the bloods together reach the minimum duration. [IMPLICIT]
+    // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
     [Fact]
     public void HaydCalculation_BloodsReachMinimumOnlyTogether_PurityInBetweenIsHayd()
     {
@@ -523,6 +527,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Yellow and turbid blood are hayd according to the sounder view. [IMPLICIT]
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] Each of them is hayd, whether she is a mubtada'a or not and whether it contradicts her 'ada or not. [IMPLICIT]
+    // KHILAF: Yellow and turbid blood are hayd according to the asahh; the other view says they are not hayd because they do not have the color of blood (Mughni al-Muhtaj, vol. 1, p. 284f.; https://shamela.ws/book/11444/200). This test follows the asahh.
     [Fact]
     public void HaydCalculation_OnlyYellowBloodWithinTheLimits_IsHayd()
     {
