@@ -71,6 +71,9 @@ private/internal static fields; `I`/`T` prefixes for interfaces/type parameters;
 locals and parameters. `var` only when the type is apparent from the right-hand side.
 File-scoped namespaces.
 
+XML doc comments: `<summary>` and `</summary>` always stand on their own lines, also for a
+one-line text (no `/// <summary>text</summary>`).
+
 Most violations are auto-fixable: `dotnet format <project>.csproj --severity error`.
 Run it per project. Do not run it on the multi-targeted MAUI project as a whole (formatting
 several TFMs at once can write merge-conflict markers into shared files). Naming (IDE1006) is
