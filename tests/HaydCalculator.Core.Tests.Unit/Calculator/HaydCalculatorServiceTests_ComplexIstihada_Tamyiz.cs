@@ -123,7 +123,6 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Permanently alternating 1 day black and 2 days red: no valid distinction. [IMPLICIT]
-    // [al-Juwayni, Nihayat al-Matlab, vol. 1, p. 435; https://shamela.ws/book/9851/843] Permanently alternating 1 day black and 1 day light red: the pillars of the distinction are missing.
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] One day black, one day red and so on: a condition of the distinction is missing, because the weak blood is not continuous. Hashiyat ash-Shirwani there: fourth condition, the weak blood must not be interrupted by strong blood (purity in between does not matter).
     // [al-Ibana wa-l-Ifada fi Ahkam al-Hayd wa-n-Nifas wa-l-Istihada] Same condition and the same example (one day black, one day red, beyond 15 days: not mumayyiza).
     [FiqhTodo]

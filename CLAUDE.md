@@ -122,6 +122,11 @@ the label and the branch prefix carry that.
 
 Tests that check calculator results against the Shafi'i mu'tamad follow these rules:
 
+- **Allowed sources only:** an-Nawawi (Minhaj at-Talibin, Rawdat at-Talibin, al-Majmu'), Ibn Hajar
+  al-Haytami (Tuhfat al-Muhtaj, al-Fatawa al-Kubra al-Fiqhiyya), ar-Ramli (Nihayat al-Muhtaj),
+  al-Khatib ash-Shirbini (Mughni al-Muhtaj), plus the sources the user provides (the lecture series
+  "Rulings of Haydh and Nifas in the Shafi'i school", al-Ibana wa-l-Ifada). Any other work only
+  after the user approved it; comparative or non-mu'tamad works (e.g. Hilyat al-'Ulama') never.
 - Every expected result has a source comment above the test:
   `// [Author, Work, vol. X, p. Y; https://shamela.ws/book/<book>/<page>] short English summary`.
   Prefer sources that state the case with explicit numbers; a source that states the rule
