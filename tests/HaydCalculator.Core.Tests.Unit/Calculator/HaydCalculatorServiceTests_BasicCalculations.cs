@@ -281,6 +281,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData]);
     }
 
+    // No text source found yet: whether blood past the completion of the minimal purity is a new hayd is an open question, see HaydCalculatorServiceTests_OpenQuestions.BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd.
     [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=200; Pages 61-62 of the pdf]
     public void HaydCalculation_CalculationWithPurityBetweenTwoSeparateMenstrualCyclesIncludingIstihada()
     {
@@ -316,6 +317,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData, secondFlowData]);
     }
 
+    // No text source found yet: whether blood past the completion of the minimal purity is a new hayd is an open question, see HaydCalculatorServiceTests_OpenQuestions.BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd.
     [Fact] // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1910]
     public void HaydCalculation_CalculationWithPartiallyIstihadaAndPartiallyMenstrualFlow()
     {
@@ -352,6 +354,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
 
+    // Whether intermittent blood that exceeds 15 days together with the purity is a mustahada case is partly an open question, see HaydCalculatorServiceTests_OpenQuestions.ThirteenRedOnePurityFiveRed_DamFasadOrMustahada.
     [Theory]
     [InlineData(11.0, 1.0, 1.0, 5.0)]
     [InlineData(13.0, 1.0, 1.0, 5.0)]
@@ -500,6 +503,22 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         // ASSERT
         result.GetHaydDayRanges(s_sourceExampleStart).Should().Equal((0.0, 5.0), (30.0, 35.0), (55.0, 60.0));
         result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
+    }
+
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] Blood that falls into the remaining minimal purity and then stops is dam fasad (example 3 blood, 12 purity, 3 blood). [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The same example. [IMPLICIT]
+    [Fact]
+    public void HaydCalculation_OneDayOfBloodWithinRemainingMinimalTuhur_IsDamFasad()
+    {
+        // ACT
+        HaydCalculationResultVO result = CalculateSourceExample(
+            (EFlowAppearanceColor.Red, 10),
+            (EFlowAppearanceColor.Clear, 10),
+            (EFlowAppearanceColor.Red, 1));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_sourceExampleStart).Should().Equal((0.0, 10.0));
+        result.GetIstihadaDayRanges(s_sourceExampleStart).Should().Equal((20.0, 21.0));
     }
 
     // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Yellow and turbid blood are hayd according to the sounder view. [IMPLICIT]
