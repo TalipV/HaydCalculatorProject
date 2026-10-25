@@ -33,7 +33,7 @@ public class HaydCalculatorServiceTests_OpenQuestions
     //   Notes that the general rule is restricted by the 3/12/3 case, but does not say where exactly
     //   the line between the two runs.
     //
-    // To resolve: the chapter on intermittent blood (talfiq) in al-Majmu' and ar-Rawda.
+    // To resolve: the passages on intermittent blood (talfiq) in Tuhfat al-Muhtaj, Nihayat al-Muhtaj, Mughni al-Muhtaj and their hawashi.
     [FiqhTodo]
     [Fact]
     public void ThirteenRedOnePurityFiveRed_DamFasadOrMustahada()

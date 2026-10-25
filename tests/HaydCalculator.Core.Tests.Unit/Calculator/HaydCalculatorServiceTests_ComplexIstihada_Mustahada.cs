@@ -30,7 +30,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
 
     #region Mubtada'a ghayr mumayyiza (without distinguishable blood)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 19f.; https://shamela.ws/book/12096/19] Mubtada'a ghayr mumayyiza (without distinguishable blood): according to the stronger view her hayd is a day and a night, her purity 29 days.
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 104; https://shamela.ws/book/21628/103] Mubtada'a ghayr mumayyiza: according to the sounder of the two views her hayd is a day and a night and her purity 29 days (after al-Majmu').
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] The same, counted from the start of the blood; the 29 days complete the month to a 30-day cycle.
     // KHILAF: Hayd of a day and a night is the stronger view (azhar); the other view gives her the usual hayd of 6 or 7 days and the rest of the month as purity (Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202). This test follows the azhar.
     [FiqhTodo]
@@ -65,6 +65,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she sees 16 days black, a condition of the distinction is missing and she counts as a mubtada'a ghayr mumayyiza.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Then her hayd is a day and a night, her purity 29 days.
     // KHILAF: Hayd of a day and a night is the stronger view (azhar); the other view gives her the usual hayd of 6 or 7 days and the rest of the month as purity (Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202). This test follows the azhar.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] If one of the conditions of the distinction is missing, she is a woman whose distinction lacks a condition, with the ruling of the mubtada'a ghayr mumayyiza. [IMPLICIT]
     [FiqhTodo]
     [Fact]
     public void MubtadaaGhayrMumayyiza_SixteenDaysBlack_TamyizFailsSoOneDayHayd()
@@ -82,6 +83,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she permanently sees one day black and two days red, a condition of the distinction is missing and she counts as a mubtada'a ghayr mumayyiza.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Then her hayd is a day and a night, her purity 29 days.
     // KHILAF: Hayd of a day and a night is the stronger view (azhar); the other view gives her the usual hayd of 6 or 7 days and the rest of the month as purity (Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202). This test follows the azhar.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] One day black, one day red and so on: a condition of the distinction is missing, because the weak blood is not continuous; Hashiyat ash-Sharwani adds "or two days" (after Mughni al-Muhtaj). [IMPLICIT]
     [FiqhTodo]
     [Fact]
     public void MubtadaaGhayrMumayyiza_AlternatingOneDayBlackTwoDaysRed_TamyizFailsSoOneDayHayd()
@@ -107,8 +109,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
 
     #region Mubtada'a mumayyiza (with distinguishable blood)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] Mubtada'a mumayyiza (with distinguishable blood): the weak blood is istihada, the strong is hayd if it lasts at least a day and night and at most 15 days and the weak does not stay under 15 days.
-    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she sees a day and a night black and then weak blood permanently, the weak blood is purity. (The source says the weak blood continues "for years"; 40 days fulfil the explicit conditions of al-Minhaj above.)
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] Mubtada'a mumayyiza: the weak blood is istihada, the strong is hayd if it lasts at least a day and night and at most 15 days and the weak does not stay under 15 days; a day and a night black, then red for many years: the weak is all purity.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] If she sees a day and a night black and then weak blood permanently, the weak blood is purity. (The source says the weak blood continues "for years"; 40 days fulfil the explicit conditions in Tuhfat al-Muhtaj above.)
     [FiqhTodo]
     [Fact]
     public void MubtadaaMumayyiza_OneDayBlackThenLongRed_BlackIsHayd()
@@ -124,6 +126,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 10 days black, then 10 days red, then it stops: she follows the distinction, although the weak blood stays under 15 days.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] 10 days black, then 10 days red, then it stops: she follows her distinction, although the weak blood stays under 15 days (after al-Mutawalli).
     [FiqhTodo]
     [Fact]
     public void MubtadaaMumayyiza_TenDaysBlackTenDaysRedAndStop_BlackIsHayd()
@@ -141,8 +144,9 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 7 days each of black, red, black: her hayd is the first black together with the red (after al-Majmu' and ar-Rawda).
     // KHILAF: [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] For 7 days black, 7 days red, 3 days black (then it stops) her hayd is only the first black, as the mu'tamad that an-Nawawi corrected in at-Tahqiq. Hashiyat ash-Shirwani there: Nihayat al-Muhtaj and Mughni al-Muhtaj disagree with him in that case, and Ibn Qasim notes that at-Tahqiq has 7/7/7 with black and red as hayd.
     // KHILAF: [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=2342] 7 days each of black, red, black: according to Ibn Hajar al-Haytami only the first black is hayd; according to Shams ad-Din ar-Ramli and Ibn Surayj the first 14 days are hayd.
-    // [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] 7/7/7: Ibn Surayj: her hayd is the first black with the red, the second black is purity. Abu Ishaq: both blacks are hayd and the red between them purity; an-Nawawi calls this very weak, even a mistake, because the blood exceeds 15 days.
-    // This test follows ar-Ramli / al-Khatib (and al-Majmu'/ar-Rawda).
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 104; https://shamela.ws/book/21628/103] In such cases ar-Ruyani holds that the hayd is only the black (followed in at-Tahqiq), Ibn Surayj that it is the black with the red (relied on in al-Majmu').
+    // KHILAF: [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] Abu Ishaq: both blacks are hayd and the red between them purity; an-Nawawi calls this very weak, even a mistake, because the blood exceeds 15 days. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
+    // This test follows ar-Ramli / al-Khatib (who report the same from al-Majmu' and ar-Rawda).
     [FiqhTodo]
     [Fact]
     public void MubtadaaMumayyiza_SevenDaysEachBlackRedBlack_FirstBlackAndRedAreHayd()
@@ -158,7 +162,6 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((14.0, 21.0));
     }
 
-    // [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] 8 days black, then 8 days red, then 8 days black: her hayd is the first black, by agreement (bi-l-ittifaq).
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 86; https://shamela.ws/book/21628/85] Same case: her hayd is the first black, by agreement (no khilaf here).
     // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=2342] Same case: the first eight days are hayd, the other days are not.
     // Note: the last day of the second black (day 23-24) lies after a full minimal purity of 15 days following the first black; the sources still give only the first black as hayd and do not discuss that day.
@@ -255,7 +258,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
 
     #region Mu'tada (woman with an 'ada)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] Mu'tada (woman with an 'ada): she returns to the hayd and purity of her 'ada in duration and timing; according to the sounder view the 'ada is established by a single occurrence.
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343] The 'ada is established by a single occurrence according to the asahh: if she had 5 days of hayd in one month and then became a mustahada, she returns to the 5.
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 110; https://shamela.ws/book/21628/109] According to the asahh, agreed upon among four views, the 'ada is established by a single occurrence.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287f.; https://shamela.ws/book/11444/203] Example 5 days every month; if she had 5 days of hayd in one month and then became a mustahada, she returns to the 5 days.
     // KHILAF: The 'ada is established by a single occurrence according to the sounder view (asahh); other views require two or three occurrences (Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204). This test follows the asahh.
     [FiqhTodo]
@@ -274,8 +278,9 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] Hayd of 5 days in one month, then 6, then 7, then istihada: according to the sounder view ('ada by a single occurrence) she returns to the 7.
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] 'Ada of 5 days at the start of each month, then 6 in one cycle, 7 in the next, then istihada: if the 'ada is established by a single occurrence, she returns to the 7.
-    // KHILAF: With an 'ada established by two occurrences she returns to the 6, with three occurrences to the 5 (Mughni al-Muhtaj, vol. 1, p. 288; ar-Rawda, vol. 1, p. 148). This test follows the asahh (single occurrence).
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343] If her 'adat differ without a fixed order, she returns to the one right before the month of istihada, because the 'ada is established by a single occurrence. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 110; https://shamela.ws/book/21628/109] A mubtada'a with 10, then 5, then 4 days, then istihada, returns to the 4 without khilaf; with 4, then 5 she returns to the 5 (asahh): she returns to the last 'ada. [IMPLICIT]
+    // KHILAF: With an 'ada established by two occurrences she returns to the 6, with three occurrences to the 5 (Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204). This test follows the asahh (single occurrence).
     [FiqhTodo]
     [Fact]
     public void Mutada_ChangingAdaFiveSixSeven_ReturnsToLastAda()
@@ -315,8 +320,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((49.0, 50.0), (55.0, 70.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] 'Ada of 5 days at the start of the month; after 20 days of purity the blood returns in the last 5 days and continues: according to the soundest view she has 5 days of hayd from its start and 20 days of purity, and so on.
-    // KHILAF: ar-Rawda gives four views (awjuh) for this case: (1, the soundest) 5 days hayd from its start and 20 days purity, and so on; (2) 5 days hayd and 25 days purity; (3) 10 days hayd from it and 25 days purity, then the old cycle; (4) further view in ar-Rawda, vol. 1, p. 149. This test follows the soundest view.
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] 'Ada of 5 days at the start of the month; after 20 days of purity the blood returns in the last five days and continues: she has 5 days of hayd from its start and 20 days of purity, and so on.
+    // KHILAF: ar-Rawda gives four views (awjuh) for this case: (1, the soundest) 5 days hayd from its start and 20 days purity, and so on; (2) 5 days hayd and 25 days purity; (3) 10 days hayd from it and 25 days purity, then the old cycle; (4) further view in ar-Rawda, vol. 1, p. 149. This test follows the soundest view. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
     [FiqhTodo]
     [Fact]
     public void Mutada_BloodReturnsEarlierAndContinues_FiveDaysHaydTwentyDaysTuhur()
@@ -334,9 +339,9 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((60.0, 80.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] 'Ada of 5 days at the start of each month, the rest pure; in one cycle she has only 4 of the 5 days, then istihada: if the 'ada is established by a single occurrence (the sounder view), she returns to what came right before the istihada (4 days).
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 110; https://shamela.ws/book/21628/109] If she sees 4 days or less of her usual 5, her hayd has decreased without moving; after a change of the 'ada she returns to the last one, even if it did not repeat (10, then 5, then 4, then istihada: back to the 4 without khilaf).
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] The 'ada is established by a single occurrence according to the sounder view.
-    // KHILAF: If the 'ada is not established by a single occurrence, she returns to her old 'ada of 5 days (ar-Rawda, vol. 1, p. 148). This test follows the asahh.
+    // KHILAF: If the 'ada is not established by a single occurrence, she returns to her old 'ada of 5 days (the view that requires two occurrences, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343) [IMPLICIT]. This test follows the asahh.
     [FiqhTodo]
     [Fact]
     public void Mutada_LastCycleOnlyFourDays_ReturnsToFourDays()
@@ -354,8 +359,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((64.0, 90.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] 'Ada of 5 days at the start of the month; she sees the second five days as blood, it stops, she is pure the rest of the month (20 days), and the blood returns at the start of the month and continues: the first 5 days are hayd without dispute, and her purity is 20 days if the 'ada is established by a single occurrence.
-    // KHILAF: If the 'ada is not established by a single occurrence, her purity is 25 days instead of 20 (ar-Rawda, vol. 1, p. 149). This test follows the asahh.
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] 'Ada of 5 days at the start of the month; she sees the second five days as blood and it stops, and it returns at the start of the next month: if it then continues, these five days are hayd by agreement and her purity is 20 days according to the asahh (the 'ada is established by a single occurrence).
+    // KHILAF: If the 'ada is not established by a single occurrence, her purity is 25 days instead of 20 (al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110: "20 days, based on the asahh that the 'ada is established by a single occurrence") [IMPLICIT]. This test follows the asahh.
     [FiqhTodo]
     [Fact]
     public void Mutada_HaydMovedToSecondFiveThenContinuousBlood_FiveDaysHaydTwentyDaysTuhur()
@@ -396,7 +401,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
 
     #region Mu'tada mumayyiza (woman with an 'ada and distinguishable blood)
 
-    // [an-Nawawi, Minhaj at-Talibin, p. 20; https://shamela.ws/book/12096/20] For a woman with an 'ada and distinguishable blood, the distinction decides according to the sounder view, not the 'ada.
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343] The mu'tada mumayyiza is judged by her distinction, not by the 'ada that contradicts it, according to the asahh.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] 'Ada of 5 days at the start of the month, the rest pure; then 10 days black from the start of the month and the rest red: her hayd are the 10 black days.
     // KHILAF: The other view (not the asahh) decides by the 'ada: her hayd would be the first 5 days (Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204). This test follows the asahh (distinction).
     [FiqhTodo]
@@ -416,7 +421,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288f.; https://shamela.ws/book/11444/204] If a full minimal purity lies between 'ada and distinction, both are used: after her 5 'ada days at the start of the month she sees 20 days red, then 5 days black, then red; according to the soundest view both (the 5 'ada days and the 5 black days) are hayd.
-    // [an-Nawawi, Minhaj at-Talibin, p. 19; https://shamela.ws/book/12096/19] The minimal purity between two hayds is 15 days, so the red right after the black cannot be hayd.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 385; https://shamela.ws/book/9059/386] The minimal purity between two hayds is 15 days with their nights, so the red right after the black cannot be hayd.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 278; https://shamela.ws/book/11444/194] The minimal purity between two hayds is 15 days.
     // KHILAF: Another view (wa qila) applies the khilaf between distinction and 'ada here as well (Mughni al-Muhtaj, vol. 1, p. 289; https://shamela.ws/book/11444/205). This test follows the asahh (both are hayd).
     [FiqhTodo]
     [Fact]
@@ -476,7 +482,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((10.0, 30.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] 'Ada of 5 days, then 6, then 7, then istihada: if the 'ada is established by two occurrences, she returns to the 6 (the soundest view on that basis).
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343] The view opposite to the asahh: the 'ada is only established by two occurrences. [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] 5, then 6, then 7: with two occurrences she returns to the 6.
     [FiqhTodo]
     [Fact]
@@ -498,7 +504,6 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((96.0, 120.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 148; https://shamela.ws/book/499/146] 'Ada of 5 days, then 6, then 7, then istihada: if the 'ada is only established by three occurrences, she returns to the 5.
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] 5, then 6, then 7: with three occurrences she returns to the 5.
     [FiqhTodo]
     [Fact]
@@ -520,7 +525,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((95.0, 120.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Second view for the 'ada that came earlier with continuous returning blood: 5 days hayd, then 25 days purity.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Second view for the 'ada that came earlier with continuous returning blood: 5 days hayd, then 25 days purity. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
     [FiqhTodo]
     [Fact]
     public void Mutada_BloodReturnsEarlierAndContinues_OldTuhurLength_FiveDaysHaydTwentyFiveDaysTuhur()
@@ -539,7 +544,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((60.0, 85.0));
     }
 
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Third view for the 'ada that came earlier with continuous returning blood: 10 days hayd from it, then 25 days purity, then she keeps to the old cycle.
+    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Third view for the 'ada that came earlier with continuous returning blood: 10 days hayd from it, then 25 days purity, then she keeps to the old cycle. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
     [FiqhTodo]
     [Fact]
     public void Mutada_BloodReturnsEarlierAndContinues_TenDaysThenOldCycle()
@@ -559,6 +564,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] Other view for the mu'tada mumayyiza: the 'ada decides, so with an 'ada of 5 days and then 10 days black from the start of the month her hayd is the first 5 days.
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343] The distinction decides "according to the asahh", so the other view decides by the 'ada. [IMPLICIT]
     [FiqhTodo]
     [Fact]
     public void MutadaMumayyiza_TenDaysBlackAgainstAdaOfFive_FollowAda_AdaWins()

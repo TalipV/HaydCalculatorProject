@@ -11,6 +11,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     #region Condition 3
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 10 days black, then 10 days red, then it stops: she follows the distinction, although the weak blood stays under 15 days.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] 10 days black, then 10 days red, then it stops: she follows her distinction, although the weak blood stays under 15 days (after al-Mutawalli).
     [FiqhTodo]
     [Fact]
     public void Condition3_Fulfilled_TenDaysBlackTenDaysRedAndStop()
@@ -52,6 +53,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285f.; https://shamela.ws/book/11444/201] The condition that the weak blood lasts at least 15 days only applies if the blood continues. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] The condition that the weak blood is not shorter than the minimal purity only applies if the blood continues (after al-Mutawalli). [IMPLICIT]
     [FiqhTodo]
     [Fact]
     public void Condition3_Fulfilled_1DayBlackAnd14DaysRed()
@@ -73,6 +75,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Only 14 days of weak blood (followed by strong blood again) does not fulfil the conditions of the distinction. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] Hashiyat ash-Sharwani (after al-Isnawi): a day and a night black, 14 days red, then black again: the distinction does not count, because otherwise the purity between the two hayds would be under the minimum.
     [FiqhTodo]
     [Fact(Skip = TamyizNotFinished)]
     public void Condition3_NotFulfilled_1DayBlack14DaysRedAndThenBlackAgain()
