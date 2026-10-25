@@ -64,11 +64,6 @@ public sealed record HaydCalculatorSettings
     /// Strong, weaker, weak (e.g. black, yellow, red): the stronger weak blood must follow the strong directly to be joined to it (ar-Ramli, al-Khatib) or not (Ibn Hajar).
     /// </summary>
     public bool StrongerWeakMustFollowStrongDirectly { get; init; } = true;
-
-    /// <summary>
-    /// Mu'tada whose hayd came earlier and whose returning blood continues (ar-Rawda, vol. 1, p. 149).
-    /// </summary>
-    public EShiftedAdaWithContinuousBlood ShiftedAdaWithContinuousBlood { get; init; } = EShiftedAdaWithContinuousBlood.NewCycle;
 }
 
 public enum EPurityBetweenBloods
@@ -117,20 +112,4 @@ public enum EWeakBetweenStrongBeyondMaximum
     /// only the first strong blood is hayd (Ibn Hajar)
     /// </summary>
     OnlyFirstStrongIsHayd,
-}
-
-public enum EShiftedAdaWithContinuousBlood
-{
-    /// <summary>
-    /// 5 days hayd from its start, then 20 days purity, and so on (the soundest view)
-    /// </summary>
-    NewCycle,
-    /// <summary>
-    /// 5 days hayd, then 25 days purity
-    /// </summary>
-    OldTuhurLength,
-    /// <summary>
-    /// 10 days hayd from it, then 25 days purity, then the old cycle
-    /// </summary>
-    TenDaysThenOldCycle,
 }

@@ -320,7 +320,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] 'Ada of 5 days at the start of the month; after 20 days of purity the blood returns in the last five days and continues: she has 5 days of hayd from its start and 20 days of purity, and so on.
-    // KHILAF: ar-Rawda gives four views (awjuh) for this case: (1, the soundest) 5 days hayd from its start and 20 days purity, and so on; (2) 5 days hayd and 25 days purity; (3) 10 days hayd from it and 25 days purity, then the old cycle; (4) further view in ar-Rawda, vol. 1, p. 149. This test follows the soundest view. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
+    // KHILAF: The later works only give this view (the asahh), e.g. al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110. ar-Rawda lists further views, but the later works do not mention them.
     [FiqhTodo]
     [Fact]
     public void Mutada_BloodReturnsEarlierAndContinues_FiveDaysHaydTwentyDaysTuhur()
@@ -522,44 +522,6 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         // ASSERT
         result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 36.0), (60.0, 67.0), (90.0, 95.0));
         result.GetIstihadaDayRanges(s_start).Should().Equal((95.0, 120.0));
-    }
-
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Second view for the 'ada that came earlier with continuous returning blood: 5 days hayd, then 25 days purity. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
-    [FiqhTodo]
-    [Fact]
-    public void Mutada_BloodReturnsEarlierAndContinues_OldTuhurLength_FiveDaysHaydTwentyFiveDaysTuhur()
-    {
-        // ACT
-        HaydCalculationResultVO result = Calculate(
-            HaydCalculatorSettings.Default with { ShiftedAdaWithContinuousBlood = EShiftedAdaWithContinuousBlood.OldTuhurLength },
-            (EFlowAppearanceColor.Red, 5),
-            (EFlowAppearanceColor.Clear, 25),
-            (EFlowAppearanceColor.Red, 5),
-            (EFlowAppearanceColor.Clear, 20),
-            (EFlowAppearanceColor.Red, 30));
-
-        // ASSERT
-        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (55.0, 60.0));
-        result.GetIstihadaDayRanges(s_start).Should().Equal((60.0, 85.0));
-    }
-
-    // [an-Nawawi, Rawdat at-Talibin, vol. 1, p. 149; https://shamela.ws/book/499/147] Third view for the 'ada that came earlier with continuous returning blood: 10 days hayd from it, then 25 days purity, then she keeps to the old cycle. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
-    [FiqhTodo]
-    [Fact]
-    public void Mutada_BloodReturnsEarlierAndContinues_TenDaysThenOldCycle()
-    {
-        // ACT
-        HaydCalculationResultVO result = Calculate(
-            HaydCalculatorSettings.Default with { ShiftedAdaWithContinuousBlood = EShiftedAdaWithContinuousBlood.TenDaysThenOldCycle },
-            (EFlowAppearanceColor.Red, 5),
-            (EFlowAppearanceColor.Clear, 25),
-            (EFlowAppearanceColor.Red, 5),
-            (EFlowAppearanceColor.Clear, 20),
-            (EFlowAppearanceColor.Red, 30));
-
-        // ASSERT
-        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (55.0, 65.0));
-        result.GetIstihadaDayRanges(s_start).Should().Equal((65.0, 85.0));
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] Other view for the mu'tada mumayyiza: the 'ada decides, so with an 'ada of 5 days and then 10 days black from the start of the month her hayd is the first 5 days.

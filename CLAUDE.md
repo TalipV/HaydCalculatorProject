@@ -71,6 +71,11 @@ private/internal static fields; `I`/`T` prefixes for interfaces/type parameters;
 locals and parameters. `var` only when the type is apparent from the right-hand side.
 File-scoped namespaces.
 
+Line endings are CRLF in the working tree (`.gitattributes`: `* text=auto eol=crlf`, `.editorconfig`:
+`end_of_line = crlf`); the repository itself stores LF. Tools that write LF (scripts, generated
+files) leave mixed line endings behind, which Visual Studio then complains about. After such
+edits, check with `git ls-files --eol` that every file shows `w/crlf`.
+
 XML doc comments: `<summary>` and `</summary>` always stand on their own lines, also for a
 one-line text (no `/// <summary>text</summary>`).
 
