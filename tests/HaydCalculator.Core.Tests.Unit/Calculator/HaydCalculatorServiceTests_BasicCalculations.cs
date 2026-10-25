@@ -544,7 +544,6 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] Blood of at least the minimum that does not exceed 15 days is all hayd, whether it is black or not. [IMPLICIT]
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 339; https://shamela.ws/book/3565/337] All hayd, whether the blood has one quality or is split into strong and weak. [IMPLICIT]
-    // KHILAF: [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] Abu Ishaq treats the weak blood in the middle like purity between two bloods of hayd, so the two views on that purity apply (hayd with the blacks, or purity); as-Sarakhsi follows him. This test follows the madhhab. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
     [FiqhTodo]
     [Fact]
     public void HaydCalculation_BlackRedBlackWithinFifteenDays_AllHayd()

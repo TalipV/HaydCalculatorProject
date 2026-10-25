@@ -145,7 +145,6 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // KHILAF: [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] For 7 days black, 7 days red, 3 days black (then it stops) her hayd is only the first black, as the mu'tamad that an-Nawawi corrected in at-Tahqiq. Hashiyat ash-Shirwani there: Nihayat al-Muhtaj and Mughni al-Muhtaj disagree with him in that case, and Ibn Qasim notes that at-Tahqiq has 7/7/7 with black and red as hayd.
     // KHILAF: [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=2342] 7 days each of black, red, black: according to Ibn Hajar al-Haytami only the first black is hayd; according to Shams ad-Din ar-Ramli and Ibn Surayj the first 14 days are hayd.
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 104; https://shamela.ws/book/21628/103] In such cases ar-Ruyani holds that the hayd is only the black (followed in at-Tahqiq), Ibn Surayj that it is the black with the red (relied on in al-Majmu').
-    // KHILAF: [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] Abu Ishaq: both blacks are hayd and the red between them purity; an-Nawawi calls this very weak, even a mistake, because the blood exceeds 15 days. (NOT AN ALLOWED SOURCE: no source from the allowed works found yet; kept until one is found.)
     // This test follows ar-Ramli / al-Khatib (who report the same from al-Majmu' and ar-Rawda).
     [FiqhTodo]
     [Fact]
