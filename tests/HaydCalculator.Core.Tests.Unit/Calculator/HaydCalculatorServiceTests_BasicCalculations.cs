@@ -509,6 +509,22 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
     }
 
+    // [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] 5 days black, then 5 days red (or yellow), then 5 days black, not exceeding 15 days: according to the madhhab everything is hayd; the majority (al-jumhur) state this decisively.
+    // KHILAF: [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] Abu Ishaq treats the weak blood in the middle like purity between two bloods of hayd, so the two views on that purity apply (hayd with the blacks, or purity); as-Sarakhsi follows him. This test follows the madhhab.
+    [Fact]
+    public void HaydCalculation_BlackRedBlackWithinFifteenDays_AllHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = CalculateSourceExample(
+            (EFlowAppearanceColor.Black, 5),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Black, 5));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_sourceExampleStart).Should().Equal((0.0, 15.0));
+        result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
+    }
+
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200] Blood that falls into the remaining minimal purity and then stops is dam fasad (example 3 blood, 12 purity, 3 blood). [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The same example. [IMPLICIT]
     [Fact]

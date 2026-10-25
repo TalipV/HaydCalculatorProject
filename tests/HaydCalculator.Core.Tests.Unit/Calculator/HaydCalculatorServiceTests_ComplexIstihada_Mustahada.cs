@@ -128,7 +128,10 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 7 days each of black, red, black: her hayd is the first black together with the red (after al-Majmu' and ar-Rawda).
-    // KHILAF: [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] For 7 days black, 7 days red, 3 days black (then it stops) her hayd is only the first black, as the mu'tamad that an-Nawawi corrected in at-Tahqiq. Hashiyat ash-Shirwani there: Nihayat al-Muhtaj and Mughni al-Muhtaj disagree with him in that case, and Ibn Qasim notes that at-Tahqiq has 7/7/7 with black and red as hayd. Whether Ibn Hajar's view also applies to 7/7/7 is not stated. This test follows Mughni al-Muhtaj (and al-Majmu'/ar-Rawda).
+    // KHILAF: [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] For 7 days black, 7 days red, 3 days black (then it stops) her hayd is only the first black, as the mu'tamad that an-Nawawi corrected in at-Tahqiq. Hashiyat ash-Shirwani there: Nihayat al-Muhtaj and Mughni al-Muhtaj disagree with him in that case, and Ibn Qasim notes that at-Tahqiq has 7/7/7 with black and red as hayd.
+    // KHILAF: [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=2342] 7 days each of black, red, black: according to Ibn Hajar al-Haytami only the first black is hayd; according to Shams ad-Din ar-Ramli and Ibn Surayj the first 14 days are hayd.
+    // [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] 7/7/7: Ibn Surayj: her hayd is the first black with the red, the second black is purity. Abu Ishaq: both blacks are hayd and the red between them purity; an-Nawawi calls this very weak, even a mistake, because the blood exceeds 15 days.
+    // This test follows ar-Ramli / al-Khatib (and al-Majmu'/ar-Rawda).
     [Fact]
     public void MubtadaaMumayyiza_SevenDaysEachBlackRedBlack_FirstBlackAndRedAreHayd()
     {
@@ -141,6 +144,24 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         // ASSERT
         result.GetHaydDayRanges(s_start).Should().Equal((0.0, 14.0));
         result.GetIstihadaDayRanges(s_start).Should().Equal((14.0, 21.0));
+    }
+
+    // [an-Nawawi, al-Majmu', vol. 2, p. 409; https://shamela.ws/book/2186/937] 8 days black, then 8 days red, then 8 days black: her hayd is the first black, by agreement (bi-l-ittifaq).
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 86; https://shamela.ws/book/21628/85] Same case: her hayd is the first black, by agreement (no khilaf here).
+    // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=2342] Same case: the first eight days are hayd, the other days are not.
+    // Note: the last day of the second black (day 23-24) lies after a full minimal purity of 15 days following the first black; the sources still give only the first black as hayd and do not discuss that day.
+    [Fact]
+    public void MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirstBlackIsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Black, 8),
+            (EFlowAppearanceColor.Red, 8),
+            (EFlowAppearanceColor.Black, 8));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 8.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((8.0, 24.0));
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Strong, weak and weaker blood: 5 days black, then 5 days red, then the yellow continues: the first two are hayd, because they are strong compared to what follows (the strong comes first, the weak follows directly, and together they do not exceed the maximum).
@@ -163,6 +184,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 10 days black, then 6 days red, then the yellow continues: black and red together exceed the maximum, so her hayd is only the black.
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 342; https://shamela.ws/book/3565/340] Same case and result.
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 404; https://shamela.ws/book/9059/405] Same principle: if the red cannot be joined to the black (e.g. 11 days red after 5 black), it is joined to the yellow instead (no khilaf here).
+    // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=1961] 10 days black, 6 days red, then yellow: the hayd is the 10 days, because adding the red would exceed the maximum.
     [Fact]
     public void MubtadaaMumayyiza_TenBlackSixRedThenYellow_OnlyBlackIsHayd()
     {
@@ -196,6 +218,7 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 5 days black, then 5 days yellow, then the red continues: the weak (red) does not follow the strong directly, so her hayd is only the black.
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 342; https://shamela.ws/book/3565/340] Same case and result, as stated by ar-Ruyani and the commentators of al-Hawi as-Saghir and corrected by an-Nawawi in at-Tahqiq.
     // KHILAF: [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 403f.; https://shamela.ws/book/9059/404] 5 days black, then 5 days yellow, then the red continues: the first ten days (black and yellow) are hayd.
+    // KHILAF: [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=1961] Black, yellow, then red: according to ar-Ramli the strong blood and the stronger of the two weak ones must be connected, so black and red cannot be combined; according to Ibn Hajar al-Haytami this condition is not needed and the black is combined with the yellow.
     // KHILAF: al-Majmu' and ar-Rawda treat this case like red between two blacks (reported in Mughni al-Muhtaj, vol. 1, p. 286 and Nihayat al-Muhtaj, vol. 1, p. 342). This test follows Nihayat al-Muhtaj and Mughni al-Muhtaj.
     [Fact]
     public void MubtadaaMumayyiza_FiveBlackFiveYellowThenRed_OnlyBlackIsHayd()
