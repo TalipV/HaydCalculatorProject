@@ -472,7 +472,6 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 293f.; https://shamela.ws/book/11444/209] If she sees blood and purity alternately, everything is hayd when the conditions are met (qawl as-sahb, the mu'tamad). [IMPLICIT]
-    // [ash-Shashi, Hilyat al-'Ulama', vol. 1, p. 228; https://shamela.ws/book/6131/176] If she sees a day of blood and a day of purity without exceeding 15 days, everything is hayd according to ash-Shafi'i's text.
     // KHILAF: Counting the purity between the bloods as hayd is the stronger view (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). This test follows qawl as-sahb.
     [FiqhTodo]
     [Fact]
