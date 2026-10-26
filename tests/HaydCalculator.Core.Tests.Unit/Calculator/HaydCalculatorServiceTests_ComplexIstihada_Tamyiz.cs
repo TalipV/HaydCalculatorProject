@@ -32,9 +32,19 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeTrue();
     }
 
+    // The same numbers as the previous test in the other order. Two points together carry the expected result:
+    // 1. 10 days black, then 10 days red, then it stops, is a valid distinction, although the weak blood stays under 15 days:
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] 10 days black, then 10 days red, then it stops: she follows her distinction, although the weak blood stays under 15 days (after al-Mutawalli).
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] The same case, same result.
+    // 2. It is no condition that the strong blood comes before the weak one:
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 102; https://shamela.ws/book/21628/101] Where the conditions of the distinction are met, the strong blood is hayd and the weak blood purity, whether the weak comes first or later and whether the blood stops or continues. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 402; https://shamela.ws/book/9059/403] The strong blood is hayd also when it comes later, e.g. 5 days red, then 5 or 11 days black, then red continuously; a mubtada'a who sees 15 days red and then 15 days black: once it turns black, the red before it is istihada. [IMPLICIT]
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 341f.; https://shamela.ws/book/3565/339] The strong blood is hayd also when it comes later or in the middle, e.g. 5 days red, then 5 days black, then red continuously; so according to the asahh. [IMPLICIT]
+    // KHILAF: ar-Ramli says "according to the asahh" for a strong blood that comes later, so there is another view
+    // (muqabil al-asahh, a strong view). The allowed works checked so far do not name it. The test follows the asahh.
     [FiqhTodo]
-    [Fact(Skip = TamyizNotFinished)]
-    public void Condition3_NotFulfilled_TenDaysRedTenDaysBlackAndStop()
+    [Fact]
+    public void Condition3_Fulfilled_TenDaysRedTenDaysBlackAndStop()
     {
         // ARRANGE
         List<(EFlowAppearanceColor type, double dayCount)> data =
@@ -49,7 +59,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         };
 
         // ACT & ASSERT
-        HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeFalse();
+        HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeTrue();
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285f.; https://shamela.ws/book/11444/201] The condition that the weak blood lasts at least 15 days only applies if the blood continues. [IMPLICIT]
@@ -94,6 +104,28 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
 
         // ACT & ASSERT
         HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeFalse();
+    }
+
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] The weak blood must last at least 15 days if the blood continues; 16 days fulfil it. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] Hashiyat ash-Sharwani (after al-Isnawi): with 14 days of red between two blacks the distinction does not count, because the purity between the two hayds would be under the minimum; with 16 days that reason no longer applies. [IMPLICIT]
+    [FiqhTodo]
+    [Fact]
+    public void Condition3_Fulfilled_1DayBlack16DaysRedAndThenBlackAgain()
+    {
+        // ARRANGE
+        List<(EFlowAppearanceColor type, double dayCount)> data =
+        [
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 16), (EFlowAppearanceColor.Black, 1)
+        ];
+
+        List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
+        var haydCycleEntity = new HaydCycleEntity
+        {
+            HaydFlows = timeData
+        };
+
+        // ACT & ASSERT
+        HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeTrue();
     }
 
     #endregion Condition 3
