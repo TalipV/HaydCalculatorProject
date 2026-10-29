@@ -19,14 +19,16 @@ test disagree, find out which one is wrong; do not silently follow either.
 | [tamyiz.md](tamyiz.md) | Strength of blood, the four conditions of tamyiz, order of strong and weak, strong / weak / weaker, red between two blacks |
 | [ada.md](ada.md) | Mu'tada: 'ada by one occurrence, changing 'ada, shifted cycle, mu'tada mumayyiza |
 | [khilaf.md](khilaf.md) | Every known khilaf with strength, holders, sources and the setting in `HaydCalculatorSettings` |
+| [nifas.md](nifas.md) | Nifas and blood in pregnancy (not implemented yet): purity between hayd and nifas, collected quotations |
 | [open-questions.md](open-questions.md) | Points the sources checked so far do not settle, with the conflicting passages |
 | [review-notes.md](review-notes.md) | Interpretations, single-author points and past mistakes an independent review should check first; review log |
 
 ## Rules for every fiqh statement (summary; full text in sources.md)
 
 - Only the mu'tamad of the later Shafi'is: Tuhfat al-Muhtaj, Nihayat al-Muhtaj, Mughni al-Muhtaj,
-  their hawashi, I'anat at-Talibin, Hashiyat al-Bajuri, Ibn Hajar's al-Fatawa al-Kubra, plus the
-  user's sources. Never a matn (al-Minhaj) as evidence, no early or comparative works. Anything
+  their hawashi, the other hawashi of the later Shafi'is (al-Bajuri, al-Bujayrimi, ash-Sharqawi,
+  al-Kurdi, at-Tarmasi, ...; user, 2026-10-29), I'anat at-Talibin, Ibn Hajar's al-Fatawa al-Kubra,
+  plus the user's sources. Never a matn (al-Minhaj) as evidence, no early or comparative works. Anything
   else only after the user approved it (see "Approved exceptions" in sources.md).
 - At least 2, ideally 4 sources from different authors per point. Two books of one author count once.
   A hashiya author (ash-Sharwani, Ibn Qasim, ash-Shabramallisi, ar-Rashidi) counts as his own author.

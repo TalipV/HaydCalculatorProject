@@ -65,7 +65,24 @@ applies, valid tamyiz [IMPLICIT]. Tests: `Condition3_NotFulfilled_1DayBlack14Day
 - Nihaya 1/341 and Mughni 1/285 give the same examples (alternating 1 black / 1 red; 1 black / 2 red forever) as a missing condition.
 - [Ibn Hajar, al-Fatawa al-Kubra 1/86](https://shamela.ws/book/21628/85): a day and a night black and a day and a night red to the end of the month: not mumayyiza, because the strong exceeds 15 days.
 
-Tests: `Condition4_ContinuouslyBlackAndRed`, `Condition4_ContinuouslyBlackAndRedAndAtTheEndLongRed` (skipped, no source yet).
+**Weak blood between strong bloods counts like purity, if the weak continues alone after day 15**
+(found 2026-10-29 via the Risala of Muhammad b. 'Ali al-Khatib, p. 28-29; checked on Shamela):
+
+- [Ibn Hajar, al-Fatawa al-Kubra 1/100](https://shamela.ws/book/21628/99) (his commentary on the Risala of Ba Qushayr):
+  «فَلَوْ رَأَتْ يَوْمًا وَلَيْلَةً أَسْوَدَ ثُمَّ مِثْلَهَا أَحْمَرَ أَوْ أَصْفَرَ أَوْ أَكْدَرَ ... وَهَكَذَا إلَى آخِرِ السَّادِسَ عَشَرَ ثُمَّ اتَّصَلَ الْأَحْمَرُ أَوْ تَخَلَّلَهُ نَقَاءٌ، فَهِيَ مُمَيِّزَةٌ أَيْضًا وَحَيْضُهَا الْخَمْسَةَ عَشَرَ. وَالْحَاصِلُ أَنَّ الدَّمَ الضَّعِيفَ الْمُتَخَلِّلُ مِنْ الدِّمَاءِ الْقَوِيَّةِ كَالنَّقَاءِ بِشَرْطِ أَنْ يَسْتَمِرَّ الضَّعِيفُ بَعْدَ الْخَمْسَةَ عَشَرَ وَحْدَهُ، وَضَابِطُهُ أَنَّ حَيْضَهَا الدِّمَاءُ الْقَوِيَّةُ فِي الْخَمْسَةَ عَشَرَ مَعَ مَا تَخَلَّلَهَا مِنْ النَّقَاءِ أَوْ الدَّمِ الضَّعِيفِ، وَلَوْ لَمْ يَتَّصِلْ الْأَحْمَرُ بَلْ اسْتَمَرَّ التَّقَطُّعُ يَوْمًا وَلَيْلَةً أَسْوَدَ وَمِثْلَهُمَا أَحْمَرَ، وَهَكَذَا إلَى آخِرِ الشَّهْرِ كَانَتْ فَاقِدَةً لِشَرْطِ التَّمْيِيزِ؛ لِأَنَّ دَمَهَا الْقَوِيَّ جَاوَزَ خَمْسَةَ عَشَرَ»
+  The same page quotes al-Majmu' for black / purity alternating 5 times, then red: «فَالْعَاشِرُ وَمَا بَعْدَهُ طُهْرٌ، وَدَمُ التِّسْعَةِ وَنَقَاؤُهَا حَيْضٌ».
+- Same author, FK 1/106 ([21628/105](https://shamela.ws/book/21628/105)): «وَالْمَقْصُودُ أَنَّ الدَّمَ الضَّعِيفَ الْمُتَخَلِّلَ بَيْنَ الدِّمَاءِ الْقَوِيَّةِ كَالنَّقَاءِ بِشَرْطِ أَنْ يَسْتَمِرَّ الضَّعِيفُ بَعْدَ الْخَمْسَةَ عَشَرَ وَحْدَهُ».
+- Same author, FK 1/86 ([21628/85](https://shamela.ws/book/21628/85)): half a day black, half a day red, five times, then day 6 black, then red beyond 15: «فَالسَّادِسُ وَمَا قَبْلَهُ حَيْضٌ وَالْبَاقِي طُهْرٌ وَكَذَا كُلُّ سَوَادَيْنِ حَكَمَ بِهِمَا حَيْضًا، فَالضَّعِيفُ بَيْنَهُمَا حَيْضٌ عَلَى الْأَصَحِّ».
+
+So condition 4 (no strong blood inside the weak) concerns the weak blood that is to be purity: if the
+alternation stops within the first 15 days and only weak blood follows, the alternation is joined
+(strong + weak in between = hayd, like naqa' under sahb), and the weak blood after it is purity.
+KHILAF: «عَلَى الْأَصَحِّ» (FK 1/86), so there is a strong counter-view; not named. Author count:
+only Ibn Hajar so far (al-Majmu' via FK is not usable on its own); a second author is missing.
+
+Tests: `Condition4_ContinuouslyBlackAndRed`, `Condition4_ContinuouslyBlackAndRedAndAtTheEndLongRed`
+(skipped; 1 black / 1 red five times, then 1 black, then 10 red: expects tamyiz. Fits FK 1/100 with
+condition 3 waived because the red stops, al-Mutawalli).
 
 ## Order: the strong blood need not come first
 
@@ -104,6 +121,11 @@ combination of Tuhfa 1/401 / Mughni 1/286 for 10 black / 10 red with the order r
 | 5 red, 5 black, then yellow | only black (weak comes first) | (not discussed separately) |
 | 5 black, 5 yellow, then red | only black (weak does not follow directly) | black and yellow (10 days) hayd |
 
+Ibn Qasim on Tuhfa 1/403 ([9059/404](https://shamela.ws/book/9059/404)) on why Tuhfa 1/401 (5 black, 5 yellow, 6 red: only black) and 1/403f. (5 black, 5 yellow, then red continues: black and yellow) do not conflict:
+«مِنْ مَاصَدَقَاتِ هَذَا بِمُجَرَّدِهِ قَوْلُهُ فِيمَا سَبَقَ وَكَذَا لَوْ رَأَتْ خَمْسَةً أَسْوَدَ، ثُمَّ خَمْسَةً أَصْفَرَ، ثُمَّ خَمْسَةً أَحْمَرَ مَعَ أَنَّهُ تَقَدَّمَ أَنَّ حَيْضَهَا السَّوَادُ فَقَطْ إلَّا أَنَّ ذَاكَ مَفْرُوضٌ مَعَ الِانْقِطَاعِ، وَهَذَا مَعَ الِاسْتِمْرَارِ كَمَا يُفْهَمُ مِنْ الْأَمْثِلَةِ فَهَذَا هُوَ الْمُمَيَّزُ لِأَحَدِ الْمَوْضِعَيْنِ عَنْ الْآخَرِ سم»
+So on Ibn Hajar's view black + yellow is hayd only when the red continues (more than 15 days); if the
+red stops, only the black. The IbnHajar test uses 20 days of red (continues): consistent.
+
 KHILAF: setting `StrongerWeakMustFollowStrongDirectly` (default `true` = ar-Ramli / al-Khatib;
 `false` = Ibn Hajar). Lecture part 8 ?t=1961 explains the same difference.
 
@@ -123,6 +145,11 @@ Tests: `MubtadaaMumayyiza_FiveBlackFiveRedThenYellow_BlackAndRedAreHayd`,
   «رَأَتْ ثَمَانِيَةً سَوَادًا ثُمَّ ثَمَانِيَةً حُمْرَةً ثُمَّ سَوَادًا، فَحَيْضُهَا السَّوَادُ الْأَوَّلُ بِالِاتِّفَاقِ، وَكَذَا لَوْ رَأَتْ نِصْفَ يَوْمٍ أَسْوَدَ ثُمَّ نِصْفَهُ حُمْرَةً ثُمَّ خَمْسَةَ عَشَرَ أَسْوَدَ، فَحَيْضُهَا السَّوَادُ الْأَخِيرُ بِالِاتِّفَاقِ»
   Same page: «وَكَذَا كُلُّ سَوَادَيْنِ حَكَمَ بِهِمَا حَيْضًا، فَالضَّعِيفُ بَيْنَهُمَا حَيْضٌ عَلَى الْأَصَحِّ»
 - Lecture part 8 ?t=2342: 7/7/7: Ibn Hajar only the first black; ar-Ramli and Ibn Surayj the first 14 days; 8/8/8: the first eight days.
+
+Ibn Hajar, FK 1/105 ([21628/104](https://shamela.ws/book/21628/104)): 7/7/7 and 8/8/8 must be pictured with
+the blood **stopping** after the third block, otherwise condition 3 fails:
+«قُلْت: يَتَعَيَّنُ تَصْوِيرُهَا بِمَا إذَا انْقَطَعَ بَعْدَ السَّبْعَةَ الثَّالِثَةِ لِمَا مَرَّ عَنْ الْمُتَوَلِّي ... وَقَدْ نَبَّهَ فِي الْمَجْمُوعِ عَلَى كَلَامِ الْمُتَوَلِّي فِي بَعْضِ الصُّوَرِ فَقَالَ: لَوْ رَأَتْ خَمْسَةَ عَشَرَ أَحْمَرَ وَخَمْسَةَ عَشَرَ أَسْوَدَ وَانْقَطَعَ فَحَيْضُهَا الْأَسْوَدُ، وَإِنْ اسْتَمَرَّ الْأَسْوَدُ وَلَمْ يَنْقَطِعْ لَمْ تَكُنْ مُمَيِّزَةً فَحَيْضُهَا مِنْ ابْتِدَاءِ الدَّمِ يَوْمٌ وَلَيْلَةٌ ... (قَوْلُهُ: ثُمَّ سَوَادًا) ، أَيْ ثُمَّ ثَمَانِيَةً سَوَادًا وَانْقَطَعَ لِمَا مَرَّ»
+"Continuing" here means exceeding 15 days. The tests 7/7/7 and 8/8/8 stop after the third block: consistent.
 
 KHILAF: setting `WeakBetweenStrongBeyondMaximum` (default `FirstStrongWithWeakIsHayd` = ar-Ramli /
 al-Khatib / Ibn Surayj; `OnlyFirstStrongIsHayd` = Ibn Hajar).

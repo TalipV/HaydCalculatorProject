@@ -37,6 +37,27 @@ Changing 'ada (Nihaya 1/345, Mughni 1/288): an ordered rotation (3, 5, 7, 3, 5, 
 rounds and then continues; unordered: back to the month before the istihada (based on the 'ada
 by one occurrence), with ihtiyat up to the longest 'ada if that one is not the last.
 
+**Precaution days (ihtiyat) when the last 'ada is not the longest** (found 2026-10-29 via the Risala
+of al-Khatib, pp. 45-47; checked on Shamela):
+
+- Ibn Hajar, Tuhfa 1/405 ([9059/406](https://shamela.ws/book/9059/406)): an ordered rotation needs two
+  rounds; if it did not repeat (istihada in the 4th month) she goes back to the last one; precaution only
+  if she forgot the order or the last turn:
+  «فَإِنْ لَمْ تَتَكَرَّرْ بِأَنْ اُسْتُحِيضَتْ فِي الرَّابِعَةِ رُدَّتْ لِلسَّبْعَةِ إنْ عَلِمَتْهَا وَلَوْ نَسِيَتْ تَرْتِيبَ تِلْكَ الْمَقَادِيرِ أَوْ لَمْ تَنْتَظِمْ أَوْ لَمْ يَتَكَرَّرْ الدَّوْرُ وَنَسِيَتْ آخِرَ النُّوَبِ فِيهِمَا احْتَاطَتْ فَتَحِيضُ مِنْ كُلِّ شَهْرٍ ثَلَاثَةً ثُمَّ هِيَ كَحَائِضٍ فِي نَحْوِ الْوَطْءِ وَطَاهِرٌ فِي الْعِبَادَةِ ...»
+- ar-Ramli, Nihaya 1/345 ([3565/343](https://shamela.ws/book/3565/343)) and al-Khatib, Mughni 1/288: for an
+  unordered changing 'ada she goes back to the month before the istihada, «وَيَلْزَمُهَا الِاحْتِيَاطُ إلَى آخِرِ أَكْثَرِ عَادَتِهَا إنْ لَمْ يَكُنْ هُوَ الَّذِي قَبْلَ شَهْرِ اسْتِحَاضَتِهَا».
+- ash-Shabramallisi on the same page (part 2): in 3, 5, 7 the 7 is the longest; if the third month had
+  been 3 or 5 «رَدَّتْ إلَيْهِ وَاحْتَاطَتْ فِي الزَّائِدِ عَلَى مَا يُفِيدُهُ كَلَامُ الْمَنْهَجِ، لَكِنْ قَالَ سم عَلَيْهِ: الَّذِي فِي الْعُبَابِ وَغَيْرِهِ أَنَّهُ حَيْثُ لَمْ يَتَكَرَّرْ الدَّوْرُ تَرُدُّ لِلنَّوْبَةِ الْأَخِيرَةِ وَلَا احْتِيَاطَ عَلَيْهَا مُطْلَقًا وَهُوَ مُقْتَضَى إطْلَاقِ الْمِنْهَاجِ».
+
+KHILAF (not in the settings): when the 'ada changed without repeating and the last one is shorter
+than an earlier one (e.g. 10, then 5, then 4): her hayd is the last one (4) on all views, but on the
+reading of Sharh al-Manhaj (via ash-Shabramallisi) the days up to the longest 'ada are precaution
+days (like hayd for intercourse, like purity for prayer and fasting, ghusl at the end of each
+possible 'ada); Ibn Qasim (al-'Ubab, the wording of al-Minhaj) and the wording of Tuhfa 1/405: no
+precaution unless she forgot. **The calculator has no "precaution day" category** (only hayd and
+istihada); affects `Mutada_LastCycleOnlyFourDays_ReturnsToFourDays` only in that category, not in
+the hayd days.
+
 Tests: `Mutada_AdaOfFiveDays_ReturnsToAda`, `Mutada_ChangingAdaFiveSixSeven_ReturnsToLastAda`,
 `Mutada_ChangingAdaFiveSixSeven_AdaByTwoOccurrences_ReturnsToSix`,
 `Mutada_ChangingAdaFiveSixSeven_AdaByThreeOccurrences_ReturnsToFive`,

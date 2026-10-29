@@ -60,6 +60,12 @@ still open) with date, and correct the topic file.
    twice plus one other author. Check the author count per point.
 5. **Page offsets** (sources.md) were checked only for vol. 1 of the hayd chapter.
 
+## D0. Source list widened (2026-10-29)
+
+The user confirmed: al-Bajuri, al-Bujayrimi, at-Tarmasi, ash-Sharqawi, al-Kurdi and similar later
+hawashi are valid sources. Re-check the author counts and the open questions with that in mind
+(open question 7 shifts: al-Bujayrimi now counts as an allowed author).
+
 ## D. Not yet verified at all
 
 - I'anat at-Talibin and Hashiyat al-Bajuri: not searched for any point.

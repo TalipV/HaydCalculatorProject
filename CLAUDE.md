@@ -137,8 +137,9 @@ Tests that check calculator results against the Shafi'i mu'tamad follow these ru
 
 - **Allowed sources:** the user's global rules for Shafi'i fiqh sources apply (user-level CLAUDE.md and
   section 4 of the skill `post-validation-shafii-madhhab`): only the later Shafi'is (Tuhfat
-  al-Muhtaj, Nihayat al-Muhtaj, Mughni al-Muhtaj, their hawashi, I'anat at-Talibin, Hashiyat
-  al-Bajuri, Ibn Hajar's al-Fatawa al-Kubra) plus the user's own sources (the lecture series
+  al-Muhtaj, Nihayat al-Muhtaj, Mughni al-Muhtaj, their hawashi, the other hawashi of the later
+  Shafi'is such as al-Bajuri, al-Bujayrimi, ash-Sharqawi, al-Kurdi, at-Tarmasi, I'anat
+  at-Talibin, Ibn Hajar's al-Fatawa al-Kubra) plus the user's own sources (the lecture series
   "Rulings of Haydh and Nifas in the Shafi'i school", al-Ibana wa-l-Ifada); never a matn such as
   al-Minhaj as evidence; no early or comparative works; at least 2, ideally 4 sources from different
   authors per point.

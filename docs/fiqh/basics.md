@@ -16,6 +16,14 @@
   and a night, it is not hayd but dam fasad and the prayers are made up:
   «فَإِنْ انْقَطَعَ لِدُونِ يَوْمٍ وَلَيْلَةٍ فَلَيْسَ بِحَيْضٍ فِي حَقِّهِنَّ لِتَبَيُّنِ أَنَّهُ دَمُ فَسَادٍ»
 
+What "continuous" means (at-Tarmasi, Dar al-Minhaj ed., vol. 1, p. 267, from photo; after al-Kurdi,
+al-Hawashi al-Madaniyya 1/132): blood counts as present when a piece of cotton put in would come out
+stained, even if nothing reaches the part that has to be washed in istinja':
+«المراد بالاتصال : أن يكون لو أدخل نحو القطن .. لتلوث ، وإن لم يخرج الدم إلى ما يجب غسله في الاستنجاء . كردي»
+and on the 24 hours: «بل إذا وصل إلى المحل الذي يجب غسله - وهو ما يظهر عند الجلوس على قدميها - كان له حكم الخارج على الفرج ... إذ ذلك كاف في الحكم على صاحبتها حائضاً ما دامت القطنة تخرج ملوثة».
+For the app: a day counts as a blood day when the cotton comes out stained; "pure" (naqa') means it
+comes out clean (see "Intermittent blood" below).
+
 No khilaf in the later works (Mughni 1/278 mentions a text of ash-Shafi'i on "a day only" and a
 view "a moment", called gharib; not mu'tamad, not in the settings).
 
@@ -26,6 +34,10 @@ view "a moment", called gharib; not mu'tamad, not in the settings).
 - [al-Khatib, Mughni 1/278](https://shamela.ws/book/11444/194): the same.
 
 The calculator counts real elapsed time: 15 days = 360 hours (NodaTime `Duration`).
+At-Tarmasi (Dar al-Minhaj ed., vol. 1, p. 269, from photo) on «وإن لم يتصل»: if the blood starts at the
+beginning of the day, the 15 nights are completed with the night of the 16th day, provided the bloods
+reach a day and a night: «كأن رأت الدم أول النهار .. تكمل الليالي بليلة السادس عشر ، لكن بشرط أن تكون الدماء مقدار يوم وليلة».
+That is the same as 360 hours from the start of the blood.
 
 ## Minimal purity between two hayds: 15 days
 
@@ -33,7 +45,7 @@ The calculator counts real elapsed time: 15 days = 360 hours (NodaTime `Duration
 - [ar-Ramli, Nihaya 1/326](https://shamela.ws/book/3565/324): «(وَأَقَلُّ طُهْرٍ بَيْنَ الْحَيْضَتَيْنِ) زَمَنًا (خَمْسَةَ عَشَرَ يَوْمًا)»
 - [al-Khatib, Mughni 1/278](https://shamela.ws/book/11444/194): the same. Between hayd and nifas the purity can be shorter.
 
-There is no maximum of purity (Tuhfa 1/385: by consensus). This is why a woman with valid tamyiz
+There is no maximum of purity (Tuhfa 1/385: by consensus). At-Tarmasi (Dar al-Minhaj ed., vol. 1, p. 274, from photo): «فلا حد له إجماعاً ؛ فقد لا تحيض المرأة في عمرها إلا مرة ، وقد لا تحيض أصلاً ، حكى القاضي أبو الطيب أن امرأة في زمنه كانت تحيض كل سنة يوماً وليلة» (a woman in Abu t-Tayyib's time had hayd of a day and a night once a year). Compare FK 1/110 (an 'ada with a cycle of ten years counts). This is why a woman with valid tamyiz
 whose weak blood lasts for years is pure all that time (tamyiz.md).
 
 Blood that comes before the minimal purity is complete: see rest-of-tuhr.md.

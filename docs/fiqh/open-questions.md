@@ -154,7 +154,12 @@ discuss that day. Test `MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirst
 ## 4. Condition 4 with a long weak blood at the end
 
 Test `Condition4_ContinuouslyBlackAndRedAndAtTheEndLongRed` (1 black / 1 red six times, then 10
-red) is skipped and has no source yet.
+red) is skipped and had no source.
+Update 2026-10-29: Ibn Hajar, al-Fatawa al-Kubra 1/100, 1/106 and 1/86 state the rule (weak blood
+between strong bloods counts like naqa' if the weak continues alone after day 15; hayd = the
+strong bloods within 15 days with what lies between; "'ala al-asahh"), see tamyiz.md, condition 4.
+That supports the test's expectation (tamyiz). Still missing: a second author, and the name / result
+of the muqabil al-asahh. The test stays skipped (the Skip belongs to the unfinished tamyiz code).
 
 ## 5. Mutahayyira
 
@@ -208,12 +213,26 @@ already has an 'ada of hayd and tuhr, so she cannot be a mubtada'a; her cycle is
 al-Bujayrimi (via ash-Sharwani, allowed) defends the text; ash-Shabramallisi (allowed) reads it
 as a day and a night from the start of the month. So the allowed hawashi lean against the
 tests here, the unapproved Ibn Hamid and Bughya for them.
+Update 2026-10-29: the user confirmed that al-Bujayrimi (and the other later hawashi) are valid
+sources in their own right, so the Tuhfa reading now has two allowed authors (al-Bujayrimi,
+ash-Shabramallisi) against the tests; al-Basri's remark ("a day and a night" fits better) points
+the same way. Still open; the user decides.
 
 For the mu'tada (Tuhfa's own example 'ada 5, 14 pure, continuing, and FK 1/111) there is no such
 conflict: the first day of the returning blood completes the purity, then her 'ada.
 
 To resolve with the user: which reading the tests follow for the mubtada'a (Bughya: cycle 1 basic;
 Tuhfa with al-Bujayrimi / ash-Shabramallisi: mustahada from day 1). The tests are unchanged.
+
+## Tests added from the Risala of al-Khatib (2026-10-29)
+
+Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` (both settings) and
+`MubtadaaMumayyiza_FifteenDaysRedFifteenDaysBlackAndStop_BlackIsHayd`; each checked against an allowed source on Shamela:
+
+| Course | Expected | Sources |
+|---|---|---|
+| 5 black, 5 yellow, 6 red, stop | only the black is hayd (also on Ibn Hajar's view) | Tuhfa 1/401 (after al-Mutawalli); Ibn Qasim on Tuhfa 1/403 (stopping vs continuing); Mughni 1/286, Nihaya 1/342 (only black anyway) |
+| 15 red, 15 black, stop | the black is hayd (tamyiz) | FK 1/105 quoting al-Majmu' (Ibn Hajar); order rule Tuhfa 1/402, Nihaya 1/341f. [IMPLICIT] |
 
 ## Resolved
 

@@ -253,6 +253,50 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((5.0, 30.0));
     }
 
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] 5 days black, then 5 days yellow, then 6 days red (then it stops): she follows her distinction, her hayd is the first black; this only holds if the blood stops (after al-Mutawalli).
+    // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 403; https://shamela.ws/book/9059/404] Explains why this does not contradict Tuhfat al-Muhtaj, vol. 1, p. 403f. (black and yellow are hayd when the red continues): that case is with continuing blood, this one with blood that stops.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Strong, weaker, weak: the weak blood that does not follow the strong directly is not joined to it, so her hayd is only the black. [IMPLICIT]
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 342; https://shamela.ws/book/3565/340] The same rule and the example 5 black, 5 yellow, then red: the hayd is only the black. [IMPLICIT]
+    // KHILAF: Where the red continues, Ibn Hajar counts black and yellow as hayd and ar-Ramli / al-Khatib only the black (setting StrongerWeakMustFollowStrongDirectly, see MubtadaaMumayyiza_FiveBlackFiveYellowThenRed_OnlyBlackIsHayd);
+    // when the blood stops as here, both give only the black (Tuhfat al-Muhtaj, vol. 1, p. 401, with Ibn Qasim, vol. 1, p. 403), so the test checks both settings. Found via the Risala of Muhammad b. 'Ali al-Khatib (Dar al-Fath, 2016), p. 31-32 (not an approved source).
+    [FiqhTodo]
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd(bool useIbnHajar)
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            useIbnHajar ? HaydCalculatorSettings.IbnHajar : HaydCalculatorSettings.Default,
+            (EFlowAppearanceColor.Black, 5),
+            (EFlowAppearanceColor.Yellow, 5),
+            (EFlowAppearanceColor.Red, 6));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((5.0, 16.0));
+    }
+
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 105; https://shamela.ws/book/21628/104] Quoting al-Majmu': 15 days red, then 15 days black, then it stops: her hayd is the black; if the black continues, she has no distinction and her hayd is a day and a night from the start of the blood.
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 402; https://shamela.ws/book/9059/403] The strong blood is hayd also when it comes after the weak; a mubtada'a who sees 15 days red and then 15 days black: once it turns black, the red before it is istihada. [IMPLICIT]
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 341f.; https://shamela.ws/book/3565/339] The strong blood is hayd also when it comes later, e.g. 5 days red, then 5 days black, then red continuously ("according to the asahh"). [IMPLICIT]
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 287; https://shamela.ws/book/11444/203] 15 days red, then 15 days black: she leaves prayer and fasting for the month; only if the black continues does she have no distinction. [IMPLICIT]
+    // KHILAF: ar-Ramli says "according to the asahh" for a strong blood that comes later, so there is another view (muqabil al-asahh, a strong view); the allowed works checked so far do not name it. The test follows the asahh.
+    // Found via the Risala of Muhammad b. 'Ali al-Khatib (Dar al-Fath, 2016), p. 51 (not an approved source).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMumayyiza_FifteenDaysRedFifteenDaysBlackAndStop_BlackIsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 15),
+            (EFlowAppearanceColor.Black, 15));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((15.0, 30.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((0.0, 15.0));
+    }
+
     #endregion Mubtada'a mumayyiza (with distinguishable blood)
 
     #region Mu'tada (woman with an 'ada)
