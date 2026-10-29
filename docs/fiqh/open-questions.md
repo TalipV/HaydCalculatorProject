@@ -133,6 +133,16 @@ leads only.
   commentary) point to **a mustahada case**, i.e. to what the tests expect. Neither is an allowed
   source yet; the user decides whether to approve them.
 
+### al-Ibana wa-l-Ifada, 3rd ed., p. 27 (approved user source; read 2026-10-30)
+
+«١- أن لا يُجاوِزَ مجموعُ الدِّماءِ مَعَ النَّقاءِ خمسةَ عشَرَ يومًا، فإنْ جاوَزَ الخمسةَ عشَرَ وكانَ مُتّصِلًا بدمٍ قبلَه فهذه امْرأةٌ مُسْتَحاضَةٌ في الحَيْضِ اختَلَطَ حيضُها بطُهْرِها، فترَدُّ إلى إحدَى صُوَرِ المُسْتَحاضَةِ في الحَيْضِ. وأمّا إذا لم يتَّصِلِ الدَّمُ بدمٍ قبلَه فإنّ هذه المرأةَ عليها بقيّةُ طُهْرٍ، فتُكَمِّلَ بقيّةَ الطُّهْرِ، وما زادَ فهو حيضٌ جديدٌ»
+
+If the blood together with the purity crosses day 15 **and is connected to the blood before it**, she is
+a mustahada; if not connected, she has a rest of tuhr. In 13/1/5 the blood of day 15 continues into
+days 16-19, so on this rule it is a mustahada case (what the tests expect). With Mughni 1/294 and
+Nihaya 1/356 that makes three authors for "mustahada case"; for "basic" only the broad wording of FK
+1/86. Whether this closes the question is the user's decision.
+
 **Decision of the user (2026-10-29): 13/1/5 stays open.** The tests stay as they are:
 `ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` keeps throwing `OpenFiqhQuestionException`,
 `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5, 13/1/1/5) keeps expecting a
@@ -150,6 +160,7 @@ checked so far. Needed for a KHILAF line with content and possibly a setting.
 FK 1/86 gives only the first black as hayd (bi-l-ittifaq). The last day of the second black (day
 24) lies after a full minimal purity of 15 days following the first black. The sources do not
 discuss that day. Test `MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirstBlackIsHayd` notes it.
+al-Ibana p. 71 (checked 2026-10-30) also gives only «فحيضُها السّوادُ الأوّلُ بالاتِّفاقِ» and says nothing about day 24.
 
 ## 4. Condition 4 with a long weak blood at the end
 
@@ -158,8 +169,9 @@ red) is skipped and had no source.
 Update 2026-10-29: Ibn Hajar, al-Fatawa al-Kubra 1/100, 1/106 and 1/86 state the rule (weak blood
 between strong bloods counts like naqa' if the weak continues alone after day 15; hayd = the
 strong bloods within 15 days with what lies between; "'ala al-asahh"), see tamyiz.md, condition 4.
-That supports the test's expectation (tamyiz). Still missing: a second author, and the name / result
-of the muqabil al-asahh. The test stays skipped (the Skip belongs to the unfinished tamyiz code).
+That supports the test's expectation (tamyiz). Second author found 2026-10-30: al-Ibana p. 71-72
+(the same case: alternating black / red for ten days, then black, then red continuing: mumayyiza).
+Still missing: the name / result of the muqabil al-asahh. The test stays skipped (the Skip belongs to the unfinished tamyiz code).
 
 ## 5. Mutahayyira
 

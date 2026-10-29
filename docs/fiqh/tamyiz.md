@@ -74,11 +74,15 @@ applies, valid tamyiz [IMPLICIT]. Tests: `Condition3_NotFulfilled_1DayBlack14Day
 - Same author, FK 1/106 ([21628/105](https://shamela.ws/book/21628/105)): «وَالْمَقْصُودُ أَنَّ الدَّمَ الضَّعِيفَ الْمُتَخَلِّلَ بَيْنَ الدِّمَاءِ الْقَوِيَّةِ كَالنَّقَاءِ بِشَرْطِ أَنْ يَسْتَمِرَّ الضَّعِيفُ بَعْدَ الْخَمْسَةَ عَشَرَ وَحْدَهُ».
 - Same author, FK 1/86 ([21628/85](https://shamela.ws/book/21628/85)): half a day black, half a day red, five times, then day 6 black, then red beyond 15: «فَالسَّادِسُ وَمَا قَبْلَهُ حَيْضٌ وَالْبَاقِي طُهْرٌ وَكَذَا كُلُّ سَوَادَيْنِ حَكَمَ بِهِمَا حَيْضًا، فَالضَّعِيفُ بَيْنَهُمَا حَيْضٌ عَلَى الْأَصَحِّ».
 
+- [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 71-72], «من مسائل التمييز», case 3:
+  «لو رأتْ يومًا أسوَدَ ثمّ يومًا أحمرَ ثمّ يومًا أسوَدَ ثمّ يومًا أحمرَ ثمّ يومًا أسوَدَ ثمّ يومًا أحمرَ وهكذا رابعًا وخامسًا، ثمّ بعدَ هذه العشَرةِ الأيامِ أسوَدَ ثمّ أحمرَ استمرَّ فهي مُميِّزةٌ، فالأسوَدُ الأوّلُ والأخيرُ وما بينَهما حيضٌ، والأحمرُ الأخيرُ استِحاضةٌ».
+  Second author next to Ibn Hajar (FK 1/100).
+
 So condition 4 (no strong blood inside the weak) concerns the weak blood that is to be purity: if the
 alternation stops within the first 15 days and only weak blood follows, the alternation is joined
 (strong + weak in between = hayd, like naqa' under sahb), and the weak blood after it is purity.
-KHILAF: «عَلَى الْأَصَحِّ» (FK 1/86), so there is a strong counter-view; not named. Author count:
-only Ibn Hajar so far (al-Majmu' via FK is not usable on its own); a second author is missing.
+KHILAF: «عَلَى الْأَصَحِّ» (FK 1/86), so there is a strong counter-view; not named. Authors: Ibn Hajar
+(FK 1/100, 1/106, 1/86) and as-Saqqaf (al-Ibana p. 71-72).
 
 Tests: `Condition4_ContinuouslyBlackAndRed`, `Condition4_ContinuouslyBlackAndRedAndAtTheEndLongRed`
 (skipped; 1 black / 1 red five times, then 1 black, then 10 red: expects tamyiz. Fits FK 1/100 with
@@ -141,6 +145,7 @@ Tests: `MubtadaaMumayyiza_FiveBlackFiveRedThenYellow_BlackAndRedAreHayd`,
 - [Ibn Hajar, Tuhfa 1/401](https://shamela.ws/book/9059/402):
   «أَوْ سَبْعَةً أَسْوَدَ، ثُمَّ سَبْعَةً أَحْمَرَ، ثُمَّ ثَلَاثَةً أَسْوَدَ فَتَعْمَلُ بِتَمْيِيزِهَا فَحَيْضُهَا الْأَسْوَدُ الْأَوَّلُ عَلَى الْمُعْتَمَدِ الَّذِي صَحَّحَهُ فِي التَّحْقِيقِ وَجَرَى عَلَيْهِ أَكْثَرُ الْمُتَأَخِّرِينَ وَمَحَلُّهُ إنْ انْقَطَعَ لِمَا تَقَرَّرَ عَنْ الْمُتَوَلِّي»
 - [Ibn Hajar, al-Fatawa al-Kubra 1/102 and 1/104](https://shamela.ws/book/21628/103): ar-Ruyani: only the black (followed in at-Tahqiq); Ibn Surayj: the black with the red (relied on in al-Majmu').
+- [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 71]: «رأتْ ثمانيةَ أسوَدَ، ثمّ ثمانيةَ أحمرَ، ثمّ ثمانيةَ أسوَدَ، فحيضُها السّوادُ الأوّلُ بالاتِّفاقِ»; 7/7/7: Ibn Hajar only the black, Ibn Surayj / ar-Ramli black with red; the difference to 1 black / 14 red / black: there the blood continues, here it stops.
 - [Ibn Hajar, al-Fatawa al-Kubra 1/86](https://shamela.ws/book/21628/85): 8 black, 8 red, then black: the first black by agreement:
   «رَأَتْ ثَمَانِيَةً سَوَادًا ثُمَّ ثَمَانِيَةً حُمْرَةً ثُمَّ سَوَادًا، فَحَيْضُهَا السَّوَادُ الْأَوَّلُ بِالِاتِّفَاقِ، وَكَذَا لَوْ رَأَتْ نِصْفَ يَوْمٍ أَسْوَدَ ثُمَّ نِصْفَهُ حُمْرَةً ثُمَّ خَمْسَةَ عَشَرَ أَسْوَدَ، فَحَيْضُهَا السَّوَادُ الْأَخِيرُ بِالِاتِّفَاقِ»
   Same page: «وَكَذَا كُلُّ سَوَادَيْنِ حَكَمَ بِهِمَا حَيْضًا، فَالضَّعِيفُ بَيْنَهُمَا حَيْضٌ عَلَى الْأَصَحِّ»

@@ -11,9 +11,11 @@ Let A = the first blood (a valid hayd), P = the purity after it, B = the returni
 2. **B starts after day 15 of A (A + P is more than 15 days), but before the minimal purity is
    complete**: the "rest of tuhr" cases below (3/12/3, the Bughya rule).
 3. **B starts inside the 15 days of A and runs past day 15** (A + P under 15 days): intermittent
-   blood that exceeds 15 days. Mughni 1/294 and Nihaya 1/356 call it istihada / a mustahada case;
-   whether that also holds when B stops soon after day 15 is an open question
-   (13/1/5, open-questions.md).
+   blood that exceeds 15 days. Mughni 1/294 and Nihaya 1/356 call it istihada / a mustahada case.
+   al-Ibana p. 27 states the line explicitly: blood that crosses day 15 **connected to the blood before
+   it** makes her a mustahada; if it is not connected, she has a rest of tuhr:
+   «فإنْ جاوَزَ الخمسةَ عشرَ وكانَ مُتّصِلًا بدمٍ قبلَه فهذه امْرأةٌ مُسْتَحاضَةٌ في الحَيْضِ اختَلَطَ حيضُها بطُهْرِها، فترَدُّ إلى إحدَى صُوَرِ المُسْتَحاضَةِ في الحَيْضِ. وأمّا إذا لم يتَّصِلِ الدَّمُ بدمٍ قبلَه فإنّ هذه المرأةَ عليها بقيّةُ طُهْرٍ، فتُكَمِّلَ بقيّةَ الطُّهْرِ، وما زادَ فهو حيضٌ جديدٌ»
+   (13/1/5 stays open by the user's decision; open-questions.md, question 1).
 
 The Bughya text names the condition for case 2 itself: «نقاءً دونَ خمسةَ عشرَ ، لٰكنْ لوِ اجتمعَ معَ الدمِ زادَ عليها»
 (purity under 15 days which, together with the first blood, exceeds 15 days).
@@ -59,6 +61,11 @@ No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
   Ibn Hajar's passage itself is about blood that continues (see next section), where Bughya says
   the same (mubtada'a: a day and a night). This was recorded as a KHILAF note, not as a
   contradiction; the user may decide otherwise.
+
+- [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 29] (approved user source), the case 10/8/12 itself:
+  «لو رأتْ عشرةَ أيامٍ وانقطعَ، ثمّ جاءها الدّمُ بعدَ ثمانيةِ أيامٍ مِن انقطاعِه واستمرَّ اثنَيْ عشرَ يومًا وانقطعَ، فالعشرةُ الأيامِ الأُولَى حيضٌ، وأمّا الاثنا عشرَ يوم دم فلا يُمكِنُ جعلُها حيضًا، وإنّما هذه المرأةُ عليها بقيّةُ طُهْرٍ، فتُكمِّلُ بقيّةَ طُهْرِها، وما زادَ يكونُ حيضًا جديدًا، ففي هذه المسألةِ تأخُذُ مِن الدّمِ الجديدِ سبعةَ أيامٍ دمَ فسادٍ تكمِلةً لأقلِّ الطُّهْرِ بين الحيضَتيْنِ، وما بَقِيَ – وهو الخمسةُ الأيامِ – حيضٌ جديدٌ»
+  and p. 30-31 for the mu'tada: «فيُحْكَمُ بأنه حيضٌ إذا أتاها بعدَ طُهْرٍ خمسةَ عشرَ فأكثرَ، وإلّا : بأن أتى قبلَه فيُعَدُّ هذا الدّمُ دمَ فسادٍ، فتكمِّلُ أقلَّ الطُّهْرِ، وما زادَ فهو حيضٌ جديدٌ».
+  With this the rule has two authors (Ba 'Alawi after Ibn Yahya, and as-Saqqaf), plus Ibn Qasim's «لا يبعد».
 
 Worked examples (day 1 = first day of the first blood):
 

@@ -336,6 +336,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] Blood that can be hayd (more than a day and a night, under 15 days), then purity under 15 days that exceeds 15 together with the blood, then blood: the first blood is hayd, the part of the returning blood that completes the purity is dam fasad, and the rest is hayd if it meets its conditions and does not exceed 15 days. Here: days 19-25 dam fasad, days 26-30 hayd. [IMPLICIT]
+    // [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 29] This case: 10 days blood, 8 days purity, 12 days blood: the first 10 days are hayd, 7 days of the new blood are dam fasad completing the minimal purity, the remaining 5 days are a new hayd.
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] Blood of e.g. 6 days after the purity: "it is not far-fetched" that the part beyond the completion of the purity is hayd. [IMPLICIT]
     // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
     [FiqhTodo]

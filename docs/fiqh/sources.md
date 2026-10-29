@@ -97,6 +97,7 @@ not in the repository (they are in the session upload folder of the conversation
 | 2026-10-29 | Photos: Hashiyat at-Tarmasi, «فصل في الحيض والاستحاضة والنفاس» from the start to «وأقل طهر فاصل بين الحيضتين» | **Dar al-Minhaj ed., vol. 1, pp. 266-274** (matn: al-Minhaj al-Qawim pp. 64-65, [9973/64](https://shamela.ws/book/9973/64)) | read from photo; quotes from the Tuhfa / Mughni checked against the known pages | approved work; mostly definitions and age of hayd. Recorded in basics.md: the meaning of "continuous" (al-Kurdi, via at-Tarmasi p. 267), the 15 nights (p. 269), no maximum of purity with Abu t-Tayyib's example (p. 274). Nothing on the open questions |
 | 2026-10-29 | Photos: Hashiyat at-Tarmasi, «وخرج بالحيضتين: الطهر بين حيض ونفاس» and the start of what is forbidden in hayd | **Dar al-Minhaj ed., vol. 1, pp. 275-278** | read from photo | approved work; purity between hayd and nifas (ash-Shabramallisi's day 50 / day 61 case, Ibn Qasim, against Ibn al-Muqri) recorded in the new nifas.md (not implemented in the calculator). pp. 277-278 (what is forbidden: tahara with the intention of worship, passing through the mosque, fasting): not relevant for the calculator, not recorded |
 | 2026-10-29 | PDF: «رسالة في أحكام الحيض والنفاس والاستحاضة» by Muhammad b. 'Ali b. 'Abd ar-Rahman al-Khatib (Tarim; finished 1421 AH) | Dar al-Fath, Amman, 2nd ed. 1437/2016, 86 pp. (scan without text layer; book page = PDF page - 3) | read pp. 24-37, 42, 44, 49, 51 from the scan; every point used was checked in the cited allowed work on Shamela | contemporary work, **not approved**; used only as a finder. Led to: FK 1/100, 1/106 (condition 4 / weak between strong), FK 1/105 (7/7/7 and 8/8/8 stop; 15 red 15 black), Ibn Qasim on Tuhfa 1/403 (stopping vs continuing). Recorded in tamyiz.md and open-questions.md. Second pass (same day): pp. 35-54 read (procedure in the second month, 15 red / 15 black, mu'tada, changing 'ada, 7/7/7, 16 black / 16 red, the fawa'id). New: precaution days for a changing 'ada (Tuhfa 1/405, Nihaya 1/345 with ash-Shabramallisi; ada.md, khilaf.md); Ibn Surayj on 16 black / 16 red (not checked). Not read: pp. 55-82 (mutahayyira, nifas) |
+| 2026-10-30 | PDF of al-Ibana wa-l-Ifada (the book itself), sent by the user after the lecture notes had served only as pointers | 3rd ed., pp. 25-31, 66-72 read from the scan | read from the scan (book page = PDF page - 1) | approved source. Recorded: p. 27 (blood crossing day 15 connected to the blood before: mustahada; not connected: rest of tuhr), p. 28-29 (examples 3/10, 6 h + 10 h, 7/16-17, 10/8/12), p. 30-31 (mu'tada: rest of tuhr, the rest new hayd), p. 71 (8/8/8, 7/7/7), p. 71-72 (alternating black / red, then black, then red: mumayyiza) |
 
 ## Shamela ids and page offsets
 
@@ -146,5 +147,17 @@ al-'Abbadi", "Ba 'Alawi"; ash-Sharwani is cited inside the Tuhfa citation ("Hash
 
 ## al-Ibana wa-l-Ifada
 
-Used for the fourth condition of tamyiz (strong blood must not interrupt the weak) with the
-example one day black, one day red, beyond 15 days: not mumayyiza. No page numbers recorded yet.
+«الإبانة والإفاضة في أحكام الحيض والنفاس والاستحاضة على مذهب الإمام الشافعي» by as-Sayyid 'Abd
+ar-Rahman b. 'Abdallah b. 'Abd al-Qadir as-Saqqaf; **3rd ed., expanded and revised** («الطبعة الثالثة
+(مزيدة ومنقحة)»), 101 pp. The user's scan:
+`F:\OneDrive\Anlagen\Bücher\Fiqh Books\Arabisch\Bücher\al-Ibanah wal-Ifadah fi Akhamil-Haydi wan-Nifasi wal-Istihada.pdf`
+(no text layer; **book page = PDF page - 1**). Approved user source. Its footnotes cite Nihaya 1/350,
+1/356, Tuhfa 1/402 and others; for more tamyiz cases it refers to the Risala of Muhammad b. 'Ali
+al-Khatib, pp. 28ff. and 57ff.
+
+Contents (book pages): lesson 1 general (10), lesson 2 age, duration, colours (20), lesson 3 purity
+from hayd and nifas (30), lesson 4 nifas (36), lesson 5 what is forbidden (43), lesson 6 the mustahada
+and her duties (55), lesson 7 the mustahada in hayd (61), lesson 8 the mustahada in nifas (88).
+The last PDF page (101) is a handwritten sheet of rules that is not part of the printed book.
+
+Citation in tests: `[as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. X]`.

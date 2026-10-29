@@ -132,6 +132,9 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
 
     #region Condition 4
 
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 100; https://shamela.ws/book/21628/99] Weak blood between strong bloods counts like purity, provided the weak continues alone after the 15 days; her hayd are the strong bloods within the 15 days with what lies between them. [IMPLICIT]
+    // [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 71-72] One day black, one day red, five times, then black, then red: she is mumayyiza; the first and the last black and what lies between are hayd, the last red is istihada.
+    // KHILAF: Ibn Hajar says "according to the asahh" for the weak blood between two strong ones (al-Fatawa al-Kubra, vol. 1, p. 86; https://shamela.ws/book/21628/85), so there is another view (muqabil al-asahh, a strong view); the allowed works checked so far do not name it. The test follows the asahh.
     [FiqhTodo]
     [Fact(Skip = TamyizNotFinished)]
     public void Condition4_ContinuouslyBlackAndRedAndAtTheEndLongRed()
