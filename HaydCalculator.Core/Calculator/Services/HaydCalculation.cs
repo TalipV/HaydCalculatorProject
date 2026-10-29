@@ -244,6 +244,9 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData, Ha
             throw new HaydCalculationStateException("Complex istihada requires a hayd cycle in progress.");
         }
 
+        // TODO: Instead of signalling a mustahada case through this InfoException, set a bool state on the
+        // hayd cycle (e.g. IsComplexIstihada) that callers and tests can read
+        // (see HaydCalculatorServiceTests_IstihadaClassification).
         throw new InfoException(TextUtil.ComplexIstihadaNotImplemented);
 
         //List<FlowDataEntity> toEvaluate = this._currentIncompleteHaydCycle.HaydDataLst;

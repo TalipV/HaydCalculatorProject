@@ -123,6 +123,14 @@ PRs opened by a Claude session must be recognizable as such at a glance:
 Same for the PR title: describe the change normally, no marker there — the banner,
 the label and the branch prefix carry that.
 
+## Fiqh reference
+
+`docs/fiqh/` is the reference for the fiqh behind the calculator: rules with sources and Arabic
+quotations, Shamela page offsets, every khilaf, open questions, and which tests cover what.
+**Before any fiqh statement, test or calculator change, read `docs/fiqh/README.md` and the file
+for the topic**, instead of relying on the session context. Add every new finding there (new
+source, user decision, khilaf, resolved or new open question).
+
 ## Fiqh tests
 
 Tests that check calculator results against the Shafi'i mu'tamad follow these rules:

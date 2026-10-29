@@ -302,6 +302,11 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] 'Ada of 5 days at the start of the month, then 14 days purity, then the blood returns and continues: the first day and night of the returning blood are purity, then 5 days hayd, and her cycle stays 20 days.
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340 (Hashiyat ash-Shabramallisi); https://shamela.ws/book/3565/338] The same example after Ibn Hajar.
     // KHILAF: The 'ada is established by a single occurrence according to the sounder view (asahh); other views require two or three occurrences (Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204). This test follows the asahh.
+    // KHILAF (source NOT APPROVED): Abu Makhrama, quoted in Bughyat al-Mustarshidin (Dar al-Minhaj ed., vol. 1, p. 277, main text), calls this test's result the asahh; the commentary of that edition
+    // (vol. 1, p. 277-278, note [615], after al-I'ab, manuscript 1/f. 424) names three opposite views (awjuh, muqabil al-asahh, i.e. strong): (1) the first day of the returning blood is istihada,
+    // then the rest of the month (10 days) and 5 days of the next are hayd, then 25 days purity, keeping her old cycle; (2) the first day is istihada, then 5 days hayd and 25 days purity, always;
+    // (3) all returning blood up to the end of the month is istihada, and her old cycle starts again with the next month. The allowed works (Tuhfat al-Muhtaj, vol. 1, p. 399;
+    // al-Fatawa al-Kubra, vol. 1, p. 111) give no khilaf here. No setting and no test for these views (user's decision, 2026-10-29); see docs/fiqh/khilaf.md.
     [FiqhTodo]
     [Fact]
     public void Mutada_FourteenDaysPurityThenContinuousBlood_FirstDayCompletesTuhur()

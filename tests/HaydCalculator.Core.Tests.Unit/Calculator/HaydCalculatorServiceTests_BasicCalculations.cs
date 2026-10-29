@@ -1,4 +1,4 @@
-using HaydCalculator.Core.Calculator.Models;
+﻿using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
 using HaydCalculator.Core.Tests.Unit.Util;
@@ -296,7 +296,9 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData]);
     }
 
-    // No text source found yet: whether blood past the completion of the minimal purity is a new hayd is an open question, see HaydCalculatorServiceTests_OpenQuestions.BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd.
+    // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] Blood that can be hayd (more than a day and a night, under 15 days), then purity under 15 days that exceeds 15 together with the blood, then blood: the first blood is hayd, the part of the returning blood that completes the purity is dam fasad, and the rest is hayd if it meets its conditions and does not exceed 15 days. Here: day 18 dam fasad, days 19-21 hayd. [IMPLICIT]
+    // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] Blood of e.g. 6 days after the purity: "it is not far-fetched" that the part beyond the completion of the purity is hayd. [IMPLICIT]
+    // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
     [FiqhTodo]
     [Fact]  // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=200; Pages 61-62 of the pdf]
     public void HaydCalculation_CalculationWithPurityBetweenTwoSeparateMenstrualCyclesIncludingIstihada()
@@ -333,7 +335,9 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         TestMethods.CheckFlowsInOrder([firstFlowData, firstIstihadaData, secondFlowData]);
     }
 
-    // No text source found yet: whether blood past the completion of the minimal purity is a new hayd is an open question, see HaydCalculatorServiceTests_OpenQuestions.BloodContinuingPastCompletionOfMinimalPurityThenStopping_IsTheRestHayd.
+    // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] Blood that can be hayd (more than a day and a night, under 15 days), then purity under 15 days that exceeds 15 together with the blood, then blood: the first blood is hayd, the part of the returning blood that completes the purity is dam fasad, and the rest is hayd if it meets its conditions and does not exceed 15 days. Here: days 19-25 dam fasad, days 26-30 hayd. [IMPLICIT]
+    // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] Blood of e.g. 6 days after the purity: "it is not far-fetched" that the part beyond the completion of the purity is hayd. [IMPLICIT]
+    // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
     [FiqhTodo]
     [Fact] // [Rulings of Haydh and Nifas in the Shafi'i school (3); https://youtu.be/fKriEgAo50o?t=1910]
     public void HaydCalculation_CalculationWithPartiallyIstihadaAndPartiallyMenstrualFlow()
@@ -372,6 +376,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
 
     // Whether intermittent blood that exceeds 15 days together with the purity is a mustahada case is partly an open question, see HaydCalculatorServiceTests_OpenQuestions.ThirteenRedOnePurityFiveRed_DamFasadOrMustahada.
+    // TODO: Assert a bool state of the hayd cycle (e.g. IsComplexIstihada) instead of the InfoException, as in HaydCalculatorServiceTests_IstihadaClassification.
     [FiqhTodo]
     [Theory]
     [InlineData(11.0, 1.0, 1.0, 5.0)]

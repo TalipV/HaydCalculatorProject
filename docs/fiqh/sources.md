@@ -1,0 +1,130 @@
+# Sources
+
+## Allowed works
+
+The rules are the user's global rules for Shafi'i fiqh (user-level CLAUDE.md, section 4 of the
+skill `post-validation-shafii-madhhab`). The standard is the mu'tamad of the school as finalized by
+the later Shafi'is (muta'akhkhirun).
+
+| Work | Author | Use |
+|---|---|---|
+| Tuhfat al-Muhtaj | Ibn Hajar al-Haytami (d. 974) | allowed |
+| Hawashi on the Tuhfa | 'Abd al-Hamid ash-Sharwani; Ibn Qasim al-'Abbadi (cited there as "سم") | allowed, each counts as own author |
+| Nihayat al-Muhtaj | Shams ad-Din ar-Ramli (d. 1004) | allowed |
+| Hawashi on the Nihaya | 'Ali ash-Shabramallisi (cited as "ع ش"); ar-Rashidi | allowed, each counts as own author |
+| Mughni al-Muhtaj | al-Khatib ash-Shirbini (d. 977) | allowed |
+| I'anat at-Talibin | al-Bakri ad-Dimyati | allowed |
+| Hashiyat al-Bajuri | Ibrahim al-Bajuri | allowed |
+| al-Fatawa al-Kubra al-Fiqhiyya | Ibn Hajar al-Haytami | allowed (same author as the Tuhfa: together they count as one author) |
+| Lecture series "Rulings of Haydh and Nifas in the Shafi'i school" | user's source | allowed |
+| al-Ibana wa-l-Ifada fi Ahkam al-Hayd wa-n-Nifas wa-l-Istihada | user's source | allowed |
+
+Never as evidence:
+
+- a matn, e.g. Minhaj at-Talibin (quote only the shuruh on it);
+- early works from before the mu'tamad was settled, e.g. al-Juwayni's Nihayat al-Matlab;
+- comparative works, e.g. Hilyat al-'Ulama';
+- ar-Rawda, al-Majmu', at-Tahqiq and Sharh ar-Rawd only as reported inside an allowed work; the
+  evidence is then the allowed work.
+
+Any other work only after the user approved it.
+
+## Approved exceptions
+
+### Bughyat al-Mustarshidin (Ba 'Alawi), after the Fatawa of Ibn Yahya
+
+Approved by the user on 2026-10-29 for the case "hayd, then purity under 15 days, then blood"
+(see rest-of-tuhr.md). The book is not available in the local Shamela library, so it is cited
+without a link. The user sent a photo of the page; the text below matches it word for word.
+
+**Where to find it** (the user's copy):
+
+- Edition: **Dar al-Minhaj**, with commentary (the commentary is printed below a line on each
+  page, its notes numbered in brackets, e.g. [615]; the editor's footnotes are numbered (1), (2) ...
+  at the very bottom).
+- **Vol. 1.** Everything cited here is from vol. 1.
+- p. 277: mas'ala «ي» [في حكم النقاء الناقص عن خمسة عشر يوماً] (main text, upper part of the page;
+  footnote (2): Fatawa Ibn Yahya p. 24), then Ba 'Alawi's «قلتُ : وعبارةُ أبي مخرمةَ ...»;
+  commentary notes [612]-[615].
+- p. 278: end of Abu Makhrama's text («وكالأربعةَ عشرَ ما دونَها إلى العشرةِ ...» ending «وفيهِ مخالفةٌ لِمَا ذُكِرَ ، فتأمَّلْهُ»);
+  commentary: end of [615] (the three awjuh, «إيعاب» fn. (2): al-I'ab 1/f. 424), [616] (al-Majmu'
+  6/6/6, fn. (3)), [617] (which 'ada).
+- p. 279: end of [617]; mas'ala «ش» on the minimum of hayd; commentary [618]; fn. (6): Ibn Hamid
+  on Tuhfa 1/399.
+
+Cite as: Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. X (main text / commentary note
+[N] / footnote (n)).
+
+Heading in the book: «مسألة ي [في حكم النقاء الناقص عن خمسة عشر يوماً]» ("ي" is Bughya's mark for
+the Fatawa of Ibn Yahya). The quotation ends with «انتهى», so nothing of Ba 'Alawi's own follows.
+
+> رأتْ دماً يصلحُ حيضاً ؛ بأن زادَ علىٰ يومٍ وليلةٍ ونقصَ عن خمسةَ عشرَ ، ثمَّ نقاءً دونَ خمسةَ عشرَ ،
+> لٰكنْ لوِ اجتمعَ معَ الدمِ زادَ عليها ، ثمَّ دماً .. فالأولُ : حيضٌ ، وما يكمِّلُ الطهرَ مِنَ العائدِ :
+> دمُ فسادٍ ، والزائدُ : حيضٌ بشرطِهِ ، ما لم يجاوزْ أكثرَهُ ، وإلَّا .. فتأخذُ المُبتدَأةُ غيرُ المميِّزةِ
+> مِنْ أولِ الزائدِ يوماً وليلةً وتطهرُ تسعةً وعشرينَ ، والمعتادةُ عادتَها حيضاً وطهراً . انتهى
+
+Citation format in tests: `[Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)]`.
+
+The approval covers this text of the Bughya only. **Not approved** (2026-10-29): the commentary
+on the Bughya and what it quotes (al-Majmu' via fn. 616, al-I'ab manuscript via fn. 615, Ibn
+Hamid via fn. 6, al-Kurdi's al-Hawashi al-Madaniyya). See review-notes.md, section E.
+
+## Log of material supplied by the user
+
+Every photo, quotation or finding the user sends is logged here: what it is, where it is from,
+how it was checked, and its status. Arabic transcribed from a photo is marked "from photo"; it
+should be compared with the photo once more before it is relied on. The photos themselves are
+not in the repository (they are in the session upload folder of the conversation from 2026-10-29).
+
+| Date | Material | Edition / place | Checked how | Status |
+|---|---|---|---|---|
+| 2026-10-29 | Quotation and photo: Bughyat al-Mustarshidin, mas'ala "ي" on purity under 15 days (after Fatawa Ibn Yahya p. 24) | Dar al-Minhaj edition, vol. 1, p. 277 | photo compared word for word with the quotation | **approved exception**; used in rest-of-tuhr.md and tests |
+| 2026-10-29 | Summary of another Claude session on the Bughya and its commentary (6 points) | Bughya pp. 277-279 with commentary | each point checked against Shamela where possible (review-notes.md, section E) | 1 adopted (= the approved Bughya text); 4 confirmed from the Tuhfa hawashi; 5 corrected (al-Basri misreported); 2, 3 not adopted; 6 already covered |
+| 2026-10-29 | Photo: Bughya p. 278 (main text, end of Abu Makhrama's fatwa; commentary [615] end, [616], [617]) | Dar al-Minhaj ed., vol. 1, p. 278, commentary notes [616]-[617], fn. 1-5 | transcribed from photo; al-Majmu' quote of [616] found on Shamela (2186/1035, Muniriyya 2/507) | commentary **not approved**; leads recorded in open-questions.md (questions 1 and 7) and review-notes.md |
+| 2026-10-29 | Photo: Bughya p. 279 (commentary on the 'ada; mas'ala "ش" on the minimum of hayd; fn. 6 with Ibn Hamid) | Dar al-Minhaj ed., vol. 1, p. 279, commentary note [618], fn. 1-7 | transcribed from photo | commentary **not approved**; Ibn Hamid recorded in open question 7 |
+| 2026-10-29 | Photo: Bughya p. 277 complete (mas'ala "ي" = the approved text; Ba 'Alawi's «قلتُ» with Abu Makhrama's wording; commentary [612]-[615]; fn. 1-3) | Dar al-Minhaj ed., vol. 1, p. 277 | transcribed from photo; the approved Ibn Yahya text compared once more: matches | Ibn Yahya text: approved (unchanged). Abu Makhrama («فالأصحّ ...») and the commentary [615] («ومقابلُهُ ثلاثةُ أوجهٍ»): **not approved**; recorded in review-notes.md, section E, row 3a |
+
+## Shamela ids and page offsets
+
+Links: `https://shamela.ws/book/<id>/<page id>`. The page id is Shamela's internal number, not
+the printed page. For vol. 1 (the hayd chapter) these offsets hold:
+
+| Work | Book id | Shamela page id = printed page ... | Example |
+|---|---|---|---|
+| Tuhfat al-Muhtaj with the hawashi of ash-Sharwani and Ibn Qasim | 9059 | + 1 | 1/399 = `9059/400` |
+| Nihayat al-Muhtaj with the hawashi of ash-Shabramallisi and ar-Rashidi | 3565 | - 2 | 1/340 = `3565/338` |
+| Mughni al-Muhtaj | 11444 | - 84 | 1/284 = `11444/200` |
+| al-Fatawa al-Kubra al-Fiqhiyya | 21628 | - 1 | 1/86 = `21628/85` |
+| I'anat at-Talibin | 963 | not checked yet | |
+
+Always check the `printed_page` field that the Shamela tool returns; the offset can change at
+other places in a book. Long pages come in parts (`body_part`); the hawashi are usually in the
+later parts of a Tuhfa or Nihaya page.
+
+Chapter starts: Tuhfa, bab al-hayd 9059/384, fasl fi ahkam al-mustahada 9059/399; Nihaya, bab
+al-hayd 3565/320, fasl "idha ra'at ..." 3565/337; Mughni, bab al-hayd 11444/193, fasl 11444/200;
+al-Fatawa al-Kubra, bab al-hayd 21628/75.
+
+## Citation format in tests
+
+```
+// [Author, Work, vol. X, p. Y; https://shamela.ws/book/<id>/<page id>] short English summary
+// [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340 (Hashiyat ash-Shabramallisi); https://shamela.ws/book/3565/338] ...
+// [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] ...
+// KHILAF: ...
+```
+
+Names used so far: "Ibn Hajar al-Haytami", "ar-Ramli", "al-Khatib ash-Shirbini", "Ibn Qasim
+al-'Abbadi", "Ba 'Alawi"; ash-Sharwani is cited inside the Tuhfa citation ("Hashiyat ash-Sharwani there").
+
+## Lecture series "Rulings of Haydh and Nifas in the Shafi'i school"
+
+| Part | Link | Used for |
+|---|---|---|
+| (3) | https://youtu.be/fKriEgAo50o | ?t=1591, ?t=1750 (purity between hayd and istihada), ?t=1910 (10/8/12) |
+| (8) | https://youtu.be/WEabG3nBuEM | ?t=200 (3/14/4, pages 61-62 of the pdf), ?t=1961 (strong / weak / weaker), ?t=2342 (7/7/7 and 8/8/8) |
+
+## al-Ibana wa-l-Ifada
+
+Used for the fourth condition of tamyiz (strong blood must not interrupt the weak) with the
+example one day black, one day red, beyond 15 days: not mumayyiza. No page numbers recorded yet.
