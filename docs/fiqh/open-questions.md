@@ -224,27 +224,6 @@ conflict: the first day of the returning blood completes the purity, then her 'a
 To resolve with the user: which reading the tests follow for the mubtada'a (Bughya: cycle 1 basic;
 Tuhfa with al-Bujayrimi / ash-Shabramallisi: mustahada from day 1). The tests are unchanged.
 
-## Leads from the user's lecture notes on al-Ibana (Shaykh Labib), 2026-10-29
-
-Loose notes of the user ("Hayd Shaykh Labib.pdf"), **not a source**. They follow the lectures on
-al-Ibana wa-l-Ifada (an approved user source) and partly the Risala of al-Khatib. Each lead needs the
-place in al-Ibana itself before it can be used:
-
-1. **Question 1 (13/1/5):** notes p. 8 (al-Ibana, before "Dars 5, book p. 37"): «Wenn die Blutung die 15
-   Tage überschreitet und dabei mit vorherigem Blut am 15. Tag verbunden ist, gilt die Frau als
-   Mustahadah. Wenn sie am 15. Tag kein Blut hat, verbleibt sie im Zustand der Reinheit (baqiyyat
-   at-tuhr) bis zur Mindestdauer der Reinheit, danach beginnt eine neue Menstruation.» In 13/1/5 there
-   is blood on day 15, so this points to a mustahada case (what the tests expect).
-2. **Question 3 (8/8/8, day 24):** notes p. 23: «Die ersten 8 Tage wären Hayd, die 8 Tage danach
-   Istihada und der letzte Tag mit schwarzem Blut wieder neue Hayd.» That would make day 24 a new hayd;
-   the test expects only days 1-8 as hayd.
-3. **Question 4 (condition 4):** notes p. 24, "3. Fall": alternating black / red for four or five rounds
-   within ten days, then black, then red: mumayyiza; hayd = first black to last black with what lies
-   between; the red after 15 days istihada. Same as FK 1/100; al-Ibana would be a second author.
-4. **Minimum of hayd, doubt:** notes p. 5: if it is doubtful whether 24 hours were reached, not hayd
-   according to Ibn Hajar, hayd according to ar-Ramli. (Ash-Shabramallisi on Nihaya 1/339 inclines to
-   "hayd": «وَالْأَقْرَبُ الْأَوَّلُ».) Not relevant for the calculator (it works with entered durations).
-
 ## Tests added from the Risala of al-Khatib (2026-10-29)
 
 Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` (both settings) and
