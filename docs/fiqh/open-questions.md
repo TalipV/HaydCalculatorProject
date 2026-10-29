@@ -143,7 +143,7 @@ days 16-19, so on this rule it is a mustahada case (what the tests expect). With
 Nihaya 1/356 that makes three authors for "mustahada case"; for "basic" only the broad wording of FK
 1/86. Whether this closes the question is the user's decision.
 
-**Decision of the user (2026-10-29): 13/1/5 stays open.** The tests stay as they are:
+**Decision of the user (2026-10-29, confirmed 2026-10-30 after al-Ibana p. 27): 13/1/5 stays open.** The tests stay as they are:
 `ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` keeps throwing `OpenFiqhQuestionException`,
 `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5, 13/1/1/5) keeps expecting a
 mustahada case, `TenDaysRedThreeDaysPurityThenTwentyDaysRed_IsMustahadaCase` keeps expecting a
