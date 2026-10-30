@@ -1,5 +1,29 @@
 # Basics: limits of hayd and tuhr, intermittent blood, colours
 
+## Definitions and age of hayd
+
+- [al-Khatib, Mughni 1/277](https://shamela.ws/book/11444/193): hayd
+  «دَمُ جِبِلَّةٍ أَيْ تَقْتَضِيهِ الطِّبَاعُ السَّلِيمَةُ يَخْرُجُ مِنْ أَقْصَى رَحِمِ الْمَرْأَةِ بَعْدَ بُلُوغِهَا عَلَى سَبِيلِ الصِّحَّةِ مِنْ غَيْرِ سَبَبٍ فِي أَوْقَاتٍ مَعْلُومَةٍ»;
+  istihada «دَمُ عِلَّةٍ يَسِيلُ مِنْ عِرْقٍ مِنْ أَدْنَى الرَّحِمِ يُقَالُ لَهُ الْعَاذِلُ»; the blood of a girl too
+  young and of a woman past menopause: «وَالْأَصَحُّ أَنَّهُ يُقَالُ لَهُ اسْتِحَاضَةٌ وَدَمُ فَسَادٍ»;
+  nifas «الدَّمُ الْخَارِجُ بَعْدَ فَرَاغِ الرَّحِمِ مِنْ الْحَمْلِ».
+- [Ibn Hajar, Tuhfa 1/383](https://shamela.ws/book/9059/384): «وَشَرْعًا دَمُ جِبِلَّةٍ يَخْرُجُ فِي وَقْتٍ مَخْصُوصٍ، وَالنِّفَاسُ الدَّمُ الْخَارِجُ بَعْدَ فَرَاغِ الرَّحِمِ وَالِاسْتِحَاضَةُ مَا عَدَاهُمَا عَلَى الْأَصَحِّ».
+- Age: [al-Khatib, Mughni 1/278](https://shamela.ws/book/11444/194): «(أَقَلُّ سِنِّهِ) كَلَبَنِ الرَّضَاعِ (تِسْعُ سِنِينَ) قَمَرِيَّةٍ».
+  [ar-Ramli, Nihaya 1/325](https://shamela.ws/book/3565/323): approximate, not exact; a shortfall under
+  the time of a hayd and a tuhr is forgiven; no upper limit (against al-Mahamili: 60 years); the 62
+  years of menopause are "the usual case":
+  «وَالْمُعْتَبَرُ فِي التِّسْعِ التَّقْرِيبُ لَا التَّحْدِيدُ ... فَيُغْتَفَرُ نَقْصُ زَمَنٍ دُونَ أَقَلِّ حَيْضٍ وَطُهْرٍ ... وَلَا حَدَّ لِآخِرِهِ كَمَا قَالَهُ الْمَاوَرْدِيُّ، بَلْ هُوَ مُمْكِنٌ مَا دَامَتْ الْمَرْأَةُ حَيَّةً»;
+  ash-Shabramallisi there: «أَيْ وَهُوَ سِتَّةَ عَشَرَ بِلَيَالِيِهَا حَجّ» (16 days with their nights).
+  The calculator does not check the age.
+- Reason for the 15-day minimal purity, [ar-Ramli, Nihaya 1/326](https://shamela.ws/book/3565/324):
+  «إذْ الشَّهْرُ لَا يَخْلُو غَالِبًا عَنْ حَيْضٍ وَطُهْرٍ، فَإِذَا كَانَ أَكْثَرُ الْحَيْضِ خَمْسَةَ عَشَرَ لَزِمَ أَنْ يَكُونَ أَقَلُّ الطُّهْرِ كَذَلِكَ»;
+  the report "minimum three days, maximum ten" is weak «كَمَا فِي الْمَجْمُوعِ».
+
+Terminology of strength (asahh / azhar etc.): the introduction of al-Minhaj as explained in
+[Mughni 1/105](https://shamela.ws/book/11444/21), [Nihaya 1/48](https://shamela.ws/book/3565/46),
+[Tuhfa 1/50](https://shamela.ws/book/9059/51): azhar / mashhur for the aqwal of ash-Shafi'i, asahh /
+sahih for the awjuh of the ashab; azhar and asahh when the khilaf is strong.
+
 ## Minimum of hayd: a day and a night = 24 hours
 
 - [Ibn Hajar, Tuhfa 1/385](https://shamela.ws/book/9059/386):
