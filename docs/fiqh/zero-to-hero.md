@@ -160,6 +160,10 @@ There is a second kind of disagreement: when **Ibn Hajar** differs from **ar-Ram
 al-Khatib**. Both sides are mu'tamad. The calculator's default follows ar-Ramli / al-Khatib, and
 the preset `IbnHajar` switches to the Tuhfa (README.md, "Which view the calculator follows").
 
+A third kind: the later **hawashi** read a passage in different ways. By the user's decision of
+2026-10-30, every difference between Ibn Hajar, ar-Ramli and al-Khatib, and every differing view or
+reading of the later hawashi, gets a setting, whether or not a strength is named (khilaf.md).
+
 ## 3. Measuring time and blood
 
 ### A day and a night = 24 hours
@@ -309,10 +313,15 @@ Fine points:
 - Hayd **according to the asahh** (Mughni 1/284, Nihaya 1/340, Tuhfa 1/400), because what a woman
   sees at a time when hayd is possible is in principle hayd.
 - Muqabil al-asahh (strong): not hayd, because of the report of Umm 'Atiyya «كُنَّا لَا نَعُدُّ الصُّفْرَةَ وَالْكُدْرَةَ شَيْئًا».
-- Inside the days of her 'ada, yellow is hayd without khilaf (Mughni 1/285).
+- **Where the other view applies is itself disputed** (basics.md, khilaf.md):
+  - al-Khatib (Mughni 1/285, after ar-Rawda): only **outside** the days of her 'ada; inside them
+    yellow is hayd «جَزْمًا».
+  - Ibn Hajar (Tuhfa 1/400): the khilaf applies inside and outside the 'ada, «هُوَ الْمُعْتَمَدُ خِلَافًا لِمَا وَقَعَ فِي الرَّوْضَةِ وَغَيْرِهَا».
+  - ar-Ramli's position on this point has not been found yet.
 
-Setting: `YellowAndTurbidAreHayd` (default `true`). With `false`, 5 days of only yellow are no
-hayd at all.
+Settings: `YellowAndTurbidAreHayd` (default `true`). With `false`, 5 days of only yellow are no
+hayd at all. `YellowNotHaydScope` only matters when `YellowAndTurbidAreHayd` is `false`: `OnlyOutsideAda`
+(default, al-Khatib) or `InsideAndOutsideAda` (Ibn Hajar, in the `IbnHajar` preset).
 
 ## 8. The rest of the minimal purity (baqiyyat tuhr)
 
@@ -333,10 +342,10 @@ case 3:  |--A--|--P--|--B-----------> day 15    B starts inside, runs past day 1
 ```
 
 1. **A + P + B within 15 days**: one hayd, the purity included (sahb).
-2. **B starts after day 15 counted from A** (so A + P are at least 15 days), but before the 15 days of
-   purity after A are complete: the rules below. (The Bughya's own condition says A + P "exceed"
-   15 days; for A + P of exactly 15 see open question 7.)
-3. **B starts inside the 15 days and runs past day 15**: intermittent blood that exceeds 15 days,
+2. **B starts after day 15 counted from A** (so A + P are 15 days or more), but before the 15 days of
+   purity after A are complete: the rules below.
+3. **B starts inside the 15 days and runs past day 15** (A + P under 15 days, i.e. B starts on day 15
+   or earlier): intermittent blood that exceeds 15 days,
    a mustahada case (Mughni 1/294, Nihaya 1/356). al-Ibana p. 27 states the line: blood that crosses
    day 15 **connected to the blood before it** makes her a mustahada; if not connected, she has a
    rest of tuhr. (One shape of this case, 13/1/5, is an open question; section 17.)
@@ -380,6 +389,18 @@ days) complete the purity and are dam fasad; days 26-30 (5 days) are a **new hay
 **How to compute it:** end of the purity = last day of the hayd + 15. Every day of blood up to that
 day is dam fasad; the blood after it is a new candidate for hayd, and the normal rules apply to it.
 
+**KHILAF for the mubtada'a** (a beginner; for the mu'tada nobody reads it differently). The rule
+above is held by Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana p. 29-31) and Ibn Qasim («لَا يَبْعُدُ»). Two
+hawashi on Tuhfa 1/399 read it differently. Ash-Shabramallisi infers from Ibn Hajar's wording that the
+rule is for the mu'tada only, and that the mubtada'a has a day and a night of hayd from the start of
+the month. Al-Bujayrimi argues that the time of the purity counts like weak blood under 15 days. On
+this reading she is a mustahada **from the first blood on**: in 3/14/4 and in 10/8/12 only day 1 is
+hayd, and all the other days of blood are istihada. The sources name no strength for either reading.
+Setting `MubtadaaBloodInRestOfTuhr`: `CompletesTuhrThenNewHayd` (default) or
+`MustahadaFromFirstBlood`. The `IbnHajar` preset keeps the default, because the second reading
+is the hawashi's reading of his wording, not his own statement (user's decision 2026-10-30;
+open-questions.md, question 7, resolved).
+
 | Course | Purity complete at end of day | Dam fasad | New hayd |
 |---|---|---|---|
 | 3 red, 14 pure, 4 red | 18 | day 18 | days 19-21 |
@@ -403,9 +424,12 @@ ruling  H .. H | T  ..  T| T* | H  ..  H | T  ..  T | H  ..  H |    T* = istihad
 ```
 
 Day 20 completes the purity (istihada), then 5 days hayd, 15 days tuhr; her cycle becomes 20 days.
+That is the asahh; FK 1/78 and 1/91 report three further strong awjuh for this case (section 13,
+"Shifted cycle").
 
-For the **mubtada'a** in this situation (e.g. 3 red, 12 pure, then continuing) the sources are read
-in two ways; this is open question 7 (section 17).
+For the **mubtada'a** in this situation (e.g. 3 red, 12 pure, then continuing) the same khilaf as in
+case 2b applies (`MubtadaaBloodInRestOfTuhr`): by default the first blood is hayd and the mustahada
+rules start with the rest; on the other reading she is a mustahada from day 1.
 
 ---
 
@@ -442,7 +466,9 @@ like kind 2 (or 3 if she has an 'ada). Only the name differs (Mughni 1/287, Tuhf
 **One course, several cycles.** The calculator decides per hayd cycle whether it is basic
 (Part II) or a mustahada case. Example: 3 red, 12 pure, 20 red: cycle 1 (the 3 days) is basic; the
 returning blood completes the purity and then exceeds 15 days, so cycle 2 is a mustahada case
-(mustahada.md, "Classification"). The docs record that no source uses the word "cycle" for this;
+(mustahada.md, "Classification"). That is the default; for a mubtada'a on the other reading
+(`MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood`, section 8) the whole course is one mustahada
+case from day 1. The docs record that no source uses the word "cycle" for this;
 it is derived from Tuhfa 1/399 and the Bughya (review-notes.md B4).
 
 ## 10. Strong and weak blood
@@ -484,7 +510,7 @@ The matn, quoted in all three shuruh: «فَالضَّعِيفُ اسْتِحَ�
 |---|---|---|
 | 1 | The strong blood lasts **at least 24 h** | black for less than a day and a night, then red continues |
 | 2 | The strong blood **does not exceed 15 days** | 16 days black, then red |
-| 3 | The weak blood lasts **at least 15 days in a row** (only needed if the blood continues) | 1 black, 14 red, then black again |
+| 3 | The weak blood lasts **at least 15 days in a row** (only needed if the blood continues) | 1 black, 14 red, then black that continues |
 | 4 | The weak blood is **not interrupted by strong blood** (purity in between does not matter) | 1 day black, 1 day red, alternating without end |
 
 If a condition fails, she is a mumayyiza "whose tamyiz does not count" and is treated like a
@@ -627,13 +653,27 @@ days** up to the longest 'ada. The calculator has no category for precaution day
 
 ### Shifted cycle
 
-The cycle is hayd + tuhr, and a single occurrence changes it (FK 1/111):
+The cycle is hayd + tuhr, and a single occurrence changes it (FK 1/111). This is the **asahh**
+(default `ShiftedCycle = NewCycle`):
 
 - 'Ada 5 at the start of the month, then 20 days pure, then blood in the last five days of the month
   that continues: her hayd came early, her cycle becomes 25: 5 hayd from the start of the blood, then
   20 tuhr, and so on.
 - 'Ada 5, then only 14 days pure, then continuous blood: the first day of the returning blood
   completes the purity, then 5 hayd, 15 tuhr, cycle 20 (the timeline in section 8, case 2c).
+
+KHILAF: Ibn Hajar (FK 1/78 and 1/91) quotes ar-Rafi'i / ar-Rawda with **four awjuh** for both cases.
+The three that are not the asahh are muqabil al-asahh, i.e. strong (khilaf.md, ada.md):
+
+| Setting value | 'Ada 5, 14 pure, then continuous blood | 'Ada 5, 20 pure, blood from the last five days, continuous |
+|---|---|---|
+| `NewCycle` (asahh, default) | day 1 istihada, 5 hayd, 15 tuhr: cycle 20 | 5 hayd from the start of the blood, 20 tuhr: cycle 25 |
+| `HaydExtendedThenOldCycle` | day 1 istihada, then the rest of the month (10 days) + 5 days of the next month hayd, then her old cycle | 10 days hayd from this blood, 25 tuhr, then her old cycle |
+| `AdaThenOldPurity` | day 1 istihada, 5 hayd, 25 tuhr, always | 5 hayd, 25 tuhr |
+| `OldCycleOnly` | all returning blood istihada to the end of the month, her old cycle from the next month | the last five days istihada, 5 hayd at the start of the next month, then 25 tuhr |
+
+khilaf.md notes a difference in wording between FK 1/78 and FK 1/91 for the second view of the
+14-day case (purity of «خَمْسَةً تَمَامَ الشَّهْرِ» or «خَمْسَةً وَعِشْرِينَ»).
 
 ### Mu'tada mumayyiza: tamyiz against 'ada
 
@@ -684,13 +724,18 @@ All in [khilaf.md](khilaf.md). The calculator's settings live in `HaydCalculator
 |---|---|---|---|---|
 | Purity between bloods | hayd (sahb, azhar) | tuhr (laqt) | `PurityBetweenBloods` | 6 |
 | Yellow / brownish | hayd (asahh) | not hayd | `YellowAndTurbidAreHayd` | 7 |
+| Scope of "not hayd" for yellow | only outside the 'ada (al-Khatib) | inside and outside (Ibn Hajar) | `YellowNotHaydScope` | 7 |
+| Mubtada'a, blood in the rest of the purity running past it | first blood hayd, rest completes the purity (Bughya, al-Ibana, Ibn Qasim) | mustahada from day 1 (ash-Shabramallisi, al-Bujayrimi) | `MubtadaaBloodInRestOfTuhr` | 8 |
 | Mubtada'a ghayr mumayyiza | a day and a night (azhar) | 6 or 7 days | `MubtadaaGhayrMumayyizaHayd` | 12 |
 | Occurrences for an 'ada | one (asahh) | two; three | `OccurrencesToEstablishAda` | 13 |
 | Mu'tada mumayyiza | tamyiz (asahh) | 'ada | `MutadaMumayyizaFollows` | 13 |
 | 7/7/7 | first strong + weak (ar-Ramli, al-Khatib) | only first strong (Ibn Hajar) | `WeakBetweenStrongBeyondMaximum` | 11 |
 | 5 black, 5 yellow, red | only black (ar-Ramli, al-Khatib) | black + yellow (Ibn Hajar) | `StrongerWeakMustFollowStrongDirectly` | 11 |
+| Shifted cycle of a mu'tada | new cycle (asahh) | three awjuh (strong) | `ShiftedCycle` | 13 |
 
-Presets: `Default` = `Ramli` = `Shirbini`; `IbnHajar` changes the last two rows.
+Presets: `Default` = `Ramli` = `Shirbini`; `IbnHajar` changes the three points where the Tuhfa
+explicitly differs: `YellowNotHaydScope`, `WeakBetweenStrongBeyondMaximum`,
+`StrongerWeakMustFollowStrongDirectly`.
 
 Things that are **not** in the settings: weak views (sahih, mashhur, "wa qila"); views whose holder or
 strength has not been found in the allowed works; points that only affect what she does while waiting
@@ -704,13 +749,15 @@ Summary (read the file for the passages):
 
 | # | Question | Status |
 |---|---|---|
-| 1 | 13 red, 1 pure, 5 red, stop: the returning blood starts inside the 15 days and stops after day 15. Mustahada case (Mughni 1/294, Nihaya 1/356, al-Ibana p. 27) or 13 hayd + 5 dam fasad (the broad wording of FK 1/86)? | open by the user's decision |
+| 1 | 13 red, 1 pure, 5 red, stop: the returning blood starts inside the 15 days and stops after day 15. Mustahada case (Mughni 1/294, Nihaya 1/356, al-Ibana p. 27; a hint in FK 1/108) or 13 hayd + 5 dam fasad (the broad wording of FK 1/86)? The same holds for 1/13/3 with a first blood of a full 24 h | open by the user's decision |
 | 2 | Who holds the strong counter-view for strong blood that comes later? | not found |
-| 3 | 8/8/8: the last day of the second black | not discussed in the sources |
+| 3 | 8/8/8: the last day of the second black (day 24 comes exactly 24 h after the minimal purity ends; by the rest-of-tuhr rule it would be a new hayd, but no source says so for 8/8/8) | not discussed in the sources |
 | 4 | Condition 4 with a long weak blood at the end | rule found (FK 1/100, al-Ibana p. 71f.); counter-view not named |
 | 5 | Mutahayyira | not implemented |
 | 6 | Exactly 24 h as first blood in the Bughya case | taken over as [IMPLICIT] |
-| 7 | Mubtada'a, 3 red, 12 pure, then continuing: is the first blood a basic hayd (Bughya), or is she a mustahada from day 1 (al-Bujayrimi and ash-Shabramallisi on Tuhfa 1/399)? | open; the tests follow the Bughya reading |
+| 7 | Mubtada'a, blood in the rest of the purity: is the first blood a basic hayd (Bughya), or is she a mustahada from day 1 (al-Bujayrimi and ash-Shabramallisi on Tuhfa 1/399)? | resolved 2026-10-30 as a khilaf with a setting (`MubtadaaBloodInRestOfTuhr`, section 8) |
+| 8 | Scope of the yellow khilaf: also inside the days of her 'ada? | resolved 2026-10-30 as a khilaf with a setting (`YellowNotHaydScope`, section 7); ar-Ramli still to find |
+| 9 | Ibn Qasim: 'ada 5, then only 3 days blood, 14 pure, then continuous blood: a day completes the purity, then 3 days hayd, cycle 18 («يَنْبَغِي نَعَمْ»)? | open: one author, tentative wording; no test yet |
 
 ## 18. From fiqh to code
 
@@ -798,7 +845,9 @@ khilaf (FK 1/86). Not a mustahada case (section 8, case 2a).
 <details><summary>Solution</summary>
 
 Days 1-10 hayd; tuhr days 11-25; days 19-25 dam fasad; days 26-30 a new hayd (al-Ibana p. 29;
-Bughya). Not a mustahada case (section 8, case 2b).
+Bughya). Not a mustahada case (section 8, case 2b). For a mubtada'a with
+`MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood`: only day 1 is hayd, the other days of blood
+istihada.
 </details>
 
 **5.** A beginner: red for 40 days, all the same.
@@ -860,7 +909,8 @@ One occurrence (default): 7 days. Two: 6. Three: 5 (Mughni 1/288).
 <details><summary>Solution</summary>
 
 Days 1-5 hayd, 6-19 pure, day 20 completes the tuhr (istihada), days 21-25 hayd, 26-40 tuhr, cycle 20
-(Tuhfa 1/399, FK 1/111; section 8, case 2c).
+(Tuhfa 1/399, FK 1/111; section 8, case 2c). That is the asahh; the other three awjuh are in the
+table in section 13 (`ShiftedCycle`).
 </details>
 
 **13.** 13 red, 1 pure, 5 red, then it stops.
