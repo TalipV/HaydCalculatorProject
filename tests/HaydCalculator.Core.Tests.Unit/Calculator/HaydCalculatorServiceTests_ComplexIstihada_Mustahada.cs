@@ -596,5 +596,134 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((35.0, 60.0));
     }
 
+    // Shifted cycle, case 1: 'ada of 5 days at the start of the month (cycle 30), then 14 days of purity, then continuous blood (here until day 100).
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 78; https://shamela.ws/book/21628/77] Quoting ar-Rafi'i / ar-Rawda, four awjuh: the asahh is a day of istihada, 5 hayd, 15 purity (cycle 20);
+    // the second: the first day of the returning blood is istihada, then the remaining 10 days of this month with 5 of the next are hayd (15), then purity, keeping her old cycle;
+    // the third: the first day istihada, then 5 hayd and 25 purity, always; the fourth: all returning blood to the end of the month is istihada and her old cycle starts again.
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 91; https://shamela.ws/book/21628/90] The same four awjuh (second view there: "then 25 days purity"; vol. 1, p. 78 has "then 5 days purity to the end of the month", which does not fit the days).
+    // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277-278 (main text and commentary note [615], after al-I'ab)] Abu Makhrama calls the first view the asahh; the commentary names the other three as its muqabil (approved: main text only).
+    // KHILAF: these three tests are the views opposite to the asahh (muqabil al-asahh, strong); the default follows the asahh (see Mutada_FourteenDaysPurityThenContinuousBlood_FirstDayCompletesTuhur).
+    [FiqhTodo]
+    [Fact]
+    public void Mutada_FourteenDaysPurityThenContinuousBlood_HaydExtendedThenOldCycle()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            HaydCalculatorSettings.Default with { ShiftedCycle = EShiftedCycle.HaydExtendedThenOldCycle },
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 51));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (50.0, 65.0), (90.0, 95.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((49.0, 50.0), (65.0, 90.0), (95.0, 100.0));
+    }
+
+    // Same case and sources as Mutada_FourteenDaysPurityThenContinuousBlood_HaydExtendedThenOldCycle; third view: the first day istihada, then 5 days hayd and 25 days purity, always.
+    // KHILAF: muqabil al-asahh (strong); the default follows the asahh.
+    [FiqhTodo]
+    [Fact]
+    public void Mutada_FourteenDaysPurityThenContinuousBlood_AdaThenOldPurity()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            HaydCalculatorSettings.Default with { ShiftedCycle = EShiftedCycle.AdaThenOldPurity },
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 51));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (50.0, 55.0), (80.0, 85.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((49.0, 50.0), (55.0, 80.0), (85.0, 100.0));
+    }
+
+    // Same case and sources as Mutada_FourteenDaysPurityThenContinuousBlood_HaydExtendedThenOldCycle; fourth view: all returning blood to the end of the month is istihada, her old cycle starts again with the next month
+    // (al-Fatawa al-Kubra, vol. 1, p. 78 has «مِنْ أَوَّلِ الشَّهْرِ السَّابِقِ», vol. 1, p. 91 and the Bughya commentary have "the next / second month"; the test follows the latter).
+    // KHILAF: muqabil al-asahh (strong); the default follows the asahh.
+    [FiqhTodo]
+    [Fact]
+    public void Mutada_FourteenDaysPurityThenContinuousBlood_OldCycleOnly()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            HaydCalculatorSettings.Default with { ShiftedCycle = EShiftedCycle.OldCycleOnly },
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 51));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (60.0, 65.0), (90.0, 95.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((49.0, 60.0), (65.0, 90.0), (95.0, 100.0));
+    }
+
+    // Shifted cycle, case 2: 'ada of 5 days at the start of the month (cycle 30), then 20 days of purity, then the blood returns in the last five days of the month and continues (here until day 100).
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 91; https://shamela.ws/book/21628/90] Quoting ar-Rafi'i / ar-Rawda, four awjuh: the asahh is 5 days hayd from the start of the blood and 20 purity, always;
+    // the second: 5 hayd and 25 purity; the third: 10 days hayd from this blood, 25 purity, then she keeps her old cycle; the fourth: the last five days (the start of the blood) are istihada, then 5 hayd at the start of the second month, then 25 purity.
+    // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] The asahh result for this case. [IMPLICIT] for the other views.
+    // KHILAF: these three tests are the views opposite to the asahh (muqabil al-asahh, strong); the default follows the asahh (see Mutada_BloodReturnsEarlierAndContinues_FiveDaysHaydTwentyDaysTuhur).
+    [FiqhTodo]
+    [Fact]
+    public void Mutada_BloodReturnsEarlierAndContinues_AdaThenOldPurity()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            HaydCalculatorSettings.Default with { ShiftedCycle = EShiftedCycle.AdaThenOldPurity },
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 20),
+            (EFlowAppearanceColor.Red, 45));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (55.0, 60.0), (85.0, 90.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((60.0, 85.0), (90.0, 100.0));
+    }
+
+    // Same case and sources as Mutada_BloodReturnsEarlierAndContinues_AdaThenOldPurity; third view: 10 days hayd from this blood, 25 days purity, then she keeps her old cycle.
+    // KHILAF: muqabil al-asahh (strong); the default follows the asahh.
+    [FiqhTodo]
+    [Fact]
+    public void Mutada_BloodReturnsEarlierAndContinues_HaydExtendedThenOldCycle()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            HaydCalculatorSettings.Default with { ShiftedCycle = EShiftedCycle.HaydExtendedThenOldCycle },
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 20),
+            (EFlowAppearanceColor.Red, 45));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (55.0, 65.0), (90.0, 95.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((65.0, 90.0), (95.0, 100.0));
+    }
+
+    // Same case and sources as Mutada_BloodReturnsEarlierAndContinues_AdaThenOldPurity; fourth view: the last five days (the start of the blood) are istihada, then 5 days hayd at the start of the second month, then 25 days purity.
+    // KHILAF: muqabil al-asahh (strong); the default follows the asahh.
+    [FiqhTodo]
+    [Fact]
+    public void Mutada_BloodReturnsEarlierAndContinues_OldCycleOnly()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            HaydCalculatorSettings.Default with { ShiftedCycle = EShiftedCycle.OldCycleOnly },
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 20),
+            (EFlowAppearanceColor.Red, 45));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 5.0), (30.0, 35.0), (60.0, 65.0), (90.0, 95.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((55.0, 60.0), (65.0, 90.0), (95.0, 100.0));
+    }
+
     #endregion Other views (khilaf), selected through HaydCalculatorSettings
 }

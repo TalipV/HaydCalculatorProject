@@ -64,6 +64,33 @@ public sealed record HaydCalculatorSettings
     /// Strong, weaker, weak (e.g. black, yellow, red): the stronger weak blood must follow the strong directly to be joined to it (ar-Ramli, al-Khatib) or not (Ibn Hajar).
     /// </summary>
     public bool StrongerWeakMustFollowStrongDirectly { get; init; } = true;
+
+    /// <summary>
+    /// Mu'tada whose blood returns before her usual time and then continues (shifted cycle, e.g. 'ada of 5,
+    /// then 14 or 20 days of purity, then continuous blood): the four awjuh reported in al-Fatawa al-Kubra 1/78 and 1/91.
+    /// </summary>
+    public EShiftedCycle ShiftedCycle { get; init; } = EShiftedCycle.NewCycle;
+}
+
+public enum EShiftedCycle
+{
+    /// <summary>
+    /// the earlier blood starts a new cycle: her 'ada of hayd from the start of the possible hayd, then the purity of the new cycle (asahh)
+    /// </summary>
+    NewCycle,
+    /// <summary>
+    /// the returning blood is hayd up to the end of her old hayd in the next month, then she keeps her old cycle
+    /// (14 days of purity: 10 + 5 days; 20 days of purity: 10 days, then 25 days purity)
+    /// </summary>
+    HaydExtendedThenOldCycle,
+    /// <summary>
+    /// her 'ada of hayd from the start of the possible hayd, then her old purity (here 25 days), always
+    /// </summary>
+    AdaThenOldPurity,
+    /// <summary>
+    /// the returning blood up to the end of the month is istihada, her old cycle continues from the next month
+    /// </summary>
+    OldCycleOnly,
 }
 
 public enum EPurityBetweenBloods

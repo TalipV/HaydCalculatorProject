@@ -97,7 +97,7 @@ Report: `fiqh-review-2026-10-30.md` (sent by the user). Checked here against Sha
 | A1 | FK 1/78 and 1/91 give four awjuh (quoting ar-Rafi'i / ar-Rawda) for both shifted-cycle cases | confirmed ([21628/77](https://shamela.ws/book/21628/77), [21628/90](https://shamela.ws/book/21628/90)); additionally found: view (2) differs between FK 1/78 («خمسة تمام الشهر») and FK 1/91 («خمسة وعشرين») | docs and two KHILAF lines corrected; setting/tests open (user) |
 | A2 | ash-Shabramallisi's remark is about blood that stops | confirmed (Tuhfa 1/399 hawashi, part 1 ends with Ibn Qasim's 6-day case, part 2 starts with «وظاهره ... ع ش») | rest-of-tuhr.md, khilaf.md and the KHILAF lines of 3/14/4, 10/8/12, 3/14/16 and the classification tests corrected; which reading the tests follow: user |
 | A3 | al-Basri's objections on Tuhfa 1/399 missing | confirmed (read on 9059/400 part 2 earlier) | noted here; no change in results |
-| A4 | yellow khilaf only outside the 'ada | confirmed (Mughni 1/285) | basics.md, khilaf.md corrected; setting change: user |
+| A4 | yellow khilaf only outside the 'ada | Mughni 1/285 says so, but Tuhfa 1/400 explicitly disagrees (the khilaf applies inside the 'ada too, against ar-Rawda): a khilaf Ibn Hajar vs al-Khatib, not a settled restriction | basics.md, khilaf.md corrected |
 | A5 | ar-Ramli's own conclusion and al-Khatib's shaykh on 7/7/7 not quoted | confirmed (Nihaya 1/342, Mughni 1/286) | quoted in tamyiz.md |
 | A6 | Ibn Qasim writes 5 red, Tuhfa 1/401 has 6 | confirmed | noted in tamyiz.md |
 | B1 | "exactly 15" missing in the window | correct | rest-of-tuhr.md corrected |
@@ -110,7 +110,7 @@ Report: `fiqh-review-2026-10-30.md` (sent by the user). Checked here against Sha
 B6 assessment: (1) `Condition3_NotFulfilled_1DayBlack14DaysRedAndThenBlackAgain` stops after 1 day of
 black; al-Isnawi's case (via ash-Sharwani) has «ثُمَّ السَّوَادَ» without a number, which by FK 1/105 means
 it continues; with stopping blood the structure is that of Tuhfa 1/401 (7 black, 7 red, 3 black, stop:
-tamyiz). The test's data or expectation needs the user's decision. (2) `Condition3_Fulfilled_1DayBlackAnd14DaysRed`:
+tamyiz). The test's data or expectation needs the user's decision. (2) `Condition3_Fulfilled_2DaysBlackAnd14DaysRedAndStop` (was 1/14, changed 2026-10-30):
 15 days in total, no mustahada, so the tamyiz check is moot; harmless but not a real case. (3)
 `Condition4_ContinuouslyBlackAndRed`: the sources have the alternation "forever" / to the end of the
 month; the test stops on day 17. Black still appears on day 17, i.e. the strong blood spreads over more

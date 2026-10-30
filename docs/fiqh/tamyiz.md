@@ -45,7 +45,7 @@ Matn (quoted in all three shuruh): «فَالضَّعِيفُ اسْتِحَاض
   continues she lacks a condition («فَإِنْ اسْتَمَرَّ فَهِيَ فَاقِدَةٌ شَرْطَ تَمْيِيزِ»). Ash-Sharwani adds a possible
   answer: with strong, weak and weaker together the rule can differ.
 
-Tests: `Condition3_Fulfilled_TenDaysBlackTenDaysRedAndStop`, `Condition3_Fulfilled_1DayBlackAnd14DaysRed`,
+Tests: `Condition3_Fulfilled_TenDaysBlackTenDaysRedAndStop`, `Condition3_Fulfilled_2DaysBlackAnd14DaysRedAndStop` (was 1/14, changed 2026-10-30),
 `MubtadaaMumayyiza_TenDaysBlackTenDaysRedAndStop_BlackIsHayd`.
 
 ### Condition 3 with strong blood after the weak: 1 black, 14 red, 1 black

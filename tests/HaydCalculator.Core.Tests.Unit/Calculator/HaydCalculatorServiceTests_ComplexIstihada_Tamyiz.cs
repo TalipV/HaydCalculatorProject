@@ -62,16 +62,18 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         HaydCycleEntity.IsHaydFlowDataLstWithDistinguishableFlows(haydCycleEntity.HaydFlows).Should().BeTrue();
     }
 
+    // 2 days black, then 14 days red, then it stops: 16 days, so a mustahada case; the weak blood stays under 15 days, which is allowed because the blood stops.
+    // (Changed 2026-10-30 after the independent review: the test had 1 day black and 14 days red, i.e. 15 days in total, which is no mustahada case, so the tamyiz check did not apply.)
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285f.; https://shamela.ws/book/11444/201] The condition that the weak blood lasts at least 15 days only applies if the blood continues. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] The condition that the weak blood is not shorter than the minimal purity only applies if the blood continues (after al-Mutawalli). [IMPLICIT]
     [FiqhTodo]
     [Fact]
-    public void Condition3_Fulfilled_1DayBlackAnd14DaysRed()
+    public void Condition3_Fulfilled_2DaysBlackAnd14DaysRedAndStop()
     {
         // ARRANGE
         List<(EFlowAppearanceColor type, double dayCount)> data =
         [
-            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14),
+            (EFlowAppearanceColor.Black, 2), (EFlowAppearanceColor.Red, 14),
         ];
 
         List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
@@ -86,6 +88,8 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Only 14 days of weak blood (followed by strong blood again) does not fulfil the conditions of the distinction. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] Hashiyat ash-Sharwani (after al-Isnawi): a day and a night black, 14 days red, then black again: the distinction does not count, because otherwise the purity between the two hayds would be under the minimum.
+    // The second black continues (here 16 days): al-Isnawi's case says «ثُمَّ السَّوَادَ» without a number, which means it continues (al-Fatawa al-Kubra, vol. 1, p. 105; https://shamela.ws/book/21628/104: no number = continuing).
+    // (Changed 2026-10-30 after the independent review: the test had 1 day of the second black and then stopped; with stopping blood the case has the structure of Tuhfat al-Muhtaj, vol. 1, p. 401: 7 black, 7 red, 3 black, stop, where the tamyiz counts.)
     [FiqhTodo]
     [Fact(Skip = TamyizNotFinished)]
     public void Condition3_NotFulfilled_1DayBlack14DaysRedAndThenBlackAgain()
@@ -93,7 +97,7 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
         // ARRANGE
         List<(EFlowAppearanceColor type, double dayCount)> data =
         [
-            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14), (EFlowAppearanceColor.Black, 1)
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 14), (EFlowAppearanceColor.Black, 16)
         ];
 
         List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);
@@ -163,6 +167,8 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Permanently alternating 1 day black and 2 days red: no valid distinction. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] One day black, one day red and so on: a condition of the distinction is missing, because the weak blood is not continuous. Hashiyat ash-Shirwani there: fourth condition, the weak blood must not be interrupted by strong blood (purity in between does not matter).
     // [al-Ibana wa-l-Ifada fi Ahkam al-Hayd wa-n-Nifas wa-l-Istihada] Same condition and the same example (one day black, one day red, beyond 15 days: not mumayyiza).
+    // One day black, one day red, to the end of the month (30 days), as in the sources («أَبَدًا» in Mughni al-Muhtaj, «إلَى آخِرِ الشَّهْرِ» in al-Fatawa al-Kubra, vol. 1, p. 100).
+    // (Changed 2026-10-30 after the independent review: the test stopped after 17 days.)
     [FiqhTodo]
     [Fact]
     public void Condition4_ContinuouslyBlackAndRed()
@@ -178,7 +184,13 @@ public class HaydCalculatorFactory_Tests_ComplexIstihada_TamyizDetermination
             (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
             (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
             (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
-            (EFlowAppearanceColor.Black, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Black, 1), (EFlowAppearanceColor.Red, 1),
         ];
 
         List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: _startDate);

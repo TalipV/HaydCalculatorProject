@@ -70,6 +70,9 @@ No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
   and p. 30-31 for the mu'tada: «فيُحْكَمُ بأنه حيضٌ إذا أتاها بعدَ طُهْرٍ خمسةَ عشرَ فأكثرَ، وإلّا : بأن أتى قبلَه فيُعَدُّ هذا الدّمُ دمَ فسادٍ، فتكمِّلُ أقلَّ الطُّهْرِ، وما زادَ فهو حيضٌ جديدٌ».
   With this the rule has two authors (Ba 'Alawi after Ibn Yahya, and as-Saqqaf), plus Ibn Qasim's «لا يبعد».
 
+- Ibn Qasim, his own hashiya on Tuhfa 1/399 ([9059/400](https://shamela.ws/book/9059/400), part 3): «لَوْ اسْتَمَرَّ سِتَّةً فَقَطْ مَثَلًا هَلْ يَكْمُلُ الطُّهْرُ بِثَلَاثَةٍ مِنْهَا وَالْبَاقِي حَيْضٌ أَوْ كَيْفَ الْحَالُ وَلَا يَبْعُدُ الْأَوَّلُ»,
+  and for a mu'tada with 'ada 5 who sees 3 days, 14 pure, then continuous blood: «فَهَلْ نَقُولُ يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ الْعَائِدِ طُهْرٌ، ثُمَّ تَحِيضُ ثَلَاثَةً وَيَسْتَمِرُّ دَوْرُهَا ثَمَانِيَةَ عَشَرَ ... يَنْبَغِي نَعَمْ» (a day of purity, then 3 days hayd, cycle 18).
+
 Worked examples (day 1 = first day of the first blood):
 
 | Course | Purity complete at end of day | Dam fasad | Hayd from the returning blood | Mustahada case? |
