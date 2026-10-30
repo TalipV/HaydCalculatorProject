@@ -12,7 +12,7 @@ test disagree, find out which one is wrong; do not silently follow either.
 
 | File | Contents |
 |---|---|
-| [zero-to-hero.md](zero-to-hero.md) | Beginner's guide through all of the following, in teaching order, with timelines and exercises; adds no rules of its own |
+| [zero-to-hero.md](zero-to-hero.md) | Beginner's guide in lessons: day-by-day pictures, flowcharts, exercises; retells the files below in teaching order and adds no rules of its own |
 | [sources.md](sources.md) | Allowed works, Shamela ids and page offsets, citation format, approved exceptions (Bughyat al-Mustarshidin), lecture series |
 | [basics.md](basics.md) | Definitions, age of hayd, terminology of strength, minimum and maximum of hayd, minimal purity, a day and a night = 24 h, intermittent blood (sahb / laqt), yellow and brownish blood, "all hayd within 15 days" |
 | [rest-of-tuhr.md](rest-of-tuhr.md) | Blood that falls into the remainder of the minimal purity: 3/12/3, blood that continues, the Bughya rule for the part after the purity is complete, the 15-day window |
