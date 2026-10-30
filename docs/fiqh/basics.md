@@ -119,6 +119,6 @@ KHILAF: hayd according to the asahh; muqabil al-asahh (strong): not hayd, **but 
 her 'ada** (inside her 'ada hayd «جَزْمًا», Mughni 1/285 after ar-Rawda). Setting `YellowAndTurbidAreHayd`
 (default `true`). Scope of the other view is a khilaf between Ibn Hajar and al-Khatib: Tuhfa 1/400
 ([9059/401](https://shamela.ws/book/9059/401)): «وَمَا اقْتَضَاهُ الْمَتْنُ مِنْ جَرَيَانِ الْخِلَافِ فِي الْمُبْتَدَأَةِ وَالْمُعْتَادَةِ فِي أَيَّامِ الْعَادَةِ وَغَيْرِهَا هُوَ الْمُعْتَمَدُ خِلَافًا لِمَا وَقَعَ فِي الرَّوْضَةِ وَغَيْرِهَا»
-(the khilaf applies inside and outside the 'ada); Mughni 1/285 follows ar-Rawda (only outside). ar-Ramli not found yet.
+(the khilaf applies inside and outside the 'ada); Mughni 1/285 follows ar-Rawda (only outside). ar-Ramli not found yet. Open: see open-questions.md, question 8.
 
 Tests: `HaydCalculation_OnlyYellowBloodWithinTheLimits_IsHayd`, `HaydCalculation_OnlyYellowBlood_YellowNotHayd_NoHaydAtAll`.

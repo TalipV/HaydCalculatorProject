@@ -249,6 +249,42 @@ conflict: the first day of the returning blood completes the purity, then her 'a
 To resolve with the user: which reading the tests follow for the mubtada'a (Bughya: cycle 1 basic;
 Tuhfa with al-Bujayrimi / ash-Shabramallisi: mustahada from day 1). The tests are unchanged.
 
+## 8. Scope of the yellow khilaf: also inside the days of her 'ada?
+
+Moved here on 2026-10-30 at the user's request (unsure points go to the open questions).
+The asahh (yellow and brownish are hayd) is not in question; only the scope of the other view
+(setting `YellowAndTurbidAreHayd = false`) is:
+
+- al-Khatib, Mughni 1/285 ([11444/201](https://shamela.ws/book/11444/201)), after ar-Rawda: the
+  other view applies only outside the days of her 'ada; inside them yellow is hayd «جَزْمًا».
+- Ibn Hajar, Tuhfa 1/400 ([9059/401](https://shamela.ws/book/9059/401)): the khilaf applies to the
+  mubtada'a and the mu'tada, inside and outside the 'ada:
+  «وَمَا اقْتَضَاهُ الْمَتْنُ مِنْ جَرَيَانِ الْخِلَافِ فِي الْمُبْتَدَأَةِ وَالْمُعْتَادَةِ فِي أَيَّامِ الْعَادَةِ وَغَيْرِهَا هُوَ الْمُعْتَمَدُ خِلَافًا لِمَا وَقَعَ فِي الرَّوْضَةِ وَغَيْرِهَا»
+- ar-Ramli, Nihaya 1/340 ([3565/338](https://shamela.ws/book/3565/338)): says the asahh holds
+  «سَوَاءٌ الْمُبْتَدَأَةُ وَغَيْرُهَا خَالَفَ عَادَتَهَا أَمْ لَا»; that is about the asahh, not about the
+  scope of the other view. His position on the scope: not found yet.
+
+No test is affected today: the yellow tests have no 'ada. Before a test for yellow inside the
+'ada with the setting `false` is written, the scope must be settled (ar-Ramli, the hawashi on
+Tuhfa 1/400 and Mughni 1/285, I'anat, al-Bajuri still to search). Then a setting may be needed.
+
+## 9. Ibn Qasim: mu'tada with a short blood, 14 days purity, then continuous blood
+
+Found on 2026-10-30 in Ibn Qasim's own hashiya on Tuhfa 1/399 ([9059/400](https://shamela.ws/book/9059/400),
+part 3). Case: 'ada 5 days; in a month she sees only 3 days, then 14 days purity, then the blood
+continues. His answer, introduced with «فَهَلْ نَقُولُ ... يَنْبَغِي نَعَمْ» (a question he answers
+with "it should be so", i.e. his own conclusion, not a quoted rule):
+«يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ الْعَائِدِ طُهْرٌ، ثُمَّ تَحِيضُ ثَلَاثَةً وَيَسْتَمِرُّ دَوْرُهَا ثَمَانِيَةَ عَشَرَ»
+(a day and a night of the returning blood complete the purity, then 3 days hayd; cycle of 18 days).
+In the same note, for 6 days of returning blood: 3 days complete the purity, the rest is hayd,
+«وَلَا يَبْعُدُ الْأَوَّلُ» ("the first is not far-fetched", also tentative).
+
+Why open: only one author, and in tentative wording. The point that needs a second source is that
+the last occurrence (3 days, cycle 18) replaces her old 'ada of 5 days (cycle 20); compare Tuhfa's
+own example ('ada 5, 14 pure, continuing: a day of purity, then 5 days hayd, cycle 20).
+On the asahh one occurrence establishes an 'ada (setting `OccurrencesToEstablishAda`), which points
+the same way [IMPLICIT]. No test yet; a test is written once a second author is found.
+
 ## Tests added from the Risala of al-Khatib (2026-10-29)
 
 Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` (both settings) and

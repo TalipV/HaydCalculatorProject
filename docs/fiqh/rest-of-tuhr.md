@@ -71,7 +71,7 @@ No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
   With this the rule has two authors (Ba 'Alawi after Ibn Yahya, and as-Saqqaf), plus Ibn Qasim's «لا يبعد».
 
 - Ibn Qasim, his own hashiya on Tuhfa 1/399 ([9059/400](https://shamela.ws/book/9059/400), part 3): «لَوْ اسْتَمَرَّ سِتَّةً فَقَطْ مَثَلًا هَلْ يَكْمُلُ الطُّهْرُ بِثَلَاثَةٍ مِنْهَا وَالْبَاقِي حَيْضٌ أَوْ كَيْفَ الْحَالُ وَلَا يَبْعُدُ الْأَوَّلُ»,
-  and for a mu'tada with 'ada 5 who sees 3 days, 14 pure, then continuous blood: «فَهَلْ نَقُولُ يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ الْعَائِدِ طُهْرٌ، ثُمَّ تَحِيضُ ثَلَاثَةً وَيَسْتَمِرُّ دَوْرُهَا ثَمَانِيَةَ عَشَرَ ... يَنْبَغِي نَعَمْ» (a day of purity, then 3 days hayd, cycle 18).
+  and for a mu'tada with 'ada 5 who sees 3 days, 14 pure, then continuous blood: «فَهَلْ نَقُولُ يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ الْعَائِدِ طُهْرٌ، ثُمَّ تَحِيضُ ثَلَاثَةً وَيَسْتَمِرُّ دَوْرُهَا ثَمَانِيَةَ عَشَرَ ... يَنْبَغِي نَعَمْ» (a day of purity, then 3 days hayd, cycle 18). Only one author and tentative: open, see open-questions.md, question 9.
 
 Worked examples (day 1 = first day of the first blood):
 
