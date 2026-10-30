@@ -62,8 +62,9 @@ No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
   wording («يقتضي») that the rule is for the mu'tada only and the mubtada'a gets a day and a night from
   the start of the month; al-Bujayrimi's reasoning (purity counts as weak blood under 15 days, same
   page) points the same way. So for the mubtada'a this is a real counter-reading, not only a note;
-  the tests 3/14/4, 10/8/12, 3/14/16 follow the Bughya / al-Ibana reading until the user decides
-  (open question 7).
+  the tests 3/14/4, 10/8/12, 3/14/16 follow the Bughya / al-Ibana reading by default; by the user's decision
+  (2026-10-30) the other reading is selectable: `MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood`, with its own tests
+  (open question 7, resolved).
 
 - [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 29] (approved user source), the case 10/8/12 itself:
   «لو رأتْ عشرةَ أيامٍ وانقطعَ، ثمّ جاءها الدّمُ بعدَ ثمانيةِ أيامٍ مِن انقطاعِه واستمرَّ اثنَيْ عشرَ يومًا وانقطعَ، فالعشرةُ الأيامِ الأُولَى حيضٌ، وأمّا الاثنا عشرَ يوم دم فلا يُمكِنُ جعلُها حيضًا، وإنّما هذه المرأةُ عليها بقيّةُ طُهْرٍ، فتُكمِّلُ بقيّةَ طُهْرِها، وما زادَ يكونُ حيضًا جديدًا، ففي هذه المسألةِ تأخُذُ مِن الدّمِ الجديدِ سبعةَ أيامٍ دمَ فسادٍ تكمِلةً لأقلِّ الطُّهْرِ بين الحيضَتيْنِ، وما بَقِيَ – وهو الخمسةُ الأيامِ – حيضٌ جديدٌ»

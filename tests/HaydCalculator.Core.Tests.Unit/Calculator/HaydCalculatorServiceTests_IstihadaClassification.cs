@@ -15,7 +15,7 @@ namespace HaydCalculator.Core.Tests.Unit.Calculator;
 /// TODO: The calculator has no state for this yet; a mustahada case currently shows up as the
 /// InfoException <see cref="TextUtil.ComplexIstihadaNotImplemented"/>. Once each hayd cycle
 /// carries a bool for it (e.g. IsComplexIstihada), assert that bool in
-/// <see cref="AssertMustahadaCase"/> and <see cref="AssertNoMustahadaCase"/> instead, and enable
+/// <see cref="AssertMustahadaCase(HaydCalculatorSettings, ValueTuple{EFlowAppearanceColor, double}[])"/> and <see cref="AssertNoMustahadaCase"/> instead, and enable
 /// the commented-out assertions in the tests with more than one cycle.
 /// </summary>
 public class HaydCalculatorServiceTests_IstihadaClassification
@@ -26,14 +26,24 @@ public class HaydCalculatorServiceTests_IstihadaClassification
 
     private HaydCalculationResultVO Calculate(params (EFlowAppearanceColor type, double dayCount)[] flows)
     {
+        return Calculate(HaydCalculatorSettings.Default, flows);
+    }
+
+    private HaydCalculationResultVO Calculate(HaydCalculatorSettings settings, params (EFlowAppearanceColor type, double dayCount)[] flows)
+    {
         List<(EFlowAppearanceColor type, double dayCount)> flowList = [.. flows];
-        return _haydCalculatorService.Calculate(flowList.GetFlowDataList(initialInstant: s_start));
+        return _haydCalculatorService.Calculate(flowList.GetFlowDataList(initialInstant: s_start), settings);
+    }
+
+    private void AssertMustahadaCase(params (EFlowAppearanceColor type, double dayCount)[] flows)
+    {
+        AssertMustahadaCase(HaydCalculatorSettings.Default, flows);
     }
 
     // TODO: Assert a bool state of each hayd cycle (e.g. IsComplexIstihada == true) instead of the InfoException.
-    private void AssertMustahadaCase(params (EFlowAppearanceColor type, double dayCount)[] flows)
+    private void AssertMustahadaCase(HaydCalculatorSettings settings, params (EFlowAppearanceColor type, double dayCount)[] flows)
     {
-        InfoException exception = Assert.Throws<InfoException>(() => Calculate(flows));
+        InfoException exception = Assert.Throws<InfoException>(() => Calculate(settings, flows));
         exception.Message.Should().Be(TextUtil.ComplexIstihadaNotImplemented);
     }
 
@@ -102,6 +112,8 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; if the rest exceeds 15 days, the mubtada'a ghayr mumayyiza takes a day and a night from its start and the mu'tada her 'ada. Here the rest (days 19-35) is 17 days. [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] Blood that exceeds 15 days makes her a mustahada. [IMPLICIT]
     // KHILAF: Whether the first 3 days already give her an 'ada (asahh: one occurrence is enough; muqabil al-asahh, a strong view: two or three occurrences, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204) only decides which kind of mustahada she is; Ibn Hajar names both kinds, so both views give a mustahada case here.
+    // KHILAF (mubtada'a): Whether the first blood is a basic hayd at all is disputed: ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on (Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400); Ba 'Alawi (Bughya) and as-Saqqaf (al-Ibana, p. 29-31) make the first blood hayd.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable through HaydCalculatorSettings.MubtadaaBloodInRestOfTuhr. This test follows the first reading (default); the second is tested in the region "Other views (khilaf)".
     [FiqhTodo]
     [Fact]
     public void ThreeDaysRedTwelveDaysPurityThenTwentyDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase()
@@ -122,6 +134,8 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340 (Hashiyat ash-Shabramallisi); https://shamela.ws/book/3565/338] The same example after Ibn Hajar. [IMPLICIT]
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; if the rest exceeds 15 days, the rules of the mustahada apply. Here the rest (days 17-35) is 19 days. Ba 'Alawi's case has a first blood of more than a day and a night; here it is exactly a day and a night. [IMPLICIT]
     // KHILAF: Whether the single day of blood gives her an 'ada (asahh: one occurrence is enough; muqabil al-asahh, a strong view: two or three occurrences, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204) only decides which kind of mustahada she is (mu'tada or mubtada'a); both views give a mustahada case here.
+    // KHILAF (mubtada'a): Whether the first blood is a basic hayd at all is disputed: ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on (Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400); Ba 'Alawi (Bughya) and as-Saqqaf (al-Ibana, p. 29-31) make the first blood hayd.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable through HaydCalculatorSettings.MubtadaaBloodInRestOfTuhr. This test follows the first reading (default); the second is tested in the region "Other views (khilaf)".
     [FiqhTodo]
     [Fact]
     public void OneDayRedFourteenDaysPurityThenTwentyDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase()
@@ -141,7 +155,7 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is 17 days. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] If the returning blood continues, a mubtada'a is ghayr mumayyiza and a mu'tada follows her 'ada, i.e. the rules of the mustahada apply. [IMPLICIT]
     // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
-    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable through HaydCalculatorSettings.MubtadaaBloodInRestOfTuhr. This test follows the first reading (default); the second is tested in the region "Other views (khilaf)".
     // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
@@ -252,7 +266,7 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is 3 days. [IMPLICIT]
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The part of the returning blood beyond the completion of the purity: "it is not far-fetched" that it is hayd. [IMPLICIT]
     // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
-    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable through HaydCalculatorSettings.MubtadaaBloodInRestOfTuhr. This test follows the first reading (default); the second is tested in the region "Other views (khilaf)".
     // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
@@ -268,7 +282,7 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is 5 days. [IMPLICIT]
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The part of the returning blood beyond the completion of the purity: "it is not far-fetched" that it is hayd. [IMPLICIT]
     // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
-    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable through HaydCalculatorSettings.MubtadaaBloodInRestOfTuhr. This test follows the first reading (default); the second is tested in the region "Other views (khilaf)".
     // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
@@ -284,7 +298,7 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is exactly 15 days. [IMPLICIT]
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The part of the returning blood beyond the completion of the purity: "it is not far-fetched" that it is hayd. [IMPLICIT]
     // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
-    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable through HaydCalculatorSettings.MubtadaaBloodInRestOfTuhr. This test follows the first reading (default); the second is tested in the region "Other views (khilaf)".
     // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
@@ -313,4 +327,104 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     }
 
     #endregion No mustahada case (basic rules)
+
+    #region Other views (khilaf), selected through HaydCalculatorSettings
+
+    // Other reading for a mubtada'a: she is a mustahada from day 1 (a day and a night of hayd from the start of the month), so the whole course is one mustahada case.
+    // [ash-Shabramallisi, Hashiya on Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] On Ibn Qasim's case of blood after the purity: Ibn Hajar's wording implies («يقتضي») that the rule is for the mu'tada only and that the mubtada'a has a day and a night of hayd from the start of the month. [IMPLICIT]
+    // [al-Bujayrimi, quoted by ash-Sharwani, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] On Ibn Hajar's mubtada'a with 3 days blood, 12 days purity and continuing blood («فَغَيْرُ مُمَيِّزَةٍ»): she is a mumayyiza lacking a condition, because the time of the purity counts as weak blood and is under the minimal purity.
+    // KHILAF (mubtada'a): Ba 'Alawi (Bughya, vol. 1, p. 277), as-Saqqaf (al-Ibana, p. 29-31) and Ibn Qasim («لا يبعد») make the first blood hayd and let the returning blood complete the purity (default); ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable. This test follows the second reading (MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMustahadaFromFirstBlood_ThreeDaysRedTwelveDaysPurityThenTwentyDaysRed_IsMustahadaCaseFromTheStart()
+    {
+        AssertMustahadaCase(
+            HaydCalculatorSettings.Default with { MubtadaaBloodInRestOfTuhr = EMubtadaaBloodInRestOfTuhr.MustahadaFromFirstBlood },
+            (EFlowAppearanceColor.Red, 3),
+            (EFlowAppearanceColor.Clear, 12),
+            (EFlowAppearanceColor.Red, 20));
+    }
+
+    // Other reading for a mubtada'a: she is a mustahada from day 1, so the whole course is one mustahada case.
+    // [ash-Shabramallisi, Hashiya on Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] On Ibn Qasim's case of blood after the purity: Ibn Hajar's wording implies («يقتضي») that the rule is for the mu'tada only and that the mubtada'a has a day and a night of hayd from the start of the month. [IMPLICIT]
+    // [al-Bujayrimi, quoted by ash-Sharwani, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] On Ibn Hajar's mubtada'a with 3 days blood, 12 days purity and continuing blood («فَغَيْرُ مُمَيِّزَةٍ»): she is a mumayyiza lacking a condition, because the time of the purity counts as weak blood and is under the minimal purity. [IMPLICIT]
+    // KHILAF (mubtada'a): Ba 'Alawi (Bughya, vol. 1, p. 277), as-Saqqaf (al-Ibana, p. 29-31) and Ibn Qasim («لا يبعد») make the first blood hayd and let the returning blood complete the purity (default); ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable. This test follows the second reading (MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMustahadaFromFirstBlood_OneDayRedFourteenDaysPurityThenTwentyDaysRed_IsMustahadaCaseFromTheStart()
+    {
+        AssertMustahadaCase(
+            HaydCalculatorSettings.Default with { MubtadaaBloodInRestOfTuhr = EMubtadaaBloodInRestOfTuhr.MustahadaFromFirstBlood },
+            (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 20));
+    }
+
+    // Other reading for a mubtada'a: she is a mustahada from day 1, so the whole course is one mustahada case.
+    // [ash-Shabramallisi, Hashiya on Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] On Ibn Qasim's case of blood after the purity: Ibn Hajar's wording implies («يقتضي») that the rule is for the mu'tada only and that the mubtada'a has a day and a night of hayd from the start of the month. [IMPLICIT]
+    // [al-Bujayrimi, quoted by ash-Sharwani, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] On Ibn Hajar's mubtada'a with 3 days blood, 12 days purity and continuing blood («فَغَيْرُ مُمَيِّزَةٍ»): she is a mumayyiza lacking a condition, because the time of the purity counts as weak blood and is under the minimal purity. [IMPLICIT]
+    // KHILAF (mubtada'a): Ba 'Alawi (Bughya, vol. 1, p. 277), as-Saqqaf (al-Ibana, p. 29-31) and Ibn Qasim («لا يبعد») make the first blood hayd and let the returning blood complete the purity (default); ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable. This test follows the second reading (MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMustahadaFromFirstBlood_ThreeDaysRedFourteenDaysPurityThenSeventeenDaysRed_IsMustahadaCaseFromTheStart()
+    {
+        AssertMustahadaCase(
+            HaydCalculatorSettings.Default with { MubtadaaBloodInRestOfTuhr = EMubtadaaBloodInRestOfTuhr.MustahadaFromFirstBlood },
+            (EFlowAppearanceColor.Red, 3),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 17));
+    }
+
+    // Other reading for a mubtada'a: the returning blood passes the completion of the purity and stops; she is a mustahada from day 1, so this is a mustahada case.
+    // [ash-Shabramallisi, Hashiya on Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] On Ibn Qasim's case of blood after the purity: Ibn Hajar's wording implies («يقتضي») that the rule is for the mu'tada only and that the mubtada'a has a day and a night of hayd from the start of the month. [IMPLICIT]
+    // [al-Bujayrimi, quoted by ash-Sharwani, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] On Ibn Hajar's mubtada'a with 3 days blood, 12 days purity and continuing blood («فَغَيْرُ مُمَيِّزَةٍ»): she is a mumayyiza lacking a condition, because the time of the purity counts as weak blood and is under the minimal purity. [IMPLICIT]
+    // KHILAF (mubtada'a): Ba 'Alawi (Bughya, vol. 1, p. 277), as-Saqqaf (al-Ibana, p. 29-31) and Ibn Qasim («لا يبعد») make the first blood hayd and let the returning blood complete the purity (default); ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable. This test follows the second reading (MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMustahadaFromFirstBlood_ThreeDaysRedFourteenDaysPurityFourDaysRedThenStop_IsMustahadaCase()
+    {
+        AssertMustahadaCase(
+            HaydCalculatorSettings.Default with { MubtadaaBloodInRestOfTuhr = EMubtadaaBloodInRestOfTuhr.MustahadaFromFirstBlood },
+            (EFlowAppearanceColor.Red, 3),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 4));
+    }
+
+    // Other reading for a mubtada'a: the returning blood passes the completion of the purity and stops; she is a mustahada from day 1, so this is a mustahada case.
+    // [ash-Shabramallisi, Hashiya on Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] On Ibn Qasim's case of blood after the purity: Ibn Hajar's wording implies («يقتضي») that the rule is for the mu'tada only and that the mubtada'a has a day and a night of hayd from the start of the month. [IMPLICIT]
+    // [al-Bujayrimi, quoted by ash-Sharwani, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] On Ibn Hajar's mubtada'a with 3 days blood, 12 days purity and continuing blood («فَغَيْرُ مُمَيِّزَةٍ»): she is a mumayyiza lacking a condition, because the time of the purity counts as weak blood and is under the minimal purity. [IMPLICIT]
+    // KHILAF (mubtada'a): Ba 'Alawi (Bughya, vol. 1, p. 277), as-Saqqaf (al-Ibana, p. 29-31) and Ibn Qasim («لا يبعد») make the first blood hayd and let the returning blood complete the purity (default); ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable. This test follows the second reading (MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMustahadaFromFirstBlood_TenDaysRedEightDaysPurityTwelveDaysRedThenStop_IsMustahadaCase()
+    {
+        AssertMustahadaCase(
+            HaydCalculatorSettings.Default with { MubtadaaBloodInRestOfTuhr = EMubtadaaBloodInRestOfTuhr.MustahadaFromFirstBlood },
+            (EFlowAppearanceColor.Red, 10),
+            (EFlowAppearanceColor.Clear, 8),
+            (EFlowAppearanceColor.Red, 12));
+    }
+
+    // Other reading for a mubtada'a: the returning blood passes the completion of the purity and stops; she is a mustahada from day 1, so this is a mustahada case.
+    // [ash-Shabramallisi, Hashiya on Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338] On Ibn Qasim's case of blood after the purity: Ibn Hajar's wording implies («يقتضي») that the rule is for the mu'tada only and that the mubtada'a has a day and a night of hayd from the start of the month. [IMPLICIT]
+    // [al-Bujayrimi, quoted by ash-Sharwani, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] On Ibn Hajar's mubtada'a with 3 days blood, 12 days purity and continuing blood («فَغَيْرُ مُمَيِّزَةٍ»): she is a mumayyiza lacking a condition, because the time of the purity counts as weak blood and is under the minimal purity. [IMPLICIT]
+    // KHILAF (mubtada'a): Ba 'Alawi (Bughya, vol. 1, p. 277), as-Saqqaf (al-Ibana, p. 29-31) and Ibn Qasim («لا يبعد») make the first blood hayd and let the returning blood complete the purity (default); ash-Shabramallisi and al-Bujayrimi read Tuhfat al-Muhtaj, vol. 1, p. 399 as making the mubtada'a a mustahada from the first blood on.
+    // The sources give no strength for either reading; by the user's decision (2026-10-30) both are selectable. This test follows the second reading (MubtadaaBloodInRestOfTuhr = MustahadaFromFirstBlood).
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMustahadaFromFirstBlood_ThreeDaysRedFourteenDaysPuritySixteenDaysRedThenStop_IsMustahadaCase()
+    {
+        AssertMustahadaCase(
+            HaydCalculatorSettings.Default with { MubtadaaBloodInRestOfTuhr = EMubtadaaBloodInRestOfTuhr.MustahadaFromFirstBlood },
+            (EFlowAppearanceColor.Red, 3),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 16));
+    }
+
+    #endregion Other views (khilaf), selected through HaydCalculatorSettings
 }

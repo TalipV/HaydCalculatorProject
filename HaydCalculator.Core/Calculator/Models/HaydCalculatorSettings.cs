@@ -18,6 +18,7 @@ public sealed record HaydCalculatorSettings
     {
         WeakBetweenStrongBeyondMaximum = EWeakBetweenStrongBeyondMaximum.OnlyFirstStrongIsHayd,
         StrongerWeakMustFollowStrongDirectly = false,
+        YellowNotHaydScope = EYellowNotHaydScope.InsideAndOutsideAda,
     };
 
     /// <summary>
@@ -39,6 +40,20 @@ public sealed record HaydCalculatorSettings
     /// Yellow and turbid blood are hayd (asahh) or not.
     /// </summary>
     public bool YellowAndTurbidAreHayd { get; init; } = true;
+
+    /// <summary>
+    /// Only used when <see cref="YellowAndTurbidAreHayd"/> is false: whether yellow and turbid blood inside the days
+    /// of her 'ada are hayd anyway (al-Khatib after ar-Rawda) or not hayd either (Ibn Hajar).
+    /// </summary>
+    public EYellowNotHaydScope YellowNotHaydScope { get; init; } = EYellowNotHaydScope.OnlyOutsideAda;
+
+    /// <summary>
+    /// Mubtada'a whose returning blood falls into the rest of the minimal purity and runs past its completion
+    /// (e.g. 3 days blood, 14 days purity, then blood): the first blood is hayd and the returning blood completes
+    /// the purity (Bughyat al-Mustarshidin, al-Ibana, Ibn Qasim) or she is a mustahada from the first blood on
+    /// (ash-Shabramallisi and al-Bujayrimi reading Tuhfat al-Muhtaj 1/399).
+    /// </summary>
+    public EMubtadaaBloodInRestOfTuhr MubtadaaBloodInRestOfTuhr { get; init; } = EMubtadaaBloodInRestOfTuhr.CompletesTuhrThenNewHayd;
 
     /// <summary>
     /// Hayd of a mubtada'a ghayr mumayyiza: a day and a night (azhar) or the usual 6 or 7 days.
@@ -91,6 +106,32 @@ public enum EShiftedCycle
     /// the returning blood up to the end of the month is istihada, her old cycle continues from the next month
     /// </summary>
     OldCycleOnly,
+}
+
+public enum EYellowNotHaydScope
+{
+    /// <summary>
+    /// yellow and turbid blood are not hayd only outside the days of her 'ada; inside them they are hayd (al-Khatib after ar-Rawda)
+    /// </summary>
+    OnlyOutsideAda,
+    /// <summary>
+    /// yellow and turbid blood are not hayd, also inside the days of her 'ada (Ibn Hajar)
+    /// </summary>
+    InsideAndOutsideAda,
+}
+
+public enum EMubtadaaBloodInRestOfTuhr
+{
+    /// <summary>
+    /// the first blood is hayd, the returning blood completes the minimal purity (dam fasad) and the rest is a new hayd
+    /// or, if it exceeds 15 days, a mustahada case of its own (Bughyat al-Mustarshidin, al-Ibana, Ibn Qasim)
+    /// </summary>
+    CompletesTuhrThenNewHayd,
+    /// <summary>
+    /// the purity counts like weak blood under the minimal purity, so she is a mustahada from the first blood on,
+    /// with a day and a night of hayd from the start of the month (ash-Shabramallisi, al-Bujayrimi)
+    /// </summary>
+    MustahadaFromFirstBlood,
 }
 
 public enum EPurityBetweenBloods

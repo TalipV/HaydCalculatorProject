@@ -199,6 +199,8 @@ also statement 2 under question 1, which is about exactly such a first blood.
 
 ## 7. Mubtada'a whose returning blood continues: does she become a mustahada from the first blood on?
 
+**Resolved 2026-10-30 as a khilaf with a setting** (see Resolved below). **User decision 2026-10-30:** differences between Ibn Hajar, ar-Ramli and al-Khatib, and further differing views or readings of the later hawashi, are treated as khilaf and get a setting, whether or not the sources name a strength and whether or not the difference is only a reading of a text.
+
 Found on 2026-10-29 while checking the findings of another session (Bughya commentary, see
 review-notes.md, section E). Affects the classification tests
 `ThreeDaysRedTwelveDaysPurityThenTwentyDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase`
@@ -251,6 +253,8 @@ Tuhfa with al-Bujayrimi / ash-Shabramallisi: mustahada from day 1). The tests ar
 
 ## 8. Scope of the yellow khilaf: also inside the days of her 'ada?
 
+**Resolved 2026-10-30 as a khilaf with a setting** (see Resolved below).
+
 Moved here on 2026-10-30 at the user's request (unsure points go to the open questions).
 The asahh (yellow and brownish are hayd) is not in question; only the scope of the other view
 (setting `YellowAndTurbidAreHayd = false`) is:
@@ -296,6 +300,18 @@ Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` 
 | 15 red, 15 black, stop | the black is hayd (tamyiz) | FK 1/105 quoting al-Majmu' (Ibn Hajar); order rule Tuhfa 1/402, Nihaya 1/341f. [IMPLICIT] |
 
 ## Resolved
+
+- Question 7 (mubtada'a, blood in the rest of the purity that runs past its completion): setting
+  `MubtadaaBloodInRestOfTuhr`, default `CompletesTuhrThenNewHayd` (Bughya, al-Ibana, Ibn Qasim; what the
+  tests followed before), other value `MustahadaFromFirstBlood` (ash-Shabramallisi, al-Bujayrimi). Not in the
+  `IbnHajar` preset: it is a reading of his wording by the hawashi, not his explicit statement, and Ibn Hamid
+  (unapproved) holds the wording to be corrupted. Tests for the second reading: region "Other views (khilaf)" in
+  `HaydCalculatorServiceTests_IstihadaClassification` (6) and `HaydCalculatorServiceTests_BasicCalculations` (2).
+- Question 8 (scope of the yellow khilaf): setting `YellowNotHaydScope` (only used when `YellowAndTurbidAreHayd`
+  is false), default `OnlyOutsideAda` (al-Khatib after ar-Rawda), `InsideAndOutsideAda` (Ibn Hajar, in the
+  `IbnHajar` preset). Only one author per side so far; ar-Ramli still to find. Tests
+  `HaydCalculation_MutadaYellowInsideAdaDays_YellowNotHayd_YellowIsHaydInsideAda` and
+  `..._YellowNotHaydIbnHajar_YellowIsNotHayd`.
 
 - 3/14/4 and 10/8/12 (blood passes the completion of the purity and then stops): resolved on
   2026-10-29 with Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (approved exception) and Ibn Qasim's "la yab'ud":
