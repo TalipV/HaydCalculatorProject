@@ -88,8 +88,37 @@ a commentary on it (author not named in the summary). Status of each point:
 | 5 | Text problem in Tuhfa 1/399 «فَغَيْرُ مُمَيِّزَةٍ»: Ibn Hamid says corrupt; al-Basri and al-Bujayrimi say not corrupt | checked on Shamela: al-Bujayrimi defends the text (lacking a condition, because the purity counts as weak blood under 15 days); **al-Basri does not say "not corrupt"**, he says the wording misleads and "a day and a night" would fit better. The summary was imprecise here | photo of p. 279 fn. 6 seen: Ibn Hamid calls the Tuhfa text «محرَّفةٌ» and reads «فإنْ كانتْ مميزةً .. عملتْ بتمييزِها» with a cycle of 18 days; recorded in open question 7 |
 | 6 | Fatra versus naqa' | already in the allowed works: Tuhfa 1/412, Mughni 1/294, Nihaya 1/356 (basics.md, README terms) | no new source needed |
 
+## G. Independent review of 2026-10-30 (another Claude session)
+
+Report: `fiqh-review-2026-10-30.md` (sent by the user). Checked here against Shamela before acting:
+
+| Point | Claim | Check here | Status |
+|---|---|---|---|
+| A1 | FK 1/78 and 1/91 give four awjuh (quoting ar-Rafi'i / ar-Rawda) for both shifted-cycle cases | confirmed ([21628/77](https://shamela.ws/book/21628/77), [21628/90](https://shamela.ws/book/21628/90)); additionally found: view (2) differs between FK 1/78 («خمسة تمام الشهر») and FK 1/91 («خمسة وعشرين») | docs and two KHILAF lines corrected; setting/tests open (user) |
+| A2 | ash-Shabramallisi's remark is about blood that stops | confirmed (Tuhfa 1/399 hawashi, part 1 ends with Ibn Qasim's 6-day case, part 2 starts with «وظاهره ... ع ش») | rest-of-tuhr.md, khilaf.md and the KHILAF lines of 3/14/4, 10/8/12, 3/14/16 and the classification tests corrected; which reading the tests follow: user |
+| A3 | al-Basri's objections on Tuhfa 1/399 missing | confirmed (read on 9059/400 part 2 earlier) | noted here; no change in results |
+| A4 | yellow khilaf only outside the 'ada | confirmed (Mughni 1/285) | basics.md, khilaf.md corrected; setting change: user |
+| A5 | ar-Ramli's own conclusion and al-Khatib's shaykh on 7/7/7 not quoted | confirmed (Nihaya 1/342, Mughni 1/286) | quoted in tamyiz.md |
+| A6 | Ibn Qasim writes 5 red, Tuhfa 1/401 has 6 | confirmed | noted in tamyiz.md |
+| B1 | "exactly 15" missing in the window | correct | rest-of-tuhr.md corrected |
+| B2 | 1/13/3 with 24 h is as open as 13/1/5 | correct | open-questions.md corrected |
+| B3 | FK 1/108 hint for 13/1/5 | correct | added to open question 1 |
+| B4 | 8/8/8 day 24 fits the rest-of-tuhr rule | correct reasoning, no source for 8/8/8 | added to open question 3 |
+| B5 | two KHILAF lines wrong | both confirmed from the test data and Mughni 1/288 / FK 1/110-111 | corrected |
+| B6 | three tamyiz tests do not fit the sources | see below | user's decision (red tests stay red) |
+
+B6 assessment: (1) `Condition3_NotFulfilled_1DayBlack14DaysRedAndThenBlackAgain` stops after 1 day of
+black; al-Isnawi's case (via ash-Sharwani) has «ثُمَّ السَّوَادَ» without a number, which by FK 1/105 means
+it continues; with stopping blood the structure is that of Tuhfa 1/401 (7 black, 7 red, 3 black, stop:
+tamyiz). The test's data or expectation needs the user's decision. (2) `Condition3_Fulfilled_1DayBlackAnd14DaysRed`:
+15 days in total, no mustahada, so the tamyiz check is moot; harmless but not a real case. (3)
+`Condition4_ContinuouslyBlackAndRed`: the sources have the alternation "forever" / to the end of the
+month; the test stops on day 17. Black still appears on day 17, i.e. the strong blood spreads over more
+than 15 days (condition 2), so "no tamyiz" probably still holds, but on another reason than the
+sources give.
+
 ## Review log
 
 | Date | Session | Point | Result |
 |---|---|---|---|
-| | | | |
+| 2026-10-30 | independent Claude session (report fiqh-review-2026-10-30.md) | A1-A7, B1-B6 | see section G |

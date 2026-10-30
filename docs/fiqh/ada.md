@@ -79,7 +79,7 @@ Tests: `Mutada_AdaOfFiveDays_ReturnsToAda`, `Mutada_ChangingAdaFiveSixSeven_Retu
   was not checked.)
 
 KHILAF for the purity of 20 instead of 25: depends on the 'ada by one occurrence (asahh).
-ar-Rawda lists further views on shifted cycles that the later works do not mention.
+Ibn Hajar, FK 1/78 and 1/91 ([21628/77](https://shamela.ws/book/21628/77), [21628/90](https://shamela.ws/book/21628/90)), quotes ar-Rafi'i / ar-Rawda with **four awjuh** for both shifted-cycle cases (14 days purity, and blood in the last five days); the asahh is the result above, the other three are muqabil al-asahh (strong). See khilaf.md for each result. (Corrected 2026-10-30: this line used to say the later works do not mention them; found by an independent review.)
 
 Tests: `HaydCalculation_BloodAfterTwentyDaysOfPurity_IsEarlierHayd`,
 `Mutada_BloodReturnsEarlierAndContinues_FiveDaysHaydTwentyDaysTuhur`,

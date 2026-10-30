@@ -77,7 +77,9 @@ the Mughni (1/293-294); phrase searches over all downloaded Shafi'i books for «
      likely a slip in the text of 1/86 or of its source. With a first blood of a full day and a
      night, the general rule of 3/12/3 applies (first blood hayd, second dam fasad). So there is
      no contradiction to statement 1 left, as long as the first blood is under 24 h in 1/13/3.
-     (This reading of the slip is mine; the user should confirm it.)
+     (This reading of the slip is mine; the user should confirm it.) Correction (independent review
+     2026-10-30): with a first blood of a full 24 h, 1/13/3 is **not** settled by 3/12/3: the blood
+     returns on day 15 and runs past it, the same constellation as 13/1/5, so it is as open as 13/1/5.
    - **The 3/12/3 reasoning:** the second blood is not hayd together with the first «لِمُجَاوَزَتِهِ خَمْسَةَ عَشَرَ»
      and not on its own «لِأَنَّهُ لَمْ يَتَقَدَّمْهُ أَقَلُّ طُهْرٍ», and «لَا خِلَافَ فِي شَيْءٍ مِنْ هَذَا».
    - **Stopping versus continuing:** on the same pages (1/108 and 1/109) Ibn Hajar repeats against
@@ -133,6 +135,13 @@ leads only.
   commentary) point to **a mustahada case**, i.e. to what the tests expect. Neither is an allowed
   source yet; the user decides whether to approve them.
 
+### Hint in FK 1/108 not used before (independent review 2026-10-30)
+
+In the al-Majmu' summary on FK 1/108 (1/13/3 with a first blood under 24 h), blood crossing day 15
+is handled with the options of the talfiq chapter, and one option is «وَإِنْ لَفَّقْنَا مِنْ الْعَادَةِ فَكَذَلِكَ لِأَنَّ الْمُبْتَدِئَةَ تُرَدُّ إلَى يَوْمٍ وَلَيْلَةٍ»:
+"a day and a night" is the rule of the mubtada'a who is a mustahada. Another hint that blood starting
+inside the 15 days and crossing day 15 is treated with the mustahada rules.
+
 ### al-Ibana wa-l-Ifada, 3rd ed., p. 27 (approved user source; read 2026-10-30)
 
 «١- أن لا يُجاوِزَ مجموعُ الدِّماءِ مَعَ النَّقاءِ خمسةَ عشَرَ يومًا، فإنْ جاوَزَ الخمسةَ عشَرَ وكانَ مُتّصِلًا بدمٍ قبلَه فهذه امْرأةٌ مُسْتَحاضَةٌ في الحَيْضِ اختَلَطَ حيضُها بطُهْرِها، فترَدُّ إلى إحدَى صُوَرِ المُسْتَحاضَةِ في الحَيْضِ. وأمّا إذا لم يتَّصِلِ الدَّمُ بدمٍ قبلَه فإنّ هذه المرأةَ عليها بقيّةُ طُهْرٍ، فتُكَمِّلَ بقيّةَ الطُّهْرِ، وما زادَ فهو حيضٌ جديدٌ»
@@ -161,6 +170,10 @@ FK 1/86 gives only the first black as hayd (bi-l-ittifaq). The last day of the s
 24) lies after a full minimal purity of 15 days following the first black. The sources do not
 discuss that day. Test `MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirstBlackIsHayd` notes it.
 al-Ibana p. 71 (checked 2026-10-30) also gives only «فحيضُها السّوادُ الأوّلُ بالاتِّفاقِ» and says nothing about day 24.
+Note (independent review 2026-10-30): the first black ends on day 8, so the minimal purity ends on day
+23, and day 24 is exactly 24 h of blood after it: the same constellation as the Bughya / al-Ibana rule
+that the basic tests apply (rest of tuhr, then a new hayd). By that rule day 24 would be a new hayd.
+No source says so for 8/8/8.
 
 ## 4. Condition 4 with a long weak blood at the end
 

@@ -140,7 +140,9 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // Two cycles: the first 3 days are a basic hayd; the returning blood completes the purity on day 18, the rest (days 19-35) is 17 days, so the second cycle is a mustahada case.
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is 17 days. [IMPLICIT]
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] If the returning blood continues, a mubtada'a is ghayr mumayyiza and a mu'tada follows her 'ada, i.e. the rules of the mustahada apply. [IMPLICIT]
-    // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
+    // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
     public void ThreeDaysRedFourteenDaysPurityThenSeventeenDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase()
@@ -249,7 +251,9 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // Day 18 completes the purity (dam fasad), days 19-21 are a new hayd; see also HaydCalculation_CalculationWithPurityBetweenTwoSeparateMenstrualCyclesIncludingIstihada.
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is 3 days. [IMPLICIT]
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The part of the returning blood beyond the completion of the purity: "it is not far-fetched" that it is hayd. [IMPLICIT]
-    // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
+    // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
     public void ThreeDaysRedFourteenDaysPurityFourDaysRedThenStop_IsNoMustahadaCase()
@@ -263,7 +267,9 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // Days 19-25 complete the purity (dam fasad), days 26-30 are a new hayd; see also HaydCalculation_CalculationWithPartiallyIstihadaAndPartiallyMenstrualFlow.
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is 5 days. [IMPLICIT]
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The part of the returning blood beyond the completion of the purity: "it is not far-fetched" that it is hayd. [IMPLICIT]
-    // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
+    // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
     public void TenDaysRedEightDaysPurityTwelveDaysRedThenStop_IsNoMustahadaCase()
@@ -277,7 +283,9 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     // Day 18 completes the purity (dam fasad), the rest (days 19-33) is exactly 15 days, so it is a new hayd without exceeding the maximum.
     // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The part of the returning blood that completes the purity is dam fasad; the rest is hayd if it meets its conditions and does not exceed 15 days, otherwise the rules of the mustahada apply. Here the rest is exactly 15 days. [IMPLICIT]
     // [Ibn Qasim al-'Abbadi, Hashiya on Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] The part of the returning blood beyond the completion of the purity: "it is not far-fetched" that it is hayd. [IMPLICIT]
-    // KHILAF: The works checked give no other view. Ash-Shabramallisi (Nihayat al-Muhtaj, vol. 1, p. 340; https://shamela.ws/book/3565/338) only remarks that Ibn Hajar's wording on continuous blood might suggest a difference for the mubtada'a, without holding a view; Ba 'Alawi's text states the rule for every woman.
+    // KHILAF (mubtada'a): Ash-Shabramallisi, on exactly this kind of case (Ibn Qasim's "6 days of blood after the purity", blood that stops; Tuhfat al-Muhtaj, vol. 1, p. 399, hawashi; https://shamela.ws/book/9059/400), infers from Ibn Hajar's wording («يقتضي») that the rule holds for the mu'tada only and that the mubtada'a has a day and a night from the start of the month;
+    // al-Bujayrimi's reasoning on the same page (the time of purity counts as weak blood and is under the minimal purity) points the same way. For the rule as tested: Ba 'Alawi (Bughya), as-Saqqaf (al-Ibana, p. 29-31), Ibn Qasim («لا يبعد»). Which reading the tests follow for a mubtada'a is open for the user's decision (open question 7).
+    // (Correction 2026-10-30, found by an independent review: an earlier line said ash-Shabramallisi only remarked on continuous blood without holding a view.)
     [FiqhTodo]
     [Fact]
     public void ThreeDaysRedFourteenDaysPuritySixteenDaysRedThenStop_IsNoMustahadaCase()

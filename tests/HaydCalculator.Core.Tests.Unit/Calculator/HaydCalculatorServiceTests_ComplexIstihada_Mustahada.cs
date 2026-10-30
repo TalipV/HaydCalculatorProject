@@ -346,11 +346,11 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 399; https://shamela.ws/book/9059/400] 'Ada of 5 days at the start of the month, then 14 days purity, then the blood returns and continues: the first day and night of the returning blood are purity, then 5 days hayd, and her cycle stays 20 days.
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 340 (Hashiyat ash-Shabramallisi); https://shamela.ws/book/3565/338] The same example after Ibn Hajar.
     // KHILAF: The 'ada is established by a single occurrence according to the sounder view (asahh); other views require two or three occurrences (Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204). This test follows the asahh.
-    // KHILAF (source NOT APPROVED): Abu Makhrama, quoted in Bughyat al-Mustarshidin (Dar al-Minhaj ed., vol. 1, p. 277, main text), calls this test's result the asahh; the commentary of that edition
-    // (vol. 1, p. 277-278, note [615], after al-I'ab, manuscript 1/f. 424) names three opposite views (awjuh, muqabil al-asahh, i.e. strong): (1) the first day of the returning blood is istihada,
-    // then the rest of the month (10 days) and 5 days of the next are hayd, then 25 days purity, keeping her old cycle; (2) the first day is istihada, then 5 days hayd and 25 days purity, always;
-    // (3) all returning blood up to the end of the month is istihada, and her old cycle starts again with the next month. The allowed works (Tuhfat al-Muhtaj, vol. 1, p. 399;
-    // al-Fatawa al-Kubra, vol. 1, p. 111) give no khilaf here. No setting and no test for these views (user's decision, 2026-10-29); see docs/fiqh/khilaf.md.
+    // KHILAF: [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 78; https://shamela.ws/book/21628/77] (and vol. 1, p. 91), quoting ar-Rafi'i / ar-Rawda: four awjuh for this case; the asahh is this test's result (a day of istihada, 5 hayd, 15 purity, cycle 20).
+    // The other three (muqabil al-asahh, i.e. strong): (2) the first day of the returning blood is istihada, then the rest of the month (10 days) and 5 days of the next month are hayd (15), then purity, keeping her old cycle;
+    // (3) the first day is istihada, then 5 days hayd and 25 days purity, always; (4) all returning blood up to the end of the month is istihada, and her old cycle starts again with the next month.
+    // (Correction 2026-10-30, found by an independent review: an earlier line here said the allowed works give no khilaf; they do. Also in Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277-278, note [615].)
+    // Whether these views get a setting and tests is open for the user's decision; see docs/fiqh/khilaf.md.
     [FiqhTodo]
     [Fact]
     public void Mutada_FourteenDaysPurityThenContinuousBlood_FirstDayCompletesTuhur()
@@ -369,7 +369,9 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] 'Ada of 5 days at the start of the month; after 20 days of purity the blood returns in the last five days and continues: she has 5 days of hayd from its start and 20 days of purity, and so on.
-    // KHILAF: The later works only give this view (the asahh), e.g. al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110. ar-Rawda lists further views, but the later works do not mention them.
+    // KHILAF: [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 91; https://shamela.ws/book/21628/90], quoting ar-Rafi'i / ar-Rawda: four awjuh; the asahh is this test's result (5 days hayd from the start of the blood, 20 days purity, always).
+    // The other three (muqabil al-asahh, i.e. strong): (2) 5 days hayd, 25 days purity; (3) 10 days hayd from this blood, 25 days purity, then she keeps her old cycle; (4) the last five days (the start of the blood) are istihada, then 5 days hayd at the start of the second month, then 25 days purity.
+    // (Correction 2026-10-30, found by an independent review: an earlier line here said the later works do not mention these views; al-Fatawa al-Kubra does.) Settings and tests for these views: open for the user's decision.
     [FiqhTodo]
     [Fact]
     public void Mutada_BloodReturnsEarlierAndContinues_FiveDaysHaydTwentyDaysTuhur()
@@ -389,7 +391,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
 
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 110; https://shamela.ws/book/21628/109] If she sees 4 days or less of her usual 5, her hayd has decreased without moving; after a change of the 'ada she returns to the last one, even if it did not repeat (10, then 5, then 4, then istihada: back to the 4 without khilaf).
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204] The 'ada is established by a single occurrence according to the sounder view.
-    // KHILAF: If the 'ada is not established by a single occurrence, she returns to her old 'ada of 5 days (the view that requires two occurrences, Nihayat al-Muhtaj, vol. 1, p. 345; https://shamela.ws/book/3565/343) [IMPLICIT]. This test follows the asahh.
+    // No khilaf in the result: the 4 days are contained in both of the last two cycles (5, then 4), so the views that require two or three occurrences also give 4 (compare Mughni al-Muhtaj, vol. 1, p. 288; https://shamela.ws/book/11444/204: 5, 6, 7 gives 6 on the two-occurrence view; and al-Fatawa al-Kubra, vol. 1, p. 110: 10, 5, 4 returns to the 4 "without khilaf").
+    // (Correction 2026-10-30, found by an independent review: an earlier KHILAF line here said the two-occurrence view gives 5.)
     [FiqhTodo]
     [Fact]
     public void Mutada_LastCycleOnlyFourDays_ReturnsToFourDays()
@@ -408,7 +411,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
     }
 
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] 'Ada of 5 days at the start of the month; she sees the second five days as blood and it stops, and it returns at the start of the next month: if it then continues, these five days are hayd by agreement and her purity is 20 days according to the asahh (the 'ada is established by a single occurrence).
-    // KHILAF: If the 'ada is not established by a single occurrence, her purity is 25 days instead of 20 (al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110: "20 days, based on the asahh that the 'ada is established by a single occurrence") [IMPLICIT]. This test follows the asahh.
+    // KHILAF: The 20 days of purity are "based on the asahh that the 'ada is established by a single occurrence" (al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110). In al-Fatawa al-Kubra's own example the other view gives 25; in this test the earlier purity is 30 days, so the other view would keep that earlier cycle [IMPLICIT]. This test follows the asahh.
+    // (Correction 2026-10-30, found by an independent review: an earlier line took the 25 over without noticing that this test's first purity is 30 days.)
     [FiqhTodo]
     [Fact]
     public void Mutada_HaydMovedToSecondFiveThenContinuousBlood_FiveDaysHaydTwentyDaysTuhur()

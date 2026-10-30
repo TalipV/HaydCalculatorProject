@@ -8,9 +8,9 @@ After a hayd, the next 15 days are the minimal purity. Blood that falls into wha
 Let A = the first blood (a valid hayd), P = the purity after it, B = the returning blood.
 
 1. **A + P + B together within 15 days**: one hayd with the purity in between (qawl as-sahb), basics.md.
-2. **B starts after day 15 of A (A + P is more than 15 days), but before the minimal purity is
+2. **B starts after day 15 of A (A + P is 15 days or more), but before the minimal purity is
    complete**: the "rest of tuhr" cases below (3/12/3, the Bughya rule).
-3. **B starts inside the 15 days of A and runs past day 15** (A + P under 15 days): intermittent
+3. **B starts inside the 15 days of A and runs past day 15** (A + P under 15 days, i.e. B starts on day 15 or earlier): intermittent
    blood that exceeds 15 days. Mughni 1/294 and Nihaya 1/356 call it istihada / a mustahada case.
    al-Ibana p. 27 states the line explicitly: blood that crosses day 15 **connected to the blood before
    it** makes her a mustahada; if it is not connected, she has a rest of tuhr:
@@ -57,10 +57,13 @@ No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
   «وَكَتَبَ شَيْخُنَا بِرّ بِهَامِشِ شَرْحِ الْمَنْهَجِ مَا نَصُّهُ: اُنْظُرْ هَذَا مَعَ قَوْلِهِمْ آخِرَ الْبَابِ فِي مَسْأَلَةِ الدِّمَاءِ الْمُتَخَلَّلَةِ بِالنَّقَاءِ إذَا زَادَتْ عَلَى خَمْسَةَ عَشَرَ بِالنَّقَاءِ فَهِيَ اسْتِحَاضَةٌ اهـ. أَقُولُ: يُخَصُّ ذَاكَ بِهَذَا ... أَيْ فَيُقَالُ إنْ قَطَعَ عَلَى رَأْسِ الْخَمْسَةَ عَشَرَ أَوْ فِيهَا كَانَ الدَّمُ مَعَ النَّقَاءِ حَيْضًا، وَهَذَا التَّخْصِيصُ فِي الْحَقِيقَةِ هُوَ مَفْهُومُ قَوْلِهِمْ إذَا زَادَتْ عَلَى خَمْسَةَ عَشَرَ»
   and then, on Ibn Qasim's "la yab'ud":
   «وَظَاهِرُهُ أَنَّهُ لَا فَرْقَ بَيْنَ الْمُبْتَدَأَةِ وَالْمُعْتَادَةِ، لَكِنَّ فِيمَا تَقَدَّمَ عَنْ حَجّ مِنْ قَوْلِهِ كَمَا قَالُوهُ فَمَا لَوْ رَأَتْ خَمْسَتَهَا الْمَعْهُودَةَ أَوَّلَ الشَّهْرِ إلَخْ مَا يَقْتَضِي تَخْصِيصَ ذَلِكَ بِالْمُعْتَادَةِ، وَأَنَّ الْمُبْتَدَأَةَ تَحِيضُ يَوْمًا وَلَيْلَةً مِنْ أَوَّلِ الشَّهْرِ»
-  He only notes what Ibn Hajar's wording "might imply" for the mubtada'a; he holds no view.
-  Ibn Hajar's passage itself is about blood that continues (see next section), where Bughya says
-  the same (mubtada'a: a day and a night). This was recorded as a KHILAF note, not as a
-  contradiction; the user may decide otherwise.
+  Correction (2026-10-30, independent review): the remark stands right after Ibn Qasim's case of 6 days
+  of blood after the purity, i.e. blood that **stops**. Ash-Shabramallisi infers from Ibn Hajar's
+  wording («يقتضي») that the rule is for the mu'tada only and the mubtada'a gets a day and a night from
+  the start of the month; al-Bujayrimi's reasoning (purity counts as weak blood under 15 days, same
+  page) points the same way. So for the mubtada'a this is a real counter-reading, not only a note;
+  the tests 3/14/4, 10/8/12, 3/14/16 follow the Bughya / al-Ibana reading until the user decides
+  (open question 7).
 
 - [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 29] (approved user source), the case 10/8/12 itself:
   «لو رأتْ عشرةَ أيامٍ وانقطعَ، ثمّ جاءها الدّمُ بعدَ ثمانيةِ أيامٍ مِن انقطاعِه واستمرَّ اثنَيْ عشرَ يومًا وانقطعَ، فالعشرةُ الأيامِ الأُولَى حيضٌ، وأمّا الاثنا عشرَ يوم دم فلا يُمكِنُ جعلُها حيضًا، وإنّما هذه المرأةُ عليها بقيّةُ طُهْرٍ، فتُكمِّلُ بقيّةَ طُهْرِها، وما زادَ يكونُ حيضًا جديدًا، ففي هذه المسألةِ تأخُذُ مِن الدّمِ الجديدِ سبعةَ أيامٍ دمَ فسادٍ تكمِلةً لأقلِّ الطُّهْرِ بين الحيضَتيْنِ، وما بَقِيَ – وهو الخمسةُ الأيامِ – حيضٌ جديدٌ»

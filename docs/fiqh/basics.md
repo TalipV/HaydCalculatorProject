@@ -115,7 +115,9 @@ Tests: `HaydCalculation_CalculationWithPurityInBetweenTwoMenstrualFlows`,
   outside the days of the 'ada; inside the 'ada it is hayd without khilaf (after ar-Rawda), "but
   at-Tatimma requires a strong blood with it" and "wa qila the strong must come first" (weak views).
 
-KHILAF: hayd according to the asahh; muqabil al-asahh (strong): not hayd. Setting
-`YellowAndTurbidAreHayd` (default `true`).
+KHILAF: hayd according to the asahh; muqabil al-asahh (strong): not hayd, **but only outside the days of
+her 'ada** (inside her 'ada hayd «جَزْمًا», Mughni 1/285 after ar-Rawda). Setting `YellowAndTurbidAreHayd`
+(default `true`); with `false` it is too broad as long as it also covers yellow inside the 'ada (independent
+review 2026-10-30; user's decision pending).
 
 Tests: `HaydCalculation_OnlyYellowBloodWithinTheLimits_IsHayd`, `HaydCalculation_OnlyYellowBlood_YellowNotHayd_NoHaydAtAll`.

@@ -111,6 +111,8 @@ combination of Tuhfa 1/401 / Mughni 1/286 for 10 black / 10 red with the order r
 - [ar-Ramli, Nihaya 1/342](https://shamela.ws/book/3565/340):
   «وَلَوْ اجْتَمَعَ قَوِيٌّ وَضَعِيفٌ وَأَضْعَفُ فَالْقَوِيُّ مَعَ مَا يُنَاسِبُهُ فِي الْقُوَّةِ مِنْ الضَّعِيفِ حَيْضٌ بِثَلَاثَةِ شُرُوطٍ: أَنْ يَتَقَدَّمَ الْقَوِيُّ، وَأَنْ يَتَّصِلَ بِهِ الْمُنَاسِبُ الضَّعِيفُ، وَأَنْ يَصْلُحَا مَعًا لِلْحَيْضِ بِأَنْ لَا يَزِيدَ مَجْمُوعُهُمَا عَلَى أَكْثَرِهِ كَخَمْسَةٍ سَوَادًا ثُمَّ خَمْسَةٍ حُمْرَةً ثُمَّ أَطْبَقَتْ الصُّفْرَةُ فَالْأَوَّلَانِ حَيْضٌ، وَإِنْ لَمْ يَصْلُحَا مَعًا لِلْحَيْضِ كَعَشَرَةٍ سَوَادًا وَسِتَّةٍ حُمْرَةً ثُمَّ أَطْبَقَتْ الصُّفْرَةُ أَوْ صَلَحَا لَكِنْ تَقَدَّمَ الضَّعِيفُ كَخَمْسَةٍ حُمْرَةً ثُمَّ خَمْسَةٍ سَوَادًا ثُمَّ أَطْبَقَتْ الصُّفْرَةُ أَوْ تَأَخَّرَ لَكِنْ لَمْ يَتَّصِلْ الضَّعِيفُ بِالْقَوِيِّ كَخَمْسَةٍ سَوَادًا ثُمَّ خَمْسَةٍ صُفْرَةً ثُمَّ أَطْبَقَتْ الْحُمْرَةُ فَالْحَيْضُ السَّوَادُ فَقَطْ، وَمَا ذَكَرَ فِي الثَّالِثَةِ هُوَ مَا صَرَّحَ بِهِ الرُّويَانِيُّ وَشُرَّاحُ الْحَاوِي الصَّغِيرِ وَصَحَّحَهُ الْمُصَنِّفُ فِي تَحْقِيقِهِ، لَكِنَّهُ فِي الْمَجْمُوعِ كَالرَّوْضَةِ وَأَصْلِهَا جَعَلَهَا كَتَوَسُّطِ الْحُمْرَةِ بَيْنَ سَوَادَيْنِ»
   His father's answer: the red is joined to the black because it comes next in strength, unlike yellow with black.
+  Then ar-Ramli's own conclusion: «وَعُلِمَ مِنْ ذَلِكَ صِحَّةُ مَا فِي التَّحْقِيقِ وَالْمَجْمُوعِ وَيُفَرَّقُ بَيْنَهُمَا، وَأَمَّا الْجَعْلُ الَّذِي ذَكَرَهُ فَغَيْرُ مُسَلَّمٍ» (both at-Tahqiq and al-Majmu' are right, and the two cases differ).
+  al-Khatib (Mughni 1/286) gives his shaykh's distinction: «وَفَرَّقَ شَيْخِي بَيْنَهُمَا بِأَنَّ الضَّعِيفَ فِي الْمَقِيسِ عَلَيْهَا تَوَسَّطَ بَيْنَ قَوِيَّيْنِ، فَأَلْحَقْنَاهُ بِأَسْبَقِهِمَا». These two sentences are the actual evidence for the default 7/7/7 view.
 - [al-Khatib, Mughni 1/286](https://shamela.ws/book/11444/202): the same three conditions and the
   same four examples, with «فَحَيْضُهَا فِي ذَلِكَ السَّوَادِ فَقَطْ», the same remark on al-Majmu' / ar-Rawda,
   and his shaykh's distinction.
@@ -127,6 +129,7 @@ combination of Tuhfa 1/401 / Mughni 1/286 for 10 black / 10 red with the order r
 
 Ibn Qasim on Tuhfa 1/403 ([9059/404](https://shamela.ws/book/9059/404)) on why Tuhfa 1/401 (5 black, 5 yellow, 6 red: only black) and 1/403f. (5 black, 5 yellow, then red continues: black and yellow) do not conflict:
 «مِنْ مَاصَدَقَاتِ هَذَا بِمُجَرَّدِهِ قَوْلُهُ فِيمَا سَبَقَ وَكَذَا لَوْ رَأَتْ خَمْسَةً أَسْوَدَ، ثُمَّ خَمْسَةً أَصْفَرَ، ثُمَّ خَمْسَةً أَحْمَرَ مَعَ أَنَّهُ تَقَدَّمَ أَنَّ حَيْضَهَا السَّوَادُ فَقَطْ إلَّا أَنَّ ذَاكَ مَفْرُوضٌ مَعَ الِانْقِطَاعِ، وَهَذَا مَعَ الِاسْتِمْرَارِ كَمَا يُفْهَمُ مِنْ الْأَمْثِلَةِ فَهَذَا هُوَ الْمُمَيَّزُ لِأَحَدِ الْمَوْضِعَيْنِ عَنْ الْآخَرِ سم»
+Note: Ibn Qasim writes «خَمْسَةً أَحْمَرَ», but Tuhfa 1/401 itself has «سِتَّةً أَحْمَرَ» (5/5/5 would be only 15 days and all hayd); the Tuhfa text counts.
 So on Ibn Hajar's view black + yellow is hayd only when the red continues (more than 15 days); if the
 red stops, only the black. The IbnHajar test uses 20 days of red (continues): consistent.
 
