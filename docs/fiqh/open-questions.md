@@ -305,7 +305,8 @@ Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` 
   `MubtadaaBloodInRestOfTuhr`, default `CompletesTuhrThenNewHayd` (Bughya, al-Ibana, Ibn Qasim; what the
   tests followed before), other value `MustahadaFromFirstBlood` (ash-Shabramallisi, al-Bujayrimi). Not in the
   `IbnHajar` preset: it is a reading of his wording by the hawashi, not his explicit statement, and Ibn Hamid
-  (unapproved) holds the wording to be corrupted. Tests for the second reading: region "Other views (khilaf)" in
+  (unapproved) holds the wording to be corrupted. The user confirmed on 2026-10-30 that the `IbnHajar` preset keeps the default
+  (Bughya / al-Ibana) here. Tests for the second reading: region "Other views (khilaf)" in
   `HaydCalculatorServiceTests_IstihadaClassification` (6) and `HaydCalculatorServiceTests_BasicCalculations` (2).
 - Question 8 (scope of the yellow khilaf): setting `YellowNotHaydScope` (only used when `YellowAndTurbidAreHayd`
   is false), default `OnlyOutsideAda` (al-Khatib after ar-Rawda), `InsideAndOutsideAda` (Ibn Hajar, in the
