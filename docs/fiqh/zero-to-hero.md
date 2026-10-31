@@ -12,32 +12,30 @@ calculator uses by default. Where the school has other views, they are shown nex
 
 ## How to read the pictures
 
-Each square is **one day** (a full day and night, 24 hours), read from left to right. The days are
-grouped in fives so they are easy to count.
+Each symbol is **one day** (a full day and night, 24 hours), read from left to right. The days are
+grouped in fives, and the small numbers above them count the days.
 
-The first row shows **what she sees**:
+The first row shows **what she sees**. Every kind of discharge is a drop:
 
 | | |
 |---|---|
-| ⬛ | black blood |
-| 🟥 | red blood |
-| 🟨 | yellow discharge |
-| ⬜ | clean: no blood at all |
+| <img src="img/icons/black.svg" width="22" height="22" alt="black drop"> | black blood |
+| <img src="img/icons/red.svg" width="22" height="22" alt="red drop"> | red blood |
+| <img src="img/icons/yellow.svg" width="22" height="22" alt="yellow drop"> | yellow discharge |
+| <img src="img/icons/clean.svg" width="22" height="22" alt="empty square"> | clean: no blood at all |
 
 The second row shows **the ruling**:
 
 | | |
 |---|---|
-| 🔴 | **hayd**: no prayer, no fasting |
-| 🟢 | **clean and pure (tuhr)**: she prays and fasts |
-| ✖️ | **blood that is not hayd** (istihada or "dam fasad"): she still prays and fasts |
+| <img src="img/icons/hayd.svg" width="22" height="22" alt="red circle"> | **hayd**: no prayer, no fasting |
+| <img src="img/icons/clean.svg" width="22" height="22" alt="empty square"> | **clean and pure (tuhr)**: she prays and fasts (the same square as a clean day) |
+| <img src="img/icons/not-hayd.svg" width="22" height="22" alt="grey X"> | **blood that is not hayd** (istihada or "dam fasad"): she still prays and fasts |
 
 Example: 3 days of red blood, 12 clean days, 3 days of red blood.
 
-```
-Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 ✖️✖️✖️
-```
+<!-- strip: Blood: 3R 12C 3R | Ruling: 3H 12T 3F -->
+![Blood: 3 red, 12 clean, 3 red. Ruling: 3 hayd, 12 tuhr, 3 not hayd.](img/strips/strip-af913621.svg)
 
 The last 3 days are blood, but not hayd (lesson 6 explains why). A row that ends in "…" goes on.
 
@@ -87,17 +85,13 @@ Almost everything follows from three numbers.
 
 **② Hayd lasts at most 15 days and nights.**
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴
-```
+<!-- strip: Blood: 15R | Ruling: 15H -->
+![Blood: 15 red. Ruling: 15 hayd.](img/strips/strip-22f1b67e.svg)
 
 **③ Between two hayds there are at least 15 clean days (tuhr).**
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢
-```
+<!-- strip: Blood: 15R 15C | Ruling: 15H 15T -->
+![Blood: 15 red, 15 clean. Ruling: 15 hayd, 15 tuhr.](img/strips/strip-233aa141.svg)
 
 Together, the longest hayd and the shortest tuhr fill one month. ar-Ramli gives exactly this as
 the reason for the 15 days of tuhr: a month usually has a hayd and a tuhr in it.
@@ -125,10 +119,8 @@ There is no upper age.
 
 **She bleeds for 6 days, then it stops.**
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥
-Ruling  🔴🔴🔴🔴🔴 🔴
-```
+<!-- strip: Blood: 6R | Ruling: 6H -->
+![Blood: 6 red. Ruling: 6 hayd.](img/strips/strip-f09a1c55.svg)
 
 All 6 days are hayd. That is the rule for most months of most women:
 
@@ -138,17 +130,13 @@ What does **not** matter here:
 
 **The colour.** 5 days black, then 4 days red, then it stops:
 
-```
-Blood   ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴
-```
+<!-- strip: Blood: 5K 4R | Ruling: 9H -->
+![Blood: 5 black, 4 red. Ruling: 9 hayd.](img/strips/strip-e53a86c1.svg)
 
 **The order of the colours.** 5 red, 5 black, 5 red, then it stops:
 
-```
-Blood   🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴
-```
+<!-- strip: Blood: 5R 5K 5R | Ruling: 15H -->
+![Blood: 5 red, 5 black, 5 red. Ruling: 15 hayd.](img/strips/strip-a2da6d3c.svg)
 
 **Her habit.** If she usually bleeds 5 days and this month it is 9 days, all 9 are hayd, because
 habits can change.
@@ -183,11 +171,8 @@ these hours are made up.
 
 **3 days red, 5 clean days, 3 days red, then it stops.** What are the clean days?
 
-```
-Blood       🟥🟥🟥⬜⬜ ⬜⬜⬜🟥🟥 🟥
-Default     🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴
-Other view  🔴🔴🔴🟢🟢 🟢🟢🟢🔴🔴 🔴
-```
+<!-- strip: Blood: 3R 5C 3R | Default: 11H | Other view: 3H 5T 3H -->
+![Blood: 3 red, 5 clean, 3 red. Default: 11 hayd. Other view: 3 hayd, 5 tuhr, 3 hayd.](img/strips/strip-19296c61.svg)
 
 There are two views:
 
@@ -217,11 +202,8 @@ Clean days **after** the last blood are always pure.
 
 **She sees only yellow discharge for 5 days.**
 
-```
-Blood       🟨🟨🟨🟨🟨
-Default     🔴🔴🔴🔴🔴
-Other view  ✖️✖️✖️✖️✖️
-```
+<!-- strip: Blood: 5Y | Default: 5H | Other view: 5F -->
+![Blood: 5 yellow. Default: 5 hayd. Other view: 5 not hayd.](img/strips/strip-801c6c18.svg)
 
 - **Default ("asahh"):** yellow and brownish discharge at a time when hayd is possible are **hayd**.
 - **Other view (also strong):** they are not hayd, because they do not have the colour of blood.
@@ -246,10 +228,8 @@ called the *rest of the purity* (baqiyyat at-tuhr).
 
 **3 red, 12 clean, 3 red, then it stops.**
 
-```
-Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 ✖️✖️✖️
-```
+<!-- strip: Blood: 3R 12C 3R | Ruling: 3H 12T 3F -->
+![Blood: 3 red, 12 clean, 3 red. Ruling: 3 hayd, 12 tuhr, 3 not hayd.](img/strips/strip-af913621.svg)
 
 - Days 1-3: hayd.
 - Days 4-18 must be pure (15 days).
@@ -265,15 +245,13 @@ pure days before it. All scholars agree on this case ("no khilaf in any of this"
 
 **10 red, 8 clean, 12 red, then it stops** (al-Ibana's own example).
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴
-```
+<!-- strip: Blood: 10R 8C 12R | Ruling: 10H 8T 7F 5H -->
+![Blood: 10 red, 8 clean, 12 red. Ruling: 10 hayd, 8 tuhr, 7 not hayd, 5 hayd.](img/strips/strip-231459a3.svg)
 
 1. Days 1-10: hayd.
 2. Days 11-25 must be pure (15 days after the end of the hayd).
-3. The blood on days 19-25 falls inside them: not hayd (✖️). It "completes the purity".
-4. Days 26-30 come after a full purity: **a new hayd** (🔴).
+3. The blood on days 19-25 falls inside them: not hayd (<img src="img/icons/not-hayd.svg" width="16" height="16" alt="grey X">). It "completes the purity".
+4. Days 26-30 come after a full purity: **a new hayd** (<img src="img/icons/hayd.svg" width="16" height="16" alt="red circle">).
 
 > **Recipe:** last day of the hayd + 15 = last day of the purity. Blood up to that day is not hayd.
 > Blood after it starts again from lesson 2.
@@ -281,10 +259,8 @@ Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢�
 Another one: **3 red, 14 clean, 4 red.** The purity ends on day 18 (3 + 15). Day 18 is not hayd,
 days 19-21 are hayd.
 
-```
-Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜🟥🟥🟥 🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢✖️🔴🔴 🔴
-```
+<!-- strip: Blood: 3R 14C 4R | Ruling: 3H 14T 1F 3H -->
+![Blood: 3 red, 14 clean, 4 red. Ruling: 3 hayd, 14 tuhr, 1 not hayd, 3 hayd.](img/strips/strip-086513c4.svg)
 
 📖 Bughya 1/277 · al-Ibana p. 29-31 · Ibn Qasim on [Tuhfa 1/399](https://shamela.ws/book/9059/400) («لَا يَبْعُدُ»)
 
@@ -293,11 +269,8 @@ al-Bujayrimi) read Ibn Hajar's wording differently for a woman who is bleeding f
 (a *mubtada'a*). On their reading, she is a "mustahada" (lesson 7) from the very first day: only
 day 1 is hayd, and the rest of the blood is not.
 
-```
-Blood          🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜🟥🟥🟥 🟥
-Default        🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢✖️🔴🔴 🔴
-Other reading  🔴✖️✖️🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢✖️✖️✖️ ✖️
-```
+<!-- strip: Blood: 3R 14C 4R | Default: 3H 14T 1F 3H | Other reading: 1H 2F 14T 4F -->
+![Blood: 3 red, 14 clean, 4 red. Default: 3 hayd, 14 tuhr, 1 not hayd, 3 hayd. Other reading: 1 hayd, 2 not hayd, 14 tuhr, 4 not hayd.](img/strips/strip-c85c8123.svg)
 
 ### Which case is it? Look at where the returning blood starts
 
@@ -363,7 +336,7 @@ Blood is stronger or weaker by three qualities:
 
 **Colour**, from strongest to weakest:
 
-> ⬛ black → 🟥 red → 🟧 ashqar (reddish-yellow) → 🟨 yellow → 🟫 brownish
+> <img src="img/icons/black.svg" width="18" height="18" alt="black drop"> black → <img src="img/icons/red.svg" width="18" height="18" alt="red drop"> red → <img src="img/icons/ashqar.svg" width="18" height="18" alt="orange drop"> ashqar (reddish-yellow) → <img src="img/icons/yellow.svg" width="18" height="18" alt="yellow drop"> yellow → <img src="img/icons/brownish.svg" width="18" height="18" alt="brown drop"> brownish
 
 **Thickness:** thick is stronger than thin.
 
@@ -387,10 +360,8 @@ How to compare:
 
 **A beginner sees 10 days black, then red that goes on for weeks.**
 
-```
-Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 10K 25R ... | Ruling: 10H 25F ... -->
+![Blood: 10 black, 25 red, and on. Ruling: 10 hayd, 25 not hayd, and on.](img/strips/strip-f9034e32.svg)
 
 > **The strong blood is hayd, the weak blood is not.**
 
@@ -409,47 +380,37 @@ without tamyiz (lesson 10).
 **② The strong blood does not go beyond 15 days.**
 ❌ 16 days black, then red:
 
-```
-Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ ⬛🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 16K 14R ... | Ruling: 1H 29F ... -->
+![Blood: 16 black, 14 red, and on. Ruling: 1 hayd, 29 not hayd, and on.](img/strips/strip-4966c88b.svg)
 
 (No tamyiz, so lesson 10 applies: only day 1 is hayd.)
 
 **③ The weak blood lasts at least 15 days in a row** (only needed if the blood goes on).
 ❌ 1 black, 14 red, then black that goes on:
 
-```
-Blood   ⬛🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ …
-Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 1K 14R 10K ... | Ruling: 1H 24F ... -->
+![Blood: 1 black, 14 red, 10 black, and on. Ruling: 1 hayd, 24 not hayd, and on.](img/strips/strip-fa34fa20.svg)
 
 The 14 red days would have to be a purity between two hayds, and a purity needs 15 days.
 
 ✅ But **10 black, 10 red, then it stops**: the red is only 10 days, but the blood did not go on,
 so condition ③ is not needed:
 
-```
-Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️
-```
+<!-- strip: Blood: 10K 10R | Ruling: 10H 10F -->
+![Blood: 10 black, 10 red. Ruling: 10 hayd, 10 not hayd.](img/strips/strip-86131fb7.svg)
 
 **④ No strong blood inside the weak blood** (clean days in between do not matter).
 ❌ Black and red alternating day by day, on and on:
 
-```
-Blood   ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 …
-Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R ... | Ruling: 1H 19F ... -->
+![Blood: 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, and on. Ruling: 1 hayd, 19 not hayd, and on.](img/strips/strip-62d3231c.svg)
 
 ✅ But if the alternating stops **within the first 15 days** and only weak blood follows, the whole
 alternating part is hayd (the red days in between are treated like clean days in lesson 4), and the
 weak blood after it is not:
 
-```
-Blood   ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 14R ... | Ruling: 11H 14F ... -->
+![Blood: 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 14 red, and on. Ruling: 11 hayd, 14 not hayd, and on.](img/strips/strip-6259ce9f.svg)
 
 📖 [Tuhfa 1/401](https://shamela.ws/book/9059/402) · [Nihaya 1/341](https://shamela.ws/book/3565/339) ·
 [Mughni 1/285-286](https://shamela.ws/book/11444/201) · [FK 1/100](https://shamela.ws/book/21628/99) ·
@@ -459,17 +420,13 @@ al-Ibana p. 71-72
 
 **5 red, 5 black, then red that goes on:** the black is hayd. The red before it is not.
 
-```
-Blood   🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 5R 5K 20R ... | Ruling: 5F 5H 20F ... -->
+![Blood: 5 red, 5 black, 20 red, and on. Ruling: 5 not hayd, 5 hayd, 20 not hayd, and on.](img/strips/strip-5b71eb51.svg)
 
 **15 red, 15 black, then it stops:** the black is hayd.
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛
-Ruling  ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴
-```
+<!-- strip: Blood: 15R 15K | Ruling: 15F 15H -->
+![Blood: 15 red, 15 black. Ruling: 15 not hayd, 15 hayd.](img/strips/strip-211f9be5.svg)
 
 📖 [Tuhfa 1/402](https://shamela.ws/book/9059/403) · [Nihaya 1/341-342](https://shamela.ws/book/3565/339) ·
 [FK 1/102](https://shamela.ws/book/21628/101), [FK 1/105](https://shamela.ws/book/21628/104)
@@ -481,25 +438,18 @@ The middle one (red) can join the strong one (black), if it **follows it directl
 
 **5 black, 5 red, then yellow that goes on:** black and red are hayd.
 
-```
-Blood   ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 5K 5R 20Y ... | Ruling: 10H 20F ... -->
+![Blood: 5 black, 5 red, 20 yellow, and on. Ruling: 10 hayd, 20 not hayd, and on.](img/strips/strip-3504e7ca.svg)
 
 **10 black, 6 red, then yellow:** together 16 days, too long. Only the black is hayd.
 
-```
-Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟨🟨🟨🟨 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 10K 6R 14Y ... | Ruling: 10H 20F ... -->
+![Blood: 10 black, 6 red, 14 yellow, and on. Ruling: 10 hayd, 20 not hayd, and on.](img/strips/strip-5f81d8d6.svg)
 
 **5 black, 5 yellow, then red that goes on:** here the scholars differ.
 
-```
-Blood                          ⬛⬛⬛⬛⬛ 🟨🟨🟨🟨🟨 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-ar-Ramli, al-Khatib (default)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-Ibn Hajar                      🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 5K 5Y 20R ... | ar-Ramli, al-Khatib (default): 5H 25F ... | Ibn Hajar: 10H 20F ... -->
+![Blood: 5 black, 5 yellow, 20 red, and on. ar-Ramli, al-Khatib (default): 5 hayd, 25 not hayd, and on. Ibn Hajar: 10 hayd, 20 not hayd, and on.](img/strips/strip-64485114.svg)
 
 ar-Ramli and al-Khatib: the blood next in strength after the black is the red, and it does not follow
 the black directly, so only the black. Ibn Hajar: black and yellow together.
@@ -511,19 +461,14 @@ the black directly, so only the black. Ibn Hajar: black and yellow together.
 
 **7 black, 7 red, 7 black, then it stops** (21 days):
 
-```
-Blood                          ⬛⬛⬛⬛⬛ ⬛⬛🟥🟥🟥 🟥🟥🟥🟥⬛ ⬛⬛⬛⬛⬛ ⬛
-ar-Ramli, al-Khatib (default)  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴✖️ ✖️✖️✖️✖️✖️ ✖️
-Ibn Hajar                      🔴🔴🔴🔴🔴 🔴🔴✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️
-```
+<!-- strip: Blood: 7K 7R 7K | ar-Ramli, al-Khatib (default): 14H 7F | Ibn Hajar: 7H 14F -->
+![Blood: 7 black, 7 red, 7 black. ar-Ramli, al-Khatib (default): 14 hayd, 7 not hayd. Ibn Hajar: 7 hayd, 14 not hayd.](img/strips/strip-00fc3603.svg)
 
 **8 black, 8 red, 8 black, then it stops:** black and red together would be 16 days, so all agree
 that only the first black is hayd. (Day 24 is an open question.)
 
-```
-Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛🟥🟥 🟥🟥🟥🟥🟥 🟥⬛⬛⬛⬛ ⬛⬛⬛⬛
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️
-```
+<!-- strip: Blood: 8K 8R 8K | Ruling: 8H 16F -->
+![Blood: 8 black, 8 red, 8 black. Ruling: 8 hayd, 16 not hayd.](img/strips/strip-78a4574e.svg)
 
 📖 [Tuhfa 1/401](https://shamela.ws/book/9059/402) · [Nihaya 1/342](https://shamela.ws/book/3565/340) ·
 [Mughni 1/286](https://shamela.ws/book/11444/202) · [FK 1/86](https://shamela.ws/book/21628/85),
@@ -535,10 +480,8 @@ Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴✖️✖️ ✖️✖️✖️✖️�
 
 **A beginner bleeds red for weeks, always the same.** There is no strong and weak blood to go by.
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 35R ... | Ruling: 1H 29F 1H 4F ... -->
+![Blood: 35 red, and on. Ruling: 1 hayd, 29 not hayd, 1 hayd, 4 not hayd, and on.](img/strips/strip-672b4c88.svg)
 
 > **Her hayd is one day and night from the start of the blood, then 29 days are not hayd. Then the
 > next day and night is hayd again, and so on.**
@@ -564,10 +507,8 @@ is one day and night at the start of each month, and she makes up the prayers an
 **Her hayd was 5 days at the start of the month, then the rest of the month pure. Now the blood goes
 on and on, all the same colour.**
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
-```
+<!-- strip: Blood: 35R ... | Ruling: 5H 25F 5H ... -->
+![Blood: 35 red, and on. Ruling: 5 hayd, 25 not hayd, 5 hayd, and on.](img/strips/strip-795ae775.svg)
 
 > **She goes back to her habit: the same number of days, at the same place in her cycle.**
 
@@ -592,10 +533,8 @@ strong) want two or three times. Example: her hayd was 5 days, then 6, then 7, t
 
 **Habit 5 days, then only 14 clean days, then the blood comes back and goes on.**
 
-```
-Blood   🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
-```
+<!-- strip: Blood: 5R 14C 26R ... | Ruling: 5H 14T 1F 5H 15F 5H ... -->
+![Blood: 5 red, 14 clean, 26 red, and on. Ruling: 5 hayd, 14 tuhr, 1 not hayd, 5 hayd, 15 not hayd, 5 hayd, and on.](img/strips/strip-687335af.svg)
 
 1. Days 1-5: hayd. Days 6-19: clean.
 2. The purity needs one more day: day 20 is not hayd (lesson 6).
@@ -604,10 +543,8 @@ Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢�
 **Habit 5 days, then 20 clean days, then the blood comes back and goes on.** Her hayd came early;
 her new cycle is 25 days.
 
-```
-Blood   🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
-```
+<!-- strip: Blood: 5R 20C 30R ... | Ruling: 5H 20T 5H 20F 5H ... -->
+![Blood: 5 red, 20 clean, 30 red, and on. Ruling: 5 hayd, 20 tuhr, 5 hayd, 20 not hayd, 5 hayd, and on.](img/strips/strip-7e490410.svg)
 
 Ibn Hajar (FK 1/78, 1/91) reports **three further strong views** for both cases. Example for the first
 case: some keep her old cycle, so the returning blood up to the end of the month is not hayd and her
@@ -624,11 +561,8 @@ purity (khilaf.md lists them).
 **Her habit is 5 days. Now she sees 10 days black, then red that goes on.** The habit says 5, the
 blood says 10. Who wins?
 
-```
-Blood               ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Default (tamyiz)    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-Other view (habit)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 10K 20R ... | Default (tamyiz): 10H 20F ... | Other view (habit): 5H 25F ... -->
+![Blood: 10 black, 20 red, and on. Default (tamyiz): 10 hayd, 20 not hayd, and on. Other view (habit): 5 hayd, 25 not hayd, and on.](img/strips/strip-d7a74129.svg)
 
 - **Default ("asahh"):** the **tamyiz** wins. It is a sign in the blood itself; the habit is only a
   sign in the woman.
@@ -637,10 +571,8 @@ Other view (habit)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️�
 **If a full purity lies between them, both count.** Habit of 5 days, then 20 days red, then 5 days
 black, then red:
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 5R 20R 5K 5R ... | Ruling: 5H 20F 5H 5F ... -->
+![Blood: 25 red, 5 black, 5 red, and on. Ruling: 5 hayd, 20 not hayd, 5 hayd, 5 not hayd, and on.](img/strips/strip-44c4d24b.svg)
 
 The 20 red days are a full purity (at least 15), so the habit days **and** the black days are hayd.
 
@@ -687,16 +619,14 @@ with every source, is in [khilaf.md](khilaf.md).
 
 # Exercises
 
-Use the colour squares on paper. Default views unless the exercise says otherwise.
+Draw the days on paper first. Default views unless the exercise says otherwise.
 
 **1.** 6 days red, then it stops.
 
 <details><summary>Solution</summary>
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥
-Ruling  🔴🔴🔴🔴🔴 🔴
-```
+<!-- strip: Blood: 6R | Ruling: 6H -->
+![Blood: 6 red. Ruling: 6 hayd.](img/strips/strip-f09a1c55.svg)
 
 At least 24 hours, not more than 15 days: all hayd (lesson 2).
 </details>
@@ -705,11 +635,8 @@ At least 24 hours, not more than 15 days: all hayd (lesson 2).
 
 <details><summary>Solution</summary>
 
-```
-Blood       🟥🟥🟥⬜⬜ ⬜⬜⬜🟥🟥 🟥
-Default     🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴
-Other view  🔴🔴🔴🟢🟢 🟢🟢🟢🔴🔴 🔴
-```
+<!-- strip: Blood: 3R 5C 3R | Default: 11H | Other view: 3H 5T 3H -->
+![Blood: 3 red, 5 clean, 3 red. Default: 11 hayd. Other view: 3 hayd, 5 tuhr, 3 hayd.](img/strips/strip-19296c61.svg)
 
 All three conditions of lesson 4 hold.
 </details>
@@ -718,10 +645,8 @@ All three conditions of lesson 4 hold.
 
 <details><summary>Solution</summary>
 
-```
-Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 ✖️✖️✖️
-```
+<!-- strip: Blood: 3R 12C 3R | Ruling: 3H 12T 3F -->
+![Blood: 3 red, 12 clean, 3 red. Ruling: 3 hayd, 12 tuhr, 3 not hayd.](img/strips/strip-af913621.svg)
 
 The last 3 days fall into the 15 days of purity (lesson 6, case A).
 </details>
@@ -730,10 +655,8 @@ The last 3 days fall into the 15 days of purity (lesson 6, case A).
 
 <details><summary>Solution</summary>
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴
-```
+<!-- strip: Blood: 10R 8C 12R | Ruling: 10H 8T 7F 5H -->
+![Blood: 10 red, 8 clean, 12 red. Ruling: 10 hayd, 8 tuhr, 7 not hayd, 5 hayd.](img/strips/strip-231459a3.svg)
 
 Purity until day 25; days 19-25 complete it; days 26-30 are a new hayd (lesson 6, case B).
 </details>
@@ -742,10 +665,8 @@ Purity until day 25; days 19-25 complete it; days 26-30 are a new hayd (lesson 6
 
 <details><summary>Solution</summary>
 
-```
-Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️
-```
+<!-- strip: Blood: 40R | Ruling: 1H 29F 1H 9F -->
+![Blood: 40 red. Ruling: 1 hayd, 29 not hayd, 1 hayd, 9 not hayd.](img/strips/strip-0b0a5dd2.svg)
 
 No tamyiz: one day and night hayd, 29 days not (lesson 10).
 </details>
@@ -754,10 +675,8 @@ No tamyiz: one day and night hayd, 29 days not (lesson 10).
 
 <details><summary>Solution</summary>
 
-```
-Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 10K 25R ... | Ruling: 10H 25F ... -->
+![Blood: 10 black, 25 red, and on. Ruling: 10 hayd, 25 not hayd, and on.](img/strips/strip-f9034e32.svg)
 
 All four conditions of tamyiz hold (lesson 9).
 </details>
@@ -766,10 +685,8 @@ All four conditions of tamyiz hold (lesson 9).
 
 <details><summary>Solution</summary>
 
-```
-Blood   ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥
-Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️
-```
+<!-- strip: Blood: 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R 1K 1R | Ruling: 1H 29F 1H 9F -->
+![Blood: 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red, 1 black, 1 red. Ruling: 1 hayd, 29 not hayd, 1 hayd, 9 not hayd.](img/strips/strip-00010be0.svg)
 
 Condition ④ fails: no tamyiz, so like exercise 5 (lessons 9 and 10).
 </details>
@@ -778,11 +695,8 @@ Condition ④ fails: no tamyiz, so like exercise 5 (lessons 9 and 10).
 
 <details><summary>Solution</summary>
 
-```
-Blood      ⬛⬛⬛⬛⬛ ⬛⬛🟥🟥🟥 🟥🟥🟥🟥⬛ ⬛⬛⬛⬛⬛ ⬛
-Default    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴✖️ ✖️✖️✖️✖️✖️ ✖️
-Ibn Hajar  🔴🔴🔴🔴🔴 🔴🔴✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️
-```
+<!-- strip: Blood: 7K 7R 7K | Default: 14H 7F | Ibn Hajar: 7H 14F -->
+![Blood: 7 black, 7 red, 7 black. Default: 14 hayd, 7 not hayd. Ibn Hajar: 7 hayd, 14 not hayd.](img/strips/strip-0cd92e9d.svg)
 
 Lesson 9, "Strong, weak, strong".
 </details>
@@ -791,11 +705,8 @@ Lesson 9, "Strong, weak, strong".
 
 <details><summary>Solution</summary>
 
-```
-Blood               ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Default (tamyiz)    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-Other view (habit)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
-```
+<!-- strip: Blood: 10K 20R ... | Default (tamyiz): 10H 20F ... | Other view (habit): 5H 25F ... -->
+![Blood: 10 black, 20 red, and on. Default (tamyiz): 10 hayd, 20 not hayd, and on. Other view (habit): 5 hayd, 25 not hayd, and on.](img/strips/strip-d7a74129.svg)
 
 Lesson 12.
 </details>
@@ -804,10 +715,8 @@ Lesson 12.
 
 <details><summary>Solution</summary>
 
-```
-Blood   🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
-```
+<!-- strip: Blood: 5R 14C 26R ... | Ruling: 5H 14T 1F 5H 15F 5H ... -->
+![Blood: 5 red, 14 clean, 26 red, and on. Ruling: 5 hayd, 14 tuhr, 1 not hayd, 5 hayd, 15 not hayd, 5 hayd, and on.](img/strips/strip-687335af.svg)
 
 Day 20 completes the purity, then her habit of 5 days, cycle 20 (lesson 11).
 </details>

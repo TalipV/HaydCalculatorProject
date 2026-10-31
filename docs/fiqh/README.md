@@ -99,3 +99,6 @@ this folder count from day 1 = the first day of the first blood; the tests use d
 - Correct wrong statements instead of adding contradicting ones.
 - A point the user decided against a source: write down the decision and who made it.
 - Write English (repository rule); Arabic only for quotations.
+- The day strips and icons of zero-to-hero.md are generated: edit the `<!-- strip: ... -->` comment
+  above a picture (format in `img/GenerateStrips.cs`), then run
+  `dotnet run docs/fiqh/img/GenerateStrips.cs` from the repository root.
