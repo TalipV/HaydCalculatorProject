@@ -30,13 +30,13 @@ The second row shows **the ruling**:
 |---|---|
 | 🔴 | **hayd**: no prayer, no fasting |
 | 🟢 | **clean and pure (tuhr)**: she prays and fasts |
-| 🟠 | **blood that is not hayd** (istihada or "dam fasad"): she still prays and fasts |
+| ✖️ | **blood that is not hayd** (istihada or "dam fasad"): she still prays and fasts |
 
 Example: 3 days of red blood, 12 clean days, 3 days of red blood.
 
 ```
 Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟠🟠🟠
+Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 ✖️✖️✖️
 ```
 
 The last 3 days are blood, but not hayd (lesson 6 explains why). A row that ends in "…" goes on.
@@ -220,7 +220,7 @@ Clean days **after** the last blood are always pure.
 ```
 Blood       🟨🟨🟨🟨🟨
 Default     🔴🔴🔴🔴🔴
-Other view  🟠🟠🟠🟠🟠
+Other view  ✖️✖️✖️✖️✖️
 ```
 
 - **Default ("asahh"):** yellow and brownish discharge at a time when hayd is possible are **hayd**.
@@ -248,7 +248,7 @@ called the *rest of the purity* (baqiyyat at-tuhr).
 
 ```
 Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟠🟠🟠
+Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 ✖️✖️✖️
 ```
 
 - Days 1-3: hayd.
@@ -267,12 +267,12 @@ pure days before it. All scholars agree on this case ("no khilaf in any of this"
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴
 ```
 
 1. Days 1-10: hayd.
 2. Days 11-25 must be pure (15 days after the end of the hayd).
-3. The blood on days 19-25 falls inside them: not hayd (🟠). It "completes the purity".
+3. The blood on days 19-25 falls inside them: not hayd (✖️). It "completes the purity".
 4. Days 26-30 come after a full purity: **a new hayd** (🔴).
 
 > **Recipe:** last day of the hayd + 15 = last day of the purity. Blood up to that day is not hayd.
@@ -283,7 +283,7 @@ days 19-21 are hayd.
 
 ```
 Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜🟥🟥🟥 🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟠🔴🔴 🔴
+Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢✖️🔴🔴 🔴
 ```
 
 📖 Bughya 1/277 · al-Ibana p. 29-31 · Ibn Qasim on [Tuhfa 1/399](https://shamela.ws/book/9059/400) («لَا يَبْعُدُ»)
@@ -295,8 +295,8 @@ day 1 is hayd, and the rest of the blood is not.
 
 ```
 Blood          🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜🟥🟥🟥 🟥
-Default        🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟠🔴🔴 🔴
-Other reading  🔴🟠🟠🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟠🟠🟠 🟠
+Default        🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢✖️🔴🔴 🔴
+Other reading  🔴✖️✖️🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢✖️✖️✖️ ✖️
 ```
 
 ### Which case is it? Look at where the returning blood starts
@@ -389,7 +389,7 @@ How to compare:
 
 ```
 Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 > **The strong blood is hayd, the weak blood is not.**
@@ -411,7 +411,7 @@ without tamyiz (lesson 10).
 
 ```
 Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ ⬛🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 (No tamyiz, so lesson 10 applies: only day 1 is hayd.)
@@ -421,7 +421,7 @@ Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠�
 
 ```
 Blood   ⬛🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ …
-Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 The 14 red days would have to be a purity between two hayds, and a purity needs 15 days.
@@ -431,7 +431,7 @@ so condition ③ is not needed:
 
 ```
 Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️
 ```
 
 **④ No strong blood inside the weak blood** (clean days in between do not matter).
@@ -439,7 +439,7 @@ Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠�
 
 ```
 Blood   ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 …
-Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 ✅ But if the alternating stops **within the first 15 days** and only weak blood follows, the whole
@@ -448,7 +448,7 @@ weak blood after it is not:
 
 ```
 Blood   ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 📖 [Tuhfa 1/401](https://shamela.ws/book/9059/402) · [Nihaya 1/341](https://shamela.ws/book/3565/339) ·
@@ -461,14 +461,14 @@ al-Ibana p. 71-72
 
 ```
 Blood   🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 **15 red, 15 black, then it stops:** the black is hayd.
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛
-Ruling  🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴
+Ruling  ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴
 ```
 
 📖 [Tuhfa 1/402](https://shamela.ws/book/9059/403) · [Nihaya 1/341-342](https://shamela.ws/book/3565/339) ·
@@ -483,22 +483,22 @@ The middle one (red) can join the strong one (black), if it **follows it directl
 
 ```
 Blood   ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 **10 black, 6 red, then yellow:** together 16 days, too long. Only the black is hayd.
 
 ```
 Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟨🟨🟨🟨 🟨🟨🟨🟨🟨 🟨🟨🟨🟨🟨 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 **5 black, 5 yellow, then red that goes on:** here the scholars differ.
 
 ```
 Blood                          ⬛⬛⬛⬛⬛ 🟨🟨🟨🟨🟨 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-ar-Ramli, al-Khatib (default)  🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
-Ibn Hajar                      🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+ar-Ramli, al-Khatib (default)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
+Ibn Hajar                      🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 ar-Ramli and al-Khatib: the blood next in strength after the black is the red, and it does not follow
@@ -513,8 +513,8 @@ the black directly, so only the black. Ibn Hajar: black and yellow together.
 
 ```
 Blood                          ⬛⬛⬛⬛⬛ ⬛⬛🟥🟥🟥 🟥🟥🟥🟥⬛ ⬛⬛⬛⬛⬛ ⬛
-ar-Ramli, al-Khatib (default)  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🟠 🟠🟠🟠🟠🟠 🟠
-Ibn Hajar                      🔴🔴🔴🔴🔴 🔴🔴🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠
+ar-Ramli, al-Khatib (default)  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴✖️ ✖️✖️✖️✖️✖️ ✖️
+Ibn Hajar                      🔴🔴🔴🔴🔴 🔴🔴✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️
 ```
 
 **8 black, 8 red, 8 black, then it stops:** black and red together would be 16 days, so all agree
@@ -522,7 +522,7 @@ that only the first black is hayd. (Day 24 is an open question.)
 
 ```
 Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛🟥🟥 🟥🟥🟥🟥🟥 🟥⬛⬛⬛⬛ ⬛⬛⬛⬛
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️
 ```
 
 📖 [Tuhfa 1/401](https://shamela.ws/book/9059/402) · [Nihaya 1/342](https://shamela.ws/book/3565/340) ·
@@ -537,7 +537,7 @@ Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🟠🟠 🟠🟠🟠🟠🟠 🟠🟠�
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🟠🟠🟠🟠 …
+Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴✖️✖️✖️✖️ …
 ```
 
 > **Her hayd is one day and night from the start of the blood, then 29 days are not hayd. Then the
@@ -566,7 +566,7 @@ on and on, all the same colour.**
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 …
+Ruling  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
 ```
 
 > **She goes back to her habit: the same number of days, at the same place in her cycle.**
@@ -594,7 +594,7 @@ strong) want two or three times. Example: her hayd was 5 days, then 6, then 7, t
 
 ```
 Blood   🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟠 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 …
+Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
 ```
 
 1. Days 1-5: hayd. Days 6-19: clean.
@@ -606,7 +606,7 @@ her new cycle is 25 days.
 
 ```
 Blood   🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 …
+Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
 ```
 
 Ibn Hajar (FK 1/78, 1/91) reports **three further strong views** for both cases. Example for the first
@@ -626,8 +626,8 @@ blood says 10. Who wins?
 
 ```
 Blood               ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Default (tamyiz)    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
-Other view (habit)  🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Default (tamyiz)    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
+Other view (habit)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 - **Default ("asahh"):** the **tamyiz** wins. It is a sign in the blood itself; the habit is only a
@@ -639,7 +639,7 @@ black, then red:
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 …
+Ruling  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ …
 ```
 
 The 20 red days are a full purity (at least 15), so the habit days **and** the black days are hayd.
@@ -720,7 +720,7 @@ All three conditions of lesson 4 hold.
 
 ```
 Blood   🟥🟥🟥⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ 🟥🟥🟥
-Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟠🟠🟠
+Ruling  🔴🔴🔴🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 ✖️✖️✖️
 ```
 
 The last 3 days fall into the 15 days of purity (lesson 6, case A).
@@ -732,7 +732,7 @@ The last 3 days fall into the 15 days of purity (lesson 6, case A).
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴
 ```
 
 Purity until day 25; days 19-25 complete it; days 26-30 are a new hayd (lesson 6, case B).
@@ -744,7 +744,7 @@ Purity until day 25; days 19-25 complete it; days 26-30 are a new hayd (lesson 6
 
 ```
 Blood   🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥
-Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠
+Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️
 ```
 
 No tamyiz: one day and night hayd, 29 days not (lesson 10).
@@ -756,7 +756,7 @@ No tamyiz: one day and night hayd, 29 days not (lesson 10).
 
 ```
 Blood   ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Ruling  🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 All four conditions of tamyiz hold (lesson 9).
@@ -768,7 +768,7 @@ All four conditions of tamyiz hold (lesson 9).
 
 ```
 Blood   ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥 ⬛🟥⬛🟥⬛ 🟥⬛🟥⬛🟥
-Ruling  🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🟠🟠🟠🟠 🟠🟠🟠🟠🟠
+Ruling  🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴✖️✖️✖️✖️ ✖️✖️✖️✖️✖️
 ```
 
 Condition ④ fails: no tamyiz, so like exercise 5 (lessons 9 and 10).
@@ -780,8 +780,8 @@ Condition ④ fails: no tamyiz, so like exercise 5 (lessons 9 and 10).
 
 ```
 Blood      ⬛⬛⬛⬛⬛ ⬛⬛🟥🟥🟥 🟥🟥🟥🟥⬛ ⬛⬛⬛⬛⬛ ⬛
-Default    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴🟠 🟠🟠🟠🟠🟠 🟠
-Ibn Hajar  🔴🔴🔴🔴🔴 🔴🔴🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠
+Default    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🔴🔴🔴🔴✖️ ✖️✖️✖️✖️✖️ ✖️
+Ibn Hajar  🔴🔴🔴🔴🔴 🔴🔴✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️
 ```
 
 Lesson 9, "Strong, weak, strong".
@@ -793,8 +793,8 @@ Lesson 9, "Strong, weak, strong".
 
 ```
 Blood               ⬛⬛⬛⬛⬛ ⬛⬛⬛⬛⬛ 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Default (tamyiz)    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
-Other view (habit)  🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 …
+Default (tamyiz)    🔴🔴🔴🔴🔴 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
+Other view (habit)  🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ …
 ```
 
 Lesson 12.
@@ -806,7 +806,7 @@ Lesson 12.
 
 ```
 Blood   🟥🟥🟥🟥🟥 ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜⬜ ⬜⬜⬜⬜🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 🟥🟥🟥🟥🟥 …
-Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟠 🔴🔴🔴🔴🔴 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🟠🟠🟠🟠🟠 🔴🔴🔴🔴🔴 …
+Ruling  🔴🔴🔴🔴🔴 🟢🟢🟢🟢🟢 🟢🟢🟢🟢🟢 🟢🟢🟢🟢✖️ 🔴🔴🔴🔴🔴 ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ ✖️✖️✖️✖️✖️ 🔴🔴🔴🔴🔴 …
 ```
 
 Day 20 completes the purity, then her habit of 5 days, cycle 20 (lesson 11).
