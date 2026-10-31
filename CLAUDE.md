@@ -71,6 +71,14 @@ private/internal static fields; `I`/`T` prefixes for interfaces/type parameters;
 locals and parameters. `var` only when the type is apparent from the right-hand side.
 File-scoped namespaces.
 
+Line endings are CRLF in the working tree (`.gitattributes`: `* text=auto eol=crlf`, `.editorconfig`:
+`end_of_line = crlf`); the repository itself stores LF. Tools that write LF (scripts, generated
+files) leave mixed line endings behind, which Visual Studio then complains about. After such
+edits, check with `git ls-files --eol` that every file shows `w/crlf`.
+
+XML doc comments: `<summary>` and `</summary>` always stand on their own lines, also for a
+one-line text (no `/// <summary>text</summary>`).
+
 Most violations are auto-fixable: `dotnet format <project>.csproj --severity error`.
 Run it per project. Do not run it on the multi-targeted MAUI project as a whole (formatting
 several TFMs at once can write merge-conflict markers into shared files). Naming (IDE1006) is
@@ -114,3 +122,47 @@ PRs opened by a Claude session must be recognizable as such at a glance:
 
 Same for the PR title: describe the change normally, no marker there — the banner,
 the label and the branch prefix carry that.
+
+## Fiqh reference
+
+`docs/fiqh/` is the reference for the fiqh behind the calculator: rules with sources and Arabic
+quotations, Shamela page offsets, every khilaf, open questions, and which tests cover what.
+**Before any fiqh statement, test or calculator change, read `docs/fiqh/README.md` and the file
+for the topic**, instead of relying on the session context. Add every new finding there (new
+source, user decision, khilaf, resolved or new open question).
+
+## Fiqh tests
+
+Tests that check calculator results against the Shafi'i mu'tamad follow these rules:
+
+- **Allowed sources:** the user's global rules for Shafi'i fiqh sources apply (user-level CLAUDE.md and
+  section 4 of the skill `post-validation-shafii-madhhab`): only the later Shafi'is (Tuhfat
+  al-Muhtaj, Nihayat al-Muhtaj, Mughni al-Muhtaj, their hawashi, the other hawashi of the later
+  Shafi'is such as al-Bajuri, al-Bujayrimi, ash-Sharqawi, al-Kurdi, at-Tarmasi, I'anat
+  at-Talibin, Ibn Hajar's al-Fatawa al-Kubra) plus the user's own sources (the lecture series
+  "Rulings of Haydh and Nifas in the Shafi'i school", al-Ibana wa-l-Ifada); never a matn such as
+  al-Minhaj as evidence; no early or comparative works; at least 2, ideally 4 sources from different
+  authors per point.
+- Every expected result has a source comment above the test:
+  `// [Author, Work, vol. X, p. Y; https://shamela.ws/book/<book>/<page>] short English summary`.
+  Prefer sources that state the case with explicit numbers; a source that states the rule
+  clearly but without the numbers of the test is marked `[IMPLICIT]`.
+- **Every known khilaf is stated** in a `// KHILAF: ...` line: the other view(s), who holds
+  them, where, and which view the test follows. This includes differences between Ibn Hajar
+  (Tuhfat al-Muhtaj) and ar-Ramli / al-Khatib (Nihayat al-Muhtaj, Mughni al-Muhtaj) and weaker
+  views inside the madhhab (asahh vs. other, azhar vs. other). Where the mu'tamad works agree,
+  say so ("no khilaf here").
+- Points of khilaf are selectable through `HaydCalculatorSettings` (Core, `Calculator/Models`): one
+  bool or enum per point, defaults = asahh / azhar and ar-Ramli / al-Khatib where the mu'tamad
+  authorities differ, presets `IbnHajar`, `Ramli`, `Shirbini`. Only mu'tamad authorities and views
+  that are at least strong inside the school go in there. Tests for another view pass the settings
+  (`HaydCalculatorSettings.Default with { ... }` or a preset) and live in the region
+  "Other views (khilaf)". A new khilaf point gets a setting, a KHILAF line and a test per view.
+- Every calculator test carries the attribute `[FiqhTodo]` (`tests/.../Util/FiqhTodoAttribute.cs`)
+  until the user has checked its expected result. It sets the xunit trait `Fiqh = ToDo`, so the
+  Visual Studio Test Explorer can group and filter by it (Group by: Traits, or search
+  `Trait:"ToDo"`), and `dotnet test --filter "Fiqh=ToDo"` runs only these tests. Add it to every
+  new test; only the user removes it.
+- A wrong result stays a red test (TDD); never change the calculator or the test to make it
+  pass unless asked. Cases the sources do not settle go into
+  `HaydCalculatorServiceTests_OpenQuestions` and throw `OpenFiqhQuestionException`.

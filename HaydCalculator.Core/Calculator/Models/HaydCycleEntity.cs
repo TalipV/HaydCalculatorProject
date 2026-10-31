@@ -115,6 +115,9 @@ public class HaydCycleEntity
         }
 
         // FOURTH CONDITION: The light flows must not be separated by a heavy flow.
+        // (al-Ibana wa-l-Ifada fi Ahkam al-Hayd wa-n-Nifas wa-l-Istihada; Tuhfat al-Muhtaj with Hashiyat
+        // ash-Shirwani, vol. 1, p. 401, https://shamela.ws/book/9059/402: the weak blood has to be continuous,
+        // i.e. not interrupted by strong blood, even if purity lies in between)
         if (IsLightFlowInterruptedByHeavyFlow(lighHaydFlowDataLst, strongHaydFlowDataLst))
         {
             return false;

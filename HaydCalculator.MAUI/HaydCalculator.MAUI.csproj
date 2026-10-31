@@ -16,6 +16,9 @@
     <!-- Versions -->
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
+
+    <!-- Windows: run unpackaged (plain .exe, no MSIX registration), so several Windows users can debug it -->
+    <WindowsPackageType Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">None</WindowsPackageType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,7 +40,7 @@
     <PackageReference Include="CommunityToolkit.Maui.Markup" Version="8.0.0" />
     <PackageReference Include="MethodTimer.Fody" Version="3.2.3" PrivateAssets="All" />
     <PackageReference Include="MetroLog.Maui" Version="2.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.14" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.120" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.120" />
     <PackageReference Include="Plugin.Maui.DebugRainbows" Version="1.2.2" />
