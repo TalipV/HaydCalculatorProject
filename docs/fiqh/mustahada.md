@@ -49,6 +49,7 @@ Expected values (tests in `HaydCalculatorServiceTests_IstihadaClassification`):
 | 15 red, then 5 red as a separate entry | mustahada case | same |
 | 5 black, 15 red | mustahada case | Tuhfa 1/399 (5 black then red: beyond 15 only the black is hayd) |
 | 10 red, 3 pure, 20 red | mustahada case | Nihaya 1/356, Mughni 1/294 (the returning blood starts inside the 15 days and runs far beyond) |
+| 13 red, 1 pure, 5 red, stop | mustahada case (user's decision 2026-11-04, open question 1) | al-Ibana p. 27, Amjad Rashid p. 15, Mughni 1/294, Nihaya 1/356 [IMPLICIT] |
 | 3 red, 12 pure, 20 red | cycle 1 basic, cycle 2 mustahada (disputed for the mubtada'a: open question 7) | Tuhfa 1/399, Shabramallisi 1/340, Bughya |
 | 1 red, 14 pure, 20 red | cycle 1 basic, cycle 2 mustahada (disputed for the mubtada'a: open question 7) | Tuhfa 1/399 [IMPLICIT], Bughya [IMPLICIT] |
 | 3 red, 14 pure, 17 red | cycle 1 basic, cycle 2 mustahada (rest 16 days) | Bughya, Tuhfa 1/399 |
@@ -64,7 +65,7 @@ Expected values (tests in `HaydCalculatorServiceTests_IstihadaClassification`):
 | 5 red, 25 pure, 5 red, 14 pure, 16 red | basic | Bughya, Ibn Qasim 1/399 |
 
 Existing test `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5 and 13/1/1/5)
-expects a mustahada case; this is the 13/1/5 pattern and therefore open (open-questions.md).
+expects a mustahada case; this is the 13/1/5 pattern, decided as a mustahada case (open-questions.md, question 1).
 
 ## Mubtada'a ghayr mumayyiza: a day and a night hayd, 29 days purity
 

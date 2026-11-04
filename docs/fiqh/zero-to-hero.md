@@ -288,7 +288,7 @@ day 1 is hayd, and the rest of the blood is not.
 |---|---|
 | starts and ends **within the first 15 days** (counted from day 1) | one hayd including the clean days (lesson 4) |
 | starts **after day 15** (counted from day 1), while the purity is not complete yet | this lesson (case A or B) |
-| starts **within the first 15 days** and **runs past day 15** | treated as blood of more than 15 days (lesson 7). One form of it, 13 red / 1 clean / 5 red, is an open question |
+| starts **within the first 15 days** and **runs past day 15** | treated as blood of more than 15 days (lesson 7), even if it stops soon after day 15 |
 
 ---
 
@@ -622,8 +622,8 @@ with every source, is in [khilaf.md](khilaf.md).
   the calculator yet. One rule to know: between a hayd and nifas, the purity can be shorter than 15
   days.
 - **The woman who forgot her habit** (*mutahayyira*): special precaution rules; not covered yet.
-- **Open questions**: cases the sources checked so far do not settle, e.g. 13 red, 1 clean, 5 red,
-  then it stops. They are listed with all passages in [open-questions.md](open-questions.md).
+- **Open questions**: cases the sources checked so far do not settle, e.g. what exactly happens on
+  day 24 of 8 black, 8 red, 8 black. They are listed with all passages in [open-questions.md](open-questions.md).
 
 ---
 
@@ -731,13 +731,15 @@ Lesson 12.
 Day 20 completes the purity, then her habit of 5 days, cycle 20 (lesson 11).
 </details>
 
-**11.** Trick question: 13 red, 1 clean, 5 red, then it stops.
+**11.** 13 red, 1 clean, 5 red, then it stops. Lesson 6, case A, or something else?
 
 <details><summary>Solution</summary>
 
-The returning blood starts within the first 15 days and runs past day 15. This exact case is an
-**open question**: some passages make her a mustahada (lesson 7), another passage would make the 5
-days not hayd (lesson 6). See [open-questions.md](open-questions.md), question 1.
+Something else. The returning blood starts on day 15, inside the first 15 days, and runs on into
+day 16. So it is not "blood that comes back too early" (lesson 6), but blood of more than 15 days:
+she is a **mustahada** (lesson 7). The test is the end of day 15: blood there that goes on into
+day 16 means mustahada; a clean end of day 15 means lesson 6. (al-Ibana p. 27, Amjad Rashid p. 15,
+Mughni 1/294, Nihaya 1/356; [open-questions.md](open-questions.md), question 1.)
 </details>
 
 ---

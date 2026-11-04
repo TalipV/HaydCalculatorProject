@@ -6,6 +6,8 @@ marked in their comments. Do not decide them yourself; collect the passages and 
 
 ## 1. Returning blood that starts inside the 15 days, runs past day 15 and then stops (13/1/5)
 
+**Resolved 2026-11-04: a mustahada case** (see Resolved below). The material is kept here as the record.
+
 Case: 13 red, 1 pure, 5 red, then it stops (19 days). Also the existing test
 `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5 and 13/1/1/5), which expects
 a mustahada case. The Bughya rule does not apply directly: the first blood and the purity
@@ -173,13 +175,24 @@ the purity (like 3/12/3).
 
 With this, "mustahada case" for 13/1/5 has four authors: al-Khatib (Mughni 1/294), ar-Ramli (Nihaya
 1/356), as-Saqqaf (al-Ibana p. 27), Amjad Rashid; for "basic" only the broad wording of FK 1/86.
-Whether this closes the question is the user's decision; the tests are unchanged.
+Whether this closes the question is the user's decision; the tests are unchanged. (Decided 2026-11-04, see below.)
 
 **Decision of the user (2026-10-29, confirmed 2026-10-30 after al-Ibana p. 27): 13/1/5 stays open.** The tests stay as they are:
 `ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` keeps throwing `OpenFiqhQuestionException`,
 `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5, 13/1/1/5) keeps expecting a
 mustahada case, `TenDaysRedThreeDaysPurityThenTwentyDaysRed_IsMustahadaCase` keeps expecting a
 mustahada case. Changing any of them needs a new decision of the user.
+
+**Decision of the user (2026-11-04), after Amjad Rashid pp. 14-15: closed as a mustahada case.** Basis:
+four authors for "mustahada case" (al-Khatib, ar-Ramli, as-Saqqaf, Amjad Rashid); against it only Ibn
+Hajar's FK 1/86: its general rule ("no khilaf") is worked only with returning blood after day 15, and its
+case "a day and a night, 13 purity, 3 blood: the last 3 are hayd" is read as a slip for "a day without its
+night", as FK 1/108 quotes the same case from al-Majmu' (review-notes.md B1, now the user's decision).
+With a first blood of a full 24 h, 1/13/3 therefore falls under the same rule (mustahada case).
+`ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` was replaced by
+`HaydCalculatorServiceTests_IstihadaClassification.ThirteenDaysRedOneDayPurityFiveDaysRedThenStop_IsMustahadaCase`
+(sources and the KHILAF line on FK 1/86 there); the other two tests are unchanged. No setting: the other
+reading rests on one passage that is read as a slip.
 
 ## 2. Who holds the muqabil al-asahh for strong blood that comes later
 
@@ -324,6 +337,8 @@ Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` 
 
 ## Resolved
 
+- Question 1 (13/1/5 and the whole "returning blood starts inside the 15 days and runs past day 15"
+  pattern, whether it stops or not): mustahada case, user's decision 2026-11-04 (see question 1).
 - Question 7 (mubtada'a, blood in the rest of the purity that runs past its completion): setting
   `MubtadaaBloodInRestOfTuhr`, default `CompletesTuhrThenNewHayd` (Bughya, al-Ibana, Ibn Qasim; what the
   tests followed before), other value `MustahadaFromFirstBlood` (ash-Shabramallisi, al-Bujayrimi). Not in the

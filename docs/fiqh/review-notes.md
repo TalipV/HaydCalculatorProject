@@ -30,7 +30,8 @@ still open) with date, and correct the topic file.
 
 1. **FK 1/86 «يَوْمًا وَلَيْلَةً» is a slip for «يَوْمًا بِلَا لَيْلَةٍ»** (1/13/3). Basis: FK 1/108 quotes
    al-Majmu' with "a day without its night" for the same case and gives the reasoning. Alternative:
-   the two pages describe different cases. (open-questions.md, question 1)
+   the two pages describe different cases. (open-questions.md, question 1) **Adopted as the user's decision
+   on 2026-11-04** when question 1 was closed.
 2. **Ash-Shabramallisi's remark on the mubtada'a is not a contradiction** to the Bughya rule
    (Nihaya 1/340: Ibn Hajar's wording "might imply" a day and a night for the mubtada'a). Treated as
    a KHILAF note, not as a conflicting view. If it is a real counter-view, the mubtada'a cases
@@ -53,7 +54,8 @@ still open) with date, and correct the topic file.
    Mughni / hawashi / I'anat / al-Bajuri state the rule (3/14/4, 10/8/12).
 2. **13/1/5 "basic"** rests only on the broad wording of FK 1/86 (Ibn Hajar); not adopted. Look in
    I'anat at-Talibin and Hashiyat al-Bajuri for a returning blood that starts inside the 15 days and
-   stops after day 15 (not searched yet).
+   stops after day 15 (not searched yet). Closed as a mustahada case on 2026-11-04 (user); a find in
+   I'anat or al-Bajuri that says otherwise would reopen it.
 3. **Strong blood that comes later**: "'ala al-asahh" (Nihaya 1/341f.) implies a strong
    counter-view that no allowed work checked so far names (open-questions.md, question 2).
 4. **al-Fatawa al-Kubra** counts as the same author as the Tuhfa; several points have Ibn Hajar

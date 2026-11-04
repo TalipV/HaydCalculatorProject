@@ -31,6 +31,7 @@ between two blacks (reported in Mughni 1/286 and Nihaya 1/342); the later works 
 
 | Point | Views | Why not in the settings | Source |
 |---|---|---|---|
+| Returning blood that starts inside the 15 days and runs past day 15, then stops (13/1/5) | mustahada case (al-Khatib, ar-Ramli, as-Saqqaf, Amjad Rashid) / 13 hayd, 5 dam fasad (the literal wording of Ibn Hajar's general rule in FK 1/86) | the second reading rests on one passage whose worked cases are all of another type, and its case 1/13/3 is read as a slip (FK 1/108); user's decision 2026-11-04 | open-questions.md, question 1 |
 | Strong blood that comes later or in the middle | hayd "'ala al-asahh" | the muqabil al-asahh (strong) is not named in the allowed works checked so far; open | Nihaya 1/341f.; Tuhfa 1/402; FK 1/100, 1/102 |
 | Full purity between 'ada and tamyiz | both hayd (asahh) / "wa qila" the khilaf applies | "wa qila" is weak | Mughni 1/288f. |
 | Yellow inside the 'ada | hayd without khilaf / at-Tatimma: needs a strong blood with it / "wa qila" strong must come first | weak views | Mughni 1/285 |

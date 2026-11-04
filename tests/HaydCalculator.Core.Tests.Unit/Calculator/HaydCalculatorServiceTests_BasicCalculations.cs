@@ -380,7 +380,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
     }
 
 
-    // Whether intermittent blood that exceeds 15 days together with the purity is a mustahada case is partly an open question, see HaydCalculatorServiceTests_OpenQuestions.ThirteenRedOnePurityFiveRed_DamFasadOrMustahada.
+    // Intermittent blood that starts again inside the first 15 days and runs past day 15 is a mustahada case; sources and KHILAF at HaydCalculatorServiceTests_IstihadaClassification.ThirteenDaysRedOneDayPurityFiveDaysRedThenStop_IsMustahadaCase.
     // TODO: Assert a bool state of the hayd cycle (e.g. IsComplexIstihada) instead of the InfoException, as in HaydCalculatorServiceTests_IstihadaClassification.
     [FiqhTodo]
     [Theory]

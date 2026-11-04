@@ -15,7 +15,9 @@ Let A = the first blood (a valid hayd), P = the purity after it, B = the returni
    al-Ibana p. 27 states the line explicitly: blood that crosses day 15 **connected to the blood before
    it** makes her a mustahada; if it is not connected, she has a rest of tuhr:
    «فإنْ جاوَزَ الخمسةَ عشرَ وكانَ مُتّصِلًا بدمٍ قبلَه فهذه امْرأةٌ مُسْتَحاضَةٌ في الحَيْضِ اختَلَطَ حيضُها بطُهْرِها، فترَدُّ إلى إحدَى صُوَرِ المُسْتَحاضَةِ في الحَيْضِ. وأمّا إذا لم يتَّصِلِ الدَّمُ بدمٍ قبلَه فإنّ هذه المرأةَ عليها بقيّةُ طُهْرٍ، فتُكَمِّلَ بقيّةَ الطُّهْرِ، وما زادَ فهو حيضٌ جديدٌ»
-   (13/1/5 stays open by the user's decision; open-questions.md, question 1).
+   13/1/5 is decided as a mustahada case (user's decision 2026-11-04; open-questions.md, question 1).
+   Amjad Rashid (Dima' an-Nisa', PDF p. 15) gives the same line as a test at the end of day 15: blood there
+   that is connected to day 16 is istihada, otherwise the returning blood completes the purity.
 
 The Bughya text names the condition for case 2 itself: «نقاءً دونَ خمسةَ عشرَ ، لٰكنْ لوِ اجتمعَ معَ الدمِ زادَ عليها»
 (purity under 15 days which, together with the first blood, exceeds 15 days).
@@ -33,7 +35,7 @@ The Bughya text names the condition for case 2 itself: «نقاءً دونَ خ�
   «رَأَتْ ثَلَاثَةَ أَيَّامٍ دَمًا ثُمَّ اثْنَيْ عَشَرَ نَقَاءً ثُمَّ ثَلَاثَةً دَمًا وَانْقَطَعَ، فَالثَّلَاثَةُ الْأُوَلُ حَيْضٌ وَالثَّانِيَةُ دَمُ فَسَادٍ لِكَوْنِهَا تَمَامَ قَدْرِ الطُّهْرِ وَكَذَا لَوْ رَأَتْ أَوَّلًا يَوْمًا وَلَيْلَةً أَوْ أَكْثَرَ ثُمَّ طَهُرَتْ، وَرَأَتْ دَمًا قَبْلَ خَمْسَةَ عَشَرَ مِنْ أَوَّلِ الطُّهْرِ، وَانْقَطَعَ بِحَيْثُ لَا يُمْكِنُ كَوْنُ الدَّمَيْنِ فِي خَمْسَةَ عَشَرَ وَلَا خِلَافَ فِي شَيْءٍ مِنْ هَذَا»
   The general rule here: first blood of a day and a night or more, then purity, then blood
   before 15 days from the start of the purity, which stops so that the two bloods cannot lie
-  within 15 days: the second blood is dam fasad, no khilaf. (How this bears on 13/1/5: open-questions.md.)
+  within 15 days: the second blood is dam fasad, no khilaf. (Read as covering only returning blood after day 15; 13/1/5: open-questions.md, question 1, resolved.)
 
 No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
 `HaydCalculation_CalculationWithPurityBetweenMenstrualFlowAndIstihadaFlow` (7/8/2),

@@ -94,7 +94,7 @@ public class HaydCalculatorServiceTests_IstihadaClassification
 
     // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 356; https://shamela.ws/book/3565/354] Purity between bloods is hayd only if the whole does not exceed 15 days; if the intermittent bleeding exceeds 15 days, the rules of the mustahada apply. [IMPLICIT]
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] If the bloods together with the purity between them exceed 15 days, they are istihada. [IMPLICIT]
-    // The blood here continues well beyond day 15 on purpose: whether intermittent blood that stops shortly after day 15 is a mustahada case is an open question, see HaydCalculatorServiceTests_OpenQuestions.ThirteenRedOnePurityFiveRed_DamFasadOrMustahada.
+    // For intermittent blood that stops shortly after day 15 see ThirteenDaysRedOneDayPurityFiveDaysRedThenStop_IsMustahadaCase.
     // KHILAF: Purity between bloods is hayd (qawl as-sahb, azhar) or purity (qawl al-laqt, muqabil al-azhar, a strong view) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). The sources state the limit of 15 days after both views, so both give a mustahada case here.
     [FiqhTodo]
     [Fact]
@@ -104,6 +104,22 @@ public class HaydCalculatorServiceTests_IstihadaClassification
             (EFlowAppearanceColor.Red, 10),
             (EFlowAppearanceColor.Clear, 3),
             (EFlowAppearanceColor.Red, 20));
+    }
+
+    // The returning blood starts inside the first 15 days (day 15) and stops after day 15 (day 19).
+    // [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 27] If blood and purity together exceed 15 days and the blood is connected to the blood before it, she is a mustahada; if it is not connected, she has a rest of tuhr. Here the blood of day 15 runs on into day 16.
+    // [Amjad Rashid (Bani Sakhr), Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa, PDF p. 15] Test at the end of day 15: blood there that is connected to day 16 is istihada, otherwise the returning blood completes the purity; cases 4 days blood, 9 purity, 4 blood and 7 blood, 7 purity, 7 blood: istihada.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210] If the bloods together with the purity between them exceed 15 days, they are istihada. [IMPLICIT]
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 356; https://shamela.ws/book/3565/354] If the intermittent bleeding exceeds 15 days, the rules of the mustahada apply. [IMPLICIT]
+    // KHILAF: Ibn Hajar, al-Fatawa al-Kubra, vol. 1, p. 86 (https://shamela.ws/book/21628/85), states as "no khilaf" that blood returning before 15 days from the start of the purity and stopping so that both bloods cannot lie within 15 days is dam fasad; read literally that would make the 13 days hayd and the 5 days dam fasad. His worked cases of that rule all have the returning blood after day 15. His case "a day and a night blood, 13 purity, 3 blood: the last 3 are hayd" (same page) is quoted in al-Fatawa al-Kubra, vol. 1, p. 108 (https://shamela.ws/book/21628/107) from al-Majmu' with a first blood of "a day without its night", i.e. under 24 hours; the wording on p. 86 is read as a slip. By the user's decision (2026-11-04) the mustahada case is followed (docs/fiqh/open-questions.md, question 1, resolved); no setting.
+    [FiqhTodo]
+    [Fact]
+    public void ThirteenDaysRedOneDayPurityFiveDaysRedThenStop_IsMustahadaCase()
+    {
+        AssertMustahadaCase(
+            (EFlowAppearanceColor.Red, 13),
+            (EFlowAppearanceColor.Clear, 1),
+            (EFlowAppearanceColor.Red, 5));
     }
 
     // Two cycles: the first 3 days are a basic hayd; the returning blood completes the purity and then exceeds 15 days, so the second cycle is a mustahada case.
