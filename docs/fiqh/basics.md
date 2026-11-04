@@ -14,7 +14,8 @@
   years of menopause are "the usual case":
   «وَالْمُعْتَبَرُ فِي التِّسْعِ التَّقْرِيبُ لَا التَّحْدِيدُ ... فَيُغْتَفَرُ نَقْصُ زَمَنٍ دُونَ أَقَلِّ حَيْضٍ وَطُهْرٍ ... وَلَا حَدَّ لِآخِرِهِ كَمَا قَالَهُ الْمَاوَرْدِيُّ، بَلْ هُوَ مُمْكِنٌ مَا دَامَتْ الْمَرْأَةُ حَيَّةً»;
   ash-Shabramallisi there: «أَيْ وَهُوَ سِتَّةَ عَشَرَ بِلَيَالِيِهَا حَجّ» (16 days with their nights).
-  The calculator does not check the age.
+  The calculator does not check the age.  The calculator does not check the age.
+  The 16 days with numbers: Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF p. 4: «فإذا رأت المرأة الدم قبل تمام التسع سنين في زمن لا يسع حيضا وطهرا، وهو ما دون ١٦ يوما؛ فهو حيض بشرطه ... وإن رأته في عمر تسع سنوات إلا ١٦ يوما فأكثر؛ فهو دم فساد وعلة».
 - Reason for the 15-day minimal purity, [ar-Ramli, Nihaya 1/326](https://shamela.ws/book/3565/324):
   «إذْ الشَّهْرُ لَا يَخْلُو غَالِبًا عَنْ حَيْضٍ وَطُهْرٍ، فَإِذَا كَانَ أَكْثَرُ الْحَيْضِ خَمْسَةَ عَشَرَ لَزِمَ أَنْ يَكُونَ أَقَلُّ الطُّهْرِ كَذَلِكَ»;
   the report "minimum three days, maximum ten" is weak «كَمَا فِي الْمَجْمُوعِ».
@@ -99,6 +100,26 @@ the first cycle; only when the blood exceeds 15 days does it become clear that s
 
 Tests: `HaydCalculation_FifteenDaysOfBlood_AllHayd`, `HaydCalculation_BlackThenRedEndingWithinFifteenDays_AllHayd`,
 `HaydCalculation_BlackRedBlackWithinFifteenDays_AllHayd`, classification tests in `HaydCalculatorServiceTests_IstihadaClassification`.
+
+### Bloods of a few hours on several days (worked in hours)
+
+[Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF pp. 6-7] (approved user source): she is ha'id as soon as
+she sees blood and pure when it stops («المرأة تُحيّض برؤية الدم وتطهر بانقطاعه»); within the 15 days the
+hours of blood count together, connected or not. Cases:
+
+- day 1 5:00-12:00 (7 h), day 2 16:00-20:00 (4 h), day 3 5:00-8:00 (3 h), day 4 16:00-24:00 (8 h),
+  day 5 two hours: together 24 h, so she takes the ghusl of hayd («الآن أصبح مجموع الساعات مجتمعة (٢٤ ساعة) خلال مدة أقصى الحيض ... اغتسلي غسل الطهارة»);
+  with sahb (below) everything from the first to the last blood is hayd.
+- 9 h, 10 h, then 1 h on each of four days: 23 h, no hayd; she makes up what she left
+  («المجموع دون الـ ٢٤ ساعة؛ فلا تغتسل غسل الطهارة وتقضي ما عليها»).
+
+Same work, p. 9: an event is dated to the nearest time she knows («الحادث يضاف إلى أقرب زمن»): saw blood
+at 8:00, slept, woke at 14:00 and was pure: pure from 14:00; saw purity at 20:00, slept, woke at 5:00
+with blood: the blood counts from 5:00. And: purity is that the blood stops in all its colours; the
+white discharge («القصة البيضاء») is not a condition. (For the app: the times entered are the times she
+noticed.)
+
+No test covers the hour cases yet.
 
 ## Intermittent blood: purity between bloods (qawl as-sahb / qawl al-laqt)
 

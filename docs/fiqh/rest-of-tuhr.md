@@ -74,6 +74,15 @@ No khilaf. Tests: `HaydCalculation_BloodWithinRemainingMinimalTuhur_IsDamFasad`,
 - Ibn Qasim, his own hashiya on Tuhfa 1/399 ([9059/400](https://shamela.ws/book/9059/400), part 3): «لَوْ اسْتَمَرَّ سِتَّةً فَقَطْ مَثَلًا هَلْ يَكْمُلُ الطُّهْرُ بِثَلَاثَةٍ مِنْهَا وَالْبَاقِي حَيْضٌ أَوْ كَيْفَ الْحَالُ وَلَا يَبْعُدُ الْأَوَّلُ»,
   and for a mu'tada with 'ada 5 who sees 3 days, 14 pure, then continuous blood: «فَهَلْ نَقُولُ يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ الْعَائِدِ طُهْرٌ، ثُمَّ تَحِيضُ ثَلَاثَةً وَيَسْتَمِرُّ دَوْرُهَا ثَمَانِيَةَ عَشَرَ ... يَنْبَغِي نَعَمْ» (a day of purity, then 3 days hayd, cycle 18). Only one author and tentative: open, see open-questions.md, question 9.
 
+- [Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF pp. 14-15] (approved user source), "takmilat at-tuhr",
+  with worked cases in numbers. p. 14: «فتكملة الطهر: نقصان أيام الطهر عن أقله، والذي يليه دم فيأخذ منه تكملة للطهر»;
+  case 1: «امرأة رأت ٤ أيام دم، و١٣ يوما نقاء، ٦ أيام دم ... أيام النقاء ينقصها يومان عن أقل الطهر؛ فنأخذ من الدم الجديد وهو الثاني يومان وتكون فيهما المرأة صاحبة عذر تصلي وتصوم ... وما بقي (٤ أيام) حيض جديد».
+  Further cases on p. 15: 5/10/9 (5 days complete the purity, 4 hayd), 7/11/7 (4 complete it, 3 hayd),
+  14/1/3 (all 3 complete it). The cases say "a woman" without distinguishing mubtada'a and mu'tada
+  ([IMPLICIT] for the default of `MubtadaaBloodInRestOfTuhr`). The test at the end of day 15 that decides
+  between this rule and a mustahada case: open-questions.md, question 1.
+  With this the rule has three authors (Ba 'Alawi after Ibn Yahya, as-Saqqaf, Amjad Rashid), plus Ibn Qasim.
+
 Worked examples (day 1 = first day of the first blood):
 
 | Course | Purity complete at end of day | Dam fasad | Hayd from the returning blood | Mustahada case? |

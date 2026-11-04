@@ -95,6 +95,15 @@ Tests: `MubtadaaGhayrMumayyiza_ContinuousRedBlood_OneDayHaydAndTwentyNineDaysTuh
 
 ## Mutahayyira
 
+Material for the implementation: Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF pp. 19-20: the
+mutahayyira who forgot amount and time is like a ha'id in seven things (touching and carrying the
+mushaf, staying in and passing through the mosque, intercourse, pleasure between navel and knee,
+reciting Qur'an outside prayer) and like a pure woman in seven (prayer, prostration of recitation and
+of thanks, tawaf, fasting, ghusl, divorce). Worked cases: she knows her 5 days lie in the first ten of
+the month and day 1 is pure: day 6 is certain hayd, day 1 and days 11-30 certain tuhr, days 2-5 and
+7-10 doubtful; she knows her hayd starts on day 1 but not its length: day 1 certain hayd, days 2-15
+doubtful, days 16-30 certain tuhr. Not checked against the Tuhfa / Nihaya / Mughni yet.
+
 Not implemented (see the project memory "TODO Mutahayyira": needs a new API, because she forgot
 her 'ada). Mughni 1/289 ([11444/205](https://shamela.ws/book/11444/205)): the mashhur is ihtiyat;
 "fi qawl" she is like a mubtada'a (weak, muqabil al-mashhur).

@@ -117,6 +117,29 @@ month; the test stops on day 17. Black still appears on day 17, i.e. the strong 
 than 15 days (condition 2), so "no tamyiz" probably still holds, but on another reason than the
 sources give.
 
+## H. Points from Amjad Rashid (Bani Sakhr), Dima' an-Nisa' (2026-11-04) to check
+
+The work is an approved user source, but it is a short summary without references. These points do
+not fit the other files as they stand:
+
+1. **5 black, 10 red, 5 black** (PDF p. 18): "the weak between the two strong is under the minimal
+   purity, so a condition of tamyiz fails" («فهنا انخرم شرط من شروط التمييز»). If the blood stops after the
+   last black, Tuhfa 1/401 (7 black, 7 red, 3 black, stop: she follows her tamyiz, after al-Mutawalli:
+   condition 3 is only needed if the blood continues) and Nihaya 1/342 / Mughni 1/286 (7/7/7) say the
+   tamyiz holds. The case does not say whether the blood stops; if it continues, the statement agrees
+   with condition 3. Not adopted until clarified.
+2. **Colour names** (PDF p. 6): ashqar = «البني» (brown), akdar = «ما بين الأبيض والأصفر» (between white and
+   yellow). The guide and tamyiz.md translate ashqar as "reddish-yellow" and kudra as "brownish". Check the
+   definitions in the allowed works (Tuhfa 1/400-402, Nihaya 1/340, I'anat, al-Bajuri) before changing
+   the translations.
+3. **Laqt** (PDF p. 8) is named as a view of Imam Malik only; in the allowed works it is the other qawl of
+   ash-Shafi'i (muqabil al-azhar, Mughni 1/294, Nihaya 1/356). No effect on the settings.
+4. **A habitual pause inside her hayd** (PDF p. 9): an-Nawawi (called the mu'tamad) - she acts as pure at
+   each stop; ar-Rafi'i - she follows her habit, on condition of 24 h of continuous hayd, "and this is
+   what Ibn Hajar and al-Khatib ash-Shirbini hold". The paragraph calls an-Nawawi's view the mu'tamad and
+   then names Ibn Hajar and al-Khatib for the other; unclear. It concerns what she does while waiting,
+   not the final result. Check in Tuhfa / Mughni before using it anywhere.
+
 ## Review log
 
 | Date | Session | Point | Result |

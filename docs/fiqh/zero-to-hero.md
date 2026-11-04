@@ -42,7 +42,8 @@ The last 3 days are blood, but not hayd (lesson 6 explains why). A row that ends
 📖 lines at the end of a rule name its sources, with links to the text on shamela.ws:
 **Tuhfa** = Tuhfat al-Muhtaj (Ibn Hajar al-Haytami), **Nihaya** = Nihayat al-Muhtaj (ar-Ramli),
 **Mughni** = Mughni al-Muhtaj (al-Khatib ash-Shirbini), **FK** = al-Fatawa al-Kubra (Ibn Hajar),
-**al-Ibana** = al-Ibana wa-l-Ifada (as-Saqqaf), **Bughya** = Bughyat al-Mustarshidin (Ba 'Alawi).
+**al-Ibana** = al-Ibana wa-l-Ifada (as-Saqqaf), **Bughya** = Bughyat al-Mustarshidin (Ba 'Alawi),
+**Amjad Rashid** = Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa (his course, written up by Hana' Bani Sakhr).
 "1/399" means volume 1, page 399.
 
 ---
@@ -106,7 +107,7 @@ short of nine by less than about 16 days (the time of a hayd and a tuhr), the bl
 There is no upper age.
 
 📖 [Tuhfa 1/385](https://shamela.ws/book/9059/386) · [Nihaya 1/325-326](https://shamela.ws/book/3565/323) ·
-[Mughni 1/278](https://shamela.ws/book/11444/194)
+[Mughni 1/278](https://shamela.ws/book/11444/194) · Amjad Rashid p. 3-4
 
 > **Good to know:** the days are counted in real hours. "15 days" means 360 hours from the moment
 > the blood started, not "until the evening of the 15th calendar day". A day counts as a blood day
@@ -160,10 +161,19 @@ these hours are made up.
 
 > **Blood that does not reach 24 hours in total is not hayd.**
 
-"In total" matters: if the blood comes and goes, the pieces are added up (lesson 4).
+"In total" matters: if the blood comes and goes, the pieces are added up (lesson 4). Amjad Rashid
+gives an example in hours:
+
+| Day | 1 | 2 | 3 | 4 | 5 | Total |
+|---|---|---|---|---|---|---|
+| Blood | 7 h | 4 h | 3 h | 8 h | 2 h | **24 h: hayd** |
+
+But 9 h, 10 h, then 1 h on each of four days makes only **23 h: not hayd**, and she makes up what
+she left.
 
 📖 [Mughni 1/278](https://shamela.ws/book/11444/194), [Mughni 1/289](https://shamela.ws/book/11444/205) ·
-[Tuhfa 1/385](https://shamela.ws/book/9059/386) · [Nihaya 1/325](https://shamela.ws/book/3565/323)
+[Tuhfa 1/385](https://shamela.ws/book/9059/386) · [Nihaya 1/325](https://shamela.ws/book/3565/323) ·
+Amjad Rashid p. 6-7
 
 ---
 
@@ -262,7 +272,7 @@ days 19-21 are hayd.
 <!-- strip: Blood: 3R 14C 4R | Ruling: 3H 14T 1F 3H -->
 ![Blood: 3 red, 14 clean, 4 red. Ruling: 3 hayd, 14 tuhr, 1 not hayd, 3 hayd.](img/strips/strip-086513c4.svg)
 
-📖 Bughya 1/277 · al-Ibana p. 29-31 · Ibn Qasim on [Tuhfa 1/399](https://shamela.ws/book/9059/400) («لَا يَبْعُدُ»)
+📖 Bughya 1/277 · al-Ibana p. 29-31 · Amjad Rashid p. 14-15 · Ibn Qasim on [Tuhfa 1/399](https://shamela.ws/book/9059/400) («لَا يَبْعُدُ»)
 
 **Another reading, for a beginner only.** Two commentators on the Tuhfa (ash-Shabramallisi and
 al-Bujayrimi) read Ibn Hajar's wording differently for a woman who is bleeding for the first time

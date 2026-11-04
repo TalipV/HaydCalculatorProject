@@ -94,6 +94,11 @@ Tests: `HaydCalculation_BloodAfterTwentyDaysOfPurity_IsEarlierHayd`,
   («لِحَدِيثِ دَمُ الْحَيْضِ أَسْوَدُ يُعْرَفُ ... وَلِأَنَّ التَّمْيِيزَ عَلَامَةٌ فِي الدَّمِ، وَالْعَادَةُ عَلَامَةٌ فِي صَاحِبَتِهِ»);
   «وَالثَّانِي يُحْكَمُ بِالْعَادَةِ ... فَعَلَى هَذَا يَكُونُ حَيْضُهَا الْخَمْسَةَ الْأُولَى».
 
+Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF p. 18: the same case ('ada 5, then 10 black, the rest red:
+10 days hayd, «لأنه أقوى»); further: 5 black, 20 red, 5 black: the first 5 hayd, the 20 istihada, the last
+5 a new hayd; mu'tada ghayr mumayyiza with an 'ada of 7, then 17 days of one quality: 7 hayd, 10 istihada.
+Its 5 black, 10 red, 5 black ("tamyiz fails") is a point to check (review-notes.md).
+
 KHILAF: tamyiz (asahh); muqabil al-asahh (strong): the 'ada, her hayd the first 5 days. Setting
 `MutadaMumayyizaFollows` (`Tamyiz` = default, `Ada`).
 

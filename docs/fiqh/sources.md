@@ -22,6 +22,7 @@ the later Shafi'is (muta'akhkhirun).
 | al-Hawashi al-Madaniyya, al-Mawahib al-Madaniyya (on al-Minhaj al-Qawim) | Muhammad b. Sulayman al-Kurdi | allowed (user, 2026-10-29: "ohne Zweifel") |
 | Lecture series "Rulings of Haydh and Nifas in the Shafi'i school" | user's source | allowed |
 | al-Ibana wa-l-Ifada fi Ahkam al-Hayd wa-n-Nifas wa-l-Istihada | user's source | allowed |
+| Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa (written up by Hana' Bani Sakhr from a course of Amjad Rashid) | user's source | allowed (user, 2026-11-04); see the section below |
 
 Never as evidence:
 
@@ -98,6 +99,7 @@ not in the repository (they are in the session upload folder of the conversation
 | 2026-10-29 | Photos: Hashiyat at-Tarmasi, «وخرج بالحيضتين: الطهر بين حيض ونفاس» and the start of what is forbidden in hayd | **Dar al-Minhaj ed., vol. 1, pp. 275-278** | read from photo | approved work; purity between hayd and nifas (ash-Shabramallisi's day 50 / day 61 case, Ibn Qasim, against Ibn al-Muqri) recorded in the new nifas.md (not implemented in the calculator). pp. 277-278 (what is forbidden: tahara with the intention of worship, passing through the mosque, fasting): not relevant for the calculator, not recorded |
 | 2026-10-29 | PDF: «رسالة في أحكام الحيض والنفاس والاستحاضة» by Muhammad b. 'Ali b. 'Abd ar-Rahman al-Khatib (Tarim; finished 1421 AH) | Dar al-Fath, Amman, 2nd ed. 1437/2016, 86 pp. (scan without text layer; book page = PDF page - 3) | read pp. 24-37, 42, 44, 49, 51 from the scan; every point used was checked in the cited allowed work on Shamela | contemporary work, **not approved**; used only as a finder. Led to: FK 1/100, 1/106 (condition 4 / weak between strong), FK 1/105 (7/7/7 and 8/8/8 stop; 15 red 15 black), Ibn Qasim on Tuhfa 1/403 (stopping vs continuing). Recorded in tamyiz.md and open-questions.md. Second pass (same day): pp. 35-54 read (procedure in the second month, 15 red / 15 black, mu'tada, changing 'ada, 7/7/7, 16 black / 16 red, the fawa'id). New: precaution days for a changing 'ada (Tuhfa 1/405, Nihaya 1/345 with ash-Shabramallisi; ada.md, khilaf.md); Ibn Surayj on 16 black / 16 red (not checked). Not read: pp. 55-82 (mutahayyira, nifas) |
 | 2026-10-30 | PDF of al-Ibana wa-l-Ifada (the book itself), sent by the user after the lecture notes had served only as pointers | 3rd ed., pp. 25-31, 66-72 read from the scan | read from the scan (book page = PDF page - 1) | approved source. Recorded: p. 27 (blood crossing day 15 connected to the blood before: mustahada; not connected: rest of tuhr), p. 28-29 (examples 3/10, 6 h + 10 h, 7/16-17, 10/8/12), p. 30-31 (mu'tada: rest of tuhr, the rest new hayd), p. 71 (8/8/8, 7/7/7), p. 71-72 (alternating black / red, then black, then red: mumayyiza) |
+| 2026-11-04 | PDF: «رسالة في فقه أحكام دماء النساء الخاصة» (Hana' Fawaz Bani Sakhr, after a course of Amjad Rashid) | 21 pp., no printed page numbers (cited by PDF page) | read in full from the scan | **approved user source**. Findings and where they were recorded: section «Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa» below |
 
 ## Shamela ids and page offsets
 
@@ -161,3 +163,41 @@ and her duties (55), lesson 7 the mustahada in hayd (61), lesson 8 the mustahada
 The last PDF page (101) is a handwritten sheet of rules that is not part of the printed book.
 
 Citation in tests: `[as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. X]`.
+
+## Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa (Amjad Rashid)
+
+«رسالة في فقه أحكام دماء النساء الخاصة: الحيض والنفاس والاستحاضة على مذهب الإمام الشافعي»,
+«جمعًا وشرحًا»: written up by Dr. Hana' Fawaz Bani Sakhr from an intensive course (Ma'had Madarik,
+2017) of Dr. Amjad Rashid, Dean of the Faculty of Shafi'i Fiqh at the World Islamic Sciences and
+Education University (Amman); finished 10 Sha'ban 1441 / 13 May 2020. 21 pages (PDF from the user,
+2026-11-04), **no printed page numbers: cite the PDF page**. The work gives rules and worked
+examples, almost no evidence and no references to the Tuhfa, Nihaya or Mughni.
+**Approved user source** (user, 2026-11-04). It counts as one author (Amjad Rashid). Arabic below is
+transcribed from the scan.
+
+Citation in tests: `[Amjad Rashid (Bani Sakhr), Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa, PDF p. X]`.
+
+Contents (PDF pages): definitions (3), general rules for hayd and nifas with cases (3-5), special
+rules for hayd (6-9), what is forbidden (10-13), "takmilat at-tuhr" against istihada (14-15), the
+seven kinds of mustahada with cases (16-20), duties of the mustahada (21).
+
+What it adds to this folder (recorded in the topic files named):
+
+| PDF p. | Statement | Recorded in |
+|---|---|---|
+| 3 | definitions of hayd, nifas (incl. after a miscarriage; blood between twins is hayd «بشرطه»), istihada | (nothing new) |
+| 3-4 | minimum 24 h, maximum 15 days, usual 6 or 7; minimum tuhr 15, no maximum, usual 23 or 24 | (agrees with basics.md) |
+| 4 | age: blood before nine lunar years at a time shorter than 16 days is hayd «بشرطه»; 16 days or more before nine: dam fasad | basics.md (second author for the 16 days) |
+| 4-5 | nifas: minimum a moment, maximum 60, usual 40; rules for purity between nifas and hayd; 12 cases | nifas.md |
+| 6 | colours: black, red, ashqar «البني», yellow, akdar «ما بين الأبيض والأصفر»; thickness, smell | tamyiz.md, review-notes.md (terminology) |
+| 6-7 | she is ha'id when she sees blood, pure when it stops; bloods of a few hours on several days count together, worked in hours (7+4+3+8+2 = 24 h: hayd; 9+10+1+1+1+1 = 23 h: no hayd) | basics.md |
+| 8 | all blood within 15 days is hayd, any colour, matching her 'ada or not; 'ada by one occurrence; naqa' between bloods is hayd (azhar, sahb); laqt named as a view of Malik | basics.md, review-notes.md |
+| 9 | a habitual pause inside her hayd (khilaf an-Nawawi / ar-Rafi'i, about what she does while waiting) | review-notes.md (to check) |
+| 9 | an event is dated to the nearest time («الحادث يضاف إلى أقرب زمن»); purity = the blood stops in all its colours, the white discharge is not a condition | basics.md |
+| 10-13 | what is forbidden in hayd and nifas; prayers owed when hayd starts or ends inside a prayer time | not relevant for the calculator (possible later feature: prayers to make up) |
+| 14-15 | "takmilat at-tuhr" against istihada: a test at the end of day 15, 8 worked cases | rest-of-tuhr.md, open-questions.md (question 1) |
+| 16 | definition of istihada (blood past day 15 **connected** to day 16); the four conditions of tamyiz; the seven kinds | (agrees with mustahada.md, tamyiz.md) |
+| 17 | mubtada'a mumayyiza: 5 black / 20 red, 10 red / 23 yellow, 17 yellow / 16 akdar (condition 2 fails); mubtada'a ghayr mumayyiza: a day and a night, 29 tuhr; 30 days black | tamyiz.md, mustahada.md |
+| 18 | mu'tada mumayyiza: tamyiz decides; 'ada 5 then 10 black / red; 5 black, 20 red, 5 black; 5 black, 10 red, 5 black: tamyiz fails; mu'tada ghayr mumayyiza: 'ada 7, then 17 days: 7 hayd | ada.md, review-notes.md (5/10/5 to check) |
+| 19-20 | mutahayyira: like a ha'id in seven things, like a pure woman in seven; worked cases for a woman who forgot the time or the amount | mustahada.md (for when the mutahayyira is implemented) |
+| 21 | duties of the mustahada | not relevant for the calculator |

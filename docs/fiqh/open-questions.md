@@ -152,6 +152,29 @@ days 16-19, so on this rule it is a mustahada case (what the tests expect). With
 Nihaya 1/356 that makes three authors for "mustahada case"; for "basic" only the broad wording of FK
 1/86. Whether this closes the question is the user's decision.
 
+### Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF pp. 14-15 (approved user source; read 2026-11-04)
+
+The work gives a test for every returning blood: look at the end of day 15 (counted from the first
+blood). If there is blood at the last moment of day 15 and it is connected to the first moment of
+day 16, she is a mustahada; if not, the returning blood completes the purity and the rest is a new
+hayd. The rule as stated (p. 15):
+«وضابطه: الدم النازل بعد تمام ١٥ إن اتصل آخره – أي آخر لحظة في اليوم ١٥- بأول لحظة من اليوم ١٦؛ فهو استحاضة، وإن لم يتصل بما قبله بأن انفصل ولو لحظة؛ فهو تكملة طهر وما بعده حيض جديد»
+and the definition (p. 14): «أما الاستحاضة: هو خروج الدم بغير وقت الحيض والنفاس بشرط الاتصال، أي أن الدم جاوز أقصى مدته وهو ١٥ يوما، واتصل باليوم ١٦».
+
+Two of its worked cases have the 13/1/5 structure (returning blood starts inside the 15 days and runs past day 15):
+
+- p. 15, case 4: «امرأة رأت ٤ أيام دم، و٩ أيام نقاء، ٤أيام دم. ٤+ ٩+ ٤= ١٧ إذاً على رأس اليوم ١٥ – أقصى مدة الحيض- كان دم واتصل بما بعده = استحاضة»
+- p. 15, case 5: «امرأة رأت ٧ أيام دم، و٧ أيام نقاء، و٧ أيام دم. ٧ + ٧ + ٧ = ٢١ إذاً على رأس اليوم ١٥ ... كان دم واتصل بما بعده = استحاضة»
+
+The cases do not say whether the blood stops after the last block or goes on; the rule makes the
+result depend only on the connection at day 15/16, so on this work 13/1/5 is a mustahada case either
+way. Its counterpart (p. 15, case 3): 14 blood, 1 pure, 3 blood: day 15 is pure, so the 3 days complete
+the purity (like 3/12/3).
+
+With this, "mustahada case" for 13/1/5 has four authors: al-Khatib (Mughni 1/294), ar-Ramli (Nihaya
+1/356), as-Saqqaf (al-Ibana p. 27), Amjad Rashid; for "basic" only the broad wording of FK 1/86.
+Whether this closes the question is the user's decision; the tests are unchanged.
+
 **Decision of the user (2026-10-29, confirmed 2026-10-30 after al-Ibana p. 27): 13/1/5 stays open.** The tests stay as they are:
 `ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` keeps throwing `OpenFiqhQuestionException`,
 `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5, 13/1/1/5) keeps expecting a

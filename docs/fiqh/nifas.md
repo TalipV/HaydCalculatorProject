@@ -16,6 +16,17 @@ for when it does. Arabic from photos is marked "from photo".
   - p. 276: nifas 60, then pure even for a moment, then blood: hayd «خلافاً لما جرى عليه ابن المقري» (al-Irshad, ar-Rawd: not hayd); Ibn Hajar rejects that in al-Imdad.
 - Blood in pregnancy is hayd (azhar; the old view: not hayd): Mughni 1/293, Nihaya 1/356, at-Tarmasi p. 276.
 
+- Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF pp. 4-5 (approved user source): nifas minimum a
+  moment («مجة أو دفعة أو لحظة»), maximum 60 days, usual 40; between hayd and a following nifas no
+  purity is needed; between nifas and a following hayd: after day 60 a moment is enough, inside the 60
+  days 15 days of purity are needed («الطهر داخل الستين ... يشترط له ١٥ يوما فأكثر، حتى يسمى الدم النازل بعده دم حيض ... وبعد الستين يشترط أن يكون لحظة»).
+  Cases (p. 5): blood that continues past 60: istihada; nifas ends exactly at day 60, a moment of purity,
+  then blood: hayd; no blood until 11 days after the birth, then blood: nifas; 13 days nifas, 10 pure,
+  blood again: nifas; 20 days nifas, 15 pure, blood again: hayd; a ha'id gives birth: before it hayd,
+  after it nifas. Nifas also after a miscarriage (p. 3).
+  This agrees with Tuhfa 1/385 and ash-Shabramallisi's day 50 / day 61 case below. The case "no blood
+  until 11 days after the birth" (from when the 60 days are counted) is not checked yet.
+
 To check before implementing: Tuhfa 1/385 ("if it stops within the 60, the returning blood is hayd
 only after 15 days") next to ash-Shabramallisi's day 50 / day 61 case (returning after day 60);
 probably no conflict (his case returns after the maximum of nifas), but not checked.
