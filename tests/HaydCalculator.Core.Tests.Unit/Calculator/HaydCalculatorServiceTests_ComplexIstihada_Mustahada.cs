@@ -125,6 +125,27 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
         result.GetIstihadaDayRanges(s_start).Should().Equal((1.0, 41.0));
     }
 
+    // Red is the strong blood here: strength is relative, red is weak next to black but strong next to yellow.
+    // [Amjad Rashid (Bani Sakhr), Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa, PDF p. 17] First blood of a woman: 10 days red (strong), then 23 days yellow (weak): her hayd is the 10 days and her istihada the 23 days, because the strong is neither under the minimum nor over the maximum and the weak is not under the minimal purity and continuous.
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 341; https://shamela.ws/book/3565/339] Red is weak next to black and strong next to ashqar; ashqar is stronger than yellow. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 402; https://shamela.ws/book/9059/403] Order of strength: black, red, ashqar, yellow, brownish. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] Mubtada'a mumayyiza: the weak blood is istihada however long it lasts; the strong is hayd under the conditions of tamyiz. [IMPLICIT]
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201] The same order of strength and the same conditions. [IMPLICIT]
+    // KHILAF: On the order of strength the mu'tamad works agree; no khilaf here. Yellow is hayd according to the asahh; on the other view (muqabil al-asahh, a strong view; Mughni al-Muhtaj, vol. 1, p. 284; https://shamela.ws/book/11444/200) the yellow is not hayd anyway and the 10 red days stay within the limits, so both views give the same hayd here. This test follows the default settings.
+    [FiqhTodo]
+    [Fact]
+    public void MubtadaaMumayyiza_TenDaysRedThenTwentyThreeDaysYellow_RedIsHayd()
+    {
+        // ACT
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 10),
+            (EFlowAppearanceColor.Yellow, 23));
+
+        // ASSERT
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 10.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((10.0, 33.0));
+    }
+
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] 10 days black, then 10 days red, then it stops: she follows the distinction, although the weak blood stays under 15 days.
     // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 401; https://shamela.ws/book/9059/402] 10 days black, then 10 days red, then it stops: she follows her distinction, although the weak blood stays under 15 days (after al-Mutawalli).
     [FiqhTodo]

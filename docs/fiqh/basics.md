@@ -119,7 +119,8 @@ with blood: the blood counts from 5:00. And: purity is that the blood stops in a
 white discharge («القصة البيضاء») is not a condition. (For the app: the times entered are the times she
 noticed.)
 
-No test covers the hour cases yet.
+Test: `HaydCalculation_BloodsOfSomeHoursOnFiveDaysReachTwentyFourHoursTogether_AllHayd` (the 24 h case; the
+23 h case is close to `HaydCalculation_MinimalHaydDurationNotFulfilled` and has no test of its own).
 
 ## Intermittent blood: purity between bloods (qawl as-sahb / qawl al-laqt)
 

@@ -534,6 +534,50 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         result.GetIstihadaDayRanges(s_sourceExampleStart).Should().BeEmpty();
     }
 
+    // Bloods of a few hours on five days that together make exactly 24 hours. The clock times are those of the source; for day 5 it only says "two hours", set here to 05:00-07:00.
+    // [Amjad Rashid (Bani Sakhr), Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa, PDF pp. 6-7] Day 1 05:00-12:00, day 2 16:00-20:00, day 3 05:00-08:00, day 4 16:00-24:00, day 5 two hours: together 24 hours within the maximum of 15 days, so she takes the ghusl of hayd.
+    // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 278; https://shamela.ws/book/11444/194] Several bloods, each under a day and a night, that together make a day and a night are enough for the minimum of hayd. [IMPLICIT]
+    // [ar-Ramli, Nihayat al-Muhtaj, vol. 1, p. 325; https://shamela.ws/book/3565/323] The same: intermittent bloods that together reach a day and a night are enough for the minimum. [IMPLICIT]
+    // [Ibn Hajar al-Haytami, Tuhfat al-Muhtaj, vol. 1, p. 385; https://shamela.ws/book/9059/386] Hashiyat ash-Sharwani: with intermittent blood, if the bloods together reach a day and a night, everything is hayd (qawl as-sahb). [IMPLICIT]
+    // KHILAF: Counting the purity between the bloods as hayd is the azhar (qawl as-sahb); the other view counts it as purity (qawl al-laqt / at-talfiq, muqabil al-azhar, a strong view) (Mughni al-Muhtaj, vol. 1, p. 294; https://shamela.ws/book/11444/210). The bloods reach the minimum on both views; this test follows qawl as-sahb, so the whole span from the first to the last blood is hayd.
+    [FiqhTodo]
+    [Fact]
+    public void HaydCalculation_BloodsOfSomeHoursOnFiveDaysReachTwentyFourHoursTogether_AllHayd()
+    {
+        // ARRANGE
+        var start = Instant.FromUtc(2024, 1, 1, 5, 0);
+        (EFlowAppearanceColor Color, int Hours)[] pieces =
+        [
+            (EFlowAppearanceColor.Red, 7), // day 1, 05:00-12:00
+            (EFlowAppearanceColor.Clear, 28),
+            (EFlowAppearanceColor.Red, 4), // day 2, 16:00-20:00
+            (EFlowAppearanceColor.Clear, 9),
+            (EFlowAppearanceColor.Red, 3), // day 3, 05:00-08:00
+            (EFlowAppearanceColor.Clear, 32),
+            (EFlowAppearanceColor.Red, 8), // day 4, 16:00-24:00
+            (EFlowAppearanceColor.Clear, 5),
+            (EFlowAppearanceColor.Red, 2), // day 5, 05:00-07:00
+        ];
+
+        List<FlowDataEntity> flows = [];
+        Instant from = start;
+        foreach ((EFlowAppearanceColor color, int hours) in pieces)
+        {
+            Instant to = from + Duration.FromHours(hours);
+            flows.Add(new FlowDataEntity { From = from, To = to, Description = new FlowDataDescriptionEntity { FlowAppearanceColorEnum = color } });
+            from = to;
+        }
+
+        // ACT
+        HaydCalculationResultVO result = _haydCalculatorService.Calculate(flows);
+
+        // ASSERT
+        result.HaydCycles.Should().ContainSingle();
+        result.HaydCycles[0].HaydBeginning.Should().Be(start);
+        result.HaydCycles[0].HaydEnd.Should().Be(Instant.FromUtc(2024, 1, 5, 7, 0));
+        result.GetIstihadaDayRanges(start).Should().BeEmpty();
+    }
+
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 111; https://shamela.ws/book/21628/110] 'Ada of 5 days at the start of the month; if she is pure for 20 days after them and the blood returns in the last five days of the month, her hayd has moved earlier and her cycle is 25 days.
     [FiqhTodo]
     [Fact]

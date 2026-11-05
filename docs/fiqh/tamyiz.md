@@ -23,7 +23,9 @@ translations used here ("reddish-yellow" for ashqar, "brownish" for kudra) diffe
 
 Worked cases for the conditions in the same work (PDF p. 17): first blood 5 black then 20 red: hayd 5;
 10 red then 23 yellow: hayd 10; 17 yellow then 16 akdar: the strong exceeds 15 (condition 2), so
-ghayr mumayyiza. No tests for these cases yet.
+ghayr mumayyiza. Test: `MubtadaaMumayyiza_TenDaysRedThenTwentyThreeDaysYellow_RedIsHayd` (the only test
+where red is the strong blood). The 5 black / 20 red case is covered by the existing tests; the akdar
+case needs a colour the calculator does not have yet (`EFlowAppearanceColor`).
 
 ## The conditions (mubtada'a mumayyiza)
 
