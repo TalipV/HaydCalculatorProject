@@ -314,6 +314,16 @@ internal sealed class HaydCalculation(IReadOnlyList<FlowDataEntity> flowData, Ha
                     return null;
                 }
 
+                // the part of it after the minimal tuhr is complete is a new hayd if it reaches a day and a night
+                // (8/8/8: day 24; Labib Najib on al-Ibana, and the rule of the rest of tuhr)
+                Instant tuhrEnd = haydEnd + MinimalTuhurDuration;
+
+                if (laterStrong.End - tuhrEnd >= MinimumHaydDuration)
+                {
+                    strongRuns[index] = laterStrong with { Start = tuhrEnd };
+                    break;
+                }
+
                 index++;
             }
         }

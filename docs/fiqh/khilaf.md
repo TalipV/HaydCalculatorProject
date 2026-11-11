@@ -52,7 +52,7 @@ between two blacks (reported in Mughni 1/286 and Nihaya 1/342); the later works 
 ## No khilaf (stated so in the sources)
 
 - Blood within the remaining purity that then stops is dam fasad (FK 1/86: «وَلَا خِلَافَ فِي شَيْءٍ مِنْ هَذَا»).
-- 8 black, 8 red, then black: the first black (FK 1/86, bi-l-ittifaq).
+- 8 black, 8 red, then black: the first black (FK 1/86, bi-l-ittifaq); day 24, after the minimal purity, is a new hayd (open-questions.md, question 3).
 - Strong blood that comes first is hayd "qat'an" (Nihaya 1/341).
 - The fatra (pause with traces) is hayd by agreement (Tuhfa 1/412).
 - No maximum of purity (Tuhfa 1/385, by consensus).

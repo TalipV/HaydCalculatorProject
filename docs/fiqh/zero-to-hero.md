@@ -475,10 +475,11 @@ the black directly, so only the black. Ibn Hajar: black and yellow together.
 ![Blood: 7 black, 7 red, 7 black. ar-Ramli, al-Khatib (default): 14 hayd, 7 not hayd. Ibn Hajar: 7 hayd, 14 not hayd.](img/strips/strip-00fc3603.svg)
 
 **8 black, 8 red, 8 black, then it stops:** black and red together would be 16 days, so all agree
-that only the first black is hayd. (Day 24 is an open question.)
+that the first black is hayd. The red and seven days of the second black complete the 15 days of purity, so
+the last day (day 24) is a **new hayd**, as in lesson 6.
 
-<!-- strip: Blood: 8K 8R 8K | Ruling: 8H 16F -->
-![Blood: 8 black, 8 red, 8 black. Ruling: 8 hayd, 16 not hayd.](img/strips/strip-78a4574e.svg)
+<!-- strip: Blood: 8K 8R 8K | Ruling: 8H 15F 1H -->
+![Blood: 8 black, 8 red, 8 black. Ruling: 8 hayd, 15 not hayd, 1 hayd.](img/strips/strip-53105a97.svg)
 
 📖 [Tuhfa 1/401](https://shamela.ws/book/9059/402) · [Nihaya 1/342](https://shamela.ws/book/3565/340) ·
 [Mughni 1/286](https://shamela.ws/book/11444/202) · [FK 1/86](https://shamela.ws/book/21628/85),
@@ -622,8 +623,8 @@ with every source, is in [khilaf.md](khilaf.md).
   the calculator yet. One rule to know: between a hayd and nifas, the purity can be shorter than 15
   days.
 - **The woman who forgot her habit** (*mutahayyira*): special precaution rules; not covered yet.
-- **Open questions**: cases the sources checked so far do not settle, e.g. what exactly happens on
-  day 24 of 8 black, 8 red, 8 black. They are listed with all passages in [open-questions.md](open-questions.md).
+- **Open questions**: cases the sources checked so far do not settle, e.g. who holds the
+  other view for strong blood that comes after weak blood. They are listed with all passages in [open-questions.md](open-questions.md).
 
 ---
 

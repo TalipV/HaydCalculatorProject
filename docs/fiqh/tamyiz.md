@@ -181,7 +181,7 @@ al-Khatib / Ibn Surayj; `OnlyFirstStrongIsHayd` = Ibn Hajar).
 
 Tests: `MubtadaaMumayyiza_SevenDaysEachBlackRedBlack_FirstBlackAndRedAreHayd`,
 `MubtadaaMumayyiza_SevenDaysEachBlackRedBlack_IbnHajar_OnlyFirstBlackIsHayd`,
-`MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirstBlackIsHayd`.
+`MubtadaaMumayyiza_EightBlackEightRedEightBlack_FirstBlackAndLastDayAreHayd` (day 24 is a new hayd: open-questions.md, question 3, resolved).
 
 ## Other cases from al-Fatawa al-Kubra 1/86 (not tested yet)
 
