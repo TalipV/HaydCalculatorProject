@@ -189,6 +189,9 @@ Hajar's FK 1/86: its general rule ("no khilaf") is worked only with returning bl
 case "a day and a night, 13 purity, 3 blood: the last 3 are hayd" is read as a slip for "a day without its
 night", as FK 1/108 quotes the same case from al-Majmu' (review-notes.md B1, now the user's decision).
 With a first blood of a full 24 h, 1/13/3 therefore falls under the same rule (mustahada case).
+Further support (2026-11-11, lesson transcripts): as-Saqqaf explains the line in his own lessons on al-Ibana
+(lesson 3, 12:47-13:32; lesson 5, 51:42-52:29: "at the moment she completes the 15, was there blood?"), and
+Labib Najib (lesson 9, 51:04-53:49) works through 3 blood, 7 clean, blood from day 11 to 17 as a mustahada case.
 `ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` was replaced by
 `HaydCalculatorServiceTests_IstihadaClassification.ThirteenDaysRedOneDayPurityFiveDaysRedThenStop_IsMustahadaCase`
 (sources and the KHILAF line on FK 1/86 there); the other two tests are unchanged. No setting: the other
@@ -210,6 +213,14 @@ Note (independent review 2026-10-30): the first black ends on day 8, so the mini
 23, and day 24 is exactly 24 h of blood after it: the same constellation as the Bughya / al-Ibana rule
 that the basic tests apply (rest of tuhr, then a new hayd). By that rule day 24 would be a new hayd.
 No source says so for 8/8/8.
+Lead (2026-11-11, lesson transcripts, not verified): Labib Najib, Sharh al-Ibana, lesson 11, 39:37 and
+41:47-42:22 ([video](https://youtu.be/p_JeZgiSs2w?t=2377)), after reading al-Ibana's «فحيضها السواد الأول باتفاق»,
+adds "from the point of benefit": the 8 red and 7 of the second black complete the minimal purity, so
+the last day is a new hayd («فيبقى اليوم الأخير ... فهو حيض جديد»). al-Qudaymi (lesson 8, 26:14-28:00) and
+ash-Shahawi (lesson 6, 21:23) only read the book's sentence. One teacher, from a transcript; the
+question stays open. (as-Saqqaf, lesson 6, 39:03-42:27, discusses 8 black, 8 red, 8 black, 8 red with
+the blood going on and accepts "the rest is all tuhr, because the blood is still connected"; a different
+course.)
 
 ## 4. Condition 4 with a long weak blood at the end
 
@@ -307,6 +318,10 @@ The asahh (yellow and brownish are hayd) is not in question; only the scope of t
 No test is affected today: the yellow tests have no 'ada. Before a test for yellow inside the
 'ada with the setting `false` is written, the scope must be settled (ar-Ramli, the hawashi on
 Tuhfa 1/400 and Mughni 1/285, I'anat, al-Bajuri still to search). Then a setting may be needed.
+Lead (2026-11-11): al-Manhal an-Naddakh (Ibn al-Qaradaghi) p. 74, no. 167 (OCR in the lesson-transcripts
+connector): «الصفرة والكدرة للمعتادة في أيام العادة حيض على الأصح عند (حج). ورجّحا ما في الروضة من أنها حيض جزماً»
+- i.e. ar-Ramli sides with al-Khatib. Not found in the Nihaya 1/340 text read so far (3565/338); to verify
+before the setting's default is described as "ar-Ramli and al-Khatib".
 
 ## 9. Ibn Qasim: mu'tada with a short blood, 14 days purity, then continuous blood
 

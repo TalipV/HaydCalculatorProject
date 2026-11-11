@@ -57,6 +57,9 @@ possible 'ada); Ibn Qasim (al-'Ubab, the wording of al-Minhaj) and the wording o
 precaution unless she forgot. **The calculator has no "precaution day" category** (only hayd and
 istihada); affects `Mutada_LastCycleOnlyFourDays_ReturnsToFourDays` only in that category, not in
 the hayd days.
+al-Ibana (as read and explained by as-Saqqaf, lesson 4, 1:02:37-1:04:32; transcript): an unordered changing
+'ada goes back to the last one «ويلزمها الاحتياط إلى أكثر عادتها إن لم يكن هو الذي ردت إليه», which he says the
+Tuhfa and Shaykh al-Islam Zakariyya indicate. So al-Ibana takes the precaution reading.
 
 Tests: `Mutada_AdaOfFiveDays_ReturnsToAda`, `Mutada_ChangingAdaFiveSixSeven_ReturnsToLastAda`,
 `Mutada_ChangingAdaFiveSixSeven_AdaByTwoOccurrences_ReturnsToSix`,

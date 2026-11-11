@@ -130,10 +130,22 @@ not fit the other files as they stand:
    condition 3 is only needed if the blood continues) and Nihaya 1/342 / Mughni 1/286 (7/7/7) say the
    tamyiz holds. The case does not say whether the blood stops; if it continues, the statement agrees
    with condition 3. Not adopted until clarified.
+   with condition 3. Not adopted until clarified.
+   2026-11-11: as-Saqqaf (lessons on al-Ibana, lesson 5, 1:16:19-1:23:56; lesson 9, 1:09:46; transcripts) gives the
+   rule that condition 3 is only needed when the later strong blood, like the first, lasts 15 days or more:
+   7 black / 14 red / 13 black: not needed; 8 black / 13 red / 20 black: needed, so no tamyiz. With a last
+   black of 5 days, 5/10/5 would keep its tamyiz: against Amjad Rashid's statement. Still not adopted.
 2. **Colour names** (PDF p. 6): ashqar = «البني» (brown), akdar = «ما بين الأبيض والأصفر» (between white and
    yellow). The guide and tamyiz.md translate ashqar as "reddish-yellow" and kudra as "brownish". Check the
    definitions in the allowed works (Tuhfa 1/400-402, Nihaya 1/340, I'anat, al-Bajuri) before changing
    the translations.
+   the translations.
+   2026-11-11: al-Ibana's teachers (transcripts): ashqar is between red and yellow (Labib Najib, lesson 3,
+   32:03); kudra is between yellow and white (al-Qudaymi reading al-Ibana, lesson 3, 16:20) or "turbid
+   water, not blood" (Labib Najib). ar-Ramli, Nihaya 1/340: «كَالصَّدِيدِ تَعْلُوهُ صُفْرَةٌ وَكُدْرَةٌ». al-Bajuri vol. 1,
+   p. 454 (OCR) gives the order black, red, shuqra, sufra, kudra, «وقيل: الكدرة مقدمة على الصفرة». So
+   "reddish-yellow" for ashqar is supported; "brownish" for kudra is not (better "turbid"); Amjad Rashid's
+   "brown" for ashqar stands alone. Translation change pending the user's OK.
 3. **Laqt** (PDF p. 8) is named as a view of Imam Malik only; in the allowed works it is the other qawl of
    ash-Shafi'i (muqabil al-azhar, Mughni 1/294, Nihaya 1/356). No effect on the settings.
 4. **A habitual pause inside her hayd** (PDF p. 9): an-Nawawi (called the mu'tamad) - she acts as pure at
@@ -141,6 +153,10 @@ not fit the other files as they stand:
    what Ibn Hajar and al-Khatib ash-Shirbini hold". The paragraph calls an-Nawawi's view the mu'tamad and
    then names Ibn Hajar and al-Khatib for the other; unclear. It concerns what she does while waiting,
    not the final result. Check in Tuhfa / Mughni before using it anywhere.
+   not the final result. Check in Tuhfa / Mughni before using it anywhere.
+   2026-11-11: al-Ibana's own text (read aloud by Labib Najib, lesson 5, 41:27-42:46; transcript): ar-Rafi'i -
+   no ghusl at each stop; an-Nawawi - she does what pure women do; the mu'tamad is an-Nawawi's view, acting on
+   ar-Rafi'i's for oneself is allowed. Amjad Rashid's attribution to Ibn Hajar and al-Khatib is not supported.
 
 ## Review log
 

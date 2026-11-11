@@ -201,3 +201,43 @@ What it adds to this folder (recorded in the topic files named):
 | 18 | mu'tada mumayyiza: tamyiz decides; 'ada 5 then 10 black / red; 5 black, 20 red, 5 black; 5 black, 10 red, 5 black: tamyiz fails; mu'tada ghayr mumayyiza: 'ada 7, then 17 days: 7 hayd | ada.md, review-notes.md (5/10/5 to check) |
 | 19-20 | mutahayyira: like a ha'id in seven things, like a pure woman in seven; worked cases for a woman who forgot the time or the amount | mustahada.md (for when the mutahayyira is implemented) |
 | 21 | duties of the mustahada | not relevant for the calculator |
+
+## Shafi'i lesson transcripts (connector, 2026-11-11)
+
+The user's connector "Shafii Lesson Transcripts" holds machine transcriptions (Whisper, unreviewed) of
+lesson series and OCR text of printed books. Relevant here:
+
+| Series id | What | Status here |
+|---|---|---|
+| `al-ibanah/shaykh-abd-ar-rahman-as-saqqaf` | as-Saqqaf's own lessons on al-Ibana (9) | leads; the author of an approved source explaining it |
+| `al-ibanah/shaykh-labib-najib` | Labib Najib 'Abdallah on al-Ibana (16) | leads |
+| `al-ibanah/shaykh-ali-al-qudaymi` | 'Ali al-Qudaymi on al-Ibana (11) | leads |
+| `al-ibanah/shaykh-abd-al-aziz-ash-shahawi` | 'Abd al-'Aziz ash-Shahawi on al-Ibana (6) | leads (transcription often garbled) |
+| `books/shaykh-ibrahim-al-bajuri/hashiyat-al-bajuri/volume-1` | OCR of Hashiyat al-Bajuri (allowed work) | citable by printed page; check the wording, OCR can misread letters |
+| `books/shaykh-umar-ibn-al-qaradaghi/al-manhal-an-naddakh` | al-Manhal an-Naddakh fi Ikhtilaf al-Ashyakh (lists differences of Ibn Hajar «حج», ar-Ramli «م ر», al-Khatib «خط»; «قالا» = the other two) | finder only; check every point in the Tuhfa / Nihaya / Mughni |
+
+Rules for these transcripts: the text is unreviewed machine transcription (wrong words, invented
+lines, audience questions mixed in), so a lesson is cited as "what was said in lesson N at mm:ss",
+never as verified wording, and never as the only source for a point. While a teacher reads al-Ibana
+aloud, what he reads is the book (approved source); his own explanations are leads. Whether the
+lessons count as user sources like the lecture series is **open for the user's decision**.
+
+Citation: `[Labib Najib, Sharh al-Ibana, lesson 11, 41:47 (transcript, unreviewed); https://youtu.be/p_JeZgiSs2w?t=2507]`.
+
+Findings (2026-11-11), recorded in the files named:
+
+| Point | Where | Recorded in |
+|---|---|---|
+| 8/8/8: day 24 is a new hayd | Labib Najib, lesson 11, 39:37 and 41:47-42:22 | open-questions.md, question 3 |
+| Condition 3 is needed only when the later strong blood lasts 15 days or more (continues); 7 black / 14 red / 13 black: not needed; 8 black / 13 red / 20 black: needed, so no tamyiz | as-Saqqaf, lesson 5, 1:16:19-1:23:56; lesson 9, 1:09:46 | review-notes.md H1 |
+| Colour names: ashqar between red and yellow; kudra between yellow and white / turbid water; order with kudra last (al-Bajuri 1/454, "wa qila" kudra before sufra) | Labib Najib, lesson 3, 32:03; al-Qudaymi, lesson 3, 16:20; al-Bajuri vol. 1, p. 454 | review-notes.md H2, tamyiz.md |
+| Habitual pause inside her hayd: ar-Rafi'i vs an-Nawawi, the mu'tamad is an-Nawawi (al-Ibana's text, read aloud) | Labib Najib, lesson 5, 38:17-42:46 | review-notes.md H4 |
+| The test at the end of day 15 (connected = mustahada, else rest of tuhr) | as-Saqqaf, lesson 3, 12:47-13:32; lesson 5, 51:42-52:29; Labib Najib, lesson 9, 51:04-53:49 | open-questions.md, question 1 (resolved) |
+| Changing 'ada without order: the last 'ada, with precaution up to the longest (al-Ibana's text, "what Ibn Hajar and Shaykh al-Islam indicate") | as-Saqqaf, lesson 4, 1:02:37-1:04:32 | ada.md |
+| Scope of the yellow khilaf: ar-Ramli and al-Khatib follow ar-Rawda (inside the 'ada hayd «جزماً»), Ibn Hajar not | al-Manhal an-Naddakh p. 74, no. 167 | open-questions.md, question 8 |
+| 5 black, 5 yellow, then red: Ibn Qasim calls ar-Ramli / al-Khatib's view «أوجه» | al-Manhal an-Naddakh p. 74, no. 170 | tamyiz.md |
+| 7/7/7: as-Saqqaf prefers to derive similar cases from Ibn Surayj's view ("more consistent") | as-Saqqaf, lesson 9, 1:07:48-1:08:39 | khilaf.md |
+
+Searched without a find: who holds the strong counter-view for strong blood that comes later
+(question 2); Ibn Qasim's cycle of 18 days (question 9).
+

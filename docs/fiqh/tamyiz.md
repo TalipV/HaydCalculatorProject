@@ -13,6 +13,9 @@ hayd, whatever its quality (basics.md).
   purely weak: if traces of the stronger remain in it, it is joined to it":
   «وَالْمُرَادُ بِالضَّعِيفِ الضَّعِيفُ الْمَحْضُ، فَلَوْ بَقِيَ فِيهِ خُطُوطٌ مِمَّا قَبْلَهُ فَهُوَ مُلْحَقٌ بِهِ»
 
+al-Bajuri, vol. 1, p. 454 (OCR via the lesson-transcripts connector): the same five colours, «وقيل: الكدرة
+مقدمة على الصفرة» (relied on by Shaykh 'Atiyya; a "wa qila", weak). On the meaning of kudra see review-notes.md H2.
+
 Order: black > red > ashqar (reddish-yellow) > yellow > brownish; each of thickness and bad smell
 adds strength; more qualities = stronger; equal strength: the earlier blood counts. The
 calculator so far only knows colours (`EFlowAppearanceColor`: Black, Red, Yellow, Clear, ...).
@@ -136,6 +139,9 @@ combination of Tuhfa 1/401 / Mughni 1/286 for 10 black / 10 red with the order r
 | 10 black, 6 red, then yellow | only black (together over 15) | same (11 red after 5 black: red joined to the yellow) |
 | 5 red, 5 black, then yellow | only black (weak comes first) | (not discussed separately) |
 | 5 black, 5 yellow, then red | only black (weak does not follow directly) | black and yellow (10 days) hayd |
+
+al-Manhal an-Naddakh p. 74, no. 170 (finder): for 5 black, 5 yellow, then red continuing, Ibn Qasim calls the view
+of ar-Ramli / al-Khatib (only the black) «أوجه». To check in Ibn Qasim's hashiya.
 
 Ibn Qasim on Tuhfa 1/403 ([9059/404](https://shamela.ws/book/9059/404)) on why Tuhfa 1/401 (5 black, 5 yellow, 6 red: only black) and 1/403f. (5 black, 5 yellow, then red continues: black and yellow) do not conflict:
 «مِنْ مَاصَدَقَاتِ هَذَا بِمُجَرَّدِهِ قَوْلُهُ فِيمَا سَبَقَ وَكَذَا لَوْ رَأَتْ خَمْسَةً أَسْوَدَ، ثُمَّ خَمْسَةً أَصْفَرَ، ثُمَّ خَمْسَةً أَحْمَرَ مَعَ أَنَّهُ تَقَدَّمَ أَنَّ حَيْضَهَا السَّوَادُ فَقَطْ إلَّا أَنَّ ذَاكَ مَفْرُوضٌ مَعَ الِانْقِطَاعِ، وَهَذَا مَعَ الِاسْتِمْرَارِ كَمَا يُفْهَمُ مِنْ الْأَمْثِلَةِ فَهَذَا هُوَ الْمُمَيَّزُ لِأَحَدِ الْمَوْضِعَيْنِ عَنْ الْآخَرِ سم»

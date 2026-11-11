@@ -20,6 +20,10 @@ difference between Ibn Hajar, ar-Ramli and al-Khatib or a differing view or read
 | Mubtada'a, blood in the rest of the purity that runs past its completion (3/14/4, 10/8/12, 3/12/continuing) | the first blood is hayd, the returning blood completes the purity, the rest is a new hayd (Ba 'Alawi, as-Saqqaf al-Ibana p. 29-31, Ibn Qasim «لا يبعد») | mustahada from the first blood on, a day and a night from the start of the month (ash-Shabramallisi «يقتضي» from Ibn Hajar's wording; al-Bujayrimi: purity counts as weak blood under 15). Strength not stated; a setting by the user's decision 2026-10-30 (open question 7). Not in the `IbnHajar` preset (a reading of his wording, not his statement) | Tuhfa 1/399 hawashi ([9059/400](https://shamela.ws/book/9059/400)), Nihaya 1/340 ([3565/338](https://shamela.ws/book/3565/338)); rest-of-tuhr.md | `MubtadaaBloodInRestOfTuhr` |
 | Strong, weaker, weak (5 black, 5 yellow, then red) | the stronger weak must follow the strong directly, so only the black (ar-Ramli, al-Khatib, after ar-Ruyani, the commentators of al-Hawi as-Saghir, at-Tahqiq) | black and yellow are hayd (Ibn Hajar) | Nihaya 1/342, Mughni 1/286, Tuhfa 1/403f.; lecture part 8 ?t=1961 | `StrongerWeakMustFollowStrongDirectly` |
 
+Note on 7/7/7 (lesson transcripts, 2026-11-11): as-Saqqaf, the author of al-Ibana, says in his lessons
+(lesson 9, 1:07:48-1:08:39) that similar cases are better derived from Ibn Surayj's view (the default),
+because Ibn Hajar's statements on such cases are not uniform. A teacher's preference, no change.
+
 Note on 7/7/7: Tuhfa 1/401 states it for 7 black, 7 red, 3 black (then it stops); ash-Sharwani
 there: the Nihaya and the Mughni disagree with him in that case; Ibn Qasim notes that at-Tahqiq
 has 7/7/7. The case 8/8/8 has no khilaf (FK 1/86, "bi-l-ittifaq").
