@@ -22,6 +22,7 @@ the later Shafi'is (muta'akhkhirun).
 | al-Hawashi al-Madaniyya, al-Mawahib al-Madaniyya (on al-Minhaj al-Qawim) | Muhammad b. Sulayman al-Kurdi | allowed (user, 2026-10-29: "ohne Zweifel") |
 | Lecture series "Rulings of Haydh and Nifas in the Shafi'i school" | user's source | allowed |
 | al-Ibana wa-l-Ifada fi Ahkam al-Hayd wa-n-Nifas wa-l-Istihada | user's source | allowed |
+| Lesson series on al-Ibana: as-Saqqaf (the author), Labib Najib 'Abdallah, 'Ali al-Qudaymi, 'Abd al-'Aziz ash-Shahawi (lesson-transcripts connector) | user's source | allowed (user, 2026-11-11: "more reliable than the lecture series"); each teacher counts as his own author; see the section at the end |
 | Risala fi Fiqh Ahkam Dima' an-Nisa' al-Khassa (written up by Hana' Bani Sakhr from a course of Amjad Rashid) | user's source | allowed (user, 2026-11-04); see the section below |
 
 Never as evidence:
@@ -209,10 +210,10 @@ lesson series and OCR text of printed books. Relevant here:
 
 | Series id | What | Status here |
 |---|---|---|
-| `al-ibanah/shaykh-abd-ar-rahman-as-saqqaf` | as-Saqqaf's own lessons on al-Ibana (9) | leads; the author of an approved source explaining it |
-| `al-ibanah/shaykh-labib-najib` | Labib Najib 'Abdallah on al-Ibana (16) | leads |
-| `al-ibanah/shaykh-ali-al-qudaymi` | 'Ali al-Qudaymi on al-Ibana (11) | leads |
-| `al-ibanah/shaykh-abd-al-aziz-ash-shahawi` | 'Abd al-'Aziz ash-Shahawi on al-Ibana (6) | leads (transcription often garbled) |
+| `al-ibanah/shaykh-abd-ar-rahman-as-saqqaf` | as-Saqqaf's own lessons on al-Ibana (9) | approved user source |
+| `al-ibanah/shaykh-labib-najib` | Labib Najib 'Abdallah on al-Ibana (16) | approved user source |
+| `al-ibanah/shaykh-ali-al-qudaymi` | 'Ali al-Qudaymi on al-Ibana (11) | approved user source |
+| `al-ibanah/shaykh-abd-al-aziz-ash-shahawi` | 'Abd al-'Aziz ash-Shahawi on al-Ibana (6) | approved user source (transcription often garbled) |
 | `books/shaykh-ibrahim-al-bajuri/hashiyat-al-bajuri/volume-1` | OCR of Hashiyat al-Bajuri (allowed work) | citable by printed page; check the wording, OCR can misread letters |
 | `books/shaykh-umar-ibn-al-qaradaghi/al-manhal-an-naddakh` | al-Manhal an-Naddakh fi Ikhtilaf al-Ashyakh (lists differences of Ibn Hajar «حج», ar-Ramli «م ر», al-Khatib «خط»; «قالا» = the other two) | finder only; check every point in the Tuhfa / Nihaya / Mughni |
 
@@ -220,7 +221,8 @@ Rules for these transcripts: the text is unreviewed machine transcription (wrong
 lines, audience questions mixed in), so a lesson is cited as "what was said in lesson N at mm:ss",
 never as verified wording, and never as the only source for a point. While a teacher reads al-Ibana
 aloud, what he reads is the book (approved source); his own explanations are leads. Whether the
-lessons count as user sources like the lecture series is **open for the user's decision**.
+lessons count as user sources: **yes, all four al-Ibana series** (user, 2026-11-11). The transcription caveat stays:
+cite lesson and timestamp; where a point rests on a lesson, the wording should be checked by listening.
 
 Citation: `[Labib Najib, Sharh al-Ibana, lesson 11, 41:47 (transcript, unreviewed); https://youtu.be/p_JeZgiSs2w?t=2507]`.
 

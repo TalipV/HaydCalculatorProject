@@ -303,7 +303,7 @@ Tuhfa with al-Bujayrimi / ash-Shabramallisi: mustahada from day 1). The tests ar
 **Resolved 2026-10-30 as a khilaf with a setting** (see Resolved below).
 
 Moved here on 2026-10-30 at the user's request (unsure points go to the open questions).
-The asahh (yellow and brownish are hayd) is not in question; only the scope of the other view
+The asahh (yellow and turbid discharge are hayd) is not in question; only the scope of the other view
 (setting `YellowAndTurbidAreHayd = false`) is:
 
 - al-Khatib, Mughni 1/285 ([11444/201](https://shamela.ws/book/11444/201)), after ar-Rawda: the

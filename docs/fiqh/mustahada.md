@@ -86,7 +86,7 @@ mustahada is always 30 days (Tuhfa 1/404).
   «وَلَوْ رَأَتْ مُبْتَدَأَةٌ خَمْسَةَ عَشَرَ حُمْرَةً ثُمَّ مِثْلَهَا أَسْوَدَ تَرَكَتْ الصَّلَاةَ وَالصَّوْمَ جَمِيعَ الشَّهْرِ؛ لِأَنَّهُ لَمَّا اسْوَدَّ فِي الثَّانِيَةِ تَبَيَّنَ أَنَّ مَا قَبْلَهُ اسْتِحَاضَةً، ثُمَّ إنْ اسْتَمَرَّ الْأَسْوَدُ كَانَتْ غَيْرَ مُمَيِّزَةٍ فَحَيْضُهَا يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ كُلِّ شَهْرٍ وَقَضَتْ الصَّلَاةَ» ([9059/404](https://shamela.ws/book/9059/404))
 - [al-Khatib, Mughni 1/287](https://shamela.ws/book/11444/203): «فَرْعٌ: لَوْ رَأَتْ الْمُبْتَدَأَةُ خَمْسَةَ عَشْرَ حُمْرَةً ثُمَّ مِثْلَهَا سَوَادًا تَرَكَتْ الصَّوْمَ وَالصَّلَاةَ ... شَهْرًا ثُمَّ إنْ اسْتَمَرَّ الْأَسْوَدُ فَلَا تَمْيِيزَ لَهَا، وَحَيْضُهَا يَوْمٌ وَلَيْلَةٌ مِنْ أَوَّلِ كُلِّ شَهْرٍ وَتَقْضِي الصَّوْمَ وَالصَّلَاةَ»
 - KHILAF (not in the settings, concerns what she does while waiting): the case with five qualities
-  of 15 days each (brownish, yellow, ashqar, red, black): Ibn Hajar says it is not analogous
+  of 15 days each (turbid, yellow, ashqar, red, black): Ibn Hajar says it is not analogous
   («خِلَافًا لِجَمْعٍ»); ar-Ramli and al-Khatib side with the group (ash-Sharwani on Tuhfa 1/403).
 
 Tests: `MubtadaaGhayrMumayyiza_ContinuousRedBlood_OneDayHaydAndTwentyNineDaysTuhur`,

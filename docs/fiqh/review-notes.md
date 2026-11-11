@@ -145,7 +145,8 @@ not fit the other files as they stand:
    water, not blood" (Labib Najib). ar-Ramli, Nihaya 1/340: «كَالصَّدِيدِ تَعْلُوهُ صُفْرَةٌ وَكُدْرَةٌ». al-Bajuri vol. 1,
    p. 454 (OCR) gives the order black, red, shuqra, sufra, kudra, «وقيل: الكدرة مقدمة على الصفرة». So
    "reddish-yellow" for ashqar is supported; "brownish" for kudra is not (better "turbid"); Amjad Rashid's
-   "brown" for ashqar stands alone. Translation change pending the user's OK.
+   "brown" for ashqar stands alone. **Changed 2026-11-11** (the user left the choice to Claude): kudra is now
+   "turbid (between yellow and white)" in all files, the guide's drop icon pale with a grey outline.
 3. **Laqt** (PDF p. 8) is named as a view of Imam Malik only; in the allowed works it is the other qawl of
    ash-Shafi'i (muqabil al-azhar, Mughni 1/294, Nihaya 1/356). No effect on the settings.
 4. **A habitual pause inside her hayd** (PDF p. 9): an-Nawawi (called the mu'tamad) - she acts as pure at

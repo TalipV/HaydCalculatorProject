@@ -6,7 +6,7 @@ public enum EFlowAppearanceColor
     // (Mughni al-Muhtaj, vol. 1, p. 285; https://shamela.ws/book/11444/201)
 
     Clear,
-    //Brownish,
+    //Turbid,
     Yellow,
     //Blondish,
     Red,

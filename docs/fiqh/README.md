@@ -14,7 +14,7 @@ test disagree, find out which one is wrong; do not silently follow either.
 |---|---|
 | [zero-to-hero.md](zero-to-hero.md) | Beginner's guide in lessons: day-by-day pictures, flowcharts, exercises; retells the files below in teaching order and adds no rules of its own |
 | [sources.md](sources.md) | Allowed works, Shamela ids and page offsets, citation format, approved exceptions (Bughyat al-Mustarshidin), lecture series |
-| [basics.md](basics.md) | Definitions, age of hayd, terminology of strength, minimum and maximum of hayd, minimal purity, a day and a night = 24 h, intermittent blood (sahb / laqt), yellow and brownish blood, "all hayd within 15 days" |
+| [basics.md](basics.md) | Definitions, age of hayd, terminology of strength, minimum and maximum of hayd, minimal purity, a day and a night = 24 h, intermittent blood (sahb / laqt), yellow and turbid discharge, "all hayd within 15 days" |
 | [rest-of-tuhr.md](rest-of-tuhr.md) | Blood that falls into the remainder of the minimal purity: 3/12/3, blood that continues, the Bughya rule for the part after the purity is complete, the 15-day window |
 | [mustahada.md](mustahada.md) | When a case is a mustahada case (classification per hayd cycle), the seven kinds, mubtada'a ghayr mumayyiza |
 | [tamyiz.md](tamyiz.md) | Strength of blood, the four conditions of tamyiz, order of strong and weak, strong / weak / weaker, red between two blacks |
@@ -70,8 +70,8 @@ Strength of the other view:
 | 'ada | her habit in length and time of hayd and tuhr |
 | tamyiz / mumayyiza | distinguishing strong and weak blood / a woman whose blood shows that |
 | mutahayyira | mustahada who forgot her 'ada (amount, time or both); not implemented yet |
-| strong / weak blood | by colour (black > red > ashqar > yellow > brownish), thickness and bad smell |
-| kudra | brownish (turbid) discharge; with sufra (yellow) hayd according to the asahh |
+| strong / weak blood | by colour (black > red > ashqar > yellow > kudra), thickness and bad smell |
+| kudra | turbid discharge, between yellow and white (not "brownish"; review-notes.md H2); with sufra (yellow) hayd according to the asahh |
 | qawl as-sahb | purity between bloods within 15 days counts as hayd (azhar) |
 | qawl al-laqt / at-talfiq | only the bloods count as hayd (muqabil al-azhar) |
 | [IMPLICIT] | the source states the rule clearly, but not with the numbers of the case |

@@ -55,7 +55,7 @@ The last 3 days are blood, but not hayd (lesson 6 explains why). A row that ends
 2. [The normal case: everything is hayd](#lesson-2-the-normal-case-everything-is-hayd)
 3. [Too short: under 24 hours](#lesson-3-too-short-under-24-hours)
 4. [Clean days in between](#lesson-4-clean-days-in-between)
-5. [Yellow and brownish discharge](#lesson-5-yellow-and-brownish-discharge)
+5. [Yellow and turbid discharge](#lesson-5-yellow-and-turbid-discharge)
 6. [Blood that comes back too early](#lesson-6-blood-that-comes-back-too-early)
 
 **Part 2: more than 15 days**
@@ -208,14 +208,14 @@ Clean days **after** the last blood are always pure.
 
 ---
 
-## Lesson 5: Yellow and brownish discharge
+## Lesson 5: Yellow and turbid discharge
 
 **She sees only yellow discharge for 5 days.**
 
 <!-- strip: Blood: 5Y | Default: 5H | Other view: 5F -->
 ![Blood: 5 yellow. Default: 5 hayd. Other view: 5 not hayd.](img/strips/strip-801c6c18.svg)
 
-- **Default ("asahh"):** yellow and brownish discharge at a time when hayd is possible are **hayd**.
+- **Default ("asahh"):** yellow and turbid discharge (kudra: between yellow and white) at a time when hayd is possible are **hayd**.
 - **Other view (also strong):** they are not hayd, because they do not have the colour of blood.
 
 The other view itself is read in two ways. al-Khatib says it only applies **outside** the days she
@@ -346,7 +346,7 @@ Blood is stronger or weaker by three qualities:
 
 **Colour**, from strongest to weakest:
 
-> <img src="img/icons/black.svg" width="18" height="18" alt="black drop"> black → <img src="img/icons/red.svg" width="18" height="18" alt="red drop"> red → <img src="img/icons/ashqar.svg" width="18" height="18" alt="orange drop"> ashqar (reddish-yellow) → <img src="img/icons/yellow.svg" width="18" height="18" alt="yellow drop"> yellow → <img src="img/icons/brownish.svg" width="18" height="18" alt="brown drop"> brownish
+> <img src="img/icons/black.svg" width="18" height="18" alt="black drop"> black → <img src="img/icons/red.svg" width="18" height="18" alt="red drop"> red → <img src="img/icons/ashqar.svg" width="18" height="18" alt="orange drop"> ashqar (reddish-yellow) → <img src="img/icons/yellow.svg" width="18" height="18" alt="yellow drop"> yellow → <img src="img/icons/turbid.svg" width="18" height="18" alt="pale drop"> turbid (kudra)
 
 **Thickness:** thick is stronger than thin.
 
@@ -601,7 +601,7 @@ the later school differ among themselves: Ibn Hajar on one side, ar-Ramli and al
 | Question | Default | Other view | Lesson |
 |---|---|---|---|
 | Clean days between bloods within 15 days | hayd | pure | 4 |
-| Yellow and brownish discharge | hayd | not hayd | 5 |
+| Yellow and turbid discharge | hayd | not hayd | 5 |
 | ... and if not hayd: also inside her habit days? | no, only outside (al-Khatib) | inside too (Ibn Hajar) | 5 |
 | A beginner whose blood comes back too early and goes past the purity | first blood hayd, the rest completes the purity | only day 1 is hayd (two commentators' reading) | 6 |
 | Beginner without tamyiz | 1 day and night | 6 or 7 days | 10 |

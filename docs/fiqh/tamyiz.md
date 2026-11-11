@@ -16,13 +16,14 @@ hayd, whatever its quality (basics.md).
 al-Bajuri, vol. 1, p. 454 (OCR via the lesson-transcripts connector): the same five colours, «وقيل: الكدرة
 مقدمة على الصفرة» (relied on by Shaykh 'Atiyya; a "wa qila", weak). On the meaning of kudra see review-notes.md H2.
 
-Order: black > red > ashqar (reddish-yellow) > yellow > brownish; each of thickness and bad smell
+Order: black > red > ashqar (reddish-yellow) > yellow > turbid (kudra); each of thickness and bad smell
 adds strength; more qualities = stronger; equal strength: the earlier blood counts. The
 calculator so far only knows colours (`EFlowAppearanceColor`: Black, Red, Yellow, Clear, ...).
 
 Amjad Rashid (Bani Sakhr), Dima' an-Nisa', PDF p. 6, lists the colours as black (strongest), red,
 ashqar «البني», yellow, akdar «ما بين الأبيض والأصفر», with thickness and smell as qualities; the
-translations used here ("reddish-yellow" for ashqar, "brownish" for kudra) differ (review-notes.md).
+translation "reddish-yellow" for ashqar is kept; kudra is translated as "turbid" (between yellow and white),
+no longer as "brownish" (review-notes.md H2).
 
 Worked cases for the conditions in the same work (PDF p. 17): first blood 5 black then 20 red: hayd 5;
 10 red then 23 yellow: hayd 10; 17 yellow then 16 akdar: the strong exceeds 15 (condition 2), so

@@ -150,13 +150,13 @@ Tests: `HaydCalculation_CalculationWithPurityInBetweenTwoMenstrualFlows`,
 `HaydCalculation_BloodsReachMinimumOnlyTogether_PurityInBetweenIsHayd`,
 `HaydCalculation_PurityInBetweenTwoMenstrualFlows_PurityCountsAsTuhr` (laqt).
 
-## Yellow (sufra) and brownish (kudra) blood
+## Yellow (sufra) and turbid (kudra) discharge
 
 - [al-Khatib, Mughni 1/284](https://shamela.ws/book/11444/200):
   «(وَالصُّفْرَةُ وَالْكُدْرَةُ) كُلٌّ مِنْهُمَا (حَيْضٌ فِي الْأَصَحِّ) وَفِي الرَّوْضَةِ الصَّحِيحُ؛ لِأَنَّهُ الْأَصْلُ فِيمَا تَرَاهُ الْمَرْأَةُ فِي زَمَنِ الْإِمْكَانِ. وَالثَّانِي: لَا لِأَنَّهُ لَيْسَ عَلَى لَوْنِ الدَّمِ، لِقَوْلِ أُمِّ عَطِيَّةَ كُنَّا لَا نَعُدُّ الصُّفْرَةَ وَالْكُدْرَةَ شَيْئًا»
 - [ar-Ramli, Nihaya 1/340](https://shamela.ws/book/3565/338):
   «(وَالصُّفْرَةُ وَالْكُدْرَةُ) كُلٌّ مِنْهُمَا (حَيْضٌ فِي الْأَصَحِّ) سَوَاءٌ الْمُبْتَدَأَةُ وَغَيْرُهَا خَالَفَ عَادَتَهَا أَمْ لَا كَمَا مَرَّ، وَهُمَا لَيْسَا مِنْ أَلْوَانِ الدَّمِ وَإِنَّمَا هُمَا كَالصَّدِيدِ تَعْلُوهُ صُفْرَةٌ وَكُدْرَةٌ ... وَمُقَابِلُ الْأَصَحِّ لَا يَكُونُ ذَلِكَ حَيْضًا لِأَنَّهُ لَيْسَ عَلَى لَوْنِ الدَّمِ»
-- [Ibn Hajar, Tuhfa 1/400](https://shamela.ws/book/9059/401): yellow and brownish are hayd (with the hadith of 'A'isha).
+- [Ibn Hajar, Tuhfa 1/400](https://shamela.ws/book/9059/401): yellow and turbid discharge are hayd (with the hadith of 'A'isha).
 - Mughni 1/285 ([11444/201](https://shamela.ws/book/11444/201)): the khilaf is about yellow
   outside the days of the 'ada; inside the 'ada it is hayd without khilaf (after ar-Rawda), "but
   at-Tatimma requires a strong blood with it" and "wa qila the strong must come first" (weak views).

@@ -5,7 +5,7 @@
 //   <!-- strip: Blood: 3R 12C 3R | Ruling: 3H 12T 3F -->
 //   ![Blood: 3 red, 12 clean, 3 red. Ruling: ...](img/strips/strip-1a2b3c4d.svg)
 // Rows are separated by "|". Each row is "Label: <count><code> ..."; "..." at the end means the
-// course goes on. Codes: K black, R red, A ashqar, Y yellow, W brownish, C clean (blood rows);
+// course goes on. Codes: K black, R red, A ashqar, Y yellow, W turbid (kudra), C clean (blood rows);
 // H hayd, T tuhr, F blood that is not hayd (ruling rows).
 // The tool rewrites the image lines, writes the SVG files and deletes strip files no longer used.
 // Edit only the comments; never edit an image line or a generated SVG by hand.
@@ -84,7 +84,7 @@ internal static partial class StripRenderer
         ['R'] = ("red", Drop("#f0508a", null)),
         ['A'] = ("ashqar", Drop("#f08a24", null)),
         ['Y'] = ("yellow", Drop("#ffd21f", "#c9a200")),
-        ['W'] = ("brownish", Drop("#8d5a3b", null)),
+        ['W'] = ("turbid", Drop("#d8d2bc", "#8b949e")),
         ['C'] = ("clean", Clean()),
         ['T'] = ("tuhr", Clean()),
         ['H'] = ("hayd", $"<circle cx=\"11\" cy=\"11\" r=\"8\" fill=\"#c62828\"/>"),
@@ -93,7 +93,7 @@ internal static partial class StripRenderer
 
     public static IEnumerable<(string Name, char Code)> Icons =>
     [
-        ("black", 'K'), ("red", 'R'), ("ashqar", 'A'), ("yellow", 'Y'), ("brownish", 'W'),
+        ("black", 'K'), ("red", 'R'), ("ashqar", 'A'), ("yellow", 'Y'), ("turbid", 'W'),
         ("clean", 'C'), ("hayd", 'H'), ("not-hayd", 'F'),
     ];
 

@@ -140,7 +140,8 @@ Tests that check calculator results against the Shafi'i mu'tamad follow these ru
   al-Muhtaj, Nihayat al-Muhtaj, Mughni al-Muhtaj, their hawashi, the other hawashi of the later
   Shafi'is such as al-Bajuri, al-Bujayrimi, ash-Sharqawi, al-Kurdi, at-Tarmasi, I'anat
   at-Talibin, Ibn Hajar's al-Fatawa al-Kubra) plus the user's own sources (the lecture series
-  "Rulings of Haydh and Nifas in the Shafi'i school", al-Ibana wa-l-Ifada, Amjad Rashid's Risala fi Fiqh
+  "Rulings of Haydh and Nifas in the Shafi'i school", al-Ibana wa-l-Ifada and the lesson series on it by as-Saqqaf, Labib Najib, al-Qudaymi and
+  ash-Shahawi, Amjad Rashid's Risala fi Fiqh
   Ahkam Dima' an-Nisa' al-Khassa written up by Bani Sakhr); never a matn such as
   al-Minhaj as evidence; no early or comparative works; at least 2, ideally 4 sources from different
   authors per point.
