@@ -105,7 +105,7 @@ Report: `fiqh-review-2026-10-30.md` (sent by the user). Checked here against Sha
 | B1 | "exactly 15" missing in the window | correct | rest-of-tuhr.md corrected |
 | B2 | 1/13/3 with 24 h is as open as 13/1/5 | correct | open-questions.md corrected |
 | B3 | FK 1/108 hint for 13/1/5 | correct | added to open question 1 |
-| B4 | 8/8/8 day 24 fits the rest-of-tuhr rule | correct reasoning, no source for 8/8/8 | added to open question 3 |
+| B4 | 8/8/8 day 24 fits the rest-of-tuhr rule | correct reasoning, no source for 8/8/8 | added to open question 3; resolved 2026-11-11 (new hayd, Labib Najib) |
 | B5 | two KHILAF lines wrong | both confirmed from the test data and Mughni 1/288 / FK 1/110-111 | corrected |
 | B6 | three tamyiz tests do not fit the sources | see below | user's decision (red tests stay red) |
 

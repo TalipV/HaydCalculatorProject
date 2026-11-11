@@ -205,9 +205,11 @@ checked so far. Needed for a KHILAF line with content and possibly a setting.
 
 ## 3. 8 black, 8 red, 8 black: the last day
 
+**Resolved 2026-11-11 by the user: day 24 is a new hayd** (see Resolved below).
+
 FK 1/86 gives only the first black as hayd (bi-l-ittifaq). The last day of the second black (day
 24) lies after a full minimal purity of 15 days following the first black. The sources do not
-discuss that day. Test `MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirstBlackIsHayd` notes it.
+discuss that day. Test: `MubtadaaMumayyiza_EightBlackEightRedEightBlack_FirstBlackAndLastDayAreHayd` (formerly `..._OnlyFirstBlackIsHayd`).
 al-Ibana p. 71 (checked 2026-10-30) also gives only «فحيضُها السّوادُ الأوّلُ بالاتِّفاقِ» and says nothing about day 24.
 Note (independent review 2026-10-30): the first black ends on day 8, so the minimal purity ends on day
 23, and day 24 is exactly 24 h of blood after it: the same constellation as the Bughya / al-Ibana rule
@@ -352,6 +354,10 @@ Written as `MubtadaaMumayyiza_FiveBlackFiveYellowSixRedAndStop_OnlyBlackIsHayd` 
 
 ## Resolved
 
+- Question 3 (8/8/8, day 24): a new hayd, user's decision 2026-11-11. Sources: Labib Najib (lesson 11, 41:47-42:22,
+  approved user source) states it; the rule of the rest of tuhr (Bughya, al-Ibana p. 29-31, Amjad Rashid p. 14-15) gives
+  the same [IMPLICIT]. The works that say "only the first black, by agreement" (FK 1/86, al-Ibana p. 71) do not discuss
+  that day. Calculator: the part of a later strong blood after the minimal tuhr is a new hayd if it reaches 24 h.
 - Question 1 (13/1/5 and the whole "returning blood starts inside the 15 days and runs past day 15"
   pattern, whether it stops or not): mustahada case, user's decision 2026-11-04 (see question 1).
 - Question 7 (mubtada'a, blood in the rest of the purity that runs past its completion): setting

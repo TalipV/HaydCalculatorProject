@@ -230,7 +230,7 @@ Findings (2026-11-11), recorded in the files named:
 
 | Point | Where | Recorded in |
 |---|---|---|
-| 8/8/8: day 24 is a new hayd | Labib Najib, lesson 11, 39:37 and 41:47-42:22 | open-questions.md, question 3 |
+| 8/8/8: day 24 is a new hayd | Labib Najib, lesson 11, 39:37 and 41:47-42:22 | open-questions.md, question 3 (resolved 2026-11-11) |
 | Condition 3 is needed only when the later strong blood lasts 15 days or more (continues); 7 black / 14 red / 13 black: not needed; 8 black / 13 red / 20 black: needed, so no tamyiz | as-Saqqaf, lesson 5, 1:16:19-1:23:56; lesson 9, 1:09:46 | review-notes.md H1 |
 | Colour names: ashqar between red and yellow; kudra between yellow and white / turbid water; order with kudra last (al-Bajuri 1/454, "wa qila" kudra before sufra) | Labib Najib, lesson 3, 32:03; al-Qudaymi, lesson 3, 16:20; al-Bajuri vol. 1, p. 454 | review-notes.md H2, tamyiz.md |
 | Habitual pause inside her hayd: ar-Rafi'i vs an-Nawawi, the mu'tamad is an-Nawawi (al-Ibana's text, read aloud) | Labib Najib, lesson 5, 38:17-42:46 | review-notes.md H4 |

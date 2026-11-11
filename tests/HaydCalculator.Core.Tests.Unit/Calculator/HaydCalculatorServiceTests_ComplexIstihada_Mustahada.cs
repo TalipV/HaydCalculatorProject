@@ -184,10 +184,13 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
 
     // [Ibn Hajar al-Haytami, al-Fatawa al-Kubra al-Fiqhiyya, vol. 1, p. 86; https://shamela.ws/book/21628/85] Same case: her hayd is the first black, by agreement (no khilaf here).
     // [Rulings of Haydh and Nifas in the Shafi'i school (8); https://youtu.be/WEabG3nBuEM?t=2342] Same case: the first eight days are hayd, the other days are not.
-    // Note: the last day of the second black (day 23-24) lies after a full minimal purity of 15 days following the first black; the sources still give only the first black as hayd and do not discuss that day.
+    // [Labib Najib, Sharh al-Ibana, lesson 11, 39:37 and 41:47-42:22 (transcript, unreviewed); https://youtu.be/p_JeZgiSs2w?t=2377] Same case: the eight red days and seven days of the second black complete the minimal purity, so the last day is a new hayd.
+    // [as-Saqqaf, al-Ibana wa-l-Ifada, 3rd ed., p. 29-31] Blood that comes before the minimal purity is complete completes it; what goes beyond is a new hayd. Day 24 is exactly a day and a night after the purity. [IMPLICIT]
+    // [Ba 'Alawi, Bughyat al-Mustarshidin, Dar al-Minhaj ed., vol. 1, p. 277 (after Fatawa Ibn Yahya, p. 24)] The same rule. [IMPLICIT]
+    // KHILAF: No view in the sources makes day 24 anything else; the sources above that give "only the first black" do not discuss that day (the lecture series says "the other days are not hayd" without looking at it). Decided by the user on 2026-11-11 (docs/fiqh/open-questions.md, question 3).
     [FiqhTodo]
     [Fact]
-    public void MubtadaaMumayyiza_EightBlackEightRedEightBlack_OnlyFirstBlackIsHayd()
+    public void MubtadaaMumayyiza_EightBlackEightRedEightBlack_FirstBlackAndLastDayAreHayd()
     {
         // ACT
         HaydCalculationResultVO result = Calculate(
@@ -196,8 +199,8 @@ public class HaydCalculatorServiceTests_ComplexIstihada_Mustahada
             (EFlowAppearanceColor.Black, 8));
 
         // ASSERT
-        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 8.0));
-        result.GetIstihadaDayRanges(s_start).Should().Equal((8.0, 24.0));
+        result.GetHaydDayRanges(s_start).Should().Equal((0.0, 8.0), (23.0, 24.0));
+        result.GetIstihadaDayRanges(s_start).Should().Equal((8.0, 23.0));
     }
 
     // [al-Khatib ash-Shirbini, Mughni al-Muhtaj, vol. 1, p. 286; https://shamela.ws/book/11444/202] Strong, weak and weaker blood: 5 days black, then 5 days red, then the yellow continues: the first two are hayd, because they are strong compared to what follows (the strong comes first, the weak follows directly, and together they do not exceed the maximum).
