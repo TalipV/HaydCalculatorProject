@@ -1,4 +1,4 @@
-﻿using HaydCalculator.Core.Calculator.Models;
+using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
 using HaydCalculator.Core.Misc;
 using HaydCalculator.Core.Tests.Unit.Util;
@@ -381,12 +381,11 @@ public class HaydCalculatorFactoryTests_BasicCalculations
 
 
     // Intermittent blood that starts again inside the first 15 days and runs past day 15 is a mustahada case; sources and KHILAF at HaydCalculatorServiceTests_IstihadaClassification.ThirteenDaysRedOneDayPurityFiveDaysRedThenStop_IsMustahadaCase.
-    // TODO: Assert a bool state of the hayd cycle (e.g. IsComplexIstihada) instead of the InfoException, as in HaydCalculatorServiceTests_IstihadaClassification.
     [FiqhTodo]
     [Theory]
     [InlineData(11.0, 1.0, 1.0, 5.0)]
     [InlineData(13.0, 1.0, 1.0, 5.0)]
-    public void IdentifyComplexIstihadahCaseWithNotImplementedException(double redFlowDayCount1, double clearFlowDayCount, double redFlowDayCount2, double redFlowDayCount3)
+    public void IdentifyComplexIstihadahCase_IsMustahadaCase(double redFlowDayCount1, double clearFlowDayCount, double redFlowDayCount2, double redFlowDayCount3)
     {
         // ARRANGE
         var startDate = Instant.FromUtc(2024, 1, 1, 0, 0);
@@ -402,8 +401,7 @@ public class HaydCalculatorFactoryTests_BasicCalculations
         List<FlowDataEntity> timeData = data.GetFlowDataList(initialInstant: startDate);
 
         // ACT & ASSERT
-        Exception exc = Assert.Throws<InfoException>(() => _haydCalculatorService.Calculate(timeData)); ;
-        exc.Message.Should().Be(TextUtil.ComplexIstihadaNotImplemented);
+        _haydCalculatorService.Calculate(timeData).HaydCycles.Should().Contain(x => x.IsMustahadaCase);
     }
 
     #region Shafi'i sources (blood within the limits, no complex istihada)

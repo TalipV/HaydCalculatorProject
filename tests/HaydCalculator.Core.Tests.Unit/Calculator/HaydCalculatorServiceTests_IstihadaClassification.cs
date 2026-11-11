@@ -1,6 +1,5 @@
-﻿using HaydCalculator.Core.Calculator.Models;
+using HaydCalculator.Core.Calculator.Models;
 using HaydCalculator.Core.Calculator.Services;
-using HaydCalculator.Core.Misc;
 using HaydCalculator.Core.Tests.Unit.Util;
 using Microsoft.Extensions.Logging.Abstractions;
 
@@ -12,11 +11,7 @@ namespace HaydCalculator.Core.Tests.Unit.Calculator;
 /// rules alone. These tests only check that classification, not which kind of mustahada it is
 /// or which days are hayd. The classification belongs to each hayd cycle: in one course of
 /// bleeding the first cycle can be a basic one and the next a mustahada case.
-/// TODO: The calculator has no state for this yet; a mustahada case currently shows up as the
-/// InfoException <see cref="TextUtil.ComplexIstihadaNotImplemented"/>. Once each hayd cycle
-/// carries a bool for it (e.g. IsComplexIstihada), assert that bool in
-/// <see cref="AssertMustahadaCase(HaydCalculatorSettings, ValueTuple{EFlowAppearanceColor, double}[])"/> and <see cref="AssertNoMustahadaCase"/> instead, and enable
-/// the commented-out assertions in the tests with more than one cycle.
+/// Each hayd cycle carries the classification in <see cref="HaydCycleEntity.IsMustahadaCase"/>.
 /// </summary>
 public class HaydCalculatorServiceTests_IstihadaClassification
 {
@@ -40,18 +35,14 @@ public class HaydCalculatorServiceTests_IstihadaClassification
         AssertMustahadaCase(HaydCalculatorSettings.Default, flows);
     }
 
-    // TODO: Assert a bool state of each hayd cycle (e.g. IsComplexIstihada == true) instead of the InfoException.
     private void AssertMustahadaCase(HaydCalculatorSettings settings, params (EFlowAppearanceColor type, double dayCount)[] flows)
     {
-        InfoException exception = Assert.Throws<InfoException>(() => Calculate(settings, flows));
-        exception.Message.Should().Be(TextUtil.ComplexIstihadaNotImplemented);
+        Calculate(settings, flows).HaydCycles.Should().Contain(x => x.IsMustahadaCase);
     }
 
-    // TODO: Assert a bool state of each hayd cycle (e.g. IsComplexIstihada == false) instead of only checking that nothing is thrown.
     private void AssertNoMustahadaCase(params (EFlowAppearanceColor type, double dayCount)[] flows)
     {
-        Action act = () => Calculate(flows);
-        act.Should().NotThrow();
+        Calculate(flows).HaydCycles.Should().NotContain(x => x.IsMustahadaCase);
     }
 
     #region Mustahada case
@@ -134,15 +125,13 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     [Fact]
     public void ThreeDaysRedTwelveDaysPurityThenTwentyDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase()
     {
-        // TODO: Enable once each hayd cycle carries the bool state; the InfoException stops the whole calculation and cannot express a result per cycle.
-        //HaydCalculationResultVO result = Calculate(
-        //    (EFlowAppearanceColor.Red, 3),
-        //    (EFlowAppearanceColor.Clear, 12),
-        //    (EFlowAppearanceColor.Red, 20));
-        //
-        //result.HaydCycles[0].IsComplexIstihada.Should().BeFalse();
-        //result.HaydCycles[1].IsComplexIstihada.Should().BeTrue();
-        throw new NotImplementedException("The mustahada classification per hayd cycle is not implemented yet.");
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 3),
+            (EFlowAppearanceColor.Clear, 12),
+            (EFlowAppearanceColor.Red, 20));
+
+        result.HaydCycles[0].IsMustahadaCase.Should().BeFalse();
+        result.HaydCycles[1].IsMustahadaCase.Should().BeTrue();
     }
 
     // Two cycles: the first day is a basic hayd; the returning blood completes the purity with its first day and then exceeds 15 days, so the second cycle is a mustahada case.
@@ -156,15 +145,13 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     [Fact]
     public void OneDayRedFourteenDaysPurityThenTwentyDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase()
     {
-        // TODO: Enable once each hayd cycle carries the bool state; the InfoException stops the whole calculation and cannot express a result per cycle.
-        //HaydCalculationResultVO result = Calculate(
-        //    (EFlowAppearanceColor.Red, 1),
-        //    (EFlowAppearanceColor.Clear, 14),
-        //    (EFlowAppearanceColor.Red, 20));
-        //
-        //result.HaydCycles[0].IsComplexIstihada.Should().BeFalse();
-        //result.HaydCycles[1].IsComplexIstihada.Should().BeTrue();
-        throw new NotImplementedException("The mustahada classification per hayd cycle is not implemented yet.");
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 1),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 20));
+
+        result.HaydCycles[0].IsMustahadaCase.Should().BeFalse();
+        result.HaydCycles[1].IsMustahadaCase.Should().BeTrue();
     }
 
     // Two cycles: the first 3 days are a basic hayd; the returning blood completes the purity on day 18, the rest (days 19-35) is 17 days, so the second cycle is a mustahada case.
@@ -177,15 +164,13 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     [Fact]
     public void ThreeDaysRedFourteenDaysPurityThenSeventeenDaysRed_FirstCycleNoMustahadaCaseSecondCycleMustahadaCase()
     {
-        // TODO: Enable once each hayd cycle carries the bool state; the InfoException stops the whole calculation and cannot express a result per cycle.
-        //HaydCalculationResultVO result = Calculate(
-        //    (EFlowAppearanceColor.Red, 3),
-        //    (EFlowAppearanceColor.Clear, 14),
-        //    (EFlowAppearanceColor.Red, 17));
-        //
-        //result.HaydCycles[0].IsComplexIstihada.Should().BeFalse();
-        //result.HaydCycles[1].IsComplexIstihada.Should().BeTrue();
-        throw new NotImplementedException("The mustahada classification per hayd cycle is not implemented yet.");
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 3),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 17));
+
+        result.HaydCycles[0].IsMustahadaCase.Should().BeFalse();
+        result.HaydCycles[1].IsMustahadaCase.Should().BeTrue();
     }
 
     // Three cycles of a mu'tada ('ada of 5 days): the returning blood completes the purity on day 50, the rest (days 51-66) is 16 days, so only the third cycle is a mustahada case.
@@ -196,18 +181,16 @@ public class HaydCalculatorServiceTests_IstihadaClassification
     [Fact]
     public void MutadaFourteenDaysPurityThenSeventeenDaysRed_OnlyThirdCycleMustahadaCase()
     {
-        // TODO: Enable once each hayd cycle carries the bool state; the InfoException stops the whole calculation and cannot express a result per cycle.
-        //HaydCalculationResultVO result = Calculate(
-        //    (EFlowAppearanceColor.Red, 5),
-        //    (EFlowAppearanceColor.Clear, 25),
-        //    (EFlowAppearanceColor.Red, 5),
-        //    (EFlowAppearanceColor.Clear, 14),
-        //    (EFlowAppearanceColor.Red, 17));
-        //
-        //result.HaydCycles[0].IsComplexIstihada.Should().BeFalse();
-        //result.HaydCycles[1].IsComplexIstihada.Should().BeFalse();
-        //result.HaydCycles[2].IsComplexIstihada.Should().BeTrue();
-        throw new NotImplementedException("The mustahada classification per hayd cycle is not implemented yet.");
+        HaydCalculationResultVO result = Calculate(
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 25),
+            (EFlowAppearanceColor.Red, 5),
+            (EFlowAppearanceColor.Clear, 14),
+            (EFlowAppearanceColor.Red, 17));
+
+        result.HaydCycles[0].IsMustahadaCase.Should().BeFalse();
+        result.HaydCycles[1].IsMustahadaCase.Should().BeFalse();
+        result.HaydCycles[2].IsMustahadaCase.Should().BeTrue();
     }
 
     #endregion Mustahada case

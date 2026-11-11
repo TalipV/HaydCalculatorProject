@@ -1,4 +1,4 @@
-﻿namespace HaydCalculator.Core.Tests.Unit.Calculator;
+namespace HaydCalculator.Core.Tests.Unit.Calculator;
 
 /// <summary>
 /// Cases whose Shafi'i mu'tamad result is not settled by the sources found so far. Each test

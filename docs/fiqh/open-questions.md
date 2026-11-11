@@ -9,7 +9,7 @@ marked in their comments. Do not decide them yourself; collect the passages and 
 **Resolved 2026-11-04: a mustahada case** (see Resolved below). The material is kept here as the record.
 
 Case: 13 red, 1 pure, 5 red, then it stops (19 days). Also the existing test
-`IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5 and 13/1/1/5), which expects
+`IdentifyComplexIstihadahCase_IsMustahadaCase` (formerly `IdentifyComplexIstihadahCaseWithNotImplementedException`) (11/1/1/5 and 13/1/1/5), which expects
 a mustahada case. The Bughya rule does not apply directly: the first blood and the purity
 together are under 15 days, so the returning blood starts inside the 15 days (rest-of-tuhr.md).
 
@@ -179,7 +179,7 @@ Whether this closes the question is the user's decision; the tests are unchanged
 
 **Decision of the user (2026-10-29, confirmed 2026-10-30 after al-Ibana p. 27): 13/1/5 stays open.** The tests stay as they are:
 `ThirteenRedOnePurityFiveRed_DamFasadOrMustahada` keeps throwing `OpenFiqhQuestionException`,
-`IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5, 13/1/1/5) keeps expecting a
+`IdentifyComplexIstihadahCase_IsMustahadaCase` (formerly `IdentifyComplexIstihadahCaseWithNotImplementedException`) (11/1/1/5, 13/1/1/5) keeps expecting a
 mustahada case, `TenDaysRedThreeDaysPurityThenTwentyDaysRed_IsMustahadaCase` keeps expecting a
 mustahada case. Changing any of them needs a new decision of the user.
 

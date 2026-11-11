@@ -10,6 +10,12 @@ public class HaydCycleEntity
 
     public List<FlowDataEntity> HaydFlows { get; set; } = [];
 
+    /// <summary>
+    /// Whether this hayd was found by the rules of the mustahada (blood beyond 15 days: tamyiz, 'ada) rather than
+    /// by the basic rules.
+    /// </summary>
+    public bool IsMustahadaCase { get; set; }
+
     #endregion properties
 
     #region calculated properties

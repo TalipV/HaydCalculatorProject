@@ -36,10 +36,13 @@ can contain both: e.g. 3 red, 12 pure, 20 red: cycle 1 (the 3 days) is basic, th
 completes the purity and then exceeds 15 days, so cycle 2 is a mustahada case (Tuhfa 1/399,
 Bughya; rest-of-tuhr.md).
 
-State in the code: today a mustahada case shows up as `InfoException(TextUtil.ComplexIstihadaNotImplemented)`
-from `HaydCalculation.DoComplexIstihada`. TODO (in the code and the tests): a bool per hayd cycle
-(e.g. `IsComplexIstihada`). Tests with more than one cycle keep the per-cycle assertions commented
-out and throw `NotImplementedException`.
+State in the code (2026-11-11): each hayd cycle carries `HaydCycleEntity.IsMustahadaCase`. The
+calculation (`HaydCalculation`) decides at the end of day 15 of each new hayd: blood there that runs on
+into day 16 makes the course a mustahada case, resolved by tamyiz (with the settings for 7/7/7 and for
+strong / weaker / weak), by her 'ada (`OccurrencesToEstablishAda`, `ShiftedCycle`, `MutadaMumayyizaFollows`)
+or, for a mubtada'a without tamyiz, a day and a night in a cycle of 30 days. With
+`MubtadaaGhayrMumayyizaHayd = UsualSixOrSevenDays` the calculator takes 6 days (the sources say "6 or 7").
+Not implemented: the mutahayyira.
 
 Expected values (tests in `HaydCalculatorServiceTests_IstihadaClassification`):
 
@@ -64,7 +67,7 @@ Expected values (tests in `HaydCalculatorServiceTests_IstihadaClassification`):
 | 3 red, 14 pure, 16 red | basic (rest exactly 15 days) | Bughya, Ibn Qasim 1/399 |
 | 5 red, 25 pure, 5 red, 14 pure, 16 red | basic | Bughya, Ibn Qasim 1/399 |
 
-Existing test `IdentifyComplexIstihadahCaseWithNotImplementedException` (11/1/1/5 and 13/1/1/5)
+Existing test `IdentifyComplexIstihadahCase_IsMustahadaCase` (11/1/1/5 and 13/1/1/5)
 expects a mustahada case; this is the 13/1/5 pattern, decided as a mustahada case (open-questions.md, question 1).
 
 ## Mubtada'a ghayr mumayyiza: a day and a night hayd, 29 days purity
