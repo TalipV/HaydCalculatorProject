@@ -57,12 +57,14 @@ jobs:
           retention-days: 30
 
   build-android:
+    # APKs are only built for main (push or manual run), never for pull requests.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: test
     timeout-minutes: 90
     # Two quick pushes must not delete/recreate the rolling release at the same time.
     concurrency:
-      group: rolling-release-${{ github.ref }}
+      group: rolling-release
       cancel-in-progress: false
 
     steps:
@@ -114,18 +116,15 @@ jobs:
           path: out/*.apk
           retention-days: 30
 
-      # The rolling "latest" release is only updated from main, never from pull requests.
-      # It is recreated on every build: action-gh-release only appends assets to an existing
-      # release and never moves an existing tag, so without this the asset list keeps growing
-      # and the tag stays on an old commit.
+      # The rolling "latest" release is recreated on every build: action-gh-release only
+      # appends assets to an existing release and never moves an existing tag, so without
+      # this the asset list keeps growing and the tag stays on an old commit.
       - name: Remove previous rolling release
-        if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh release delete latest --cleanup-tag --yes --repo "$GITHUB_REPOSITORY" || true
 
       - name: Publish rolling release
-        if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v3
         with:
           tag_name: latest
