@@ -14,13 +14,15 @@ public class HaydCalculatorService(ILogger<HaydCalculatorService> logger)
     public static readonly Duration MaximumHaydDuration = Duration.FromDays(15);
     public static readonly Duration MinimalTuhurDuration = Duration.FromDays(15);
 
-    public HaydCalculationResultVO Calculate(IReadOnlyList<FlowDataEntity> flowDataEntities)
+    /// <param name="flowDataEntities">The flows in chronological order, without gaps or overlaps.</param>
+    /// <param name="settings">Which view to follow where the school has a khilaf; <see cref="HaydCalculatorSettings.Default"/> if omitted.</param>
+    public HaydCalculationResultVO Calculate(IReadOnlyList<FlowDataEntity> flowDataEntities, HaydCalculatorSettings? settings = null)
     {
         ArgumentNullException.ThrowIfNull(flowDataEntities);
 
         logger.LogDebug("Calculating {FlowDataCount} flow data entries", flowDataEntities.Count);
 
-        HaydCalculationResultVO result = new HaydCalculation(flowDataEntities).Run();
+        HaydCalculationResultVO result = new HaydCalculation(flowDataEntities, settings ?? HaydCalculatorSettings.Default).Run();
 
         logger.LogDebug(
             "Calculation result: {HaydCycleCount} hayd cycles, {IstihadaFlowCount} istihada flows, {MakeUpDays} make up days",

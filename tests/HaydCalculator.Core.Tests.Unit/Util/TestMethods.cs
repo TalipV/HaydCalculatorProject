@@ -24,6 +24,61 @@ internal static class TestMethods
         return list;
     }
 
+    /// <summary>
+    /// The hayd cycles of a result as day ranges [from, to) relative to <paramref name="start"/>,
+    /// purity in between included (one range per cycle).
+    /// </summary>
+    public static List<(double FromDay, double ToDay)> GetHaydDayRanges(this HaydCalculationResultVO result, Instant start)
+    {
+        return [.. result.HaydCycles.Select(cycle => ToDayRange(start, cycle.HaydBeginning!.Value, cycle.HaydEnd!.Value))];
+    }
+
+    /// <summary>
+    /// The flows inside the hayd cycles as day ranges [from, to) relative to <paramref name="start"/>,
+    /// touching flows merged. Unlike <see cref="GetHaydDayRanges"/> this shows purity inside a cycle
+    /// that does not count as hayd (qawl al-laqt) as a gap.
+    /// </summary>
+    public static List<(double FromDay, double ToDay)> GetHaydFlowDayRanges(this HaydCalculationResultVO result, Instant start)
+    {
+        return MergeDayRanges(result.HaydCycles.SelectMany(cycle => cycle.HaydFlows), start);
+    }
+
+    /// <summary>
+    /// The istihada flows (including dam fasad) of a result as day ranges [from, to) relative to
+    /// <paramref name="start"/>. Touching flows are merged and empty ones dropped, so the ranges
+    /// only describe what is istihada, not how the calculator happens to split it up.
+    /// </summary>
+    public static List<(double FromDay, double ToDay)> GetIstihadaDayRanges(this HaydCalculationResultVO result, Instant start)
+    {
+        return MergeDayRanges(result.IstihadaFlows, start);
+    }
+
+    private static List<(double FromDay, double ToDay)> MergeDayRanges(IEnumerable<FlowDataEntity> flows, Instant start)
+    {
+        List<(double FromDay, double ToDay)> merged = [];
+
+        foreach (FlowDataEntity flow in flows.Where(x => x.Duration > Duration.Zero).OrderBy(x => x.From))
+        {
+            (double fromDay, double toDay) = ToDayRange(start, flow.From, flow.To);
+
+            if (merged.Count > 0 && merged[^1].ToDay == fromDay)
+            {
+                merged[^1] = (merged[^1].FromDay, toDay);
+            }
+            else
+            {
+                merged.Add((fromDay, toDay));
+            }
+        }
+
+        return merged;
+    }
+
+    private static (double FromDay, double ToDay) ToDayRange(Instant start, Instant from, Instant to)
+    {
+        return ((from - start).TotalDays, (to - start).TotalDays);
+    }
+
     public static bool CheckFlowsInOrder(List<FlowDataEntity> flows)
     {
         ArgumentNullException.ThrowIfNull(flows);
