@@ -63,7 +63,7 @@ The last 3 days are blood, but not hayd (lesson 6 explains why). A row that ends
 7. [More than 15 days: the mustahada](#lesson-7-more-than-15-days-the-mustahada)
 8. [Strong and weak blood](#lesson-8-strong-and-weak-blood)
 9. [Telling hayd by its strength (tamyiz)](#lesson-9-telling-hayd-by-its-strength-tamyiz)
-10. [A beginner without tamyiz](#lesson-10-a-beginner-without-tamyiz)
+10. [First bleeding without tamyiz](#lesson-10-first-bleeding-without-tamyiz)
 11. [A woman with a habit ('ada)](#lesson-11-a-woman-with-a-habit-ada)
 12. [Habit against tamyiz](#lesson-12-habit-against-tamyiz)
 
@@ -274,7 +274,7 @@ days 19-21 are hayd.
 
 📖 Bughya 1/277 · al-Ibana p. 29-31 · Amjad Rashid p. 14-15 · Ibn Qasim on [Tuhfa 1/399](https://shamela.ws/book/9059/400) («لَا يَبْعُدُ»)
 
-**Another reading, for a beginner only.** Two commentators on the Tuhfa (ash-Shabramallisi and
+**Another reading, only for a woman in her first bleeding (*mubtada'a*).** Two commentators on the Tuhfa (ash-Shabramallisi and
 al-Bujayrimi) read Ibn Hajar's wording differently for a woman who is bleeding for the first time
 (a *mubtada'a*). On their reading, she is a "mustahada" (lesson 7) from the very first day: only
 day 1 is hayd, and the rest of the blood is not.
@@ -304,7 +304,7 @@ hayd lasts more than 15 days. She is now called a **mustahada**, and the questio
 The answer depends on two things about her:
 
 1. **Is this her first bleeding, or has she had a hayd before?**
-   - A **beginner** (*mubtada'a*) has never had a hayd and a purity that she knows.
+   - A woman in her **first bleeding** (*mubtada'a*) has never had a hayd and a purity that she knows.
    - A woman with a **habit** (*mu'tada*) knows her earlier hayd and purity: how long, and when.
 2. **Does her blood show a clear difference between strong and weak blood?** If it does and
    certain conditions hold, she has **tamyiz** (she is *mumayyiza*).
@@ -314,14 +314,14 @@ This gives the following map. Follow the arrows:
 ```mermaid
 flowchart TD
     A["Blood longer than 15 days: mustahada"] --> B{"Has she had a hayd and a purity before that she knows?"}
-    B -- "no: beginner (mubtada'a)" --> C{"Strong and weak blood, all 4 conditions met?"}
-    C -- yes --> R1["Strong blood = hayd, weak blood = not hayd<br/>Lesson 9"]
-    C -- no --> R2["1 day and night hayd, 29 days not<br/>Lesson 10"]
+    B -- "no: first bleeding (mubtada'a)" --> C{"Strong and weak blood, all 4 conditions met?"}
+    C -- yes --> R1["Strong blood = hayd, weak blood = not hayd<br/><i>(see lesson 9)</i>"]
+    C -- no --> R2["1 day and night hayd, 29 days not<br/><i>(see lesson 10)</i>"]
     B -- "yes: she has a habit (mu'tada)" --> D{"Does she still remember it?"}
     D -- no --> R5["Mutahayyira: special precaution rules<br/>(not covered yet)"]
     D -- yes --> E{"Strong and weak blood, all 4 conditions met?"}
-    E -- yes --> R3["The strength of the blood decides<br/>Lesson 12"]
-    E -- no --> R4["Her habit decides: same length, same time<br/>Lesson 11"]
+    E -- yes --> R3["Strong blood = hayd, weak blood = not hayd<br/>(other view: her habit decides)<br/><i>(see lesson 12)</i>"]
+    E -- no --> R4["Her habit decides: same length, same time<br/><i>(see lesson 11)</i>"]
 ```
 
 (GitHub draws this as a diagram. The school counts **seven** kinds of mustahada: the five end
@@ -368,7 +368,7 @@ How to compare:
 
 ## Lesson 9: Telling hayd by its strength (tamyiz)
 
-**A beginner sees 10 days black, then red that goes on for weeks.**
+**In her first bleeding, a woman sees 10 days black, then red that goes on for weeks.**
 
 <!-- strip: Blood: 10K 25R ... | Ruling: 10H 25F ... -->
 ![Blood: 10 black, 25 red, and on. Ruling: 10 hayd, 25 not hayd, and on.](img/strips/strip-f9034e32.svg)
@@ -487,9 +487,9 @@ the last day (day 24) is a **new hayd**, as in lesson 6.
 
 ---
 
-## Lesson 10: A beginner without tamyiz
+## Lesson 10: First bleeding without tamyiz
 
-**A beginner bleeds red for weeks, always the same.** There is no strong and weak blood to go by.
+**In her first bleeding, a woman bleeds red for weeks, always the same.** There is no strong and weak blood to go by.
 
 <!-- strip: Blood: 35R ... | Ruling: 1H 29F 1H 4F ... -->
 ![Blood: 35 red, and on. Ruling: 1 hayd, 29 not hayd, 1 hayd, 4 not hayd, and on.](img/strips/strip-672b4c88.svg)
@@ -604,8 +604,8 @@ the later school differ among themselves: Ibn Hajar on one side, ar-Ramli and al
 | Clean days between bloods within 15 days | hayd | pure | 4 |
 | Yellow and turbid discharge | hayd | not hayd | 5 |
 | ... and if not hayd: also inside her habit days? | no, only outside (al-Khatib) | inside too (Ibn Hajar) | 5 |
-| A beginner whose blood comes back too early and goes past the purity | first blood hayd, the rest completes the purity | only day 1 is hayd (two commentators' reading) | 6 |
-| Beginner without tamyiz | 1 day and night | 6 or 7 days | 10 |
+| First bleeding: blood comes back too early and goes past the purity | first blood hayd, the rest completes the purity | only day 1 is hayd (two commentators' reading) | 6 |
+| First bleeding without tamyiz | 1 day and night | 6 or 7 days | 10 |
 | How often until a habit counts | once | twice; three times | 11 |
 | Blood comes earlier than her habit and goes on | new cycle | three further views | 11 |
 | Habit against tamyiz | tamyiz | habit | 12 |
@@ -672,7 +672,7 @@ The last 3 days fall into the 15 days of purity (lesson 6, case A).
 Purity until day 25; days 19-25 complete it; days 26-30 are a new hayd (lesson 6, case B).
 </details>
 
-**5.** A beginner bleeds red for 40 days, always the same.
+**5.** First bleeding: red for 40 days, always the same.
 
 <details><summary>Solution</summary>
 
@@ -682,7 +682,7 @@ Purity until day 25; days 19-25 complete it; days 26-30 are a new hayd (lesson 6
 No tamyiz: one day and night hayd, 29 days not (lesson 10).
 </details>
 
-**6.** A beginner: 10 black, then red that goes on.
+**6.** First bleeding: 10 black, then red that goes on.
 
 <details><summary>Solution</summary>
 
@@ -692,7 +692,7 @@ No tamyiz: one day and night hayd, 29 days not (lesson 10).
 All four conditions of tamyiz hold (lesson 9).
 </details>
 
-**7.** A beginner: black and red alternate day by day for 40 days.
+**7.** First bleeding: black and red alternate day by day for 40 days.
 
 <details><summary>Solution</summary>
 
@@ -702,7 +702,7 @@ All four conditions of tamyiz hold (lesson 9).
 Condition ④ fails: no tamyiz, so like exercise 5 (lessons 9 and 10).
 </details>
 
-**8.** A beginner: 7 black, 7 red, 7 black, then it stops.
+**8.** First bleeding: 7 black, 7 red, 7 black, then it stops.
 
 <details><summary>Solution</summary>
 
@@ -750,12 +750,12 @@ Mughni 1/294, Nihaya 1/356; [open-questions.md](open-questions.md), question 1.)
 ```mermaid
 flowchart TD
     S["Blood, maybe with clean days in between<br/>(count from day 1 of the first blood)"] --> M{"Blood reaches 24 hours in total?"}
-    M -- no --> N["Not hayd<br/>Lesson 3"]
+    M -- no --> N["Not hayd<br/><i>(see lesson 3)</i>"]
     M -- yes --> L{"First to last blood within 15 days?"}
-    L -- yes --> H["All hayd, any colour,<br/>clean days in between too<br/>Lessons 2 and 4"]
+    L -- yes --> H["All hayd, any colour,<br/>clean days in between too<br/><i>(see lessons 2 and 4)</i>"]
     L -- no --> G{"Does the blood run past day 15<br/>without a clean break before it?"}
-    G -- yes --> X["Mustahada: follow the map in lesson 7"]
-    G -- "no: it came back after day 15" --> R["First blood hayd; the returning blood completes<br/>the 15 clean days and is not hayd<br/>Lesson 6"]
+    G -- yes --> X["Mustahada<br/><i>(see the map in lesson 7)</i>"]
+    G -- "no: it came back after day 15" --> R["First blood hayd; the returning blood completes<br/>the 15 clean days and is not hayd<br/><i>(see lesson 6)</i>"]
     R -- "blood left after that" --> M
 ```
 
@@ -780,7 +780,7 @@ flowchart TD
 | **hayd** | menstruation |
 | **istihada** | blood that is not hayd; she prays and fasts |
 | **khilaf** | a difference of views among the scholars |
-| **mubtada'a** | a beginner: bleeding for the first time |
+| **mubtada'a** | a woman in her first bleeding: she has had no hayd and purity before that she knows |
 | **mu'tada** | a woman with a habit |
 | **mumayyiza** | a woman whose blood shows tamyiz |
 | **mustahada** | a woman whose blood goes beyond 15 days |
