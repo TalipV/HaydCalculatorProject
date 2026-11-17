@@ -94,14 +94,39 @@ jobs:
       - name: Build date
         run: echo "BUILD_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
 
-      # No signing secrets yet: the APK is signed with the Android SDK's auto-generated
-      # debug keystore. For a stable signature, add ANDROID_KEYSTORE_B64 & co. as repository
-      # secrets and pass them like PrayerTimeEngine's android-apk workflow does.
+      # Signs with the release keystore from the repository secrets, so every build has the
+      # same signature and installed apps can be updated. Passwords reach the build through
+      # environment variables (env: prefix), never through the command line.
+      # Fork pull requests get no secrets: they fall back to the debug keystore, and their APK
+      # is only uploaded as a build artifact. A build of main without secrets fails, so a
+      # debug-signed APK is never published.
       - name: Build Release APK
-        run: >
-          dotnet publish HaydCalculator.MAUI/HaydCalculator.MAUI.csproj
-          -c Release -f net10.0-android
-          -p:EnableLLVM=false
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          signing_args=()
+          if [ -n "$KEYSTORE_B64" ]; then
+            echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/signing.keystore"
+            signing_args=(
+              -p:AndroidKeyStore=true
+              "-p:AndroidSigningKeyStore=$RUNNER_TEMP/signing.keystore"
+              "-p:AndroidSigningKeyAlias=$KEY_ALIAS"
+              -p:AndroidSigningKeyPass=env:KEY_PASSWORD
+              -p:AndroidSigningStorePass=env:KEYSTORE_PASSWORD
+            )
+          elif [ "$GITHUB_REF" = "refs/heads/main" ]; then
+            echo "::error::Signing secrets missing (ANDROID_KEYSTORE_B64 & co.). Refusing to publish a debug-signed APK."
+            exit 1
+          else
+            echo "::warning::No signing secrets available; this APK is signed with the debug keystore."
+          fi
+          dotnet publish HaydCalculator.MAUI/HaydCalculator.MAUI.csproj \
+            -c Release -f net10.0-android \
+            -p:EnableLLVM=false \
+            "${signing_args[@]}"
 
       - name: Collect APK
         run: |
