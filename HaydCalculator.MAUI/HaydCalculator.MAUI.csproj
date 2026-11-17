@@ -22,6 +22,16 @@
     <WindowsPackageType Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">None</WindowsPackageType>
   </PropertyGroup>
 
+  <!-- Since .NET 11 the app runs on CoreCLR (Mono is no longer supported). Release builds
+       are trimmed and precompiled with composite ReadyToRun by default; by default only part
+       of the methods is precompiled, the rest is compiled on the device at runtime.
+       Full ReadyToRun precompiles (almost) every method: faster start and fewer runtime
+       compilations, at the cost of a larger APK and a longer build. NativeAOT would go
+       further but is experimental on Android in .NET 11. -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <MauiEnableFullReadyToRun>true</MauiEnableFullReadyToRun>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- App Icon -->
     <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
