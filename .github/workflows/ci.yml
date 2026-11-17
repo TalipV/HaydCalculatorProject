@@ -139,7 +139,7 @@ jobs:
         run: |
           mkdir -p out
           cp HaydCalculator.MAUI/bin/Release/net10.0-android/*-Signed.apk \
-             "out/HaydCalculator-${APP_VERSION}-build${{ github.run_number }}.apk"
+             "out/HaydCalculator-${APP_VERSION}.apk"
           ls -lh out
 
       - name: Upload build artifact
