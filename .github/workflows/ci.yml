@@ -141,7 +141,6 @@ jobs:
           fi
           dotnet publish HaydCalculator.MAUI/HaydCalculator.MAUI.csproj \
             -c Release -f net11.0-android \
-            -p:RuntimeIdentifiers=android-arm64 \
             -p:ApplicationVersion=${{ github.run_number }} \
             "${signing_args[@]}"
 
