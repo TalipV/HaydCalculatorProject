@@ -59,6 +59,26 @@ Android APK; pushes to `main` refresh the rolling `latest` prerelease.
 Three Tamyiz tests are skipped (`TamyizNotFinished`) because that part of the calculation is
 not finished; remove the `Skip` once it is.
 
+## Versioning
+
+- **`ApplicationDisplayVersion`** in `HaydCalculator.MAUI/HaydCalculator.MAUI.csproj` is the
+  version the user sees, as `MAJOR.MINOR.PATCH` (Semantic Versioning). The app is not finished
+  yet, so it stays at `0.x.y`; `1.0.0` comes only when the user says so.
+- **`ApplicationVersion`** (Android versionCode) is not maintained by hand. CI sets it to
+  `github.run_number`, so every build counts up and installs as an update. The `1` in the
+  csproj is only for local builds; leave it.
+- **Raising the version is Claude's job.** Whenever a change to the app lands on `main`, raise
+  `ApplicationDisplayVersion` in the same commit, once per push, at the highest level any of the
+  pushed changes needs:
+  - **PATCH** (`0.3.1` → `0.3.2`): bug fixes, text or translation fixes, small UI polish.
+  - **MINOR** (`0.3.2` → `0.4.0`): new features, noticeable behaviour changes, changed
+    calculation results (fiqh rules), and changes that break stored data or settings.
+  - **MAJOR**: only when the user asks for it.
+  - **No bump**: changes that do not reach the app (tests, docs, CI, refactoring without a
+    behaviour change).
+- **When in doubt** (PATCH or MINOR, bump or not), ask the user before committing.
+- Name the new version in the commit message body (e.g. `Version 0.4.0.`).
+
 ## Code style
 
 All text in the repository is English: code, comments, test descriptions, docs, CI output. No German.

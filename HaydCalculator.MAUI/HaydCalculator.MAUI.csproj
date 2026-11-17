@@ -13,8 +13,9 @@
     <ApplicationId>com.companyname.haydcalculator</ApplicationId>
     <ApplicationIdGuid>4fa0f16c-b741-49c9-a2cf-d9466d4ed4a0</ApplicationIdGuid>
 
-    <!-- Versions -->
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <!-- Versions (see "Versioning" in CLAUDE.md). ApplicationDisplayVersion is raised by hand;
+         CI overrides ApplicationVersion (Android versionCode) with the workflow run number. -->
+    <ApplicationDisplayVersion>0.1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
 
     <!-- Windows: run unpackaged (plain .exe, no MSIX registration), so several Windows users can debug it -->

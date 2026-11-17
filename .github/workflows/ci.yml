@@ -91,8 +91,14 @@ jobs:
           dotnet workload install maui-android
           dotnet workload --version
 
-      - name: Build date
-        run: echo "BUILD_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
+      # APP_VERSION is the display version from the csproj; the run number becomes the
+      # Android versionCode, so every build counts up and installs as an update.
+      - name: Build info
+        run: |
+          echo "BUILD_DATE=$(date -u +%Y-%m-%d)" >> "$GITHUB_ENV"
+          version=$(sed -n 's:.*<ApplicationDisplayVersion>\(.*\)</ApplicationDisplayVersion>.*:\1:p' HaydCalculator.MAUI/HaydCalculator.MAUI.csproj)
+          if [ -z "$version" ]; then echo "::error::ApplicationDisplayVersion not found in csproj."; exit 1; fi
+          echo "APP_VERSION=$version" >> "$GITHUB_ENV"
 
       # Signs with the release keystore from the repository secrets, so every build has the
       # same signature and installed apps can be updated. Passwords reach the build through
@@ -126,12 +132,14 @@ jobs:
           dotnet publish HaydCalculator.MAUI/HaydCalculator.MAUI.csproj \
             -c Release -f net10.0-android \
             -p:EnableLLVM=false \
+            -p:ApplicationVersion=${{ github.run_number }} \
             "${signing_args[@]}"
 
       - name: Collect APK
         run: |
           mkdir -p out
-          cp HaydCalculator.MAUI/bin/Release/net10.0-android/*-Signed.apk "out/HaydCalculator-release.apk"
+          cp HaydCalculator.MAUI/bin/Release/net10.0-android/*-Signed.apk \
+             "out/HaydCalculator-${APP_VERSION}-build${{ github.run_number }}.apk"
           ls -lh out
 
       - name: Upload build artifact
@@ -154,12 +162,13 @@ jobs:
         with:
           tag_name: latest
           target_commitish: ${{ github.sha }}
-          name: Latest build (${{ env.BUILD_DATE }})
+          name: ${{ env.APP_VERSION }} (build ${{ github.run_number }}, ${{ env.BUILD_DATE }})
           body: |
             Automatic build of `main` — commit ${{ github.sha }}
+            Version: ${{ env.APP_VERSION }} (build ${{ github.run_number }})
             Date: ${{ env.BUILD_DATE }}
 
-            Permanent download link (always points to the latest build):
-            https://github.com/${{ github.repository }}/releases/download/latest/HaydCalculator-release.apk
+            Permanent link to this page (always shows the latest build):
+            https://github.com/${{ github.repository }}/releases/tag/latest
           prerelease: true
           files: out/*.apk
