@@ -6,7 +6,7 @@ internal static class TestMethods
 {
     public static List<FlowDataEntity> GetFlowDataList(this List<(EFlowAppearanceColor type, double dayCount)> tupleLst, Instant initialInstant)
     {
-        List<FlowDataEntity> list = new(tupleLst.Count);
+        List<FlowDataEntity> list = [with(tupleLst.Count)];
         Instant lastBeginningInstant = initialInstant;
 
         foreach ((EFlowAppearanceColor type, double dayCount) in tupleLst.Where(x => x.dayCount != 0))

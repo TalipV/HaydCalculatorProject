@@ -73,7 +73,8 @@ jobs:
       - uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: '17'
+          # .NET 11 for Android (API 37) requires JDK 21 or newer
+          java-version: '21'
 
       - uses: actions/setup-dotnet@v6
         with:
@@ -90,6 +91,15 @@ jobs:
         run: |
           dotnet workload install maui-android
           dotnet workload --version
+
+      # The runner image does not necessarily ship the Android platform that the
+      # target framework needs (net11.0-android = API 37); install whatever is missing.
+      - name: Install Android SDK dependencies
+        run: >
+          dotnet build HaydCalculator.MAUI/HaydCalculator.MAUI.csproj
+          -t:InstallAndroidDependencies -f net11.0-android
+          -p:AndroidSdkDirectory="$ANDROID_HOME"
+          -p:AcceptAndroidSDKLicenses=True
 
       # APP_VERSION is the display version from the csproj; the run number becomes the
       # Android versionCode, so every build counts up and installs as an update.
@@ -130,7 +140,7 @@ jobs:
             echo "::warning::No signing secrets available; this APK is signed with the debug keystore."
           fi
           dotnet publish HaydCalculator.MAUI/HaydCalculator.MAUI.csproj \
-            -c Release -f net10.0-android \
+            -c Release -f net11.0-android \
             -p:EnableLLVM=false \
             -p:ApplicationVersion=${{ github.run_number }} \
             "${signing_args[@]}"
@@ -138,7 +148,7 @@ jobs:
       - name: Collect APK
         run: |
           mkdir -p out
-          cp HaydCalculator.MAUI/bin/Release/net10.0-android/*-Signed.apk \
+          cp HaydCalculator.MAUI/bin/Release/net11.0-android/*-Signed.apk \
              "out/HaydCalculator-${APP_VERSION}.apk"
           ls -lh out
 

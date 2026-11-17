@@ -1,7 +1,7 @@
 ## Projects
 
 - **`HaydCalculator.Core`** — the calculation logic (`HaydCalculatorService`, flow data / hayd
-  cycle models). Plain `net10.0`; only NodaTime plus the logging and DI abstractions are allowed.
+  cycle models). Plain `net11.0`; only NodaTime plus the logging and DI abstractions (part of the .NET 11 shared framework) are allowed.
   `AddCore()` (`DependencyInjection/CoreServiceCollectionExtensions.cs`) is its composition root.
 - **`HaydCalculator.MAUI`** — the app and the real composition root (`MauiProgram`, which calls
   `AddCore()`). Pages live in `Presentation/Pages/<Name>/` (`<Name>Page.cs` + `<Name>PageViewModel.cs`),
@@ -32,7 +32,7 @@
 
 ## Building and testing
 
-`global.json` pins the SDK feature band (any `10.0.4xx` patch) and the exact MAUI workload set
+`global.json` pins the SDK feature band (any `11.0.1xx` patch) and the exact MAUI workload set
 version. Install an SDK from that band, then run `dotnet workload update` once in the repo root.
 Without it every project fails with `MSB4242 ... Workload version ... was not found`.
 
@@ -50,7 +50,7 @@ nothing about the code. Do not try to install the workload there. To still get t
 over the MAUI code on a Windows machine, build a single TFM:
 
 ```
-dotnet build HaydCalculator.MAUI/HaydCalculator.MAUI.csproj -f net10.0-windows10.0.26100.0
+dotnet build HaydCalculator.MAUI/HaydCalculator.MAUI.csproj -f net11.0-windows10.0.26100.0
 ```
 
 GitHub Actions (`.github/workflows/ci.yml`) runs the tests on every push/PR and builds the
@@ -107,7 +107,7 @@ members (IDE0051); check the diff before committing.
 
 `global.json` is the single source of truth for toolchain versions: the .NET SDK
 (`sdk.version` + `rollForward: latestPatch`) and the MAUI workload set (`sdk.workloadVersion`).
-`latestPatch` pins the SDK *feature band*: any newer patch of `10.0.4xx` is accepted, so a
+`latestPatch` pins the SDK *feature band*: any newer patch of `11.0.1xx` is accepted, so a
 Visual Studio update that replaces one patch with the next does not break the build. New
 analyzer rules arrive with a new feature band, which requires a deliberate change here.
 GitHub Actions reads both values, so local and CI builds run the same analyzers and workloads.
@@ -115,7 +115,7 @@ GitHub Actions reads both values, so local and CI builds run the same analyzers 
 **Keep `sdk.workloadVersion` in step with Visual Studio** (and with PrayerTimeEngine, which
 uses the same pin). After a VS update, local CLI builds of the MAUI project can fail with
 `NETSDK1147` or `MSB4242`. Then find the workload set that matches VS's packs
-(`dotnet workload search version 10.0.40x`; compare with `C:\Program Files\dotnet\packs\Microsoft.Maui.Sdk`
+(`dotnet workload search version 11.0.100`; compare with `C:\Program Files\dotnet\packs\Microsoft.Maui.Sdk`
 and `Microsoft.Android.Sdk.Windows`), raise `sdk.workloadVersion` to it and run
 `dotnet workload update` in an admin shell. Remind the user of this whenever a VS update is
 mentioned or one of these errors shows up.
